@@ -1,0 +1,13 @@
+@import '../../../../styles/common.scss';
+
+.itemExplanation {
+  h1 {
+    margin: 1.8rem 0;
+  }
+
+  p {
+    width: 70%;
+    line-height: $line-height-16;
+    color: $--colour-text-default;
+  }
+}

@@ -1,0 +1,45 @@
+@import '../../../../styles/common.scss';
+
+.products {
+  margin-top: 2.5rem;
+
+  .productRow {
+    @include flexbox(center center);
+    flex-wrap: nowrap;
+
+    .product {
+      max-width: 25rem;
+      padding: 1rem;
+      font-size: 0.875rem;
+
+      img {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 0.875rem;
+        cursor: pointer;
+
+        &:hover {
+          border-bottom: 1px solid $--colour-border-dark;
+        }
+      }
+
+      .productsExplanation {
+        margin-top: 20px;
+
+        div {
+          margin-top: 7px;
+        }
+
+        .productPrice {
+          font-size: 1.5rem;
+
+          span {
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+}

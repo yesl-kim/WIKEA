@@ -1,0 +1,60 @@
+@import '../../../../styles/common.scss';
+
+.btnLine {
+  @include flexbox(between);
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid $--colour-border-light;
+  background-color: $--colour-bg-default;
+
+  .btnContainer {
+    padding: 1.25rem 0;
+
+    button {
+      margin-right: 0.8rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background-color: $--colour-bg-alternative;
+
+      &:hover {
+        background-color: $--colour-button-inverse-disabled-dark;
+      }
+
+      &:active {
+        background-color: $--colour-switch-off-pressed;
+      }
+
+      [class^='ic-'] {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .productBtn {
+    @include flexbox(center end);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    cursor: pointer;
+
+    span {
+      margin-right: 7px;
+      padding: 5px;
+      transition: all 0.3s ease;
+
+      &:first-child {
+        color: $--colour-text-lightest;
+        cursor: initial;
+
+        &:hover {
+          border-bottom: none;
+        }
+      }
+
+      &:hover {
+        border-bottom: 1px solid $--colour-border-dark;
+      }
+    }
+  }
+}
