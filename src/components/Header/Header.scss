@@ -84,6 +84,7 @@ header {
 
   @include responsive(D) {
     height: 92px;
+
     @include flexbox(between);
 
     .options {

@@ -6,90 +6,216 @@
   padding: 0 20px;
   margin-bottom: 40px;
 
-  .nav-container {
-    border-bottom: 1px solid $--colour-border-light;
-    margin-bottom: 40px;
+  hr {
+    width: 100%;
+    border: 1px solid $--colour-border-light;
+  }
 
+  .row:nth-child(1) {
+    .nav-container {
+      ol {
+        display: inline-block;
+        padding: 16px 0;
+
+        li {
+          display: inline;
+          font-size: 14px;
+        }
+      }
+    }
+    hr {
+      width: 100%;
+      border: 0.8px solid $--colour-border-light;
+      margin-bottom: 40px;
+    }
+  }
+
+  .row:nth-child(2) {
+    .item-img {
+      img {
+        width: 100%;
+      }
+
+      .sm-slide {
+        width: 100%;
+        height: 34px;
+        border-top: 2px solid $--colour-border-light;
+      }
+    }
+
+    .item-info {
+      > p {
+        color: $--colour-cmsg-new;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      .item-primary-info {
+        @include flexbox(between);
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+        h1 {
+          @include column-flexbox(around, start);
+          height: 57px;
+          font-size: 0.75rem;
+          font-weight: 400;
+          span:first-of-type {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+          }
+        }
+
+        .rating-star {
+          width: 100%;
+          margin: 4px 0;
+          font-size: 14px;
+
+          .ic-star:last-of-type {
+            color: lightgray;
+          }
+        }
+      }
+
+      .item-btn-group {
+        @include flexbox(around);
+        width: 100%;
+        height: 56px;
+        margin: 16px 0 20px 0;
+
+        button:first-of-type {
+          width: 80%;
+          height: 56px;
+          border-radius: 64px;
+          color: white;
+          font-weight: 700;
+          background-color: $--colour-button-primary-emphasised-default;
+        }
+
+        button:last-of-type {
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          font-weight: 700;
+          border: 2px solid $--colour-border-light;
+        }
+      }
+
+      .item-availability {
+        font-size: 14px;
+
+        .stock-check {
+          margin-top: 20px;
+          padding-bottom: 20px;
+
+          i {
+            margin-right: 6px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .row:nth-child(3) {
+    .item-details {
+      .item-summary {
+        @include column-flexbox(center, start);
+        margin: 64px 0;
+
+        span {
+          display: inline-block;
+          font-size: 12px;
+
+          &:last-of-type {
+            margin-top: 8px;
+            padding: 4px 12px;
+            font-weight: 900;
+            color: white;
+            background-color: black;
+          }
+        }
+      }
+
+      button {
+        font-size: 14px;
+        font-weight: 700;
+
+        &:nth-of-type(3) {
+          @include column-flexbox(around, start);
+        }
+      }
+
+      .box {
+        height: 90px;
+        padding: 20px 0;
+      }
+    }
+  }
+
+  .recommandation {
+    h3 {
+      margin-bottom: 32px;
+      z-index: 0;
+    }
     ol {
-      display: inline-block;
-
-      padding: 16px 0;
+      @include flexbox(start);
+      width: 100%;
+      overflow: scroll;
 
       li {
-        display: inline;
-        font-size: 14px;
-      }
-    }
-  }
+        width: 200px;
+        padding: 40px 0 16px 0;
+        position: relative;
+        margin-right: 4px;
+        background-color: transparent;
 
-  .item-img {
-    img {
-      width: 100%;
-    }
-
-    .sm-slide {
-      width: 100%;
-      height: 34px;
-      border-top: 2px solid $--colour-border-light;
-    }
-  }
-
-  .item-info {
-    > p {
-      color: $--colour-cmsg-new;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .item-primary-info {
-      @include flexbox(between);
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-      h1 {
-        @include column-flexbox(around, start);
-        height: 57px;
-        font-size: 0.75rem;
-        font-weight: 400;
-        span:first-of-type {
-          font-size: 18px;
-          font-weight: 700;
-          margin-bottom: 0.25rem;
+        button:first-of-type {
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          right: 0;
+          top: -40px;
+          z-index: 9999;
         }
-      }
 
-      .rating-star {
-        width: 365px;
-        margin: 4px 0;
-        font-size: 14px;
-
-        .ic-star:last-of-type {
-          color: lightgray;
+        img {
+          width: 100%;
         }
-      }
-    }
 
-    .item-btn-group {
-      @include flexbox(around);
-      width: 100%;
-      height: 56px;
+        .item-primary-info {
+          height: 127px;
+          @include column-flexbox(between, start);
+          span {
+            font-size: 12px;
+          }
+          p {
+            font-size: 12px;
+            font-weight: 400;
+          }
 
-      button:first-of-type {
-        width: 80%;
-        height: 56px;
-        border-radius: 64px;
-        color: white;
-        font-weight: 700;
-        background-color: $--colour-button-primary-emphasised-default;
-      }
+          .price {
+            font-size: 16px;
+            font-weight: 700;
+          }
 
-      button:last-of-type {
-        width: 56px;
-        height: 56px;
+          .rating-star {
+            font-size: 12px;
 
-        border-radius: 50%;
-        font-weight: 700;
-        border: 2px solid $--colour-border-light;
+            span {
+              margin-left: 8px;
+            }
+          }
+        }
+
+        button:last-of-type {
+          width: 40px;
+          height: 40px;
+          color: white;
+          background-color: $--colour-button-primary-emphasised-default;
+          border-radius: 50%;
+        }
       }
     }
   }
@@ -100,29 +226,21 @@
 
   @include responsive(D) {
     padding: 0 40px 0 20px;
-  }
 
-  .route {
-    width: 100%;
-    height: 45.25px;
-    padding: 8px 0 16px 0;
-    // background-color: yellow;
+    .row:nth-child(2) {
+      .item-img {
+        img {
+          width: 50%;
+        }
+      }
 
-    @include responsive(T) {
-      margin-bottom: 64px;
-    }
-
-    @include responsive(D) {
-      margin-bottom: 64px;
-    }
-  }
-
-  article {
-    height: 2091.83px;
-
-    img {
-      width: 25%;
-      object-fit: cover;
+      .item-info {
+        .item-btn-group {
+          button:first-of-type {
+            width: 70%;
+          }
+        }
+      }
     }
   }
 }
