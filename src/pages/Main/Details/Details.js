@@ -1,7 +1,7 @@
 import React from 'react';
-import Message from './Header/Message.js';
-import Header from './Header/Header.js';
-// import Main from './Main/Main.js';
+import Message from '../../../components/Header/Message';
+import Header from '../../../components/Header/Header';
+import Main from './Main/Main.js';
 
 class Details extends React.Component {
   render() {
@@ -9,7 +9,7 @@ class Details extends React.Component {
       <>
         <Message />
         <Header />
-        {/* <Main /> */}
+        <Main />
       </>
     );
   }

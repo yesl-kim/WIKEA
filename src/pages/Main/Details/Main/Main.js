@@ -5,49 +5,65 @@ class Main extends React.Component {
   render() {
     return (
       <div className="main ">
-        <div className="container col-lg-13 col-md-12 col-sm-4 route">
-          <p>... 제품 화분/식물 물뿌리개 SESAMFRÖN 세삼프뢴 화초물뿌리개</p>
-        </div>
-        <article className="col-lg-13 col-md-12 col-sm-4 ">
-          <div className="row">
-            <div className="col-sm-4 col-md-7 col-lg-8">
-              <div className="row">
-                <img
-                  src="https://www.ikea.com/kr/ko/images/products/sesamfroen-plant-mister-clear-glass__0958896_pe809495_s5.jpg?f=sg"
-                  alt="상품"
-                />
-                <img
-                  src="https://www.ikea.com/kr/ko/images/products/sesamfroen-plant-mister-clear-glass__0958896_pe809495_s5.jpg?f=sg"
-                  alt="상품"
-                />
-              </div>
-              <div className="row">
-                <img
-                  src="https://www.ikea.com/kr/ko/images/products/sesamfroen-plant-mister-clear-glass__0958896_pe809495_s5.jpg?f=sg"
-                  alt="상품"
-                />
-                <img
-                  src="https://www.ikea.com/kr/ko/images/products/sesamfroen-plant-mister-clear-glass__0958896_pe809495_s5.jpg?f=sg"
-                  alt="상품"
-                />
-              </div>
-              <div className="row">
-                <img
-                  src="https://www.ikea.com/kr/ko/images/products/sesamfroen-plant-mister-clear-glass__0958896_pe809495_s5.jpg?f=sg"
-                  alt="상품"
-                />
-                <img
-                  src="https://www.ikea.com/kr/ko/images/products/sesamfroen-plant-mister-clear-glass__0958896_pe809495_s5.jpg?f=sg"
-                  alt="상품"
-                />
-              </div>
-              <div className="img1 col-log-4"></div>
-              이미지
-            </div>
-
-            <div className="col-sm-4 col-md-4 col-lg-4">상품 이름</div>
+        <div className="container">
+          <div className="row nav-container">
+            <nav>
+              <ol>
+                <li>
+                  <a href="/">
+                    <span>... &nbsp; &gt; &nbsp;</span>
+                  </a>
+                </li>
+                <li className="visually-hidden ">
+                  <a href="/">
+                    <span>제품 &nbsp; &gt; &nbsp;</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    <span>화분/식물 &nbsp; &gt; &nbsp;</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    <span>물뿌리개</span>
+                  </a>
+                </li>
+              </ol>
+            </nav>
           </div>
-        </article>
+          <div className="row item-img">
+            <img
+              alt="상품이미지"
+              src="https://www.ikea.com/kr/ko/images/products/sesamfroen-plant-mister-clear-glass__0958896_pe809495_s5.jpg?f=xl"
+            />
+            <div className="sm-slide lg-hidden"></div>
+          </div>
+          <div className="item-info">
+            <p>NEW</p>
+            <div className="item-primary-info">
+              <h1>
+                <span>SESAMFRÖN 세삼프뢴</span>
+                <p>화초물뿌리개, 유리, 25 cl</p>
+              </h1>
+              <div className="price">W 4,900</div>
+              <div className="rating-star">
+                <i className="ic-star" />
+                <i className="ic-star" />
+                <i className="ic-star" />
+                <i className="ic-star" />
+                <i className="ic-star" />
+                (2)
+              </div>
+            </div>
+            <div className="item-btn-group">
+              <button>구매하기</button>
+              <button>
+                <i className="ic-heart" />
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
