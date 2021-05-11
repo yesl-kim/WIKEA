@@ -170,6 +170,7 @@ class Main extends React.Component {
                   <i className="ic-cart" />
                 </button>
               </li>
+
               <li>
                 <button>
                   <i className="ic-heart" />
@@ -177,6 +178,34 @@ class Main extends React.Component {
                 <img
                   alt="상품미리보기"
                   src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
+                />
+                <div className="item-primary-info">
+                  <h1>
+                    <span>SESAMFRÖN 세삼프뢴</span>
+                    <p>화초물뿌리개, 유리, 25 cl</p>
+                  </h1>
+                  <div className="price">W 4,900</div>
+                  <div className="rating-star">
+                    <i className="ic-star" />
+                    <i className="ic-star" />
+                    <i className="ic-star" />
+                    <i className="ic-star" />
+                    <i className="ic-star" />
+                    (2)
+                  </div>
+                  <p>기타 옵션</p>
+                </div>
+                <button>
+                  <i className="ic-cart" />
+                </button>
+              </li>
+              <li>
+                <button>
+                  <i className="ic-heart" />
+                </button>
+                <img
+                  alt="상품미리보기"
+                  src="https://www.ikea.com/kr/ko/images/products/socker-watering-can-in-outdoor-galvanised__0635850_pe697471_s5.jpg?f=s"
                 />
                 <div className="item-primary-info">
                   <h1>
@@ -291,7 +320,10 @@ class Main extends React.Component {
                 <button>
                   <i className="ic-heart" />
                 </button>
-                <img alt="상품미리보기" src="" />
+                <img
+                  alt="상품미리보기"
+                  src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
+                />
                 <div className="item-primary-info">
                   <h1>
                     <span>SESAMFRÖN 세삼프뢴</span>
@@ -306,13 +338,20 @@ class Main extends React.Component {
                     <i className="ic-star" />
                     (2)
                   </div>
+                  <p>기타 옵션</p>
                 </div>
+                <button>
+                  <i className="ic-cart" />
+                </button>
               </li>
               <li>
                 <button>
                   <i className="ic-heart" />
                 </button>
-                <img alt="상품미리보기" src="" />
+                <img
+                  alt="상품미리보기"
+                  src="https://www.ikea.com/kr/ko/images/products/socker-watering-can-in-outdoor-galvanised__0635850_pe697471_s5.jpg?f=s"
+                />
                 <div className="item-primary-info">
                   <h1>
                     <span>SESAMFRÖN 세삼프뢴</span>
@@ -327,13 +366,20 @@ class Main extends React.Component {
                     <i className="ic-star" />
                     (2)
                   </div>
+                  <p>기타 옵션</p>
                 </div>
+                <button>
+                  <i className="ic-cart" />
+                </button>
               </li>
               <li>
                 <button>
                   <i className="ic-heart" />
                 </button>
-                <img alt="상품미리보기" src="" />
+                <img
+                  alt="상품미리보기"
+                  src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
+                />
                 <div className="item-primary-info">
                   <h1>
                     <span>SESAMFRÖN 세삼프뢴</span>
@@ -348,13 +394,20 @@ class Main extends React.Component {
                     <i className="ic-star" />
                     (2)
                   </div>
+                  <p>기타 옵션</p>
                 </div>
+                <button>
+                  <i className="ic-cart" />
+                </button>
               </li>
               <li>
                 <button>
                   <i className="ic-heart" />
                 </button>
-                <img alt="상품미리보기" src="" />
+                <img
+                  alt="상품미리보기"
+                  src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
+                />
                 <div className="item-primary-info">
                   <h1>
                     <span>SESAMFRÖN 세삼프뢴</span>
@@ -369,13 +422,20 @@ class Main extends React.Component {
                     <i className="ic-star" />
                     (2)
                   </div>
+                  <p>기타 옵션</p>
                 </div>
+                <button>
+                  <i className="ic-cart" />
+                </button>
               </li>
               <li>
                 <button>
                   <i className="ic-heart" />
                 </button>
-                <img alt="상품미리보기" src="" />
+                <img
+                  alt="상품미리보기"
+                  src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
+                />
                 <div className="item-primary-info">
                   <h1>
                     <span>SESAMFRÖN 세삼프뢴</span>
@@ -388,9 +448,13 @@ class Main extends React.Component {
                     <i className="ic-star" />
                     <i className="ic-star" />
                     <i className="ic-star" />
-                    (2)
+                    <span>(2)</span>
                   </div>
+                  <p>기타 옵션</p>
                 </div>
+                <button>
+                  <i className="ic-cart" />
+                </button>
               </li>
             </ol>
           </div>
@@ -401,7 +465,10 @@ class Main extends React.Component {
                 <button>
                   <i className="ic-heart" />
                 </button>
-                <img alt="상품미리보기" src="" />
+                <img
+                  alt="상품미리보기"
+                  src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
+                />
                 <div className="item-primary-info">
                   <h1>
                     <span>SESAMFRÖN 세삼프뢴</span>
@@ -416,13 +483,20 @@ class Main extends React.Component {
                     <i className="ic-star" />
                     (2)
                   </div>
+                  <p>기타 옵션</p>
                 </div>
+                <button>
+                  <i className="ic-cart" />
+                </button>
               </li>
               <li>
                 <button>
                   <i className="ic-heart" />
                 </button>
-                <img alt="상품미리보기" src="" />
+                <img
+                  alt="상품미리보기"
+                  src="https://www.ikea.com/kr/ko/images/products/socker-watering-can-in-outdoor-galvanised__0635850_pe697471_s5.jpg?f=s"
+                />
                 <div className="item-primary-info">
                   <h1>
                     <span>SESAMFRÖN 세삼프뢴</span>
@@ -437,13 +511,20 @@ class Main extends React.Component {
                     <i className="ic-star" />
                     (2)
                   </div>
+                  <p>기타 옵션</p>
                 </div>
+                <button>
+                  <i className="ic-cart" />
+                </button>
               </li>
               <li>
                 <button>
                   <i className="ic-heart" />
                 </button>
-                <img alt="상품미리보기" src="" />
+                <img
+                  alt="상품미리보기"
+                  src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
+                />
                 <div className="item-primary-info">
                   <h1>
                     <span>SESAMFRÖN 세삼프뢴</span>
@@ -458,13 +539,20 @@ class Main extends React.Component {
                     <i className="ic-star" />
                     (2)
                   </div>
+                  <p>기타 옵션</p>
                 </div>
+                <button>
+                  <i className="ic-cart" />
+                </button>
               </li>
               <li>
                 <button>
                   <i className="ic-heart" />
                 </button>
-                <img alt="상품미리보기" src="" />
+                <img
+                  alt="상품미리보기"
+                  src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
+                />
                 <div className="item-primary-info">
                   <h1>
                     <span>SESAMFRÖN 세삼프뢴</span>
@@ -479,13 +567,20 @@ class Main extends React.Component {
                     <i className="ic-star" />
                     (2)
                   </div>
+                  <p>기타 옵션</p>
                 </div>
+                <button>
+                  <i className="ic-cart" />
+                </button>
               </li>
               <li>
                 <button>
                   <i className="ic-heart" />
                 </button>
-                <img alt="상품미리보기" src="" />
+                <img
+                  alt="상품미리보기"
+                  src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
+                />
                 <div className="item-primary-info">
                   <h1>
                     <span>SESAMFRÖN 세삼프뢴</span>
@@ -498,9 +593,13 @@ class Main extends React.Component {
                     <i className="ic-star" />
                     <i className="ic-star" />
                     <i className="ic-star" />
-                    (2)
+                    <span>(2)</span>
                   </div>
+                  <p>기타 옵션</p>
                 </div>
+                <button>
+                  <i className="ic-cart" />
+                </button>
               </li>
             </ol>
           </div>

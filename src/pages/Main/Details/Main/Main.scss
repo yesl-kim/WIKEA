@@ -212,6 +212,9 @@
         button:last-of-type {
           width: 40px;
           height: 40px;
+          position: absolute;
+          right: 10px;
+          bottom: 5px;
           color: white;
           background-color: $--colour-button-primary-emphasised-default;
           border-radius: 50%;
