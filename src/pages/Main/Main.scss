@@ -72,7 +72,7 @@
     }
 
     &.recommendation {
-      @include flexbox();
+      @include flexbox(start);
       flex-wrap: nowrap;
       overflow: auto;
 
