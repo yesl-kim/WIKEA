@@ -1,0 +1,230 @@
+@import '../../../styles/common.scss';
+
+.SignIn {
+  display: flex;
+
+  .signInAside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    height: 100vh;
+    background-color: $--colour-brand-blue;
+
+    header {
+      position: relative;
+      .ic-close {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        font-weight: 700;
+        color: $--color-light-gray;
+
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
+        }
+      }
+
+      .wikeaLogo {
+        width: 88px;
+        height: 44px;
+        border: 1px solid $--color-light-gray;
+      }
+    }
+
+    article {
+      .loginTitle {
+        margin-bottom: 20px;
+        color: $--colour-brand-yellow;
+        font-weight: 700;
+        font-size: $font-size-24;
+      }
+
+      .loginDescription,
+      .howToLoginFirst {
+        margin-bottom: 5px;
+        color: $--color-light-gray;
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      .howToLoginSecond {
+        margin-top: 30px;
+        color: $--color-light-gray;
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+
+    footer {
+      .homepageAddress {
+        color: $--color-light-gray;
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      .personalInfoPolicy {
+        border-bottom: 1px solid $--color-light-gray;
+        color: $--color-light-gray;
+        font-size: 12px;
+        font-weight: 400;
+
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
+        }
+      }
+
+      .copyrightNotice {
+        color: $--color-light-gray;
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .signInMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    border: 1px solid black;
+    width: 100vw;
+
+    form {
+      padding-right: 20px;
+
+      .idInputContainer {
+        margin-bottom: 60px;
+
+        .idInputWrapper {
+          position: relative;
+
+          #loginId {
+            display: block;
+            width: 300px;
+            margin-bottom: 8px;
+            padding: 10px 10px 2px 2px;
+            border-bottom: 1px solid $--colour-border-dark;
+          }
+
+          label {
+            position: absolute;
+            top: 0;
+            transform: translateY(50%);
+          }
+        }
+
+        .anotherLoginOption {
+          color: $--colour-border-dark;
+          font-size: 14px;
+          font-weight: 400;
+        }
+
+        .oneTimeCodeForLogin {
+          border-bottom: 1px solid $--colour-border-dark;
+          color: $--colour-border-dark;
+          font-size: 14px;
+          font-weight: 700;
+
+          &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .pwInputContainer {
+        margin-bottom: 40px;
+
+        .pwInputWrapper {
+          position: relative;
+
+          #loginPassword {
+            margin-bottom: 8px;
+            padding: 10px 10px 2px 2px;
+            width: 300px;
+            border-bottom: 1px solid $--colour-border-dark;
+          }
+
+          label {
+            position: absolute;
+            left: 0px;
+            transform: translateY(50%);
+          }
+
+          .ic-lock {
+            position: absolute;
+            left: 280px;
+            top: 10px;
+
+            &:hover {
+              opacity: 0.8;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .findingPassword {
+          padding-top: 50px;
+          border-bottom: 1px solid $--colour-border-dark;
+          color: $--colour-border-dark;
+          font-size: 14px;
+          font-weight: 700;
+
+          &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .loginBtnWrapper {
+        button {
+          display: block;
+          padding: 12px;
+          margin-bottom: 10px;
+          width: 300px;
+          background-color: $--colour-brand-blue;
+          border: 1px solid $--colour-brand-blue;
+          border-radius: 30px;
+          color: $--color-light-gray;
+          font-size: 13px;
+          font-weight: 700;
+
+          &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+          }
+        }
+
+        .activated {
+          background-color: $--colour-button-primary-emphasised-press;
+        }
+
+        .deactivated {
+          background-color: $--colour-brand-blue;
+        }
+      }
+
+      .signUpBtn {
+        display: block;
+        padding: 12px;
+        width: 300px;
+        background-color: $--color-light-gray;
+        border: 1px solid $--color-light-gray;
+        border-radius: 30px;
+        color: $--colour-border-dark;
+        font-size: 13px;
+        font-weight: 700;
+
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
