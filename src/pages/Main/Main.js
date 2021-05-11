@@ -52,26 +52,26 @@ class Main extends React.Component {
               <div className="col-lg-1 col-md-1" />
               <div className="col-lg-6 col-md-6">
                 <section className="new_product left">
-                  <div className="이미지 기준 포지션 앱솔루트">
+                  <img
+                    alt="조명 인테리어"
+                    src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"
+                  />
+                  <div className="label_container">
                     <button type="button" className="label_btn" />
-                    <div className="label">
-                      <a>
-                        <div className="product_info">
-                          <span>new</span>
-                          <span>제품명 복슬리브</span>
-                          <span>카테고리 조명</span>
-                        </div>
-                        <div>
-                          <a>
-                            <i className="ic-chevron"></i>
-                          </a>
-                        </div>
+                    <a className="label">
+                      <div className="product_info">
+                        <span className="new">new</span>
+                        <span className="title">복슬리브</span>
+                        <span className="category">조명</span>
                         <div className="price">
-                          <span>￦</span>
+                          <span className="won">￦</span>
                           <span>99,900</span>
                         </div>
+                      </div>
+                      <a role="button">
+                        <i className="ic-chevron"></i>
                       </a>
-                    </div>
+                    </a>
                   </div>
                 </section>
               </div>
