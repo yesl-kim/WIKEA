@@ -1,9 +1,44 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import Title from './components/Title/Title';
+import NewProduct from './components/NewProduct/NewProduct';
 import './Main.scss';
 
 class Main extends React.Component {
   render() {
+    const newProducts = [
+      {
+        bgImage: {
+          alt: '조명 인테리어',
+          src: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
+        },
+        products: [
+          {
+            id: 'product01',
+            name: '복슬리브',
+            category: '조명',
+            price: 99900,
+            inNew: true,
+          },
+        ],
+      },
+      {
+        bgImage: {
+          alt: '조명 인테리어',
+          src: 'https://images.unsplash.com/photo-1589834390005-5d4fb9bf3d32?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
+        },
+        products: [
+          {
+            id: 'product02',
+            name: 'SNÖBYAR 스뇌뷔아르',
+            category: '탁상 스탠드',
+            price: 59900,
+            inNew: true,
+          },
+        ],
+      },
+    ];
+
     return (
       <main className="main">
         <article>
@@ -34,6 +69,7 @@ class Main extends React.Component {
               </div>
             </div>
             <div className="row">
+              <Title title="추천 제품" btnName="제품 보러가기" />
               <div className="col-lg-1 col-md-1" />
               <div className="col-lg-12 col-md-12">
                 <section className="recommendation">
@@ -48,37 +84,17 @@ class Main extends React.Component {
                 </section>
               </div>
             </div>
-            <div className="row">
+            <section className="row">
+              <Title title="신제품을 만나보세요" btnName="신제품 보러가기" />
               <div className="col-lg-1 col-md-1" />
-              <div className="col-lg-6 col-md-6">
-                <section className="new_product left">
-                  <img
-                    alt="조명 인테리어"
-                    src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"
-                  />
-                  <div className="label_container">
-                    <button type="button" className="label_btn" />
-                    <a className="label">
-                      <div className="product_info">
-                        <span className="new">new</span>
-                        <span className="title">복슬리브</span>
-                        <span className="category">조명</span>
-                        <div className="price">
-                          <span className="won">￦</span>
-                          <span>99,900</span>
-                        </div>
-                      </div>
-                      <a role="button">
-                        <i className="ic-chevron"></i>
-                      </a>
-                    </a>
-                  </div>
-                </section>
-              </div>
-              <div className="col-lg-6 col-md-6">
-                <section className="new_product right"></section>
-              </div>
-            </div>
+              {newProducts.map((newProduct, idx) => (
+                <NewProduct
+                  bgImage={newProduct.bgImage}
+                  key={idx}
+                  items={newProduct.products}
+                />
+              ))}
+            </section>
           </div>
         </article>
       </main>

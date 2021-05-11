@@ -1,0 +1,115 @@
+@import '../../../../styles/mixins/flexbox';
+@import '../../../../styles/mixins/positions';
+@import '../../../../styles/constants/colors';
+
+.label_container {
+  position: absolute;
+
+  .label_btn {
+    display: block;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: border-color 250ms ease-in-out, opacity 250ms ease-in-out,
+      visibility 250ms ease-in-out;
+
+    &::after {
+      display: block;
+      @include pos-center(absolute);
+      width: 0.75rem;
+      height: 0.75rem;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+      content: '';
+    }
+
+    &.active {
+      border-color: rgba($color: #fff, $alpha: 0.5);
+
+      &::after {
+        transform: scale(0.667);
+      }
+    }
+  }
+
+  .label {
+    @include flexbox(between, start);
+    @include pos-center-y(absolute);
+    padding: 14px 6px 16px 15px;
+    width: 100%;
+    min-width: 135px;
+    max-width: 180px;
+    background-color: #fff;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+    line-height: 1.571;
+    font-size: 0.875rem;
+
+    .product_info {
+      font-size: 0.875rem;
+      line-height: 1.42857;
+
+      > span {
+        display: block;
+      }
+
+      .new {
+        margin-bottom: 0.25rem;
+        font-weight: bold;
+        color: $--colour-text-red;
+      }
+
+      .name {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .category {
+        color: $--colour-text-default;
+        margin-bottom: 0.5rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .price {
+        font-weight: bold;
+
+        .won {
+          margin-right: 0.25rem;
+          vertical-align: top;
+          font-size: 0.625rem;
+        }
+      }
+    }
+
+    > a[role='button'] {
+      transform: rotate(-90deg);
+
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &.product01 {
+    top: 36%;
+    left: 17.5%;
+
+    .label {
+      left: 150%;
+    }
+  }
+
+  &.product02 {
+    top: 52.5%;
+    left: 67.5%;
+
+    .label {
+      right: 150%;
+    }
+  }
+}
