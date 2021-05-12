@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Breadcrumb extends Component {
   render() {
     return (
-      <div>
+      <div className="row">
         <nav className="breadcrumb_nav">
           <ol className="breadcrumb_list">
             <li className="breadcrumb_item">
