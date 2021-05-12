@@ -1,43 +1,14 @@
 import React from 'react';
+import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb';
 import './Main.scss';
 
 class Main extends React.Component {
   render() {
     return (
-      <div className="main ">
+      <div className="main">
         <div className="container">
-          <div className="row">
-            <nav className="breadcrumb_nav">
-              <ol className="breadcrumb_list">
-                <li className="breadcrumb_item">
-                  <a href="/">
-                    <span>... &nbsp; &gt; &nbsp;</span>
-                  </a>
-                </li>
-                <li className="lg-only">
-                  <a href="/">
-                    <span>제품 &nbsp; &gt; &nbsp;</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/">
-                    <span>화분/식물 &nbsp; &gt; &nbsp;</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/">
-                    <span>물뿌리개</span>
-                  </a>
-                </li>
-                <li className="lg-only">
-                  <a href="/">
-                    <span> &nbsp;&gt; SESAMFRÖN 세삼프뢴 &nbsp;</span>
-                  </a>
-                </li>
-              </ol>
-            </nav>
-            <hr />
-          </div>
+          <Breadcrumb />
+
           <div className="row">
             <div className="col-lg-1"></div>
             <div className="col-lg-8 ">
