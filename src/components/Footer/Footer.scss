@@ -1,0 +1,45 @@
+@import '../../styles/constants/colors';
+
+.footer {
+  padding: 100px 0;
+
+  .footerLinks {
+    .footerSignUp {
+      h2 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      p {
+        line-height: 1.5;
+
+        a {
+          margin-left: 10px;
+          border-bottom: 1px solid $--colour-text-dark;
+        }
+      }
+
+      button {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: white;
+        background-color: $--colour-button-primary-default;
+
+        &:hover {
+          background-color: $--colour-button-primary-hover;
+        }
+      }
+    }
+
+    .links {
+      line-height: 2;
+
+      h4 {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
