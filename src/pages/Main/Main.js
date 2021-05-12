@@ -2,10 +2,14 @@
 import React from 'react';
 import Message from '../../components/Header/Message';
 import Header from '../../components/Header/Header';
+import Nav from '../../components/Nav/Nav';
 import Title from './components/Title/Title';
+import ScrollBox from '../../components/ScrollBox/ScrollBox';
+import Product from './Lists/Products/Product/Product';
 import NewProduct from './components/NewProduct/NewProduct';
 import Footer from '../../components/Footer/Footer';
 import '../../styles/common.scss';
+import '../../styles/base/_globals.scss';
 import './Main.scss';
 
 class Main extends React.Component {
@@ -42,11 +46,54 @@ class Main extends React.Component {
         ],
       },
     ];
+    const products = [
+      {
+        id: '',
+        name: '',
+        price: 0,
+        image: '',
+        category: '',
+        rating: '',
+      },
+      {
+        id: '',
+        name: '',
+        price: 0,
+        image: '',
+        category: '',
+        rating: '',
+      },
+      {
+        id: '',
+        name: '',
+        price: 0,
+        image: '',
+        category: '',
+        rating: '',
+      },
+      {
+        id: '',
+        name: '',
+        price: 0,
+        image: '',
+        category: '',
+        rating: '',
+      },
+      {
+        id: '',
+        name: '',
+        price: 0,
+        image: '',
+        category: '',
+        rating: '',
+      },
+    ];
 
     return (
       <>
         <Message />
         <Header />
+        <Nav />
         <main className="main">
           <article>
             <div className="container">
@@ -75,22 +122,19 @@ class Main extends React.Component {
                   </section>
                 </div>
               </div>
-              <div className="row">
-                <Title title="추천 제품" btnName="제품 보러가기" />
-                <div className="col-lg-1" />
+              <section className="row">
+                <div className="col-lg-1 col-md-1" />
                 <div className="col-lg-12 col-md-12">
-                  <section className="recommendation">
-                    <div className="recommendation_item">product</div>
-                    <div className="recommendation_item">product</div>
-                    <div className="recommendation_item">product</div>
-                    <div className="recommendation_item">product</div>
-                    <div className="recommendation_item">product</div>
-                    <div className="recommendation_item">product</div>
-                    <div className="recommendation_item">product</div>
-                    <div className="recommendation_item">product</div>
-                  </section>
+                  <ScrollBox
+                    title="추천 제품"
+                    btn={<a role="button">제품 보러가기</a>}
+                  >
+                    {products.map(product => (
+                      <Product className="item"></Product>
+                    ))}
+                  </ScrollBox>
                 </div>
-              </div>
+              </section>
               <section className="row">
                 <Title title="신제품을 만나보세요" btnName="신제품 보러가기" />
                 <div className="col-lg-1" />

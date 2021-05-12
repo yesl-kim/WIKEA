@@ -1,15 +1,12 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import './Product.scss';
 
 class Product extends React.Component {
   render() {
     return (
-      <div className="product">
-        <img
-          src={
-            'https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m'
-          }
-        />
+      <div className="product item">
+        <img src="https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m" />
         <div className="productsExplanation">
           <h2>
             <span>멋있는 램프</span>

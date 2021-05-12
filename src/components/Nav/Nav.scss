@@ -1,0 +1,43 @@
+@import '../../styles/mixins/flexbox';
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30rem;
+  background-color: #fff;
+  height: 100vh;
+  z-index: 9999;
+  overflow-x: scroll;
+
+  .menu_top {
+    position: absolute;
+    left: 54px;
+    top: 0;
+    @include flexbox(start, center);
+    padding: 1.75rem 0;
+  }
+
+  .back {
+    position: absolute;
+    left: 54px;
+    top: 127px;
+  }
+
+  i {
+    font-size: 24px;
+  }
+}
+
+/*
+left: 54px;
+top: 127px;
+
+
+/*
+        <div className="back">
+          <button type="button">
+            <i className="ic-chevron" />
+          </button>
+        </div>
+        */

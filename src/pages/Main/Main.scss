@@ -70,20 +70,5 @@
         }
       }
     }
-
-    &.recommendation {
-      @include flexbox(start);
-      flex-wrap: nowrap;
-      overflow: auto;
-
-      .recommendation_item {
-        flex-basis: calc(22.72727% - 1.25rem);
-        flex-shrink: 0;
-        max-width: calc(22.72727% - 1.25rem);
-        margin: 0 0.625rem;
-        height: 200px;
-        background: darkgray;
-      }
-    }
   }
 }
