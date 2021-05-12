@@ -7,7 +7,7 @@ class Breadcrumb extends Component {
       <div className="row">
         <nav className="breadcrumb_nav">
           <ol className="breadcrumb_list">
-            <li className="breadcrumb_item">
+            <li>
               <a href="/">
                 <span>... &nbsp; &gt; &nbsp;</span>
               </a>

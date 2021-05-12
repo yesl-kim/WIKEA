@@ -1,16 +1,15 @@
-@import '/src/styles/common.scss';
+@import '../../styles/common.scss';
 
-.breadcrumb_nav {
-  .breadcrumb_list {
-    display: inline-block;
-    padding: 16px 0;
+.breadcrumb_list {
+  display: inline-block;
+  padding: 16px 0;
 
-    li {
-      display: inline;
-      font-size: 14px;
-    }
+  li {
+    display: inline;
+    font-size: 14px;
   }
 }
+
 hr {
   width: 100%;
   border: 0.8px solid $--colour-border-light;

@@ -26,10 +26,6 @@ class Main extends React.Component {
           </div>
           <div className="row">
             <div className="col-lg-1 lg-only" />
-            <div className="col-sm-4 col-lg-8"></div>
-          </div>
-          <div className="row">
-            <div className="col-lg-1 lg-only" />
             <div className="col-lg-12">
               <ScrollBox>
                 <div className="recommandation searched">
