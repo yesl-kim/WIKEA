@@ -16,12 +16,12 @@ class Product extends React.Component {
             'https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m'
           }
         />
-        <div className="productsExplanation">
-          <h2 className="productName">
+        <div className="products_explanation">
+          <h2 className="produc_name">
             <span>멋있는 램프</span>
           </h2>
-          <div className="productSize">탁상스탠드</div>
-          <div className="productPrice">
+          <div className="product_size">탁상스탠드</div>
+          <div className="product_price">
             <span>₩</span>5,000
           </div>
           <div>
