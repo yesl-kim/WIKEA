@@ -10,25 +10,34 @@ class Details extends React.Component {
     super();
     this.state = {
       modalOn: false,
+      isLiked: false,
     };
   }
 
-  handleModal = e => {
+  handleModal = () => {
     const { modalOn } = this.state;
     this.setState({
       modalOn: !modalOn,
+    });
+  };
+
+  popUpLiked = e => {
+    const { isLiked } = this.state;
+    this.setState({
+      isLiked: !isLiked,
     });
     console.log('clicked');
   };
 
   render() {
-    const { modalOn } = this.state;
+    const { modalOn, isLiked } = this.state;
     return (
       <>
         <Message />
         <Header />
-        <Main modalOn={modalOn} handleModal={this.handleModal} />
+        <Main handleModal={this.handleModal} popUpLiked={this.popUpLiked} />
         {modalOn && <ImgModal handleModal={this.handleModal} />}
+        {isLiked && <div></div>}
       </>
     );
   }
