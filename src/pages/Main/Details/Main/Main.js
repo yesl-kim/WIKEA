@@ -9,6 +9,7 @@ import './Main.scss';
 
 class Main extends React.Component {
   render() {
+    const { modalOn, handleModal } = this.props;
     return (
       <div className="main">
         <div className="grid-container">
@@ -16,7 +17,7 @@ class Main extends React.Component {
           <div className="row">
             <div className="col-lg-1"></div>
             <div className="col-lg-8 ">
-              <ItemImg />
+              <ItemImg modalOn={modalOn} handleModal={handleModal} />
               <ItemDetails />
             </div>
             <div className="col-sm-4 col-md-12 col-lg-4 ">
