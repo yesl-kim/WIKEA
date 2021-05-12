@@ -11,7 +11,7 @@ class Main extends React.Component {
   render() {
     return (
       <div className="main">
-        <div className="container">
+        <div className="grid-container">
           <Breadcrumb />
           <div className="row">
             <div className="col-lg-1"></div>
