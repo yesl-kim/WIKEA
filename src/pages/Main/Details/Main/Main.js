@@ -7,9 +7,9 @@ class Main extends React.Component {
       <div className="main ">
         <div className="container">
           <div className="row">
-            <nav className="nav-container">
-              <ol>
-                <li>
+            <nav className="breadcrumb_nav">
+              <ol className="breadcrumb_list">
+                <li className="breadcrumb_item">
                   <a href="/">
                     <span>... &nbsp; &gt; &nbsp;</span>
                   </a>
