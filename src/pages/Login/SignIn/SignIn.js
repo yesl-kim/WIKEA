@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import './SignIn.scss';
 
 class SignIn extends React.Component {
@@ -7,7 +8,7 @@ class SignIn extends React.Component {
     this.state = {
       idValue: '',
       pwValue: '',
-      isLoginButtonActive: false,
+      type: 'password',
     };
   }
 
@@ -18,86 +19,132 @@ class SignIn extends React.Component {
     });
   };
 
-  changeColorLoginBtn = () => {
-    const { idValue, pwValue } = this.state;
-    idValue.includes('@') && idValue.includes('.') && pwValue.length >= 8
-      ? this.setState({ isLoginButtonActive: true })
-      : this.setState({ isLoginButtonActive: false });
+  handleSubmit = e => {
+    e.preventDefault();
+    fetch('http://10.58.0.184:8000/user/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.idValue,
+        password: this.state.pwValue,
+        phonenumber: '010-3263-2769',
+        nickname: 'wecode1',
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.MESSAGE === 'SUCCESS') {
+          localStorage.setItem('token', result.token);
+          this.goToMain();
+        } else {
+          alert('아이디나 비밀번호를 확인해주세요');
+        }
+      });
+  };
+
+  goToMain = () => {
+    this.props.history.push('/');
+  };
+
+  goToSignUp = () => {
+    this.props.history.push('/signup');
+  };
+
+  showPassword = () => {
+    const { type } = this.state;
+    this.setState({
+      type: type === 'password' ? 'text' : 'password',
+    });
   };
 
   render() {
+    const { idValue, pwValue, type } = this.state;
+    const isValid =
+      idValue.includes('@') && idValue.includes('.') && pwValue.length >= 8;
+
     return (
-      <div className="SignIn">
-        <aside className="signInAside">
+      <div className="sign_in">
+        <i className="ic-close" onClick={this.goToMain} />
+        <aside className="sign_in_aside">
           <header>
-            <i className="ic-close" />
             <img
-              className="wikeaLogo"
+              className="wikea_logo"
               alt="WIKEA Logo"
               src="/images/Login/SignIn/wikeaLogo.jpeg"
             />
           </header>
           <article>
-            <p className="loginTitle">로그인</p>
-            <p className="loginDescription">
+            <p className="login_title">로그인</p>
+            <p className="login_description">
               외워야 할 비밀번호가 많아 불편하셨죠?
             </p>
-            <p className="howToLoginFirst">
+            <p className="how_to_login_first">
               이제 일회용 코드를 이용하여 간편하게 로그인 하세요.
             </p>
-            <p className="howToLoginSecond">
+            <p className="how_to_login_second">
               * 이메일 또는 휴대폰 번호 최초 인증 후 사용 가능
             </p>
           </article>
           <footer>
-            <span className="homepageAddress">IKEA.kr -</span>
-            <span className="personalInfoPolicy">개인정보처리방침</span>
-            <p className="copyrightNotice">
+            <span className="homepage_address">IKEA.kr -</span>
+            <span className="personal_info_policy">개인정보처리방침</span>
+            <p className="copyright_notice">
               © Inter IKEA Systems B.V. 1999-2021
             </p>
           </footer>
         </aside>
-        <div className="signInMain">
+        <div className="sign_in_main" onSubmit={this.handleSubmit}>
           <form>
-            <div className="idInputContainer">
-              <div className="idInputWrapper">
+            <div className="id_input_container">
+              <div className="id_input_wrapper">
                 <input
-                  id="loginId"
+                  id="login_id"
                   type="text"
                   name="idValue"
                   onChange={this.handleIdPwInput}
-                  onKeyUp={this.changeColorLoginBtn}
                 />
-                <label for="loginId">이메일 또는 휴대폰 번호</label>
+                <label htmlFor="login_id" className={idValue ? 'typing' : ''}>
+                  이메일 또는 휴대폰 번호
+                </label>
               </div>
-              <span className="anotherLoginOption">다른 로그인 옵션: </span>
-              <span className="oneTimeCodeForLogin">일회용 코드로 로그인</span>
+              <span className="another_login_option">다른 로그인 옵션: </span>
+              <span className="one_time_code_for_login">
+                일회용 코드로 로그인
+              </span>
             </div>
-            <div className="pwInputContainer">
-              <div className="pwInputWrapper">
+            <div className="pw_input_container">
+              <div className="pw_input_wrapper">
                 <input
-                  id="loginPassword"
-                  type="password"
+                  id="login_password"
+                  type={type}
                   name="pwValue"
                   onChange={this.handleIdPwInput}
-                  onKeyUp={this.changeColorLoginBtn}
                 />
-                <label for="loginPassword">비밀번호</label>
-                <i className="ic-lock" />
+                <label
+                  htmlFor="login_password"
+                  className={pwValue ? 'typing' : ''}
+                >
+                  비밀번호
+                </label>
+                <i
+                  className={`ic-lock ${pwValue ? '_show' : '_hide'}`}
+                  onClick={this.showPassword}
+                />
               </div>
-              <span className="findingPassword">비밀번호 찾기</span>
+              <span className="finding_password">비밀번호 찾기</span>
             </div>
-            <section className="loginBtnWrapper">
-              <button
-                type="button"
-                className={
-                  this.state.isLoginButtonActive ? 'activated' : 'deactivated'
-                }
-              >
-                로그인
-              </button>
-            </section>
-            <button className="signUpBtn" type="button">
+            <button
+              type="button"
+              className={`login_btn ${isValid ? 'activated' : 'deactivated'}`}
+              disabled={!isValid}
+              onClick={this.goToMain}
+            >
+              로그인
+            </button>
+            <button
+              type="button"
+              className="sign_up_btn"
+              onClick={this.goToSignUp}
+            >
               회원가입
             </button>
           </form>
@@ -107,4 +154,4 @@ class SignIn extends React.Component {
   }
 }
 
-export default SignIn;
+export default withRouter(SignIn);

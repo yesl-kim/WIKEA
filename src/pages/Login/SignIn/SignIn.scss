@@ -1,33 +1,51 @@
 @import '../../../styles/common.scss';
 
-.SignIn {
+@mixin flex-column-space-between {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  .signInAside {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 30px;
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+$font-weight-400: 400;
+
+$font-weight-700: 700;
+
+.sign_in {
+  display: flex;
+  position: relative;
+
+  .ic-close {
+    position: absolute;
+    top: 8%;
+    transform: translateX(15px);
+    color: $--color-light-gray;
+    font-size: $font-size-24;
+    font-weight: $font-weight-400;
+
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+
+  .sign_in_aside {
+    @include flex-column-space-between;
     height: 100vh;
+    padding: 30px;
     background-color: $--colour-brand-blue;
 
     header {
+      display: flex;
+      justify-content: center;
       position: relative;
-      .ic-close {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 20px;
-        font-weight: 700;
-        color: $--color-light-gray;
 
-        &:hover {
-          opacity: 0.8;
-          cursor: pointer;
-        }
-      }
-
-      .wikeaLogo {
+      .wikea_logo {
         width: 88px;
         height: 44px;
         border: 1px solid $--color-light-gray;
@@ -35,41 +53,41 @@
     }
 
     article {
-      .loginTitle {
+      .login_title {
         margin-bottom: 20px;
         color: $--colour-brand-yellow;
-        font-weight: 700;
         font-size: $font-size-24;
+        font-weight: $font-weight-700;
       }
 
-      .loginDescription,
-      .howToLoginFirst {
+      .login_description,
+      .how_to_login_first {
         margin-bottom: 5px;
         color: $--color-light-gray;
-        font-size: 12px;
-        font-weight: 400;
+        font-size: $font-size-12;
+        font-weight: $font-weight-400;
       }
 
-      .howToLoginSecond {
+      .how_to_login_second {
         margin-top: 30px;
         color: $--color-light-gray;
-        font-size: 12px;
-        font-weight: 600;
+        font-size: $font-size-12;
+        font-weight: $font-weight-700;
       }
     }
 
     footer {
-      .homepageAddress {
+      .homepage_address {
         color: $--color-light-gray;
-        font-size: 12px;
-        font-weight: 400;
+        font-size: $font-size-12;
+        font-weight: $font-weight-400;
       }
 
-      .personalInfoPolicy {
-        border-bottom: 1px solid $--color-light-gray;
+      .personal_info_policy {
         color: $--color-light-gray;
-        font-size: 12px;
-        font-weight: 400;
+        border-bottom: 1px solid $--color-light-gray;
+        font-size: $font-size-12;
+        font-weight: $font-weight-400;
 
         &:hover {
           opacity: 0.8;
@@ -77,32 +95,29 @@
         }
       }
 
-      .copyrightNotice {
+      .copyright_notice {
         color: $--color-light-gray;
-        font-size: 12px;
-        font-weight: 400;
+        font-size: $font-size-12;
+        font-weight: $font-weight-400;
       }
     }
   }
 
-  .signInMain {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 30px;
-    border: 1px solid black;
+  .sign_in_main {
+    @include flex-column-center;
     width: 100vw;
+    padding: 30px;
 
     form {
       padding-right: 20px;
 
-      .idInputContainer {
+      .id_input_container {
         margin-bottom: 60px;
 
-        .idInputWrapper {
+        .id_input_wrapper {
           position: relative;
 
-          #loginId {
+          #login_id {
             display: block;
             width: 300px;
             margin-bottom: 8px;
@@ -112,22 +127,28 @@
 
           label {
             position: absolute;
-            top: 0;
+            top: 0px;
             transform: translateY(50%);
+
+            &.typing {
+              position: absolute;
+              transform: translateY(1%);
+              font-size: 6px;
+            }
           }
         }
 
-        .anotherLoginOption {
+        .another_login_option {
           color: $--colour-border-dark;
-          font-size: 14px;
-          font-weight: 400;
+          font-size: $font-size-14;
+          font-weight: $font-weight-400;
         }
 
-        .oneTimeCodeForLogin {
-          border-bottom: 1px solid $--colour-border-dark;
+        .one_time_code_for_login {
           color: $--colour-border-dark;
-          font-size: 14px;
-          font-weight: 700;
+          border-bottom: 1px solid $--colour-border-dark;
+          font-size: $font-size-14;
+          font-weight: $font-weight-700;
 
           &:hover {
             opacity: 0.8;
@@ -136,43 +157,49 @@
         }
       }
 
-      .pwInputContainer {
+      .pw_input_container {
         margin-bottom: 40px;
 
-        .pwInputWrapper {
+        .pw_input_wrapper {
           position: relative;
 
-          #loginPassword {
+          #login_password {
+            display: block;
+            width: 300px;
             margin-bottom: 8px;
             padding: 10px 10px 2px 2px;
-            width: 300px;
             border-bottom: 1px solid $--colour-border-dark;
           }
 
           label {
             position: absolute;
-            left: 0px;
+            top: 0px;
             transform: translateY(50%);
-          }
 
-          .ic-lock {
-            position: absolute;
-            left: 280px;
-            top: 10px;
-
-            &:hover {
-              opacity: 0.8;
-              cursor: pointer;
+            &.typing {
+              position: absolute;
+              transform: translateY(5%);
+              font-size: 6px;
             }
           }
         }
 
-        .findingPassword {
-          padding-top: 50px;
-          border-bottom: 1px solid $--colour-border-dark;
+        .ic-lock {
+          position: absolute;
+          top: 10px;
+          left: 280px;
+
+          &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+          }
+        }
+
+        .finding_password {
           color: $--colour-border-dark;
-          font-size: 14px;
-          font-weight: 700;
+          border-bottom: 1px solid $--colour-border-dark;
+          font-size: $font-size-14;
+          font-weight: $font-weight-700;
 
           &:hover {
             opacity: 0.8;
@@ -181,44 +208,42 @@
         }
       }
 
-      .loginBtnWrapper {
-        button {
-          display: block;
-          padding: 12px;
-          margin-bottom: 10px;
-          width: 300px;
-          background-color: $--colour-brand-blue;
-          border: 1px solid $--colour-brand-blue;
-          border-radius: 30px;
-          color: $--color-light-gray;
-          font-size: 13px;
-          font-weight: 700;
-
-          &:hover {
-            opacity: 0.8;
-            cursor: pointer;
-          }
-        }
-
-        .activated {
-          background-color: $--colour-button-primary-emphasised-press;
-        }
-
-        .deactivated {
-          background-color: $--colour-brand-blue;
-        }
-      }
-
-      .signUpBtn {
+      .login_btn {
         display: block;
-        padding: 12px;
         width: 300px;
+        margin-bottom: 10px;
+        padding: 12px;
+        color: $--color-light-gray;
+        background-color: $--colour-brand-blue;
+        border: 1px solid $--colour-brand-blue;
+        border-radius: 30px;
+        font-size: $font-size-13;
+        font-weight: $font-weight-700;
+
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
+        }
+      }
+
+      .activated {
+        background-color: $--colour-button-primary-emphasised-press;
+      }
+
+      .deactivated {
+        background-color: $--colour-brand-blue;
+      }
+
+      .sign_up_btn {
+        display: block;
+        width: 300px;
+        padding: 12px;
+        color: $--colour-border-dark;
         background-color: $--color-light-gray;
         border: 1px solid $--color-light-gray;
         border-radius: 30px;
-        color: $--colour-border-dark;
-        font-size: 13px;
-        font-weight: 700;
+        font-size: $font-size-13;
+        font-weight: $font-weight-700;
 
         &:hover {
           opacity: 0.8;
