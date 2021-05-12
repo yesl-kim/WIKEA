@@ -7,13 +7,12 @@
   left: 0;
   right: 0;
   z-index: 9999;
-  //transition-property: transform, opacity, width;
 
   .dimmer {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.25);
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.3s ease;
     pointer-events: all;
   }
 
@@ -29,7 +28,8 @@
 
     .close {
       position: absolute;
-      top: 1.75rem;
+      top: 1.25rem;
+      padding: 0.5rem;
     }
 
     &.left {
@@ -37,7 +37,7 @@
       transform: translateX(-100%);
 
       .close {
-        left: 54px;
+        left: 50px;
       }
     }
 
@@ -46,7 +46,7 @@
       transform: translateX(100%);
 
       .close {
-        right: 54px;
+        right: 50px;
       }
     }
 
@@ -66,3 +66,8 @@
     }
   }
 }
+
+/*
+1. 컴포넌트는 스스로 불린값을 가져야하고
+2. 그 불린값을 밖에서 제어할 수 있는 방법은 뭐가 있을까
+*/
