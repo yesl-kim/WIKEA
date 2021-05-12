@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import Star from '../../../../../components/Star/Star.js';
 import './ItemDetails.scss';
-import Star from './Star';
 
 class ItemDetails extends Component {
   render() {

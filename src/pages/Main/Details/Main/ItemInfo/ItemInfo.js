@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
 import './ItemInfo.scss';
-import Star from './Star';
+import PrimaryInfo from './PrimaryInfo.js';
 
 class ItemInfo extends Component {
   render() {
     return (
       <div className="item-info sticky">
-        <div className="item-primary-info">
-          <strong>NEW</strong>
-          <h1>
-            <span>SESAMFRÖN 세삼프뢴</span>
-            <p>화초물뿌리개, 유리, 25 cl</p>
-          </h1>
-          <div className="price">W 4,900</div>
-          <Star />
-        </div>
+        <PrimaryInfo />
         <div className="item-btn-group">
           <button>구매하기</button>
           <button>

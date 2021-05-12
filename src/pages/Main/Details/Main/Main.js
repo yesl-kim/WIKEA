@@ -2,11 +2,11 @@ import React from 'react';
 import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb';
 import Product from '../../../../components/Product/Product';
 import ScrollBox from '../../../../components/ScrollBox/ScrollBox';
-import ItemDetails from './ItemDetails';
+import Star from '../../../../components/Star/Star.js';
+import ItemDetails from './ItemDetails/ItemDetails';
 import ItemImg from './ItemImg';
-import ItemInfo from './ItemInfo';
+import ItemInfo from './ItemInfo/ItemInfo';
 import './Main.scss';
-import Star from './Star';
 
 class Main extends React.Component {
   render() {
