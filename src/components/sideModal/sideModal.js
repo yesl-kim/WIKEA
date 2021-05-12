@@ -3,52 +3,18 @@ import React, { Component } from 'react';
 import './SideModal.scss';
 
 class SideModal extends Component {
-  constructor() {
-    super();
-    this.state = {
-      category: [
-        '홈스마트',
-        '가구',
-        '침대/매트리스',
-        '어린이 WIKEA',
-        '수납/정리',
-        '주방가구',
-        '텍스타일',
-        '홈데코/장식품',
-        '욕실',
-        '야외용 제품',
-        '조명',
-        '러그/매트/데크',
-      ],
-    };
-  }
-
   render() {
+    const { title, direction } = this.props;
     return (
-      <nav className="sideModal">
-        <h1 className="visually-hidden">메인 네비게이션</h1>
-        <div className="menu_top">
+      <div className="sideModal">
+        <div className="dimmer" />
+        <div className={`nav_like ${direction}`}>
+          <h1 className="visually-hidden">{title}</h1>
           <button type="button" className="close">
             <i className="ic-close" />
           </button>
-          <a className="logo">
-            <img alt="wikea logo" src="http://placehold.it/90x36" />
-          </a>
         </div>
-        <div className="menu_container">
-          <h2>모든 제품</h2>
-          <ul>
-            <li className="bold_item">
-              <a>지속가능한 제품</a>
-            </li>
-            {this.state.category.map((c, idx) => (
-              <li key={idx}>
-                <a>{c}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
+      </div>
     );
   }
 }
