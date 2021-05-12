@@ -6,6 +6,7 @@ import ItemDetails from './ItemDetails';
 import ItemImg from './ItemImg';
 import ItemInfo from './ItemInfo';
 import './Main.scss';
+import Star from './Star';
 
 class Main extends React.Component {
   render() {
@@ -28,7 +29,7 @@ class Main extends React.Component {
             <div className="col-lg-1 lg-only" />
             <div className="col-lg-12">
               <ScrollBox>
-                <div className="recommandation searched">
+                <div className="recommandation">
                   <ol className="item-lists">
                     <li>
                       <button>
@@ -44,15 +45,7 @@ class Main extends React.Component {
                           <p>화초물뿌리개, 유리, 25 cl</p>
                         </h1>
                         <div className="price">W 4,900</div>
-                        <div className="rating-star">
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          (2)
-                        </div>
-                        <p>기타 옵션</p>
+                        <Star />
                       </div>
                       <button>
                         <i className="ic-cart" />
