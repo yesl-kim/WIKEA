@@ -1,47 +1,12 @@
 @import '../../../../styles/common.scss';
+@import './Product/Product.scss';
 
 .products {
-  margin-top: 3rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid $--colour-border-light;
 
   .productRow {
     @include flexbox(center center);
     flex-wrap: nowrap;
-
-    .product {
-      max-width: 25rem;
-      padding: 1rem;
-      font-size: 0.875rem;
-
-      img {
-        width: 100%;
-      }
-
-      h2 {
-        font-size: 0.875rem;
-        cursor: pointer;
-
-        span:hover {
-          border-bottom: 1px solid $--colour-border-dark;
-        }
-      }
-
-      .productsExplanation {
-        margin-top: 20px;
-
-        div {
-          margin-top: 7px;
-        }
-
-        .productPrice {
-          font-size: 1.5rem;
-
-          span {
-            margin-right: 0.2rem;
-            font-size: 0.75rem;
-            vertical-align: top;
-          }
-        }
-      }
-    }
   }
 }
