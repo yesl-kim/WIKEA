@@ -1,4 +1,5 @@
 import React from 'react';
+import './Product.scss';
 
 class Product extends React.Component {
   render() {
@@ -8,10 +9,11 @@ class Product extends React.Component {
       <div className="product">
         {/* children으로 구멍뚫어 놓기(input checkbox) */}
         <input type="checkbox" />
-        <button>
+        <button className="product_favorite">
           <i className="ic-heart" />
         </button>
         <img
+          alt="lamp"
           src={
             'https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m'
           }
@@ -24,12 +26,15 @@ class Product extends React.Component {
           <div className="product_price">
             <span>₩</span>5,000
           </div>
-          <div>
+          <div className="product_rating">
             <i className="ic-star" />
             <i className="ic-star" />
             <i className="ic-star" />
             <i className="ic-star" />
           </div>
+          <button className="product_shopping">
+            <i className="ic-cart" />
+          </button>
         </div>
       </div>
     );
