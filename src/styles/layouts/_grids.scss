@@ -16,6 +16,7 @@ $lg-max-container: 1800px + $lg-margin-left + $lg-margin-right;
   width: 100%;
   padding: 0 $sm-margin;
   margin: 0 auto;
+
   .row {
     display: flex;
     flex-wrap: wrap;

@@ -5,6 +5,8 @@ import ListBtn from './ListBtn/ListBtn';
 import Products from './Products/Products';
 import Header from '../../../components/Header/Header';
 import Message from '../../../components/Header/Message';
+import Footer from '../../../components/Footer/Footer';
+
 import './Lists.scss';
 
 class Lists extends React.Component {
@@ -21,6 +23,7 @@ class Lists extends React.Component {
               <ItemExplanation />
               <ListBtn />
               <Products />
+              <Footer />
             </div>
           </div>
         </main>

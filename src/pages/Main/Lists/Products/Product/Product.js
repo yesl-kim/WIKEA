@@ -10,7 +10,9 @@ class Product extends React.Component {
           }
         />
         <div className="productsExplanation">
-          <h2>멋있는 램프</h2>
+          <h2>
+            <span>멋있는 램프</span>
+          </h2>
           <div className="productSize">탁상스탠드, 29 cm</div>
           <div className="productPrice">
             <span>₩</span>5,000

@@ -10,8 +10,10 @@ class ListBtn extends React.Component {
             <span>비교</span>
           </button>
           <button aria-label="분류 옵션보기">
-            <span>정렬</span>
-            <i className="ic-caret sortBtn" />
+            <span>
+              정렬
+              <i className="ic-caret sortBtn" />
+            </span>
           </button>
           <button aria-label="필터 모달 표시 가격">
             <span>가격</span>
@@ -29,8 +31,10 @@ class ListBtn extends React.Component {
             <span>고객 평가</span>
           </button>
           <button aria-label="필터 모달 더보기, 더 지속 가능한 소재, 특가, 신재품, 시리즈">
-            <span>모든 필터</span>
-            <i className="ic-menu" />
+            <span>
+              모든 필터
+              <i className="ic-menu" />
+            </span>
           </button>
         </div>
         <div className="productBtn">
