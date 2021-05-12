@@ -6,6 +6,7 @@ class Product extends React.Component {
 
     return (
       <div className="product">
+        {/* children으로 구멍뚫어 놓기(input checkbox) */}
         <input type="checkbox" />
         <button>
           <i className="ic-heart" />
