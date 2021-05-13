@@ -13,8 +13,8 @@ class SideModal extends Component {
           <button type="button" className="close" onClick={handleSideModalOn}>
             <i className="ic-close" />
           </button>
+          {children}
         </aside>
-        {children}
       </div>
     );
   }
