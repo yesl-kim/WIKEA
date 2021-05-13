@@ -54,7 +54,7 @@ class Main extends React.Component {
       <>
         <main className="main">
           <article>
-            <div className="container">
+            <div className="grid-container">
               <div className="row">
                 <div className="col-lg-1" />
                 <div className="col-lg-12 col-md-12">

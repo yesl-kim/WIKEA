@@ -1,5 +1,3 @@
-@import '../constants/breakpoint';
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -11,36 +9,43 @@
   white-space: nowrap;
   border: 0;
 }
+
 .sm-only {
   @media screen and (min-width: $md-breakpoint) {
-    display: none;
+    display: none !important;
   }
 }
+
 .md-only {
   @media screen and (max-width: $md-breakpoint - 1) {
-    display: none;
+    display: none !important;
   }
+
   @media screen and (min-width: $lg-breakpoint) {
-    display: none;
+    display: none !important;
   }
 }
+
 .lg-only {
   @media screen and (max-width: $lg-breakpoint - 1) {
-    display: none;
+    display: none !important;
   }
 }
+
 .sm-hidden {
   @media screen and (max-width: $md-breakpoint - 1) {
-    display: none;
+    display: none !important;
   }
 }
+
 .md-hidden {
   @media screen and (min-width: $md-breakpoint) and(max-width: $lg-breakpoint - 1) {
-    display: none;
+    display: none !important;
   }
 }
+
 .lg-hidden {
   @media screen and (min-width: $lg-breakpoint) {
-    display: none;
+    display: none !important;
   }
 }
