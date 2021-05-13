@@ -4,7 +4,7 @@ import './ListPath.scss';
 class ListPath extends React.Component {
   render() {
     return (
-      <ol className="listPath">
+      <ol className="list_path">
         <li>
           <span>제품</span>
         </li>

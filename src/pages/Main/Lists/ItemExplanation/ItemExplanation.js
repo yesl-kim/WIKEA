@@ -4,7 +4,7 @@ import './ItemExplanation.scss';
 class ItemExplanation extends React.Component {
   render() {
     return (
-      <div className="itemExplanation">
+      <div className="item_explanation">
         <h1>탁상스탠드</h1>
         <p>
           탁상스탠드는 실용적이면서도 방안에 개성적인 느낌을 더해줄 수 있어용.

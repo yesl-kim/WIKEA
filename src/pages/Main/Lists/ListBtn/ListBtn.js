@@ -1,18 +1,41 @@
 import React from 'react';
+import Sortbox from './Sortbox/Sortbox';
 import './ListBtn.scss';
 
 class ListBtn extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      isExist: false,
+    };
+  }
+
+  hideBox = () => {
+    const { isExist } = this.state;
+
+    this.setState({
+      isExist: !isExist ? 'visible' : '',
+    });
+  };
+
   render() {
+    const { isExist } = this.state;
+
     return (
-      <div className="btnLine">
-        <div className="btnContainer">
+      <div className="btn_line">
+        <div className="btn_container">
           <button aria-label="제품 비교 선택 활성화">
             <span>비교</span>
           </button>
-          <button aria-label="분류 옵션보기">
+          <button
+            className={isExist}
+            aria-label="분류 옵션보기"
+            onClick={this.hideBox}
+          >
             <span>
               정렬
-              <i className="ic-caret sortBtn" />
+              <i className="ic-caret" />
             </span>
           </button>
           <button aria-label="필터 모달 표시 가격">
@@ -37,11 +60,12 @@ class ListBtn extends React.Component {
             </span>
           </button>
         </div>
-        <div className="productBtn">
+        <div className="product_btn">
           <span>61개</span>
           <span>제품</span>
           <span>디지털 쇼룸</span>
         </div>
+        <Sortbox className={isExist} />
       </div>
     );
   }

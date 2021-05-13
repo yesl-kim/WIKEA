@@ -1,13 +1,14 @@
 @import '../../../../styles/common.scss';
 
-.btnLine {
+.btn_line {
   @include flexbox(between);
   position: sticky;
   top: 0;
   border-bottom: 1px solid $--colour-border-light;
   background-color: $--colour-bg-default;
+  z-index: 99;
 
-  .btnContainer {
+  .btn_container {
     padding: 1.25rem 0;
 
     button {
@@ -17,6 +18,7 @@
       font-size: 0.85rem;
       font-weight: 600;
       background-color: $--colour-bg-alternative;
+      transition: all 0.2s ease;
 
       &:hover {
         background-color: $--colour-button-inverse-disabled-dark;
@@ -30,9 +32,14 @@
         margin-left: 0.5rem;
       }
     }
+
+    button.visible {
+      color: $--colour-text-inverse;
+      background-color: $--colour-button-primary-default;
+    }
   }
 
-  .productBtn {
+  .product_btn {
     @include flexbox(center end);
     font-size: 0.75rem;
     font-weight: 600;

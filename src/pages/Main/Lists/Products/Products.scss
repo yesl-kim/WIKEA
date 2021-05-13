@@ -1,11 +1,10 @@
 @import '../../../../styles/common.scss';
-@import './Product/Product.scss';
 
 .products {
   padding: 3rem 0;
   border-bottom: 1px solid $--colour-border-light;
 
-  .productRow {
+  .product_row {
     @include flexbox(center center);
     flex-wrap: nowrap;
   }
