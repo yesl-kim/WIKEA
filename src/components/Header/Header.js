@@ -17,23 +17,34 @@ class Header extends React.Component {
               </a>
             </div>
 
-            <div className="nav-menu-group">
-              <a href="/">
-                <i className="ic-cart1 lg-only" />
-              </a>
-              <a href="/">
-                <i className="ic-user" />
-              </a>
-              <a href="/">
-                <i className="ic-heart" />
-              </a>
-              <a href="/">
-                <i className="ic-cart" />
-              </a>
-              <button className="col-lg-1">
-                <i className="ic-menu" />
-              </button>
-            </div>
+            <ul className="nav-menu-group">
+              <li>
+                <a href="/">
+                  <i className="ic-cart1 lg-only" />
+                </a>
+              </li>
+              <li>
+                <a href="/">
+                  <i className="ic-user" />
+                </a>
+              </li>
+              <li>
+                {' '}
+                <a href="/">
+                  <i className="ic-heart" />
+                </a>
+              </li>
+              <li>
+                <a href="/">
+                  <i className="ic-cart" />
+                </a>
+              </li>
+              <li>
+                <button className="col-lg-1">
+                  <i className="ic-menu" />
+                </button>
+              </li>
+            </ul>
 
             <div className="searchBox">
               <i className="ic-search" />
