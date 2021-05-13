@@ -16,7 +16,6 @@ class Header extends React.Component {
                 <span>디지털 쇼룸</span>
               </a>
             </div>
-
             <ul className="nav-menu-group">
               <li>
                 <a href="/">
@@ -45,7 +44,6 @@ class Header extends React.Component {
                 </button>
               </li>
             </ul>
-
             <div className="searchBox">
               <i className="ic-search" />
               <input
