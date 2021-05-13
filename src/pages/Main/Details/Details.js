@@ -1,6 +1,6 @@
 import React from 'react';
-import Message from './Header/Message.js';
-import Header from './Header/Header.js';
+import Message from '../../../components/Nav/Message';
+import Nav from '../../../components/Nav/Nav';
 // import Main from './Main/Main.js';
 
 class Details extends React.Component {
@@ -8,7 +8,7 @@ class Details extends React.Component {
     return (
       <>
         <Message />
-        <Header />
+        <Nav />
         {/* <Main /> */}
       </>
     );

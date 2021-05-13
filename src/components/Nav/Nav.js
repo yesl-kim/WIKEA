@@ -1,12 +1,13 @@
 import React from 'react';
-import './Header.scss';
+import './Nav.scss';
 
-class Header extends React.Component {
+class Nav extends React.Component {
   render() {
     return (
       <div className="grid-container">
         <div className="row">
-          <header>
+          <nav>
+            <h1 className="visually-hidden">메뉴바</h1>
             <img alt="logo" src="/images/Detail/logo.png" />
             <div className="lg-only options">
               <a href="/">
@@ -55,11 +56,11 @@ class Header extends React.Component {
                 <i className="ic-store" />
               </button>
             </div>
-          </header>
+          </nav>
         </div>
       </div>
     );
   }
 }
 
-export default Header;
+export default Nav;
