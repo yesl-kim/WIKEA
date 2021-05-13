@@ -21,24 +21,6 @@ class Details extends React.Component {
     });
   };
 
-  popUpLiked = e => {
-    const { isLiked } = this.state;
-    this.setState({
-      isLiked: !isLiked,
-    });
-  };
-
-  removePopUp = () => {
-    const { isLiked } = this.state;
-    if (isLiked === true) {
-      console.log('보여라');
-      return 'visible';
-    } else {
-      console.log('사라져라');
-      return '';
-    }
-  };
-
   render() {
     const { modalOn, isLiked } = this.state;
     return (
@@ -51,30 +33,6 @@ class Details extends React.Component {
           popUpLiked={this.popUpLiked}
         />
         {modalOn && <ImgModal handleModal={this.handleModal} />}
-
-        {isLiked ? (
-          <div className="popup_liked">
-            위시리스트에 담겼습니다.
-            <button />
-          </div>
-        ) : (
-          <div className="popup_liked invisible">
-            위시리스트에 담겼습니다.
-            <button />
-          </div>
-        )}
-
-        {!isLiked ? (
-          <div className="popup_liked">
-            즐겨찾기 목록에서 삭제되었습니다.
-            <button />
-          </div>
-        ) : (
-          <div className="popup_liked invisible">
-            즐겨찾기 목록에서 삭제되었습니다.
-            <button />
-          </div>
-        )}
       </>
     );
   }

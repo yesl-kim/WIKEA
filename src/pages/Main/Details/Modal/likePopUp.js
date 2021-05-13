@@ -7,9 +7,11 @@ class likePopUp extends Component {
     return (
       <>
         {isLiked ? (
-          <div className="popup_liked">위시리스트에 담겼습니다.</div>
+          <div className="popup_liked invisible">위시리스트에 담겼습니다.</div>
         ) : (
-          <div className="popup_liked">즐겨찾기 목록에서 삭제되었습니다.</div>
+          <div className="popup_liked invisible">
+            즐겨찾기 목록에서 삭제되었습니다.
+          </div>
         )}
       </>
     );
