@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import './ImgModal.scss';
+import ImgSlider from './ImgSlider';
 
 class ImgModal extends Component {
   render() {
-    const { handleModal } = this.props;
+    const { right, goNext, goPrev, handleModal } = this.props;
     return (
       <div className="modal">
         <div className="modal_back">
-          <img
-            alt="상세 이미지"
-            src="https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
-          />
-          <button onClick={this.handleModal} className="modal_btn" />
+          <ImgSlider right={right} goNext={goNext} goPrev={goPrev} />
+          <button onClick={handleModal} className="modal_btn" />
         </div>
       </div>
     );

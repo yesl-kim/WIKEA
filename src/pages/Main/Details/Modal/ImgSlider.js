@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import './ImgSlider.scss';
 
 class ImgSlider extends Component {
   render() {
     const { right, goNext, goPrev } = this.props;
     return (
-      <div class="carousel-container">
+      <div className="carousel-container">
         <div
-          class="carousel-slide"
+          className="carousel-slide"
           style={{ transform: `translateX(${right}px)` }}
         >
           <img

@@ -4,7 +4,6 @@ import Header from '../../../components/Header/Header';
 import Main from './Main/Main.js';
 import ImgModal from './Modal/ImgModal';
 import './Details.scss';
-import ImgSlider from './Modal/ImgSlider';
 
 class Details extends React.Component {
   constructor() {
@@ -22,8 +21,6 @@ class Details extends React.Component {
       modalOn: !modalOn,
     });
   };
-
-  //조건 : '이미지 개수 * W'로 나중에 수정하기!
 
   goNext = () => {
     const { imgRight } = this.state;
@@ -45,13 +42,19 @@ class Details extends React.Component {
       <>
         <Message />
         <Header />
-        {/* <Main
+        <Main
           handleModal={this.handleModal}
           isLiked={isLiked}
           popUpLiked={this.popUpLiked}
         />
-        {modalOn && <ImgModal handleModal={this.handleModal} />} */}
-        <ImgSlider right={imgRight} goNext={this.goNext} goPrev={this.goPrev} />
+        {modalOn && (
+          <ImgModal
+            right={imgRight}
+            goPrev={this.goPrev}
+            goNext={this.goNext}
+            handleModal={this.handleModal}
+          />
+        )}
       </>
     );
   }
