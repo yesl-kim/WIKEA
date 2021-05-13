@@ -3,7 +3,6 @@ import ItemExplanation from './ItemExplanation/ItemExplanation';
 import ListBtn from './ListBtn/ListBtn';
 import Products from './Products/Products';
 import Product from '../../../components/Product/Product';
-import Footer from '../../../components/Footer/Footer';
 import './Lists.scss';
 
 class Lists extends React.Component {
@@ -47,7 +46,6 @@ class Lists extends React.Component {
                 <input type="checkbox" />
               </Product>
             </Products>
-            <Footer />
           </div>
         </div>
       </main>
