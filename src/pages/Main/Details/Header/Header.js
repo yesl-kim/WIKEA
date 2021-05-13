@@ -4,7 +4,7 @@ import './Header.scss';
 class Header extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div className="grid-container">
         <div className="row">
           <header>
             <img alt="logo" src="/images/Detail/logo.png" />
