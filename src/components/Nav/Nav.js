@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
+import SideModal from '../SideModal/SideModal';
 import './Nav.scss';
 
 class Nav extends Component {
@@ -24,31 +25,31 @@ class Nav extends Component {
   }
 
   render() {
+    const { handleNavOn, on } = this.props;
     return (
-      <nav className="nav">
-        <h1 className="visually-hidden">메인 네비게이션</h1>
-        <div className="menu_top">
-          <button type="button" className="close">
-            <i className="ic-close" />
-          </button>
-          <a className="logo">
-            <img alt="wikea logo" src="http://placehold.it/90x36" />
-          </a>
-        </div>
-        <div className="menu_container">
-          <h2>모든 제품</h2>
-          <ul>
-            <li className="bold_item">
-              <a>지속가능한 제품</a>
-            </li>
-            {this.state.category.map((c, idx) => (
-              <li key={idx}>
-                <a>{c}</a>
+      <SideModal direction="left" handleSideModalOn={handleNavOn} on={on}>
+        <nav className="nav">
+          <h1 className="visually-hidden">메인 네비게이션</h1>
+          <div className="menu_top">
+            <a className="logo">
+              <img alt="wikea logo" src="http://placehold.it/90x36" />
+            </a>
+          </div>
+          <div className="menu_container">
+            <h2>모든 제품</h2>
+            <ul>
+              <li className="bold_item">
+                <a>지속가능한 제품</a>
               </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
+              {this.state.category.map((c, idx) => (
+                <li key={idx}>
+                  <a>{c}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+      </SideModal>
     );
   }
 }

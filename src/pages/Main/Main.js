@@ -2,7 +2,6 @@
 import React from 'react';
 import Message from '../../components/Header/Message';
 import Header from '../../components/Header/Header';
-import Nav from '../../components/Nav/Nav';
 import Title from './components/Title/Title';
 import ScrollBox from '../../components/ScrollBox/ScrollBox';
 import Product from './Lists/Products/Product/Product';
@@ -93,7 +92,7 @@ class Main extends React.Component {
       <>
         <Message />
         <Header />
-        <Nav />
+
         <main className="main">
           <article>
             <div className="container">
