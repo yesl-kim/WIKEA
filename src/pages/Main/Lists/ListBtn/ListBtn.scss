@@ -9,7 +9,9 @@
   z-index: 99;
 
   .btn_container {
+    width: 900px;
     padding: 1.25rem 0;
+    overflow: auto;
 
     button {
       margin-right: 0.8rem;
