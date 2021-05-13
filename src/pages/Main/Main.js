@@ -1,98 +1,57 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import Message from '../../components/Header/Message';
-import Header from '../../components/Header/Header';
-import Title from './components/Title/Title';
-import ScrollBox from '../../components/ScrollBox/ScrollBox';
-import Product from './Lists/Products/Product/Product';
 import NewProduct from './components/NewProduct/NewProduct';
-import Footer from '../../components/Footer/Footer';
+
 import '../../styles/common.scss';
 import '../../styles/base/_globals.scss';
 import './Main.scss';
 
 class Main extends React.Component {
-  render() {
-    const newProducts = [
-      {
-        bgImage: {
-          alt: '조명 인테리어',
-          src: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
-        },
-        products: [
-          {
-            id: 'product01',
-            name: '복슬리브',
-            category: '조명',
-            price: 99900,
-            inNew: true,
+  constructor() {
+    super();
+    this.state = {
+      newProducts: [
+        {
+          id: '1',
+          bgImage: {
+            alt: '조명 인테리어',
+            src: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
           },
-        ],
-      },
-      {
-        bgImage: {
-          alt: '조명 인테리어',
-          src: 'https://images.unsplash.com/photo-1589834390005-5d4fb9bf3d32?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
+          products: [
+            {
+              id: 'product01',
+              name: '복슬리브',
+              category: '조명',
+              price: 99900,
+              inNew: true,
+            },
+          ],
         },
-        products: [
-          {
-            id: 'product02',
-            name: 'SNÖBYAR 스뇌뷔아르',
-            category: '탁상 스탠드',
-            price: 59900,
-            inNew: true,
+        {
+          id: '2',
+          bgImage: {
+            alt: '조명 인테리어',
+            src: 'https://images.unsplash.com/photo-1589834390005-5d4fb9bf3d32?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
           },
-        ],
-      },
-    ];
-    const products = [
-      {
-        id: '',
-        name: '',
-        price: 0,
-        image: '',
-        category: '',
-        rating: '',
-      },
-      {
-        id: '',
-        name: '',
-        price: 0,
-        image: '',
-        category: '',
-        rating: '',
-      },
-      {
-        id: '',
-        name: '',
-        price: 0,
-        image: '',
-        category: '',
-        rating: '',
-      },
-      {
-        id: '',
-        name: '',
-        price: 0,
-        image: '',
-        category: '',
-        rating: '',
-      },
-      {
-        id: '',
-        name: '',
-        price: 0,
-        image: '',
-        category: '',
-        rating: '',
-      },
-    ];
+          products: [
+            {
+              id: 'product02',
+              name: 'SNÖBYAR 스뇌뷔아르',
+              category: '탁상 스탠드',
+              price: 59900,
+              inNew: true,
+            },
+          ],
+        },
+      ],
+    };
+  }
 
+  render() {
+    const { newProducts } = this.state;
+    console.log(newProducts);
     return (
       <>
-        <Message />
-        <Header />
-
         <main className="main">
           <article>
             <div className="container">
@@ -124,31 +83,30 @@ class Main extends React.Component {
               <section className="row">
                 <div className="col-lg-1 col-md-1" />
                 <div className="col-lg-12 col-md-12">
-                  <ScrollBox
-                    title="추천 제품"
-                    btn={<a role="button">제품 보러가기</a>}
-                  >
-                    {products.map(product => (
-                      <Product className="item"></Product>
-                    ))}
-                  </ScrollBox>
+                  스크롤 박스 컴포넌트 부분
                 </div>
               </section>
               <section className="row">
-                <Title title="신제품을 만나보세요" btnName="신제품 보러가기" />
+                <div className="col-lg-1 col-md-1" />
+                <div className="col-lg-12 col-md-12">
+                  <header className="section_title">
+                    <h2>신제품을 만나보세요</h2>
+                    <a role="button">신제품 보러가기</a>
+                  </header>
+                </div>
                 <div className="col-lg-1" />
-                {newProducts.map((newProduct, idx) => (
-                  <NewProduct
-                    bgImage={newProduct.bgImage}
-                    key={idx}
-                    items={newProduct.products}
-                  />
-                ))}
+                {newProducts &&
+                  newProducts.map(newProduct => (
+                    <NewProduct
+                      key={newProduct.id}
+                      bgImage={newProduct.bgImage}
+                      items={newProduct.products}
+                    />
+                  ))}
               </section>
             </div>
           </article>
         </main>
-        <Footer />
       </>
     );
   }

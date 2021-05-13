@@ -8,10 +8,10 @@ class ScrollBox extends Component {
 
     return (
       <>
-        <div className="section_title">
+        <header className="section_title">
           <h2>{title}</h2>
           {btn}
-        </div>
+        </header>
         <div className="scroll_box">
           <ul className="item_list">{children}</ul>
         </div>

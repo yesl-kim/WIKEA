@@ -7,7 +7,8 @@ class Nav extends Component {
   constructor() {
     super();
     this.state = {
-      category: [
+      categories: [
+        '지속가능한 제품',
         '홈스마트',
         '가구',
         '침대/매트리스',
@@ -30,20 +31,15 @@ class Nav extends Component {
       <SideModal direction="left" handleSideModalOn={handleNavOn} on={on}>
         <nav className="nav">
           <h1 className="visually-hidden">메인 네비게이션</h1>
-          <div className="menu_top">
-            <a className="logo">
-              <img alt="wikea logo" src="http://placehold.it/90x36" />
-            </a>
-          </div>
+          <a className="logo">
+            <img alt="wikea logo" src="http://placehold.it/90x36" />
+          </a>
           <div className="menu_container">
             <h2>모든 제품</h2>
             <ul>
-              <li className="bold_item">
-                <a>지속가능한 제품</a>
-              </li>
-              {this.state.category.map((c, idx) => (
+              {this.state.categories.map((category, idx) => (
                 <li key={idx}>
-                  <a>{c}</a>
+                  <a>{category}</a>
                 </li>
               ))}
             </ul>

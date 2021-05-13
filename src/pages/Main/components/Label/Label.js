@@ -9,7 +9,7 @@ class Label extends Component {
       <div className={`label_container ${product.id}`}>
         <button type="button" className="label_btn" />
         <a className="label">
-          <div className="product_info">
+          <p className="product_info">
             <span className="new">New</span>
             <span className="name">{product.name}</span>
             <span className="category">{product.category}</span>
@@ -17,9 +17,9 @@ class Label extends Component {
               <span className="won">￦</span>
               <span>{product.price.toLocaleString()}</span>
             </div>
-          </div>
+          </p>
           <a role="button">
-            <i className="ic-chevron"></i>
+            <i className="ic-chevron" />
           </a>
         </a>
       </div>

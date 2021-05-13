@@ -5,6 +5,24 @@
 .label_container {
   position: absolute;
 
+  &.product01 {
+    top: 36%;
+    left: 17.5%;
+
+    .label {
+      left: 150%;
+    }
+  }
+
+  &.product02 {
+    top: 52.5%;
+    left: 67.5%;
+
+    .label {
+      right: 150%;
+    }
+  }
+
   .label_btn {
     display: block;
     position: relative;
@@ -92,24 +110,6 @@
       i {
         font-size: 24px;
       }
-    }
-  }
-
-  &.product01 {
-    top: 36%;
-    left: 17.5%;
-
-    .label {
-      left: 150%;
-    }
-  }
-
-  &.product02 {
-    top: 52.5%;
-    left: 67.5%;
-
-    .label {
-      right: 150%;
     }
   }
 }

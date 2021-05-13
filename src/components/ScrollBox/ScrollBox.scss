@@ -9,7 +9,6 @@
 
   .item_list {
     @include flexbox(start);
-    flex-wrap: nowrap;
     position: absolute;
     top: 0;
     left: 0;
