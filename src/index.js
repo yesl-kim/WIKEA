@@ -3,4 +3,6 @@ import ReactDOM from 'react-dom';
 import Routes from './Routes';
 import './styles/common.scss';
 
-ReactDOM.render(<Routes />, document.getElementById('root'));
+import Product from './components/Product/Product';
+
+ReactDOM.render(<Product />, document.getElementById('root'));

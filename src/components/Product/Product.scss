@@ -1,4 +1,4 @@
-@import '../../styles/common.scss';
+@import '../../styles/var.scss';
 
 .product {
   position: relative;
@@ -45,6 +45,13 @@
 
     div {
       margin-top: 7px;
+    }
+
+    .product_new {
+      margin-bottom: 2px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: $--colour-icon-favourite;
     }
 
     .product_price {
