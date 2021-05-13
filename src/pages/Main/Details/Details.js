@@ -2,8 +2,8 @@ import React from 'react';
 import Message from '../../../components/Header/Message';
 import Header from '../../../components/Header/Header';
 import Main from './Main/Main.js';
-import './Details.scss';
 import ImgModal from './Modal/ImgModal';
+import './Details.scss';
 
 class Details extends React.Component {
   constructor() {
@@ -26,7 +26,17 @@ class Details extends React.Component {
     this.setState({
       isLiked: !isLiked,
     });
-    console.log('clicked');
+  };
+
+  removePopUp = () => {
+    const { isLiked } = this.state;
+    if (isLiked === true) {
+      console.log('보여라');
+      return 'visible';
+    } else {
+      console.log('사라져라');
+      return '';
+    }
   };
 
   render() {
@@ -35,9 +45,36 @@ class Details extends React.Component {
       <>
         <Message />
         <Header />
-        <Main handleModal={this.handleModal} popUpLiked={this.popUpLiked} />
+        <Main
+          handleModal={this.handleModal}
+          isLiked={isLiked}
+          popUpLiked={this.popUpLiked}
+        />
         {modalOn && <ImgModal handleModal={this.handleModal} />}
-        {isLiked && <div></div>}
+
+        {isLiked ? (
+          <div className="popup_liked">
+            위시리스트에 담겼습니다.
+            <button />
+          </div>
+        ) : (
+          <div className="popup_liked invisible">
+            위시리스트에 담겼습니다.
+            <button />
+          </div>
+        )}
+
+        {!isLiked ? (
+          <div className="popup_liked">
+            즐겨찾기 목록에서 삭제되었습니다.
+            <button />
+          </div>
+        ) : (
+          <div className="popup_liked invisible">
+            즐겨찾기 목록에서 삭제되었습니다.
+            <button />
+          </div>
+        )}
       </>
     );
   }

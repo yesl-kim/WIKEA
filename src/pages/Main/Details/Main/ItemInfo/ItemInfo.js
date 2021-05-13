@@ -4,12 +4,13 @@ import PrimaryInfo from './PrimaryInfo.js';
 
 class ItemInfo extends Component {
   render() {
+    const { isLiked, popUpLiked } = this.props;
     return (
       <div className="item-info sticky">
         <PrimaryInfo />
         <div className="item-btn-group">
           <button>구매하기</button>
-          <button>
+          <button onClick={popUpLiked} className={`${isLiked ? 'liked' : ''}`}>
             <i className="ic-heart" aria-label="위시리스트에 추가" />
           </button>
         </div>

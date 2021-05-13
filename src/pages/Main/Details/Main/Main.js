@@ -10,7 +10,7 @@ import './Main.scss';
 
 class Main extends React.Component {
   render() {
-    const { handleModal } = this.props;
+    const { handleModal, popUpLiked, isLiked } = this.props;
     return (
       <div className="main">
         <div className="grid-container">
@@ -22,7 +22,7 @@ class Main extends React.Component {
               <ItemDetails />
             </div>
             <div className="col-sm-4 col-md-12 col-lg-4 ">
-              <ItemInfo />
+              <ItemInfo popUpLiked={popUpLiked} isLiked={isLiked} />
             </div>
           </div>
           <div className="row">

@@ -4,7 +4,6 @@ import './ItemImg.scss';
 class ItemImg extends Component {
   render() {
     const { handleModal } = this.props;
-    console.log(this.props);
     return (
       <div>
         <div className="item-img">
