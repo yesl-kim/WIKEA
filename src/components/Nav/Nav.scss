@@ -2,7 +2,6 @@
 
 nav {
   @include flexbox(between);
-  width: 100%;
   padding: 0 20px;
   flex-wrap: wrap;
   position: relative;
@@ -66,7 +65,7 @@ nav {
   }
 
   @include responsive(T) {
-    height: 92px;
+    height: 70px;
     padding: 0 32px;
     flex-wrap: nowrap;
 
@@ -83,6 +82,7 @@ nav {
 
   @include responsive(D) {
     @include flexbox(between);
+    margin: 0 60px;
     height: 92px;
 
     .options {
@@ -94,9 +94,9 @@ nav {
     }
 
     img {
-      margin-left: 100px;
       height: 36px;
       width: 90px;
+      margin-left: 64px;
     }
 
     .searchBox {
@@ -104,9 +104,8 @@ nav {
     }
 
     .nav-menu-group button {
-      position: absolute;
-      left: 4%;
-      top: 30%;
+      @include pos-center-y;
+      left: 0;
     }
   }
 }
