@@ -1,0 +1,50 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sm-only {
+  @media screen and (min-width: $md-breakpoint) {
+    display: none;
+  }
+}
+
+.md-only {
+  @media screen and (max-width: $md-breakpoint - 1) {
+    display: none;
+  }
+  @media screen and (min-width: $lg-breakpoint) {
+    display: none;
+  }
+}
+
+.lg-only {
+  @media screen and (max-width: $lg-breakpoint - 1) {
+    display: none;
+  }
+}
+
+.sm-hidden {
+  @media screen and (max-width: $md-breakpoint - 1) {
+    display: none;
+  }
+}
+
+.md-hidden {
+  @media screen and (min-width: $md-breakpoint) and(max-width: $lg-breakpoint - 1) {
+    display: none;
+  }
+}
+
+.lg-hidden {
+  @media screen and (min-width: $lg-breakpoint) {
+    display: none;
+  }
+}
