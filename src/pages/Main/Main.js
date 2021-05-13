@@ -4,9 +4,6 @@ import SideModal from '../../components/SideModal/SideModal';
 class Main extends React.Component {
   render() {
     return (
-      <>
-        <SideModal direction="left" />
-      </>
     );
   }
 }
