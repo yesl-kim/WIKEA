@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Label.scss';
 
 class Label extends Component {
@@ -8,7 +9,7 @@ class Label extends Component {
     return (
       <div className={`label_container ${product.id}`}>
         <button type="button" className="label_btn" />
-        <a className="label">
+        <Link to="/" className="label">
           <p className="product_info">
             <span className="new">New</span>
             <span className="name">{product.name}</span>
@@ -18,10 +19,10 @@ class Label extends Component {
               <span>{product.price.toLocaleString()}</span>
             </div>
           </p>
-          <a role="button">
+          <Link to="/" role="button">
             <i className="ic-chevron" />
-          </a>
-        </a>
+          </Link>
+        </Link>
       </div>
     );
   }

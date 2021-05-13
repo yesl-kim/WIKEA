@@ -1,7 +1,4 @@
-@import '../../styles/mixins/flexbox';
-@import '../../styles/mixins/positions';
-@import '../../styles/constants/colors';
-@import '../../styles/constants/typography';
+@import '../../styles/var.scss';
 
 .main {
   padding-top: 4rem;
@@ -12,24 +9,17 @@
 
     &.promotion {
       position: relative;
-      padding-bottom: 37.25%;
       height: auto;
 
       div {
-        position: absolute;
-        top: 0;
         height: 100%;
       }
 
       .image_container {
-        left: 0;
-        width: 66.66%;
-
         a {
           display: block;
 
           img {
-            @include pos-center(absolute);
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -38,9 +28,7 @@
       }
 
       .description {
-        right: 0;
         padding: 3rem;
-        width: 33.33%;
         background-color: $--colour-bg-promotion;
 
         h2 {
@@ -86,6 +74,59 @@
         &:hover {
           border-color: $--colour-icon-light;
         }
+      }
+    }
+  }
+}
+
+@include responsive('D') {
+  .main {
+    .promotion {
+      padding-bottom: 37.25%;
+
+      div {
+        position: absolute;
+        top: 0;
+      }
+
+      .image_container {
+        left: 0;
+        width: 66.66%;
+
+        img {
+          @include pos-center(absolute);
+        }
+      }
+
+      .description {
+        right: 0;
+        width: 33.33%;
+      }
+    }
+  }
+}
+
+@include responsive('T') {
+  .main {
+    .promotion {
+      padding-bottom: 0;
+
+      div {
+        position: static;
+      }
+
+      .image_container {
+        width: 100%;
+
+        img {
+          display: block;
+          position: static;
+          transform: translate(0, 0);
+        }
+      }
+
+      .description {
+        width: 100%;
       }
     }
   }
