@@ -1,5 +1,4 @@
 import React from 'react';
-import ListPath from './ListPath/ListPath';
 import ItemExplanation from './ItemExplanation/ItemExplanation';
 import ListBtn from './ListBtn/ListBtn';
 import Products from './Products/Products';
@@ -32,7 +31,6 @@ class Lists extends React.Component {
         <div className="row">
           <div className="col-lg-1 col-md-1"></div>
           <div className="col-lg-12 col-md-11">
-            <ListPath />
             <ItemExplanation />
             <ListBtn />
             <Products>

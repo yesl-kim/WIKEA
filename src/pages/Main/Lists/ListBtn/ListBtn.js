@@ -7,20 +7,20 @@ class ListBtn extends React.Component {
     super();
 
     this.state = {
-      isExist: false,
+      isVisible: false,
     };
   }
 
   hideBox = () => {
-    const { isExist } = this.state;
+    const { isVisible } = this.state;
 
     this.setState({
-      isExist: !isExist ? 'visible' : '',
+      isExist: !isVisible ? 'visible' : '',
     });
   };
 
   render() {
-    const { isExist } = this.state;
+    const { isVisible } = this.state;
 
     return (
       <div className="btn_line">
@@ -29,7 +29,7 @@ class ListBtn extends React.Component {
             <span>비교</span>
           </button>
           <button
-            className={isExist}
+            className={isVisible}
             aria-label="분류 옵션보기"
             onClick={this.hideBox}
           >
@@ -62,10 +62,10 @@ class ListBtn extends React.Component {
         </div>
         <div className="product_btn">
           <span>61개</span>
-          <span>제품</span>
-          <span>디지털 쇼룸</span>
+          <span className="product_btn_product">제품</span>
+          <span className="product_btn_showroom">디지털 쇼룸</span>
         </div>
-        <Sortbox className={isExist} />
+        <Sortbox className={isVisible} />
       </div>
     );
   }
