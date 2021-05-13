@@ -6,6 +6,6 @@
 
   .product_row {
     @include flexbox(center center);
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
 }
