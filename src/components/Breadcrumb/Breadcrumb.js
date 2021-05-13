@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Breadcrumb.scss';
 
 class Breadcrumb extends Component {
   render() {
