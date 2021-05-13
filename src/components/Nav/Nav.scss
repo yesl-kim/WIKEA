@@ -27,11 +27,11 @@ nav {
 
     a,
     button {
+      @include flexbox;
       display: block;
       width: 44px;
       height: 44px;
       margin-left: 4px;
-      @include flexbox;
     }
   }
 

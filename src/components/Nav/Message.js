@@ -4,20 +4,20 @@ import './Message.scss';
 class Message extends React.Component {
   render() {
     return (
-      <div className="h-message-wrap">
-        <div className="h-message lg-only">
+      <ul className="message-wrap">
+        <li className="lg-only">
           <i className="ic-check" />
-          <span>코로나 19 대응 공지</span>
-        </div>
-        <div className="h-message lg-only">
+          <strong>코로나 19 대응 공지</strong>
+        </li>
+        <li className="lg-only">
           <i className="ic-phone" />
           <span>비대면 전화주문 서비스</span>
-        </div>
-        <div className="h-message">
+        </li>
+        <li>
           <i className="ic-cart" />
           <span>WIKEA 베스트셀러</span>
-        </div>
-      </div>
+        </li>
+      </ul>
     );
   }
 }
