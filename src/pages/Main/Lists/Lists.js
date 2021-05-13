@@ -28,7 +28,7 @@ class Lists extends React.Component {
     console.log(this.state.data);
 
     return (
-      <main className="grid_container">
+      <main className="grid-container">
         <div className="row">
           <div className="col-lg-1 col-md-1"></div>
           <div className="col-lg-12 col-md-11">
