@@ -7,7 +7,7 @@ class Message extends React.Component {
       <ul className="message-wrap">
         <li className="lg-only">
           <i className="ic-check" />
-          <strong>코로나 19 대응 공지</strong>
+          <span>코로나 19 대응 공지</span>
         </li>
         <li className="lg-only">
           <i className="ic-phone" />

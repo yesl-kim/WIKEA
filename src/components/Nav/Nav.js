@@ -29,7 +29,6 @@ class Nav extends React.Component {
                 </a>
               </li>
               <li>
-                {' '}
                 <a href="/">
                   <i className="ic-heart" />
                 </a>

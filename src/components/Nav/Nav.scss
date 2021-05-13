@@ -28,7 +28,6 @@ nav {
     a,
     button {
       @include flexbox;
-      display: block;
       width: 44px;
       height: 44px;
       margin-left: 4px;
@@ -83,8 +82,8 @@ nav {
   }
 
   @include responsive(D) {
-    height: 92px;
     @include flexbox(between);
+    height: 92px;
 
     .options {
       order: -1;
@@ -106,7 +105,8 @@ nav {
 
     .nav-menu-group button {
       position: absolute;
-      left: 0;
+      left: 4%;
+      top: 30%;
     }
   }
 }
