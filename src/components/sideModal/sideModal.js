@@ -3,27 +3,14 @@ import React, { Component } from 'react';
 import './SideModal.scss';
 
 class SideModal extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isOn: true,
-    };
-  }
-
-  handleClick = () => {
-    console.log('clicked');
-    this.setState({ isOn: false });
-  };
-
   render() {
-    const { title, direction, children } = this.props;
-    const { isOn } = this.state;
+    const { title, direction, children, on, handleSideModalOn } = this.props;
     return (
-      <div className={isOn ? 'side_modal_box on' : 'side_modal_box'}>
-        <div className="dimmer" />
+      <div className={on ? 'side_modal_box on' : 'side_modal_box'}>
+        <div className="dimmer" onClick={handleSideModalOn} />
         <aside className={`side_modal ${direction}`}>
           <h1 className="visually-hidden">{title}</h1>
-          <button type="button" className="close" onClick={this.handleClick}>
+          <button type="button" className="close" onClick={handleSideModalOn}>
             <i className="ic-close" />
           </button>
         </aside>
