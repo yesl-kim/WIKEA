@@ -1,6 +1,6 @@
 @import '../../styles/common.scss';
 
-.sideModal {
+.side_modal_box {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -16,7 +16,7 @@
     pointer-events: all;
   }
 
-  .nav_like {
+  .side_modal {
     position: absolute;
     top: 0;
     width: 30rem;
@@ -66,8 +66,3 @@
     }
   }
 }
-
-/*
-1. 컴포넌트는 스스로 불린값을 가져야하고
-2. 그 불린값을 밖에서 제어할 수 있는 방법은 뭐가 있을까
-*/

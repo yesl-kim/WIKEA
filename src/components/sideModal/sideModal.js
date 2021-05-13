@@ -19,14 +19,14 @@ class SideModal extends Component {
     const { title, direction, children } = this.props;
     const { isOn } = this.state;
     return (
-      <div className={isOn ? 'sideModal on' : 'sideModal'}>
+      <div className={isOn ? 'side_modal_box on' : 'side_modal_box'}>
         <div className="dimmer" />
-        <div className={`nav_like ${direction}`}>
+        <aside className={`side_modal ${direction}`}>
           <h1 className="visually-hidden">{title}</h1>
           <button type="button" className="close" onClick={this.handleClick}>
             <i className="ic-close" />
           </button>
-        </div>
+        </aside>
         {children}
       </div>
     );
