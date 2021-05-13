@@ -1,0 +1,40 @@
+@import '../../styles/var.scss';
+
+.nav {
+  padding: 0rem 2rem 0rem 150px;
+  overflow-y: scroll;
+
+  .logo {
+    padding: 1.25rem 0;
+    background-color: #fff;
+    order: 1;
+  }
+
+  .menu_container {
+    max-width: 275px;
+    padding: 2.5rem 1rem 0 0;
+    overflow-y: auto;
+
+    h2 {
+      font-size: 1.375rem;
+      font-weight: bold;
+      line-height: 1.36;
+    }
+
+    ul {
+      padding: 2rem 0 4rem;
+      border-bottom: 1px solid $--colour-neutral-grey-100;
+      font-size: 0.875rem;
+
+      li {
+        height: 33px;
+        line-height: 33px;
+
+        &:first-child {
+          margin-bottom: 1.375rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

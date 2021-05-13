@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import SideModal from '../SideModal/SideModal';
 import './Nav.scss';
 
@@ -26,14 +27,15 @@ class Nav extends Component {
   }
 
   render() {
-    const { handleNavOn, on } = this.props;
     return (
-      <SideModal direction="left" handleSideModalOn={handleNavOn} on={on}>
+      <SideModal direction="left" on={true}>
         <nav className="nav">
           <h1 className="visually-hidden">메인 네비게이션</h1>
-          <a className="logo">
-            <img alt="wikea logo" src="http://placehold.it/90x36" />
-          </a>
+          <div className="logo">
+            <Link to="/">
+              <img alt="wikea logo" src="http://placehold.it/90x36" />
+            </Link>
+          </div>
           <div className="menu_container">
             <h2>모든 제품</h2>
             <ul>

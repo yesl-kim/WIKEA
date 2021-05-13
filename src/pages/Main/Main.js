@@ -1,11 +1,12 @@
 import React from 'react';
-import SideModal from '../../components/SideModal/SideModal';
+import Nav from '../../components/Nav/Nav';
+import './Main.scss';
 
 class Main extends React.Component {
   render() {
     return (
       <>
-        <SideModal direction="left" />
+        <Nav />
       </>
     );
   }
