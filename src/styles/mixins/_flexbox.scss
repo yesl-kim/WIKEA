@@ -28,9 +28,6 @@ $flex-map: (
   display: flex;
   justify-content: _get-flex-value($jc);
   flex-direction: column;
-<<<<<<< HEAD
-=======
   justify-content: _get-flex-value($jc);
->>>>>>> master
   align-items: _get-flex-value($ai);
 }
