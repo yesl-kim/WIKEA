@@ -11,7 +11,7 @@ class Label extends Component {
         <button type="button" className="label_btn" />
         <Link to="/" className="label">
           <p className="product_info">
-            <span className="new">New</span>
+            {product.isNew && <span className="new">New</span>}
             <span className="name">{product.name}</span>
             <span className="category">{product.category}</span>
             <div className="price">

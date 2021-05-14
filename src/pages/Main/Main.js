@@ -2,59 +2,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NewProduct from './components/NewProduct/NewProduct';
+import { API } from '../../config';
 import './Main.scss';
 
 class Main extends React.Component {
   constructor() {
     super();
     this.state = {
-      newProducts: [
-        {
-          id: '1',
-          bgImage: {
-            alt: '조명 인테리어',
-            src: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
-          },
-          products: [
-            {
-              id: 'product01',
-              name: '복슬리브',
-              category: '조명',
-              price: 99900,
-              inNew: true,
-            },
-          ],
-        },
-        {
-          id: '2',
-          bgImage: {
-            alt: '조명 인테리어',
-            src: 'https://images.unsplash.com/photo-1589834390005-5d4fb9bf3d32?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
-          },
-          products: [
-            {
-              id: 'product02',
-              name: 'SNÖBYAR 스뇌뷔아르',
-              category: '탁상 스탠드',
-              price: 59900,
-              inNew: true,
-            },
-          ],
-        },
-      ],
+      recommended: [],
+      newProducts: [],
     };
+  }
+
+  componentDidMount() {
+    fetch(API.PRODUCTS_MAIN)
+      .then(products => products.json())
+      .then(products => {
+        this.setState({ recommended: products.recommended });
+      });
+    fetch(API.NEW_PRODUCTS)
+      .then(news => news.json())
+      .then(news => this.setState({ newProducts: news }));
   }
 
   render() {
     const { newProducts } = this.state;
-    console.log(newProducts);
     return (
       <>
         <main className="main">
           <article>
             <div className="grid-container">
               <div className="row">
-                <div className="col-lg-1" />
+                <div className="col-lg-1 lg-only" />
                 <div className="col-lg-12 col-md-12">
                   <section className="promotion">
                     <div className="image_container">
@@ -81,13 +60,13 @@ class Main extends React.Component {
                 </div>
               </div>
               <section className="row">
-                <div className="col-lg-1" />
+                <div className="col-lg-1 lg-only" />
                 <div className="col-lg-12 col-md-12">
                   스크롤 박스 컴포넌트 부분
                 </div>
               </section>
               <section className="row">
-                <div className="col-lg-1" />
+                <div className="col-lg-1 lg-only" />
                 <div className="col-lg-12 col-md-12">
                   <header className="section_title">
                     <h2>신제품을 만나보세요</h2>
@@ -96,7 +75,7 @@ class Main extends React.Component {
                     </Link>
                   </header>
                 </div>
-                <div className="col-lg-1" />
+                <div className="col-lg-1 lg-only" />
                 {newProducts &&
                   newProducts.map(newProduct => (
                     <NewProduct
