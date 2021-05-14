@@ -1,13 +1,36 @@
 import React, { Component } from 'react';
 
 class ImgSlider extends Component {
+  constructor() {
+    super();
+    this.state = {
+      imgRight: 0,
+    };
+  }
+
+  //조건 : '이미지 개수 * W'로 나중에 수정하기!
+
+  goNext = () => {
+    const { imgRight } = this.state;
+    if (imgRight > -2250) {
+      this.setState({ imgRight: imgRight - W });
+    }
+  };
+
+  goPrev = () => {
+    const { imgRight } = this.state;
+    if (imgRight < 0) {
+      this.setState({ imgRight: imgRight + W });
+    }
+  };
+
   render() {
-    const { right, goNext, goPrev } = this.props;
+    const { imgRight } = this.state;
     return (
-      <div class="carousel-container">
+      <div className="carousel-container">
         <div
-          class="carousel-slide"
-          style={{ transform: `translateX(${right}px)` }}
+          className="carousel-slide"
+          style={{ transform: `translateX(${imgRight}px)` }}
         >
           <img
             alt="test"
@@ -35,10 +58,10 @@ class ImgSlider extends Component {
             id="firstClone"
           />
         </div>
-        <button onClick={goPrev} className="prevBtn">
+        <button onClick={this.goPrev} className="prevBtn">
           <i className="ic-chevron" />
         </button>
-        <button onClick={goNext} className="nextBtn">
+        <button onClick={this.goNext} className="nextBtn">
           <i className="ic-chevron" />
         </button>
       </div>
@@ -47,3 +70,5 @@ class ImgSlider extends Component {
 }
 
 export default ImgSlider;
+
+const W = 450;
