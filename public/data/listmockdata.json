@@ -1,0 +1,286 @@
+[
+  {
+    "id": 1,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m",
+      "https://www.ikea.com/kr/ko/images/products/solklin…ass-grey-clear-glass__0842258_pe781834_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/solklin…ass-grey-clear-glass__0842258_pe781834_s5.jpg?f=m",
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m",
+      "https://www.ikea.com/kr/ko/images/products/solklin…ass-grey-clear-glass__0842258_pe781834_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m",
+      "https://www.ikea.com/kr/ko/images/products/solklin…ass-grey-clear-glass__0842258_pe781834_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m",
+      "https://www.ikea.com/kr/ko/images/products/solklin…ass-grey-clear-glass__0842258_pe781834_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m",
+      "https://www.ikea.com/kr/ko/images/products/solklin…ass-grey-clear-glass__0842258_pe781834_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m",
+      "https://www.ikea.com/kr/ko/images/products/solklin…ass-grey-clear-glass__0842258_pe781834_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m",
+      "https://www.ikea.com/kr/ko/images/products/solklin…ass-grey-clear-glass__0842258_pe781834_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m",
+      "https://www.ikea.com/kr/ko/images/products/solklin…ass-grey-clear-glass__0842258_pe781834_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "멋있는 램프",
+    "category": "탁상스탠드",
+    "price": "5,000",
+    "isFavorite": false,
+    "rating": 4.5,
+    "img": [
+      "https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+    ]
+  }
+]

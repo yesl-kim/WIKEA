@@ -5,6 +5,7 @@ class Products extends React.Component {
   render() {
     return (
       <ul className="products">
+        {/* (arr.map(p => <li>p</li>)) */}
         <li className="product_row">{this.props.children}</li>
       </ul>
     );

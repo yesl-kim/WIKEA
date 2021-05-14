@@ -2,20 +2,38 @@ import React from 'react';
 import './Product.scss';
 
 class Product extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      img: props.img,
+    };
   }
 
   render() {
-    const { name, category, price, isFavorite, rating, img } = this.props;
+    const {
+      name,
+      category,
+      price,
+      isFavorite,
+      rating,
+      img,
+      classGrid,
+      children,
+    } = this.props;
 
     return (
-      <div className="product">
-        {this.props.children}
+      <div className={`product ${classGrid}`}>
+        {children}
         <button className="product_favorite">
           <i className="ic-heart" />
         </button>
-        <img alt="lamp" src={img} />
+        <img
+          alt={category}
+          src={img[0]}
+          onMouseOver={e => img[1] && (e.currentTarget.src = img[1])}
+          onMouseOut={e => (e.currentTarget.src = img[0])}
+        />
         <div className="products_explanation">
           <h2 className="produc_name">
             <span>{name}</span>

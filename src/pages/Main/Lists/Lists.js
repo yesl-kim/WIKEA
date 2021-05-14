@@ -10,105 +10,16 @@ class Lists extends React.Component {
     super();
 
     this.state = {
-      product: [
-        {
-          name: '멋있는 램프',
-          category: '탁상스탠드',
-          price: '5,000',
-          isFavorite: false,
-          rating: 4.5,
-          img: 'https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m',
-        },
-        {
-          name: '멋있는 램프',
-          category: '탁상스탠드',
-          price: '5,000',
-          isFavorite: false,
-          rating: 4.5,
-          img: 'https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m',
-        },
-        {
-          name: '멋있는 램프',
-          category: '탁상스탠드',
-          price: '5,000',
-          isFavorite: false,
-          rating: 4.5,
-          img: 'https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m',
-        },
-        {
-          name: '멋있는 램프',
-          category: '탁상스탠드',
-          price: '5,000',
-          isFavorite: false,
-          rating: 4.5,
-          img: 'https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m',
-        },
-        {
-          name: '멋있는 램프',
-          category: '탁상스탠드',
-          price: '5,000',
-          isFavorite: false,
-          rating: 4.5,
-          img: 'https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m',
-        },
-        {
-          name: '멋있는 램프',
-          category: '탁상스탠드',
-          price: '5,000',
-          isFavorite: false,
-          rating: 4.5,
-          img: 'https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m',
-        },
-        {
-          name: '멋있는 램프',
-          category: '탁상스탠드',
-          price: '5,000',
-          isFavorite: false,
-          rating: 4.5,
-          img: 'https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m',
-        },
-        {
-          name: '멋있는 램프',
-          category: '탁상스탠드',
-          price: '5,000',
-          isFavorite: false,
-          rating: 4.5,
-          img: 'https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m',
-        },
-        {
-          name: '멋있는 램프',
-          category: '탁상스탠드',
-          price: '5,000',
-          isFavorite: false,
-          rating: 4.5,
-          img: 'https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m',
-        },
-        {
-          name: '멋있는 램프',
-          category: '탁상스탠드',
-          price: '5,000',
-          isFavorite: false,
-          rating: 4.5,
-          img: 'https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m',
-        },
-        {
-          name: '멋있는 램프',
-          category: '탁상스탠드',
-          price: '5,000',
-          isFavorite: false,
-          rating: 4.5,
-          img: 'https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m',
-        },
-      ],
+      product: [],
     };
   }
 
   componentDidMount() {
-    fetch('http://10.58.1.239:5000/product/cat/table-lamps')
-      .then(res => res.json())
-      .then(res => {
+    fetch('http://localhost:3000/data/listmockdata.json')
+      .then(product => product.json())
+      .then(product => {
         this.setState({
-          data: res,
+          product,
         });
       });
   }
@@ -124,7 +35,7 @@ class Lists extends React.Component {
             <ItemExplanation />
             <ListBtn />
             <Products>
-              {/* {product.map(item => (
+              {product.map(item => (
                 <Product
                   name={item.name}
                   category={item.category}
@@ -132,8 +43,12 @@ class Lists extends React.Component {
                   isFavorite={item.isFavorite}
                   rating={item.rating}
                   img={item.img}
-                />
-              ))} */}
+                  classGrid="col-lg-3 col-md-4"
+                  key={item.id}
+                >
+                  <input type="checkbox" />
+                </Product>
+              ))}
             </Products>
           </div>
         </div>

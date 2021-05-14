@@ -3,6 +3,7 @@
 .product {
   position: relative;
   max-width: 25rem;
+  margin-bottom: 2rem;
   padding: 1rem;
   font-size: 0.875rem;
 
@@ -33,6 +34,7 @@
 
   img {
     width: 100%;
+    transition: all 0.3s ease;
   }
 
   .product_name {
