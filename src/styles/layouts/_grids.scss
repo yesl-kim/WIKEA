@@ -50,7 +50,6 @@ $lg-max-container: 1800px + $lg-margin-left + $lg-margin-right;
   @include responsive(D) {
     max-width: $lg-max-container;
     padding: 0 $lg-margin-right 0 $lg-margin-left;
-
     @for $i from 1 through $lg-columns {
       .col-lg-#{$i} {
         width: percentage($i / $lg-columns);
