@@ -17,14 +17,20 @@ $flex-map: (
   justify-content: _get-flex-value($jc);
   align-items: _get-flex-value($ai);
 }
+
 @mixin inline-flexbox($jc: center, $ai: center) {
   display: flex;
   justify-content: _get-flex-value($jc);
   align-items: _get-flex-value($ai);
 }
+
 @mixin column-flexbox($jc: center, $ai: center) {
   display: flex;
   justify-content: _get-flex-value($jc);
   flex-direction: column;
+<<<<<<< HEAD
+=======
+  justify-content: _get-flex-value($jc);
+>>>>>>> master
   align-items: _get-flex-value($ai);
 }
