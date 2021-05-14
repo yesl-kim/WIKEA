@@ -11,7 +11,6 @@ class Details extends React.Component {
     this.state = {
       modalOn: false,
       isLiked: false,
-      imgRight: 0,
     };
   }
 
@@ -22,22 +21,8 @@ class Details extends React.Component {
     });
   };
 
-  goNext = () => {
-    const { imgRight } = this.state;
-    if (imgRight > -2250) {
-      this.setState({ imgRight: imgRight - W });
-    }
-  };
-
-  goPrev = () => {
-    const { imgRight } = this.state;
-    if (imgRight < 0) {
-      this.setState({ imgRight: imgRight + W });
-    }
-  };
-
   render() {
-    const { modalOn, isLiked, imgRight } = this.state;
+    const { modalOn, isLiked } = this.state;
     return (
       <>
         <Message />
@@ -47,19 +32,10 @@ class Details extends React.Component {
           isLiked={isLiked}
           popUpLiked={this.popUpLiked}
         />
-        {modalOn && (
-          <ImgModal
-            right={imgRight}
-            goPrev={this.goPrev}
-            goNext={this.goNext}
-            handleModal={this.handleModal}
-          />
-        )}
+        {modalOn && <ImgModal handleModal={this.handleModal} />}
       </>
     );
   }
 }
 
 export default Details;
-
-const W = 450;
