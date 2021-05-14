@@ -3,11 +3,7 @@ import Breadcrumb from '../../../components/Breadcrumb/Breadcrumb';
 
 class Details extends React.Component {
   render() {
-    return (
-      <>
-        <Breadcrumb />
-      </>
-    );
+    return <Breadcrumb />;
   }
 }
 
