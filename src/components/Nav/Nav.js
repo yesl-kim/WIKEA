@@ -20,7 +20,6 @@ class Nav extends Component {
         '홈데코/장식품',
         '욕실',
         '야외용 제품',
-        '조명',
         '러그/매트/데크',
       ],
       subCategories: [
@@ -35,6 +34,13 @@ class Nav extends Component {
       ],
     };
   }
+
+  handleClick = e => {
+    e.preventDefault();
+    console.log(e.target.className);
+  };
+
+  openSubMenu = () => {};
 
   render() {
     const { categories, subCategories } = this.state;
@@ -57,6 +63,12 @@ class Nav extends Component {
                     <i className="ic-chevron" />
                   </li>
                 ))}
+                <li key="light" onClick={this.openSubMenu}>
+                  <Link to="/" role="button" onClick={this.handleClick}>
+                    조명
+                  </Link>
+                  <i className="ic-chevron" />
+                </li>
               </ul>
             </div>
             <div className="menu_promotion">
