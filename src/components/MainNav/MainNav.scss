@@ -19,34 +19,14 @@
   }
 
   .nav {
+    margin-right: 1.25rem;
     padding: 1.25rem 1rem 0 0;
     width: 15rem;
-
-    &.main_menu {
-      position: relative;
-      transition: margin 0.2s ease;
-
-      &.active {
-        margin-right: 320px;
-        border-right: 1px solid $--colour-neutral-grey-100;
-      }
-    }
+    border-right: 1px solid $--colour-neutral-grey-100;
 
     &.sub_menu {
-      position: absolute;
-      top: 0;
-      left: 100%;
       width: 320px;
       border-right: none;
-      visibility: hidden;
-      opacity: 0;
-      transform: translateX(1.25rem);
-      transition: opacity 0.1s ease;
-
-      &.active {
-        visibility: visible;
-        opacity: 1;
-      }
     }
 
     .nav_title {
@@ -85,6 +65,12 @@
           transform: rotate(-90deg);
           opacity: 0;
           transition: opacity 0.2s ease;
+        }
+
+        &.on {
+          i {
+            opacity: 1;
+          }
         }
       }
     }
