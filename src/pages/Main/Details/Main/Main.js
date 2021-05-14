@@ -4,7 +4,7 @@ import Product from '../../../../components/Product/Product';
 import ScrollBox from '../../../../components/ScrollBox/ScrollBox';
 import Star from '../../../../components/Star/Star.js';
 import ItemDetails from './ItemDetails/ItemDetails';
-import ItemImg from './ItemImg';
+import ItemImg from './ItemImg/ItemImg';
 import ItemInfo from './ItemInfo/ItemInfo';
 import './Main.scss';
 
