@@ -2,15 +2,13 @@ import React from 'react';
 import ItemExplanation from './ItemExplanation/ItemExplanation';
 import ListBtn from './ListBtn/ListBtn';
 import Products from './Products/Products';
-import Product from '../../../components/Product/Product';
 import './Lists.scss';
 
 class Lists extends React.Component {
   constructor() {
     super();
-
     this.state = {
-      product: [],
+      products: [],
     };
   }
 
@@ -25,7 +23,7 @@ class Lists extends React.Component {
   }
 
   render() {
-    const { product } = this.state;
+    const { products } = this.state;
 
     return (
       <main className="grid-container">
@@ -34,22 +32,7 @@ class Lists extends React.Component {
           <div className="col-lg-12 col-md-11">
             <ItemExplanation />
             <ListBtn />
-            <Products>
-              {product.map(item => (
-                <Product
-                  name={item.name}
-                  category={item.category}
-                  price={item.price}
-                  isFavorite={item.isFavorite}
-                  rating={item.rating}
-                  img={item.img}
-                  classGrid="col-lg-3 col-md-4"
-                  key={item.id}
-                >
-                  <input type="checkbox" />
-                </Product>
-              ))}
-            </Products>
+            <Products products={products} />
           </div>
         </div>
       </main>

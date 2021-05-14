@@ -5,7 +5,6 @@ import './ListBtn.scss';
 class ListBtn extends React.Component {
   constructor() {
     super();
-
     this.state = {
       isVisible: '',
     };
