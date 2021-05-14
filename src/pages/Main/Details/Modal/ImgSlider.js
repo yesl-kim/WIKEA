@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
+import URL from './imgData';
+import './ImgSlider.scss';
 
 class ImgSlider extends Component {
   constructor() {
     super();
     this.state = {
       imgRight: 0,
+      imgUrl: [],
     };
+  }
+
+  componentDidMount() {
+    this.setState({
+      imgUrl: URL,
+    });
   }
 
   //조건 : '이미지 개수 * W'로 나중에 수정하기!
@@ -32,31 +41,9 @@ class ImgSlider extends Component {
           className="carousel-slide"
           style={{ transform: `translateX(${imgRight}px)` }}
         >
-          <img
-            alt="test"
-            src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
-          />
-          <img
-            alt="test"
-            src="https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
-          />
-          <img
-            alt="test"
-            src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
-          />
-          <img
-            alt="test"
-            src="https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
-          />
-          <img
-            alt="test"
-            src="https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
-          />
-          <img
-            alt="test"
-            src="https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
-            id="firstClone"
-          />
+          {URL.map((url, idx) => {
+            return <img key={idx} alt="test" src={url} />;
+          })}
         </div>
         <button onClick={this.goPrev} className="prevBtn">
           <i className="ic-chevron" />
