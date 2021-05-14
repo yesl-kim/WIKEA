@@ -40,7 +40,7 @@ class Details extends React.Component {
         <Message />
         <Header />
         <Main
-          datails={details}
+          details={details}
           products={products}
           handleModal={this.handleModal}
           isLiked={isLiked}
