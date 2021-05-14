@@ -7,7 +7,7 @@ class ListBtn extends React.Component {
     super();
 
     this.state = {
-      isVisible: false,
+      isVisible: '',
     };
   }
 
@@ -15,7 +15,7 @@ class ListBtn extends React.Component {
     const { isVisible } = this.state;
 
     this.setState({
-      isExist: !isVisible ? 'visible' : '',
+      isVisible: isVisible === 'visible' ? '' : 'visible',
     });
   };
 
