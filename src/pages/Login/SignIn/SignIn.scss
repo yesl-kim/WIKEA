@@ -1,21 +1,5 @@
 @import '../../../styles/common.scss';
 
-@mixin flex-column-space-between {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-@mixin flex-column-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-$font-weight-400: 400;
-
-$font-weight-700: 700;
-
 .sign_in {
   display: flex;
   position: relative;
@@ -26,7 +10,7 @@ $font-weight-700: 700;
     transform: translateX(15px);
     color: $--color-light-gray;
     font-size: $font-size-24;
-    font-weight: $font-weight-400;
+    font-weight: 400;
 
     &:hover {
       opacity: 0.8;
@@ -35,7 +19,7 @@ $font-weight-700: 700;
   }
 
   .sign_in_aside {
-    @include flex-column-space-between;
+    @include column-flexbox(between, center);
     height: 100vh;
     padding: 30px;
     background-color: $--colour-brand-blue;
@@ -57,7 +41,7 @@ $font-weight-700: 700;
         margin-bottom: 20px;
         color: $--colour-brand-yellow;
         font-size: $font-size-24;
-        font-weight: $font-weight-700;
+        font-weight: 700;
       }
 
       .login_description,
@@ -65,14 +49,14 @@ $font-weight-700: 700;
         margin-bottom: 5px;
         color: $--color-light-gray;
         font-size: $font-size-12;
-        font-weight: $font-weight-400;
+        font-weight: 400;
       }
 
       .how_to_login_second {
         margin-top: 30px;
         color: $--color-light-gray;
         font-size: $font-size-12;
-        font-weight: $font-weight-700;
+        font-weight: 700;
       }
     }
 
@@ -80,14 +64,14 @@ $font-weight-700: 700;
       .homepage_address {
         color: $--color-light-gray;
         font-size: $font-size-12;
-        font-weight: $font-weight-400;
+        font-weight: 400;
       }
 
       .personal_info_policy {
         color: $--color-light-gray;
         border-bottom: 1px solid $--color-light-gray;
         font-size: $font-size-12;
-        font-weight: $font-weight-400;
+        font-weight: 400;
 
         &:hover {
           opacity: 0.8;
@@ -98,13 +82,13 @@ $font-weight-700: 700;
       .copyright_notice {
         color: $--color-light-gray;
         font-size: $font-size-12;
-        font-weight: $font-weight-400;
+        font-weight: 400;
       }
     }
   }
 
   .sign_in_main {
-    @include flex-column-center;
+    @include column-flexbox(center, start);
     width: 100vw;
     padding: 30px;
 
@@ -136,19 +120,29 @@ $font-weight-700: 700;
               font-size: 6px;
             }
           }
+
+          .id_invalid_comment {
+            padding: 0px 0px 5px;
+            color: $--colour-icon-favourite;
+            font-size: 6px;
+          }
+
+          .no_display_comment {
+            display: none;
+          }
         }
 
         .another_login_option {
           color: $--colour-border-dark;
           font-size: $font-size-14;
-          font-weight: $font-weight-400;
+          font-weight: 400;
         }
 
         .one_time_code_for_login {
           color: $--colour-border-dark;
           border-bottom: 1px solid $--colour-border-dark;
           font-size: $font-size-14;
-          font-weight: $font-weight-700;
+          font-weight: 700;
 
           &:hover {
             opacity: 0.8;
@@ -182,6 +176,16 @@ $font-weight-700: 700;
               font-size: 6px;
             }
           }
+
+          .pw_invalid_comment {
+            padding: 0px 0px 5px;
+            color: $--colour-icon-favourite;
+            font-size: 6px;
+          }
+
+          .no_display_comment {
+            display: none;
+          }
         }
 
         .ic-lock {
@@ -199,7 +203,7 @@ $font-weight-700: 700;
           color: $--colour-border-dark;
           border-bottom: 1px solid $--colour-border-dark;
           font-size: $font-size-14;
-          font-weight: $font-weight-700;
+          font-weight: 700;
 
           &:hover {
             opacity: 0.8;
@@ -218,7 +222,7 @@ $font-weight-700: 700;
         border: 1px solid $--colour-brand-blue;
         border-radius: 30px;
         font-size: $font-size-13;
-        font-weight: $font-weight-700;
+        font-weight: 700;
 
         &:hover {
           opacity: 0.8;
@@ -243,7 +247,7 @@ $font-weight-700: 700;
         border: 1px solid $--color-light-gray;
         border-radius: 30px;
         font-size: $font-size-13;
-        font-weight: $font-weight-700;
+        font-weight: 700;
 
         &:hover {
           opacity: 0.8;

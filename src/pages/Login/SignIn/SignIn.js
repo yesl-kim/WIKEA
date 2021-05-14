@@ -19,30 +19,46 @@ class SignIn extends React.Component {
     });
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    fetch('http://10.58.0.184:8000/user/signin', {
+  // handleSubmit = e => {
+  //   e.preventDefault();
+  //   fetch('http://10.58.6.62:8000/user/signin', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       email: this.state.idValue,
+  //       password: this.state.pwValue,
+  //     }),
+  //   })
+  //     .then(response => response.json())
+  //     // .then(result => console.log('결과: ', result));
+  //     .then(result => {
+  //       if (result.MESSAGE === 'SUCCESS') {
+  //         localStorage.setItem('token', result.token);
+  //         this.props.history.push('/');
+  //       } else {
+  //         alert('아이디나 비밀번호를 확인해주세요');
+  //       }
+  //     });
+  // };
+
+  goToMain = () => {
+    // this.props.history.push('/');
+    fetch('http://10.58.6.62:8000/user/signin', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.idValue,
         password: this.state.pwValue,
-        phonenumber: '010-3263-2769',
-        nickname: 'wecode1',
       }),
     })
       .then(response => response.json())
+      // .then(result => console.log('결과: ', result));
       .then(result => {
         if (result.MESSAGE === 'SUCCESS') {
           localStorage.setItem('token', result.token);
-          this.goToMain();
+          this.props.history.push('/');
         } else {
           alert('아이디나 비밀번호를 확인해주세요');
         }
       });
-  };
-
-  goToMain = () => {
-    this.props.history.push('/');
   };
 
   goToSignUp = () => {
@@ -92,7 +108,10 @@ class SignIn extends React.Component {
             </p>
           </footer>
         </aside>
-        <div className="sign_in_main" onSubmit={this.handleSubmit}>
+
+        {/* onSubmit={this.handleSubmit} */}
+
+        <div className="sign_in_main">
           <form>
             <div className="id_input_container">
               <div className="id_input_wrapper">
@@ -102,14 +121,23 @@ class SignIn extends React.Component {
                   name="idValue"
                   onChange={this.handleIdPwInput}
                 />
-                <label htmlFor="login_id" className={idValue ? 'typing' : ''}>
+                <label htmlFor="login_id" className={idValue && 'typing'}>
                   이메일 또는 휴대폰 번호
                 </label>
+                <p
+                  className={
+                    idValue ? 'id_invalid_comment' : 'no_display_comment'
+                  }
+                >
+                  유효한 이메일 또는 휴대폰 번호를 입력해주세요.
+                </p>
               </div>
-              <span className="another_login_option">다른 로그인 옵션: </span>
-              <span className="one_time_code_for_login">
-                일회용 코드로 로그인
-              </span>
+              <div>
+                <span className="another_login_option">다른 로그인 옵션: </span>
+                <span className="one_time_code_for_login">
+                  일회용 코드로 로그인
+                </span>
+              </div>
             </div>
             <div className="pw_input_container">
               <div className="pw_input_wrapper">
@@ -129,6 +157,13 @@ class SignIn extends React.Component {
                   className={`ic-lock ${pwValue ? '_show' : '_hide'}`}
                   onClick={this.showPassword}
                 />
+                <p
+                  className={
+                    pwValue ? 'pw_invalid_comment' : 'no_display_comment'
+                  }
+                >
+                  비밀번호는 최소 8자 이상을 입력해야 합니다.
+                </p>
               </div>
               <span className="finding_password">비밀번호 찾기</span>
             </div>
