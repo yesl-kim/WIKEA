@@ -1,0 +1,30 @@
+{
+  "id": 3,
+  "ko_name": "세삼프뢴",
+  "en_name": "SESAMFRÖN",
+  "stock": true,
+  "price": 4900,
+  "is_new": false,
+  "number": "604.881.87",
+  "details": {
+    "designer": "I Bermudez/E Strandmark",
+    "meterial": {
+      "물통": "유리",
+      "펌프": ["스테인리스스틸", "폴리프로필렌 플라스틱"]
+    },
+    "Packing": {
+      "길이": 17,
+      "무게": 0.21,
+      "지름": 8,
+      "패키지": 1
+    }
+  },
+  "Reviews": {
+    "total": 3,
+    "difficulty": 5,
+    "costPerformance": 4,
+    "quality": 2,
+    "appearance": 5,
+    "features": 3
+  }
+}
