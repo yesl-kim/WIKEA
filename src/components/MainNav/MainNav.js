@@ -9,7 +9,8 @@ class MainNav extends Component {
   constructor() {
     super();
     this.state = {
-      categories: {},
+      activeSubCategory: '',
+      categories: [],
       subCategories: {},
     };
   }
@@ -28,11 +29,13 @@ class MainNav extends Component {
   handleClick = e => {
     const { name } = e.target;
     e.preventDefault();
+    this.setState({
+      activeSubCategory: name,
+    });
   };
 
   render() {
-    const { categories, subCategories } = this.state;
-    console.log(categories);
+    const { activeSubCategory, categories, subCategories } = this.state;
     return (
       <SideModal direction="left" on={true}>
         <div className="main_nav_box">
@@ -42,7 +45,9 @@ class MainNav extends Component {
           <nav className="nav">
             <h2 className="nav_title">모든 제품</h2>
             <ul aria-label="모든 제품 하위 메뉴" className="menu_container">
-              <li>지속가능한 제품</li>
+              <li>
+                <Link to="/">지속가능한 제품</Link>
+              </li>
               {!!categories.length &&
                 categories.map((category, idx) => (
                   <li key={category + idx}>
@@ -73,12 +78,15 @@ class MainNav extends Component {
               </ul>
             </div>
           </nav>
-          {!!subCategories && (
+          {!!subCategories[activeSubCategory] && (
             <nav className="nav sub_menu">
-              <h2 className="nav_title">조명</h2>
+              <h2 className="nav_title">{activeSubCategory}</h2>
               <ul aria-label="조명 하위 메뉴" className="menu_container">
-                {subCategories.map((category, idx) => (
-                  <li key={idx}>
+                <li>
+                  <Link to="/">전체 보기</Link>
+                </li>
+                {subCategories[activeSubCategory].map((category, idx) => (
+                  <li key={activeSubCategory + idx}>
                     <Link to="/">{category}</Link>
                   </li>
                 ))}
