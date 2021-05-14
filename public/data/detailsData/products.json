@@ -3,6 +3,7 @@
     "id": 1,
     "name": "SESAMFRÖN 세삼프뢴",
     "desc": "화초물뿌리개, 유리, 25 cl",
+    "stock": true,
     "url": [
       "https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx",
       "https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx",
@@ -12,7 +13,28 @@
       "https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
     ],
     "price": 4900,
-    "totalScore": 3
+    "number": "604.881.87",
+    "details": {
+      "designer": "I Bermudez/E Strandmark",
+      "meterial": {
+        "물통": "유리",
+        "펌프": ["스테인리스스틸", "폴리프로필렌 플라스틱"]
+      },
+      "Packing": {
+        "길이": 17,
+        "무게": 0.21,
+        "지름": 8,
+        "패키지": 1
+      }
+    },
+    "Reviews": {
+      "total": 3,
+      "difficulty": 5,
+      "costPerformance": 4,
+      "quality": 2,
+      "appearance": 5,
+      "features": 3
+    }
   },
   {
     "id": 2,

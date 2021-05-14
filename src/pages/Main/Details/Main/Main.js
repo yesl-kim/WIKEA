@@ -1,6 +1,6 @@
 import React from 'react';
 import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb';
-import Product from '../../../../components/Product/Product';
+// import Product from '../../../../components/Product/Product';
 import ScrollBox from '../../../../components/ScrollBox/ScrollBox';
 import Star from '../../../../components/Star/Star.js';
 import ItemDetails from './ItemDetails/ItemDetails';
@@ -10,7 +10,7 @@ import './Main.scss';
 
 class Main extends React.Component {
   render() {
-    const { handleModal, popUpLiked, isLiked, details, products } = this.props;
+    const { handleModal, popUpLiked, isLiked, products } = this.props;
     return (
       <div className="main">
         <div className="grid-container">
@@ -18,7 +18,7 @@ class Main extends React.Component {
           <div className="row">
             <div className="col-lg-1"></div>
             <div className="col-lg-8 ">
-              <ItemImg handleModal={handleModal} />
+              <ItemImg products={products} handleModal={handleModal} />
               <ItemDetails />
             </div>
             <div className="col-sm-4 col-md-12 col-lg-4 ">
@@ -31,37 +31,27 @@ class Main extends React.Component {
               <ScrollBox>
                 <div className="recommandation">
                   <ol className="item-lists">
-                    {/* {products.map(item => )} */}
-                    <li>
-                      <button>
-                        <i className="ic-heart" />
-                      </button>
-                      <img
-                        alt="상품미리보기"
-                        src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
-                      />
-                      <div className="item-primary-info">
-                        <h1>
-                          <span>SESAMFRÖN 세삼프뢴</span>
-                          <p>화초물뿌리개, 유리, 25 cl</p>
-                        </h1>
-                        <div className="price">W 4,900</div>
-                        <Star />
-                      </div>
-                      <button>
-                        <i className="ic-cart" />
-                      </button>
-                    </li>
+                    {products.map((item, idx) => (
+                      <li key={idx}>
+                        <button>
+                          <i className="ic-heart" />
+                        </button>
+                        <img alt="상품미리보기" src={item.url} />
+                        <div className="item-primary-info">
+                          <h1>
+                            <span>{item.name}</span>
+                            <p>{item.desc}</p>
+                          </h1>
+                          <div className="price">W {item.price}</div>
+                          <Star />
+                        </div>
+                        <button>
+                          <i className="ic-cart" />
+                        </button>
+                      </li>
+                    ))}
                   </ol>
                 </div>
-              </ScrollBox>
-              <ScrollBox>
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
               </ScrollBox>
             </div>
           </div>
