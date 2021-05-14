@@ -1,6 +1,6 @@
 import React from 'react';
-import './Details.scss';
 import ImgSlider from './Modal/ImgSlider';
+import './Details.scss';
 
 class Details extends React.Component {
   constructor() {
