@@ -3,7 +3,7 @@
 .footer {
   @include flexbox(around, start);
   width: 100%;
-  padding: 150px 3rem;
+  padding: 150px 4rem;
   background-color: $--colour-bg-alternative;
 
   .footer_signup {
@@ -15,8 +15,8 @@
     p {
       line-height: 1.5;
 
-      a {
-        // margin-left: 10px;
+      .family_signup {
+        margin-left: 10px;
         border-bottom: 1px solid $--colour-text-dark;
       }
     }
