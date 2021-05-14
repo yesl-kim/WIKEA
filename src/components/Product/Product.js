@@ -2,13 +2,20 @@ import React from 'react';
 import './Product.scss';
 
 class Product extends React.Component {
-  constructor(props) {
-    super(props);
-
+  constructor() {
+    super();
     this.state = {
-      img: props.img,
+      favoriteBtn: false,
     };
   }
+
+  handleFavoriteBtn = () => {
+    const { favoriteBtn } = this.state;
+
+    this.setState({
+      favoriteBtn: !favoriteBtn,
+    });
+  };
 
   render() {
     const {
@@ -22,11 +29,25 @@ class Product extends React.Component {
       children,
     } = this.props;
 
+    const { favoriteBtn } = this.state;
+
+    const totalRating = () => {
+      const ratingIcons = [];
+      for (let i = 0; i <= this.props.rating - 1; i++) {
+        ratingIcons.push(<i key={i} className="ic-star" />);
+      }
+      if (rating % 1 > 0) {
+        ratingIcons.push(<i className="ic-cart" />);
+      }
+
+      return ratingIcons;
+    };
+
     return (
       <div className={`product ${classGrid}`}>
         {children}
-        <button className="product_favorite">
-          <i className="ic-heart" />
+        <button className="product_favorite" onClick={this.handleFavoriteBtn}>
+          <i className={`ic-heart ${favoriteBtn}`} />
         </button>
         <img
           alt={category}
@@ -43,12 +64,7 @@ class Product extends React.Component {
             <span>₩</span>
             {price}
           </div>
-          <div className="product_rating">
-            <i className="ic-star" />
-            <i className="ic-star" />
-            <i className="ic-star" />
-            <i className="ic-star" />
-          </div>
+          <div className="product_rating">{totalRating()}</div>
           <button className="product_shopping">
             <i className="ic-cart" />
           </button>

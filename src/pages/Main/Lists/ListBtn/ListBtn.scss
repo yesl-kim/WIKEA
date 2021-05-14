@@ -42,9 +42,9 @@
 
   .product_btn {
     @include flexbox(center end);
+    padding: 0.5rem;
     font-size: 0.75rem;
     font-weight: 600;
-    line-height: 1.5;
     cursor: pointer;
 
     span {
