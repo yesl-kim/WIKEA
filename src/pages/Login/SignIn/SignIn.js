@@ -19,29 +19,7 @@ class SignIn extends React.Component {
     });
   };
 
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   fetch('http://10.58.6.62:8000/user/signin', {
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       email: this.state.idValue,
-  //       password: this.state.pwValue,
-  //     }),
-  //   })
-  //     .then(response => response.json())
-  //     // .then(result => console.log('결과: ', result));
-  //     .then(result => {
-  //       if (result.MESSAGE === 'SUCCESS') {
-  //         localStorage.setItem('token', result.token);
-  //         this.props.history.push('/');
-  //       } else {
-  //         alert('아이디나 비밀번호를 확인해주세요');
-  //       }
-  //     });
-  // };
-
   goToMain = () => {
-    // this.props.history.push('/');
     fetch('http://10.58.6.62:8000/user/signin', {
       method: 'POST',
       body: JSON.stringify({
@@ -50,7 +28,6 @@ class SignIn extends React.Component {
       }),
     })
       .then(response => response.json())
-      // .then(result => console.log('결과: ', result));
       .then(result => {
         if (result.MESSAGE === 'SUCCESS') {
           localStorage.setItem('token', result.token);
@@ -79,7 +56,7 @@ class SignIn extends React.Component {
 
     return (
       <div className="sign_in">
-        <i className="ic-close" onClick={this.goToMain} />
+        <i className="ic-close" onClick={this.goToSignUp} />
         <aside className="sign_in_aside">
           <header>
             <img
@@ -108,8 +85,6 @@ class SignIn extends React.Component {
             </p>
           </footer>
         </aside>
-
-        {/* onSubmit={this.handleSubmit} */}
 
         <div className="sign_in_main">
           <form>
