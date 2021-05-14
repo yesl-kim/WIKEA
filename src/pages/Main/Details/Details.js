@@ -11,7 +11,19 @@ class Details extends React.Component {
     this.state = {
       modalOn: false,
       isLiked: false,
+      details: [],
+      products: [],
     };
+  }
+
+  componentDidMount() {
+    fetch('/data/detailsData/details.json')
+      .then(res => res.json())
+      .then(details => this.setState({ details }));
+
+    fetch('/data/detailsData/products.json')
+      .then(res => res.json())
+      .then(products => this.setState({ products }));
   }
 
   handleModal = () => {
@@ -22,12 +34,14 @@ class Details extends React.Component {
   };
 
   render() {
-    const { modalOn, isLiked } = this.state;
+    const { modalOn, isLiked, details, products } = this.state;
     return (
       <>
         <Message />
         <Header />
         <Main
+          datails={details}
+          products={products}
           handleModal={this.handleModal}
           isLiked={isLiked}
           popUpLiked={this.popUpLiked}

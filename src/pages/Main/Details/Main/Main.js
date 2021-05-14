@@ -10,7 +10,7 @@ import './Main.scss';
 
 class Main extends React.Component {
   render() {
-    const { handleModal, popUpLiked, isLiked } = this.props;
+    const { handleModal, popUpLiked, isLiked, details, products } = this.props;
     return (
       <div className="main">
         <div className="grid-container">
@@ -31,6 +31,7 @@ class Main extends React.Component {
               <ScrollBox>
                 <div className="recommandation">
                   <ol className="item-lists">
+                    {/* {products.map(item => )} */}
                     <li>
                       <button>
                         <i className="ic-heart" />
@@ -46,203 +47,6 @@ class Main extends React.Component {
                         </h1>
                         <div className="price">W 4,900</div>
                         <Star />
-                      </div>
-                      <button>
-                        <i className="ic-cart" />
-                      </button>
-                    </li>
-                    <li>
-                      <button>
-                        <i className="ic-heart" />
-                      </button>
-                      <img
-                        alt="상품미리보기"
-                        src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
-                      />
-                      <div className="item-primary-info">
-                        <h1>
-                          <span>SESAMFRÖN 세삼프뢴</span>
-                          <p>화초물뿌리개, 유리, 25 cl</p>
-                        </h1>
-                        <div className="price">W 4,900</div>
-                        <div className="rating-star">
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          (2)
-                        </div>
-                        <p>기타 옵션</p>
-                      </div>
-                      <button>
-                        <i className="ic-cart" />
-                      </button>
-                    </li>
-                    <li>
-                      <button>
-                        <i className="ic-heart" />
-                      </button>
-                      <img
-                        alt="상품미리보기"
-                        src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
-                      />
-                      <div className="item-primary-info">
-                        <h1>
-                          <span>SESAMFRÖN 세삼프뢴</span>
-                          <p>화초물뿌리개, 유리, 25 cl</p>
-                        </h1>
-                        <div className="price">W 4,900</div>
-                        <div className="rating-star">
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          (2)
-                        </div>
-                        <p>기타 옵션</p>
-                      </div>
-                      <button>
-                        <i className="ic-cart" />
-                      </button>
-                    </li>
-
-                    <li>
-                      <button>
-                        <i className="ic-heart" />
-                      </button>
-                      <img
-                        alt="상품미리보기"
-                        src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
-                      />
-                      <div className="item-primary-info">
-                        <h1>
-                          <span>SESAMFRÖN 세삼프뢴</span>
-                          <p>화초물뿌리개, 유리, 25 cl</p>
-                        </h1>
-                        <div className="price">W 4,900</div>
-                        <div className="rating-star">
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          (2)
-                        </div>
-                        <p>기타 옵션</p>
-                      </div>
-                      <button>
-                        <i className="ic-cart" />
-                      </button>
-                    </li>
-                    <li>
-                      <button>
-                        <i className="ic-heart" />
-                      </button>
-                      <img
-                        alt="상품미리보기"
-                        src="https://www.ikea.com/kr/ko/images/products/socker-watering-can-in-outdoor-galvanised__0635850_pe697471_s5.jpg?f=s"
-                      />
-                      <div className="item-primary-info">
-                        <h1>
-                          <span>SESAMFRÖN 세삼프뢴</span>
-                          <p>화초물뿌리개, 유리, 25 cl</p>
-                        </h1>
-                        <div className="price">W 4,900</div>
-                        <div className="rating-star">
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          (2)
-                        </div>
-                        <p>기타 옵션</p>
-                      </div>
-                      <button>
-                        <i className="ic-cart" />
-                      </button>
-                    </li>
-                    <li>
-                      <button>
-                        <i className="ic-heart" />
-                      </button>
-                      <img
-                        alt="상품미리보기"
-                        src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
-                      />
-                      <div className="item-primary-info">
-                        <h1>
-                          <span>SESAMFRÖN 세삼프뢴</span>
-                          <p>화초물뿌리개, 유리, 25 cl</p>
-                        </h1>
-                        <div className="price">W 4,900</div>
-                        <div className="rating-star">
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          (2)
-                        </div>
-                        <p>기타 옵션</p>
-                      </div>
-                      <button>
-                        <i className="ic-cart" />
-                      </button>
-                    </li>
-                    <li>
-                      <button>
-                        <i className="ic-heart" />
-                      </button>
-                      <img
-                        alt="상품미리보기"
-                        src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
-                      />
-                      <div className="item-primary-info">
-                        <h1>
-                          <span>SESAMFRÖN 세삼프뢴</span>
-                          <p>화초물뿌리개, 유리, 25 cl</p>
-                        </h1>
-                        <div className="price">W 4,900</div>
-                        <div className="rating-star">
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          (2)
-                        </div>
-                        <p>기타 옵션</p>
-                      </div>
-                      <button>
-                        <i className="ic-cart" />
-                      </button>
-                    </li>
-                    <li>
-                      <button>
-                        <i className="ic-heart" />
-                      </button>
-                      <img
-                        alt="상품미리보기"
-                        src="https://www.ikea.com/kr/ko/images/products/socker-greenhouse-white__0635683_pe697307_s5.jpg?f=xx"
-                      />
-                      <div className="item-primary-info">
-                        <h1>
-                          <span>SESAMFRÖN 세삼프뢴</span>
-                          <p>화초물뿌리개, 유리, 25 cl</p>
-                        </h1>
-                        <div className="price">W 4,900</div>
-                        <div className="rating-star">
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <i className="ic-star" />
-                          <span>(2)</span>
-                        </div>
-                        <p>기타 옵션</p>
                       </div>
                       <button>
                         <i className="ic-cart" />
