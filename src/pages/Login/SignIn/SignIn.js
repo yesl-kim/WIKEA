@@ -122,10 +122,7 @@ class SignIn extends React.Component {
                   name="pwValue"
                   onChange={this.handleIdPwInput}
                 />
-                <label
-                  htmlFor="login_password"
-                  className={pwValue ? 'typing' : ''}
-                >
+                <label htmlFor="login_password" className={pwValue && 'typing'}>
                   비밀번호
                 </label>
                 <i
