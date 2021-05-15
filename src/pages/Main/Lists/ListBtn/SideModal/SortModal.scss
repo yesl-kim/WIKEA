@@ -1,0 +1,46 @@
+@import '../../../../../styles/var.scss';
+
+.sort_modal {
+  width: 100%;
+  padding: 80px;
+  padding-top: 140px;
+
+  li {
+    @include column-flexbox(center, center);
+    margin-bottom: 40px;
+
+    .sort_btn {
+      @include flexbox(between, center);
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .sort_name {
+      @include column-flexbox(start, start);
+
+      span:first-child {
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+    }
+
+    .sort_box {
+      width: 95%;
+
+      .sort_lists {
+        width: 100%;
+
+        label {
+          @include flexbox(between, center);
+          width: 100%;
+          padding: 1rem 0;
+          font-size: 0.875rem;
+          font-weight: 500;
+          line-height: 1.57;
+          color: $--colour-text-default;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

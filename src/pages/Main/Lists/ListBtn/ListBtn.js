@@ -1,25 +1,36 @@
 import React from 'react';
 import Sortbox from './Sortbox/Sortbox';
+import SideModal from './SideModal/SideModal';
+import SortModal from './SideModal/SortModal';
 import './ListBtn.scss';
 
 class ListBtn extends React.Component {
   constructor() {
     super();
     this.state = {
-      isVisible: '',
+      sortboxVisible: '',
+      sideModalVisible: false,
     };
   }
 
   hideBox = () => {
-    const { isVisible } = this.state;
+    const { sortboxVisible } = this.state;
 
     this.setState({
-      isVisible: isVisible === 'visible' ? '' : 'visible',
+      sortboxVisible: sortboxVisible === 'visible' ? '' : 'visible',
+    });
+  };
+
+  handleSideModal = () => {
+    const { sideModalVisible } = this.state;
+
+    this.setState({
+      sideModalVisible: !sideModalVisible,
     });
   };
 
   render() {
-    const { isVisible } = this.state;
+    const { sortboxVisible, sideModalVisible } = this.state;
 
     return (
       <div className="btn_line">
@@ -28,7 +39,7 @@ class ListBtn extends React.Component {
             <span>비교</span>
           </button>
           <button
-            className={isVisible}
+            className={sortboxVisible}
             aria-label="분류 옵션보기"
             onClick={this.hideBox}
           >
@@ -52,7 +63,10 @@ class ListBtn extends React.Component {
           <button aria-label="필터 모달 표시 고객 평가">
             <span>고객 평가</span>
           </button>
-          <button aria-label="필터 모달 더보기, 더 지속 가능한 소재, 특가, 신재품, 시리즈">
+          <button
+            aria-label="필터 모달 더보기, 더 지속 가능한 소재, 특가, 신재품, 시리즈"
+            onClick={this.handleSideModal}
+          >
             <span>
               모든 필터
               <i className="ic-menu" />
@@ -64,7 +78,10 @@ class ListBtn extends React.Component {
           <span className="product_btn_product">제품</span>
           <span className="product_btn_showroom">디지털 쇼룸</span>
         </div>
-        <Sortbox className={isVisible} />
+        <Sortbox className={sortboxVisible} />
+        <SideModal on={sideModalVisible} direction="right">
+          <SortModal />
+        </SideModal>
       </div>
     );
   }
