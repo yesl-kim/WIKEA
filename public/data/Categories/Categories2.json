@@ -2,16 +2,19 @@
   {
     "id": "1",
     "name": "조명",
+    "path": "/lists",
     "sub_category": ["탁상 조명", "시스템 조명", "LED 조명"]
   },
   {
     "id": "2",
     "name": "침대/매트리스",
+    "path": "/lists",
     "sub_category": ["탁상 조명", "시스템 조명", "LED 조명"]
   },
   {
     "id": "3",
     "name": "수납/정리",
+    "path": "/lists",
     "sub_category": ["옷장", "서랍장", "장식장"]
   }
 ]

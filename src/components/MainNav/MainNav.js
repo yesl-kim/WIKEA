@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import SideModal from '../SideModal/SideModal';
 import { API } from '../../config';
 import './MainNav.scss';
+import Nav from '../Nav/Nav';
 
 class MainNav extends Component {
   constructor() {
@@ -39,35 +40,20 @@ class MainNav extends Component {
   render() {
     const { isSubCategoryOn, activeSubCategory, categories, subCategories } =
       this.state;
+    console.log(!!subCategories[activeSubCategory]);
     return (
       <SideModal direction="left" on={true}>
         <Link to="/" className="main_nav_logo">
           <img alt="wikea logo" src="http://placehold.it/90x36" />
         </Link>
         <div className="main_nav_box">
-          <nav
-            className={isSubCategoryOn ? 'nav main_menu on' : 'nav main_menu'}
+          <Nav
+            type="main"
+            on={isSubCategoryOn}
+            title="모든 제품"
+            list={categories}
+            handleSubNavOn={this.handleClick}
           >
-            <h2 className="nav_title">모든 제품</h2>
-            <ul aria-label="모든 제품 하위 메뉴" className="menu_container">
-              <li>
-                <Link to="/">지속가능한 제품</Link>
-              </li>
-              {!!categories.length &&
-                categories.map((category, idx) => (
-                  <li key={category + idx}>
-                    <Link
-                      to="/"
-                      role="button"
-                      name={category}
-                      onClick={this.handleClick}
-                    >
-                      {category}
-                    </Link>
-                    <i className="ic-chevron" />
-                  </li>
-                ))}
-            </ul>
             <div className="menu_promotion">
               <span>최근 본 제품</span>
               <ul className="promotion_list">
@@ -81,24 +67,14 @@ class MainNav extends Component {
                 </li>
               </ul>
             </div>
-          </nav>
-          {!!subCategories[activeSubCategory] && (
-            <nav
-              className={
-                isSubCategoryOn ? 'nav sub_menu on' : 'nav sub_menu on'
-              }
+          </Nav>
+          {!!activeSubCategory && (
+            <Nav
+              type="sub"
+              on={isSubCategoryOn}
+              title={activeSubCategory}
+              list={subCategories[activeSubCategory]}
             >
-              <h2 className="nav_title">{activeSubCategory}</h2>
-              <ul aria-label="조명 하위 메뉴" className="menu_container">
-                <li>
-                  <Link to="/">전체 보기</Link>
-                </li>
-                {subCategories[activeSubCategory].map((category, idx) => (
-                  <li key={activeSubCategory + idx}>
-                    <Link to="/">{category}</Link>
-                  </li>
-                ))}
-              </ul>
               <div className="menu_promotion">
                 <Link to="/">
                   <span className="promotion_image">
@@ -110,7 +86,7 @@ class MainNav extends Component {
                   <span>지속가능한 LED 전구 구매 가이드</span>
                 </Link>
               </div>
-            </nav>
+            </Nav>
           )}
         </div>
       </SideModal>
