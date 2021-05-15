@@ -26,7 +26,7 @@
       position: relative;
       transition: margin 0.2s ease;
 
-      &.active {
+      &.on {
         margin-right: 320px;
         border-right: 1px solid $--colour-neutral-grey-100;
       }
@@ -43,7 +43,7 @@
       transform: translateX(1.25rem);
       transition: opacity 0.1s ease;
 
-      &.active {
+      &.on {
         visibility: visible;
         opacity: 1;
       }

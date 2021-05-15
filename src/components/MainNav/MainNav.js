@@ -9,6 +9,7 @@ class MainNav extends Component {
   constructor() {
     super();
     this.state = {
+      isSubCategoryOn: false,
       activeSubCategory: '',
       categories: [],
       subCategories: {},
@@ -30,19 +31,23 @@ class MainNav extends Component {
     const { name } = e.target;
     e.preventDefault();
     this.setState({
+      isSubCategoryOn: true,
       activeSubCategory: name,
     });
   };
 
   render() {
-    const { activeSubCategory, categories, subCategories } = this.state;
+    const { isSubCategoryOn, activeSubCategory, categories, subCategories } =
+      this.state;
     return (
       <SideModal direction="left" on={true}>
+        <Link to="/" className="main_nav_logo">
+          <img alt="wikea logo" src="http://placehold.it/90x36" />
+        </Link>
         <div className="main_nav_box">
-          <Link to="/" className="logo">
-            <img alt="wikea logo" src="http://placehold.it/90x36" />
-          </Link>
-          <nav className="nav">
+          <nav
+            className={isSubCategoryOn ? 'nav main_menu on' : 'nav main_menu'}
+          >
             <h2 className="nav_title">모든 제품</h2>
             <ul aria-label="모든 제품 하위 메뉴" className="menu_container">
               <li>
@@ -63,7 +68,6 @@ class MainNav extends Component {
                   </li>
                 ))}
             </ul>
-
             <div className="menu_promotion">
               <span>최근 본 제품</span>
               <ul className="promotion_list">
@@ -79,7 +83,11 @@ class MainNav extends Component {
             </div>
           </nav>
           {!!subCategories[activeSubCategory] && (
-            <nav className="nav sub_menu">
+            <nav
+              className={
+                isSubCategoryOn ? 'nav sub_menu on' : 'nav sub_menu on'
+              }
+            >
               <h2 className="nav_title">{activeSubCategory}</h2>
               <ul aria-label="조명 하위 메뉴" className="menu_container">
                 <li>

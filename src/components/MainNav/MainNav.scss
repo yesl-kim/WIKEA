@@ -1,9 +1,19 @@
 @import '../../styles/var.scss';
 
+.main_nav_logo {
+  position: absolute;
+  top: 1.25rem;
+  left: 150px;
+  background-color: #fff;
+}
+
 .main_nav_box {
+  position: relative;
   display: flex;
   margin-top: 6.25rem;
   padding: 0 2rem 0 150px;
+  width: auto;
+  height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -11,22 +21,28 @@
     width: 100%;
   }
 
-  .logo {
-    position: absolute;
-    top: 1.25rem;
-    left: 150px;
-    background-color: #fff;
-  }
-
   .nav {
-    margin-right: 1.25rem;
-    padding: 1.25rem 1rem 0 0;
-    width: 15rem;
-    border-right: 1px solid $--colour-neutral-grey-100;
+    padding: 1.25rem 2rem 0 0;
+
+    &.main_menu {
+      max-width: 275px;
+      transition: margin 0.2s ease;
+
+      &.on {
+        margin-right: 320px;
+        border-right: 1px solid $--colour-neutral-grey-100;
+      }
+    }
 
     &.sub_menu {
+      position: absolute;
+      top: 0;
+      left: 100%;
       width: 320px;
-      border-right: none;
+
+      &.on {
+        left: calc(150px + 275px + 2rem);
+      }
     }
 
     .nav_title {
@@ -123,3 +139,11 @@
     }
   }
 }
+
+/*
+issue
+1. 서브 카테고리가 열릴 때 애니메이션 효과가 안먹히는 문제
+2. 서브 카테고리 밑에 프로모션 데이터를 어떻게 추가할지의 문제
+3. 받아온 데이터를 어떻게 가공할지의 문제
+  최악은 다시 처음 데이터 구조로 달라고 부탁하는 것....우석님 미안...
+*/

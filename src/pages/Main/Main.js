@@ -1,12 +1,12 @@
 import React from 'react';
-import Nav from '../../components/Nav/Nav';
+import MainNav from '../../components/MainNav/MainNav';
 import './Main.scss';
 
 class Main extends React.Component {
   render() {
     return (
       <>
-        <Nav />
+        <MainNav />
       </>
     );
   }
