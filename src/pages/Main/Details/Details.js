@@ -17,13 +17,14 @@ class Details extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/data/detailsData/details.json')
-      .then(res => res.json())
-      .then(details => this.setState({ details }));
-
     fetch('/data/detailsData/products.json')
       .then(res => res.json())
-      .then(products => this.setState({ products }));
+      .then(products =>
+        this.setState({
+          products: products,
+          details: products[0],
+        })
+      );
   }
 
   handleModal = () => {

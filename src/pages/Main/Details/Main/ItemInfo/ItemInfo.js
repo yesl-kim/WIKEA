@@ -4,10 +4,10 @@ import PrimaryInfo from './PrimaryInfo.js';
 
 class ItemInfo extends Component {
   render() {
-    const { isLiked, popUpLiked } = this.props;
+    const { isLiked, popUpLiked, details } = this.props;
     return (
       <div className="item-info sticky">
-        <PrimaryInfo />
+        <PrimaryInfo details={details} />
         <div className="item-btn-group">
           <button>구매하기</button>
           <button onClick={popUpLiked} className={`${isLiked ? 'liked' : ''}`}>

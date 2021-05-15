@@ -4,11 +4,13 @@ import './ItemDetails.scss';
 
 class ItemDetails extends Component {
   render() {
+    const { details } = this.props;
+
     return (
       <div className="item-details">
         <div className="item-summary">
           <span>제품 번호</span>
-          <span>064.881.87</span>
+          <span>{details && details.number}</span>
         </div>
         <hr />
         <button className="item-information box">

@@ -4,9 +4,12 @@ import './PrimaryInfo.scss';
 
 class PrimayInfo extends Component {
   render() {
+    const { details } = this.props;
+    console.log(details);
     return (
       <div className="item-primary-info">
-        <strong>NEW</strong>
+        <strong>{details.is_new ? 'NEW' : ''}</strong>
+
         <h1>
           <span>SESAMFRÖN 세삼프뢴</span>
           <p>화초물뿌리개, 유리, 25 cl</p>

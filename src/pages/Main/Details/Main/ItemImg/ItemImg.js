@@ -3,13 +3,12 @@ import './ItemImg.scss';
 
 class ItemImg extends Component {
   render() {
-    const { handleModal, products } = this.props;
-
+    const { handleModal, details } = this.props;
     return (
       <div>
         <div className="item-img">
-          {!!products.length &&
-            products[0].url.map((s, idx) => (
+          {!!details.url &&
+            details.url.map((s, idx) => (
               <img
                 key={idx}
                 onClick={handleModal}
