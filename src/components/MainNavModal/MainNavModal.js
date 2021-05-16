@@ -2,11 +2,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import SideModal from '../SideModal/SideModal';
+import AsideNav from '../AsideNav/AsideNav';
 import { API } from '../../config';
-import './MainNav.scss';
-import Nav from '../Nav/Nav';
+import './MainNavModal.scss';
 
-class MainNav extends Component {
+class MainNavModal extends Component {
   SUB_CATEGORY = {};
 
   constructor() {
@@ -21,14 +21,12 @@ class MainNav extends Component {
   componentDidMount() {
     fetch(API.CATEGORY)
       .then(categories => categories.json())
-      .then(categories => {
+      .then(res => {
         this.setState({
-          categories: categories,
+          categories: res.category_list,
         });
+        this.SUB_CATEGORY = res.sub_category_list;
       });
-    fetch(API.SUB_CATEGORY)
-      .then(subCatetories => subCatetories.json())
-      .then(subCat => (this.SUB_CATEGORY = subCat));
   }
 
   handleSubMenuClick = e => {
@@ -52,7 +50,7 @@ class MainNav extends Component {
           <img alt="wikea logo" src="http://placehold.it/90x36" />
         </Link>
         <div className="main_nav_box">
-          <Nav
+          <AsideNav
             type="main"
             on={isSubCategoryOn}
             title="모든 제품"
@@ -72,9 +70,9 @@ class MainNav extends Component {
                 </li>
               </ul>
             </div>
-          </Nav>
+          </AsideNav>
           {isSubCategoryOn && (
-            <Nav
+            <AsideNav
               type="sub"
               on={isSubCategoryOn}
               title={activeSubCategory}
@@ -92,7 +90,7 @@ class MainNav extends Component {
                   <span>지속가능한 LED 전구 구매 가이드</span>
                 </Link>
               </div>
-            </Nav>
+            </AsideNav>
           )}
         </div>
       </SideModal>
@@ -100,4 +98,4 @@ class MainNav extends Component {
   }
 }
 
-export default MainNav;
+export default MainNavModal;

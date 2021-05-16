@@ -1,14 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './Nav.scss';
+import './AsideNav.scss';
 
-class Nav extends Component {
+class AsideNav extends Component {
   render() {
     const { on, type, title, list, handleClick, children } = this.props;
     return (
-      <nav className={on ? `nav ${type}_menu on` : `nav ${type}_menu`}>
-        <h2 className="nav_title">{title}</h2>
+      <nav
+        className={on ? `aside_nav ${type}_menu on` : `aside_nav ${type}_menu`}
+      >
+        <h2 className="aside_nav_title">{title}</h2>
         <ul aria-label={`${title} 하위 메뉴`} className="menu_container">
           <li>
             <Link to="/">
@@ -36,4 +38,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default AsideNav;

@@ -1,17 +1,72 @@
-[
-  {
-    "id": "1",
-    "korean_name": "조명",
-    "eglish_name": "lamp"
-  },
-  {
-    "id": "2",
-    "korean_name": "침대/매트리스",
-    "eglish_name": "bed"
-  },
-  {
-    "id": "3",
-    "korean_name": "수납/정리",
-    "eglish_name": "storage"
+{
+  "category_list": [
+    {
+      "id": 1,
+      "korean_name": "조명",
+      "english_name": "lamps"
+    },
+    {
+      "id": 2,
+      "korean_name": "침대",
+      "english_name": "beds"
+    },
+    {
+      "id": 3,
+      "korean_name": "수납",
+      "english_name": "storages"
+    }
+  ],
+  "sub_category_list": {
+    "lamps": [
+      {
+        "id": 1,
+        "korean_name": "탁상스탠드",
+        "english_name": "table-lamps"
+      },
+      {
+        "id": 2,
+        "korean_name": "LED",
+        "english_name": "LED"
+      },
+      {
+        "id": 3,
+        "korean_name": "작업등",
+        "english_name": "work-lamps"
+      }
+    ],
+    "beds": [
+      {
+        "id": 4,
+        "korean_name": "더블/퀸/킹",
+        "english_name": "double-queen-king"
+      },
+      {
+        "id": 5,
+        "korean_name": "수납형",
+        "english_name": "beds-with-storage"
+      },
+      {
+        "id": 6,
+        "korean_name": "소파",
+        "english_name": "beds-with-sofa"
+      }
+    ],
+    "storages": [
+      {
+        "id": 7,
+        "korean_name": "큐브형",
+        "english_name": "cube-storage"
+      },
+      {
+        "id": 8,
+        "korean_name": "선반유닛",
+        "english_name": "shelving-units"
+      },
+      {
+        "id": 9,
+        "korean_name": "책장",
+        "english_name": "bookcases"
+      }
+    ]
   }
-]
+}

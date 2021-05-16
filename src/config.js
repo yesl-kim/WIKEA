@@ -1,6 +1,5 @@
-const IP = '10.58.6.62:8000';
+const IP = '192.168.0.28:8000';
 export const API = {
   SIGN_IN: `http://${IP}/users/signin`,
-  CATEGORY: '/data/Categories/Categories.json',
-  SUB_CATEGORY: '/data/Categories/SubCategories.json',
+  CATEGORY: `http://${IP}/product/main`,
 };

@@ -1,12 +1,12 @@
 import React from 'react';
-import MainNav from '../../components/MainNav/MainNav';
+import MainNavModal from '../../components/MainNavModal/MainNavModal';
 import './Main.scss';
 
 class Main extends React.Component {
   render() {
     return (
       <>
-        <MainNav />
+        <MainNavModal />
       </>
     );
   }
