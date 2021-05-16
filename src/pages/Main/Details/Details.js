@@ -24,6 +24,10 @@ class Details extends React.Component {
           details: products[0],
         })
       );
+
+    fetch('http://192.168.0.39:5000/product/nikelamp')
+      .then(res => res.json())
+      .then(result => console.log(result));
   }
 
   handleModal = () => {

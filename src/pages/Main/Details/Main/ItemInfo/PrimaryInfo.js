@@ -5,7 +5,7 @@ import './PrimaryInfo.scss';
 class PrimayInfo extends Component {
   render() {
     const { details } = this.props;
-    console.log(details);
+
     return (
       <div className="item-primary-info">
         <strong>{details.is_new ? 'NEW' : ''}</strong>
