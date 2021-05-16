@@ -5,7 +5,7 @@ import LINK_LINES from '../FooterList/FooterList';
 class FooterLine extends React.Component {
   render() {
     return LINK_LINES.map(line => (
-      <ul className="links">
+      <ul className="footerLine_links">
         <h4>{line.title}</h4>
         {line.links.map((link, index) => (
           <li key={index}>
