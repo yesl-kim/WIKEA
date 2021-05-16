@@ -14,9 +14,9 @@ class Product extends React.Component {
         </button>
         <img
           alt="제품이미지"
-          src="https://www.ikea.com/kr/ko/images/products/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
+          src="https://www.ikea.com/kr/ko/images/product/arstid-…ble-lamp-brass-white__0880725_pe617347_s5.jpg?f=m"
         />
-        <div className="products_explanation">
+        <div className="product_explanation">
           <h2 className="produc_name">
             <span>멋있는 램프</span>
           </h2>

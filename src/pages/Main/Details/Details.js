@@ -11,23 +11,28 @@ class Details extends React.Component {
     this.state = {
       modalOn: false,
       details: [],
-      products: [],
+      product: [],
     };
   }
 
   componentDidMount() {
-    fetch('/data/detailsData/products.json')
+    //서버 없을 때,
+    // fetch('/data/detailsData/test.json')
+    //   .then(res => res.json())
+    //   .then(product =>
+    //     this.setState({
+    //       product: product.product[0],
+    //       details: product.product[0].descriptions,
+    //     })
+    //   );
+    fetch('http://192.168.0.39:5000/product/p/nikelamp')
       .then(res => res.json())
-      .then(products =>
+      .then(product =>
         this.setState({
-          products: products,
-          details: products[0],
+          product: product.product[0],
+          details: product.product[0].descriptions,
         })
       );
-
-    fetch('http://192.168.0.39:5000/product/nikelamp')
-      .then(res => res.json())
-      .then(result => console.log(result));
   }
 
   handleModal = () => {
@@ -38,14 +43,15 @@ class Details extends React.Component {
   };
 
   render() {
-    const { modalOn, details, products } = this.state;
+    const { modalOn, details, product } = this.state;
+    console.log(product, details);
     return (
       <>
         <Message />
         <Header />
         <Main
           details={details}
-          products={products}
+          product={product}
           handleModal={this.handleModal}
         />
         {modalOn && (

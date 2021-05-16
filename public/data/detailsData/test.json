@@ -1,0 +1,36 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "korean_name": "\ub098\uc774\ud0a4\ub7a8\ud504",
+      "english_name": "nikelamp",
+      "stock": 15,
+      "is_new": true,
+      "url": "url",
+      "descriptions": [
+        {
+          "id": 1,
+          "content": "\ubd80\ub4dc\ub7fd\ub2e4",
+          "package": "\uc18c\ud615\ubc15\uc2a4",
+          "material": "\ud50c\ub77c\uc2a4\ud2f1",
+          "recycling": "\ubd84\ub9ac\uc218\uac70",
+          "product_id": 1
+        }
+      ]
+    }
+  ],
+  "recommend_list": [
+    {
+      "id": 3,
+      "korean_name": "\ub274\ubc1c\ub780\uc2a4\ub7a8\ud504",
+      "english_name": "newbalancelamp",
+      "stock": 30,
+      "price": "25000.00",
+      "special_price": "20000.00",
+      "is_new": false,
+      "is_online": true,
+      "series_id": 3,
+      "sub_category_id": 3
+    }
+  ]
+}

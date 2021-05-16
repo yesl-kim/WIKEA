@@ -3,14 +3,14 @@ import './ItemImg.scss';
 
 class ItemImg extends Component {
   render() {
-    const { handleModal, details } = this.props;
+    const { handleModal, product } = this.props;
     return (
       <div>
         <div className="item-img">
-          {!!details.url &&
-            details.url.map((s, idx) => (
+          {/* {!!product.url &&
+            product.url.map((s, idx) => (
               <img key={idx} onClick={handleModal} alt="상품이미지" src={s} />
-            ))}
+            ))} */}
         </div>
         <div className="sm-slide lg-hidden"></div>
       </div>

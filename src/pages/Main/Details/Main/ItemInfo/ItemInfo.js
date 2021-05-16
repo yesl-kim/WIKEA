@@ -20,11 +20,11 @@ class ItemInfo extends Component {
 
   render() {
     const { isLiked } = this.state;
-    const { details } = this.props;
+    const { product } = this.props;
     return (
       <>
         <div className="item-info sticky">
-          <PrimaryInfo details={details} />
+          <PrimaryInfo product={product} />
           <div className="item-btn-group">
             <button>구매하기</button>
             <button

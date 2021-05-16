@@ -10,7 +10,7 @@ import './Main.scss';
 
 class Main extends React.Component {
   render() {
-    const { handleModal, products, details } = this.props;
+    const { handleModal, product, details } = this.props;
 
     return (
       <div className="main">
@@ -19,20 +19,20 @@ class Main extends React.Component {
           <div className="row">
             <div className="col-lg-1"></div>
             <div className="col-sm-4 col-md-12 col-lg-8 ">
-              <ItemImg details={details} handleModal={handleModal} />
-              <ItemDetails details={details} />
+              <ItemImg product={product} handleModal={handleModal} />
+              <ItemDetails product={product} details={details} />
             </div>
             <div className="col-sm-4 col-md-12 col-lg-4 ">
-              <ItemInfo details={details} />
+              <ItemInfo product={product} />
             </div>
           </div>
           <div className="row">
             <div className="col-lg-1 lg-only" />
             <div className="col-lg-12">
-              <ScrollBox>
+              {/* <ScrollBox>
                 <div className="recommandation">
                   <ol className="item-lists">
-                    {products.map((item, idx) => (
+                    {product.map((item, idx) => (
                       <li key={idx}>
                         <button>
                           <i className="ic-heart" />
@@ -57,7 +57,7 @@ class Main extends React.Component {
               <ScrollBox>
                 <div className="recommandation">
                   <ol className="item-lists">
-                    {products.map((item, idx) => (
+                    {product.map((item, idx) => (
                       <li key={idx}>
                         <button>
                           <i className="ic-heart" />
@@ -82,7 +82,7 @@ class Main extends React.Component {
               <ScrollBox>
                 <div className="recommandation">
                   <ol className="item-lists">
-                    {products.map((item, idx) => (
+                    {product.map((item, idx) => (
                       <li key={idx}>
                         <button>
                           <i className="ic-heart" />
@@ -103,7 +103,7 @@ class Main extends React.Component {
                     ))}
                   </ol>
                 </div>
-              </ScrollBox>
+              </ScrollBox>*/}
             </div>
           </div>
         </div>

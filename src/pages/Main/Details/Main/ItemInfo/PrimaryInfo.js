@@ -4,17 +4,20 @@ import './PrimaryInfo.scss';
 
 class PrimayInfo extends Component {
   render() {
-    const { details } = this.props;
+    const { product } = this.props;
 
     return (
       <div className="item-primary-info">
-        <strong>{details.is_new ? 'NEW' : ''}</strong>
+        <strong>{product.is_new ? 'NEW' : ''}</strong>
 
         <h1>
-          <span>SESAMFRÖN 세삼프뢴</span>
+          <span>
+            {product.english_name}
+            {product.korean_name}
+          </span>
           <p>화초물뿌리개, 유리, 25 cl</p>
         </h1>
-        <div className="price">W 4,900</div>
+        <div className="price">W {product.price}</div>
         <Star />
       </div>
     );
