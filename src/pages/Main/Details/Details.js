@@ -3,6 +3,8 @@ import Message from '../../../components/Header/Message';
 import Header from '../../../components/Header/Header';
 import Main from './Main/Main.js';
 import ImgModal from './Modal/ImgModal';
+import SideModal from '../../../components/SideModal/SideModal.js';
+import DetailsModal from '../Details/Modal/DetailsModal.js';
 import './Details.scss';
 
 class Details extends React.Component {
@@ -10,6 +12,7 @@ class Details extends React.Component {
     super();
     this.state = {
       modalOn: false,
+      on: false,
       details: [],
       product: [],
     };
@@ -17,15 +20,7 @@ class Details extends React.Component {
 
   componentDidMount() {
     //서버 없을 때,
-    // fetch('/data/detailsData/test.json')
-    //   .then(res => res.json())
-    //   .then(product =>
-    //     this.setState({
-    //       product: product.product[0],
-    //       details: product.product[0].descriptions,
-    //     })
-    //   );
-    fetch('http://192.168.0.39:5000/product/p/nikelamp')
+    fetch('/data/detailsData/test.json')
       .then(res => res.json())
       .then(product =>
         this.setState({
@@ -33,6 +28,14 @@ class Details extends React.Component {
           details: product.product[0].descriptions,
         })
       );
+    // fetch('http://192.168.0.39:5000/product/p/nikelamp')
+    //   .then(res => res.json())
+    //   .then(product =>
+    //     this.setState({
+    //       product: product.product[0],
+    //       details: product.product[0].descriptions,
+    //     })
+    //   );
   }
 
   handleModal = () => {
@@ -42,9 +45,15 @@ class Details extends React.Component {
     });
   };
 
+  handleSideModal = () => {
+    const { on } = this.state;
+    this.setState({
+      on: !on,
+    });
+  };
+
   render() {
-    const { modalOn, details, product } = this.state;
-    console.log(product, details);
+    const { modalOn, on, details, product } = this.state;
     return (
       <>
         <Message />
@@ -53,9 +62,20 @@ class Details extends React.Component {
           details={details}
           product={product}
           handleModal={this.handleModal}
+          handleSideModal={this.handleSideModal}
         />
         {modalOn && (
           <ImgModal details={details} handleModal={this.handleModal} />
+        )}
+
+        {on && (
+          <SideModal
+            handleSideModalOn={this.handleSideModal}
+            on={on}
+            direction="right"
+          >
+            <DetailsModal details={details} />
+          </SideModal>
         )}
       </>
     );

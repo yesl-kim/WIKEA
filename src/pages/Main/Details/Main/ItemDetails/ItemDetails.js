@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Star from '../../../../../components/Star/Star.js';
+
 import './ItemDetails.scss';
 
 class ItemDetails extends Component {
   render() {
-    const { product, details } = this.props;
+    const { product, handleSideModal } = this.props;
 
     return (
       <div className="item-details">
@@ -13,9 +14,10 @@ class ItemDetails extends Component {
           <span>{product && product.id}</span>
         </div>
         <hr />
-        <button className="item-information box">
+        <button onClick={handleSideModal} className="item-information box">
           <span>제품 설명</span>
         </button>
+
         <hr />
         <button className="item-size box">
           <span>제품 크기</span>

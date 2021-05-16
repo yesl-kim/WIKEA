@@ -7,10 +7,10 @@ class ItemImg extends Component {
     return (
       <div>
         <div className="item-img">
-          {/* {!!product.url &&
+          {!!product.url &&
             product.url.map((s, idx) => (
               <img key={idx} onClick={handleModal} alt="상품이미지" src={s} />
-            ))} */}
+            ))}
         </div>
         <div className="sm-slide lg-hidden"></div>
       </div>

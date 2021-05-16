@@ -10,8 +10,7 @@ import './Main.scss';
 
 class Main extends React.Component {
   render() {
-    const { handleModal, product, details } = this.props;
-
+    const { handleModal, handleSideModal, product, details } = this.props;
     return (
       <div className="main">
         <div className="grid-container">
@@ -20,7 +19,11 @@ class Main extends React.Component {
             <div className="col-lg-1"></div>
             <div className="col-sm-4 col-md-12 col-lg-8 ">
               <ItemImg product={product} handleModal={handleModal} />
-              <ItemDetails product={product} details={details} />
+              <ItemDetails
+                handleSideModal={handleSideModal}
+                product={product}
+                details={details}
+              />
             </div>
             <div className="col-sm-4 col-md-12 col-lg-4 ">
               <ItemInfo product={product} />
