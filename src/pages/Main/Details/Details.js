@@ -47,7 +47,9 @@ class Details extends React.Component {
           isLiked={isLiked}
           popUpLiked={this.popUpLiked}
         />
-        {modalOn && <ImgModal handleModal={this.handleModal} />}
+        {modalOn && (
+          <ImgModal details={details} handleModal={this.handleModal} />
+        )}
       </>
     );
   }

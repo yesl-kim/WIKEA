@@ -25,6 +25,7 @@ class ItemDetails extends Component {
           <span>상품평</span>
           <Star />
         </button>
+        <hr />
       </div>
     );
   }

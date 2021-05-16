@@ -58,6 +58,56 @@ class Main extends React.Component {
                   </ol>
                 </div>
               </ScrollBox>
+              <ScrollBox>
+                <div className="recommandation">
+                  <ol className="item-lists">
+                    {products.map((item, idx) => (
+                      <li key={idx}>
+                        <button>
+                          <i className="ic-heart" />
+                        </button>
+                        <img alt="상품미리보기" src={item.url} />
+                        <div className="item-primary-info">
+                          <h1>
+                            <span>{item.name}</span>
+                            <p>{item.desc}</p>
+                          </h1>
+                          <div className="price">W {item.price}</div>
+                          <Star />
+                        </div>
+                        <button>
+                          <i className="ic-cart" />
+                        </button>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              </ScrollBox>
+              <ScrollBox>
+                <div className="recommandation">
+                  <ol className="item-lists">
+                    {products.map((item, idx) => (
+                      <li key={idx}>
+                        <button>
+                          <i className="ic-heart" />
+                        </button>
+                        <img alt="상품미리보기" src={item.url} />
+                        <div className="item-primary-info">
+                          <h1>
+                            <span>{item.name}</span>
+                            <p>{item.desc}</p>
+                          </h1>
+                          <div className="price">W {item.price}</div>
+                          <Star />
+                        </div>
+                        <button>
+                          <i className="ic-cart" />
+                        </button>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              </ScrollBox>
             </div>
           </div>
         </div>

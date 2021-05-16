@@ -10,13 +10,17 @@ class Routes extends React.Component {
   render() {
     return (
       <Router>
+        {/* <Header/> */}
+        {/* <Aside/> */}
         <Switch>
+          {/* <Main>{this.props.children}</Main> */}
           <Route exact path="/" component={Main} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/lists" component={Lists} />
           <Route exact path="/details" component={Details} />
         </Switch>
+        {/* <Footer/> */}
       </Router>
     );
   }
