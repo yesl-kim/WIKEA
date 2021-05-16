@@ -10,7 +10,7 @@ class Lists extends React.Component {
     this.state = {
       products: [],
       offset: 0,
-      LIMIT: 10,
+      limit: 10,
       showMoreBar: 50,
     };
   }
@@ -27,14 +27,14 @@ class Lists extends React.Component {
   // }
 
   // fetchProduct = () => {
-  //   const { offset, LIMIT, showMoreBar } = this.state;
+  //   const { offset, limit, showMoreBar } = this.state;
 
-  //   const nextOffset = LIMIT + offset;
+  //   const nextLimit = limit + offset;
   //   fetch(
   //     `http://localhost:3000/data/listmockdata.json/products?offset=${offset}&limit=${nextOffset}`
   //   )
   //     .then(res => res.json())
-  //     .then(product => this.setState({ product, offset: nextOffset, showMoreBar: !showMoreBar }));
+  //     .then(product => this.setState({ product, limit: nextLimit, showMoreBar: 100 }));
   // };
 
   render() {
@@ -52,7 +52,7 @@ class Lists extends React.Component {
               <div className="show_more_bar">
                 <div
                   className="show_more_charge_half"
-                  style={{ width: showMoreBar }}
+                  style={{ width: `${showMoreBar}%` }}
                 ></div>
               </div>
               <button
