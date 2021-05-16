@@ -23,7 +23,7 @@
     visibility: hidden;
   }
 
-  .product_favorite .true {
+  .product_favorite .isFavorite {
     visibility: visible;
     color: $--colour-icon-favourite;
   }
@@ -36,9 +36,24 @@
     border-bottom: 1px solid $--colour-border-dark;
   }
 
-  img {
-    width: 100%;
-    transition: all 0.3s ease;
+  &:hover .product_images img:last-child {
+    opacity: 1;
+  }
+
+  .product_images {
+    position: relative;
+
+    img {
+      width: 100%;
+      transition: all 0.3s ease;
+
+      &:last-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+    }
   }
 
   .product_name {

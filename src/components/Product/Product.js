@@ -18,23 +18,15 @@ class Product extends React.Component {
   };
 
   render() {
-    const {
-      name,
-      category,
-      price,
-      isFavorite,
-      rating,
-      img,
-      classGrid,
-      children,
-    } = this.props;
+    const { name, category, price, isNew, rating, img, classGrid, children } =
+      this.props;
 
     const { favoriteBtn } = this.state;
 
     const totalRating = () => {
       const ratingIcons = [];
       for (let i = 0; i <= this.props.rating - 1; i++) {
-        ratingIcons.push(<i key={i} className="ic-star" />);
+        ratingIcons.push(<i className="ic-star" />);
       }
       if (rating % 1 > 0) {
         ratingIcons.push(<i className="ic-cart" />);
@@ -47,14 +39,12 @@ class Product extends React.Component {
       <div className={`product ${classGrid}`}>
         {children}
         <button className="product_favorite" onClick={this.handleFavoriteBtn}>
-          <i className={`ic-heart ${favoriteBtn}`} />
+          <i className={favoriteBtn ? 'ic-heart isFavorite' : 'ic-heart'} />
         </button>
-        <img
-          alt={category}
-          src={img[0]}
-          onMouseOver={e => img[1] && (e.currentTarget.src = img[1])}
-          onMouseOut={e => (e.currentTarget.src = img[0])}
-        />
+        <div className="product_images">
+          <img alt={category} src={img[0]} />
+          <img alt={category} src={img[1]} />
+        </div>
         <div className="products_explanation">
           <h2 className="produc_name">
             <span>{name}</span>
