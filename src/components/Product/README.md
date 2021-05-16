@@ -19,7 +19,7 @@
 - name : 제품 명
 - category : 제품 카테고리
 - price : 제품 가격
-- isFavorite : 제품의 위시리스트 상태
+- isNew : 제품의 신상품 여부
 - rating : 제품 별점
 - img : 제품 url
 
