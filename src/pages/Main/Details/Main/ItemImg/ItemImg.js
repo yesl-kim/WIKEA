@@ -12,7 +12,7 @@ class ItemImg extends Component {
               <img
                 key={idx}
                 onClick={handleModal}
-                className="lg-only"
+                // className="lg-only"
                 alt="상품이미지"
                 src={s}
               />

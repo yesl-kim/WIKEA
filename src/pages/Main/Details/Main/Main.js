@@ -18,7 +18,7 @@ class Main extends React.Component {
           <Breadcrumb />
           <div className="row">
             <div className="col-lg-1"></div>
-            <div className="col-lg-8 ">
+            <div className="col-sm-4 col-md-12 col-lg-8 ">
               <ItemImg details={details} handleModal={handleModal} />
               <ItemDetails details={details} />
             </div>
