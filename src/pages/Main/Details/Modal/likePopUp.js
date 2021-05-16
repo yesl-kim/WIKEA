@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-import './likePopUp.scss';
+import './LikePopUp.scss';
 
-class likePopUp extends Component {
+class LikePopUp extends Component {
   render() {
     const { isLiked } = this.props;
     return (
       <>
-        {isLiked ? (
-          <div className="popup_liked invisible">위시리스트에 담겼습니다.</div>
-        ) : (
-          <div className="popup_liked invisible">
-            즐겨찾기 목록에서 삭제되었습니다.
-          </div>
-        )}
+        <div className="popup_liked">
+          {isLiked
+            ? '위시리스트에 담겼습니다.'
+            : '즐겨찾기 목록에서 삭제되었습니다.'}
+        </div>
       </>
     );
   }
 }
 
-export default likePopUp;
+export default LikePopUp;

@@ -21,13 +21,6 @@ class Details extends React.Component {
     });
   };
 
-  popUpLiked = e => {
-    const { isLiked } = this.state;
-    this.setState({
-      isLiked: !isLiked,
-    });
-  };
-
   removePopUp = () => {
     const { isLiked } = this.state;
     if (isLiked === true) {

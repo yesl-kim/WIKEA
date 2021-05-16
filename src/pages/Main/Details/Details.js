@@ -10,7 +10,6 @@ class Details extends React.Component {
     super();
     this.state = {
       modalOn: false,
-      isLiked: false,
       details: [],
       products: [],
     };
@@ -35,7 +34,7 @@ class Details extends React.Component {
   };
 
   render() {
-    const { modalOn, isLiked, details, products } = this.state;
+    const { modalOn, details, products } = this.state;
     return (
       <>
         <Message />
@@ -44,8 +43,6 @@ class Details extends React.Component {
           details={details}
           products={products}
           handleModal={this.handleModal}
-          isLiked={isLiked}
-          popUpLiked={this.popUpLiked}
         />
         {modalOn && (
           <ImgModal details={details} handleModal={this.handleModal} />
