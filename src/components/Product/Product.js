@@ -46,7 +46,8 @@ class Product extends React.Component {
           <img alt={category} src={img[1]} />
         </div>
         <div className="products_explanation">
-          <h2 className="produc_name">
+          <div className="product_new">{isNew ? 'New' : ''}</div>
+          <h2 className="product_name">
             <span>{name}</span>
           </h2>
           <div className="product_size">{category}</div>

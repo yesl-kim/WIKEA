@@ -6,6 +6,7 @@
   margin-bottom: 2rem;
   padding: 1rem;
   font-size: 0.875rem;
+  cursor: pointer;
 
   input {
     position: absolute;
@@ -56,14 +57,18 @@
     }
   }
 
+  .product_new {
+    height: 15px;
+    color: $--colour-icon-favourite;
+  }
+
   .product_name {
     font-size: 0.875rem;
-    cursor: pointer;
   }
 
   .products_explanation {
     position: relative;
-    margin-top: 20px;
+    margin-top: 10px;
 
     div {
       margin-top: 7px;
