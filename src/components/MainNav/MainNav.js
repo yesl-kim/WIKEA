@@ -7,28 +7,35 @@ import './MainNav.scss';
 import Nav from '../Nav/Nav';
 
 class MainNav extends Component {
+  SUB_CATEGORY = {};
+
   constructor() {
     super();
     this.state = {
       isSubCategoryOn: false,
       activeSubCategory: '',
       categories: [],
-      subCategories: {},
     };
   }
 
   componentDidMount() {
     fetch(API.CATEGORY)
-      .then(res => res.json())
-      .then(res => {
+      .then(categories => categories.json())
+      .then(categories => {
         this.setState({
-          categories: Object.keys(res),
-          subCategories: res,
+          categories: categories,
         });
       });
+    fetch(API.SUB_CATEGORY)
+      .then(subCatetories => subCatetories.json())
+      .then(subCat => (this.SUB_CATEGORY = subCat));
   }
 
-  handleClick = e => {
+  handleSubMenuClick = e => {
+    e.preventDefault();
+  };
+
+  handleSubNavOn = e => {
     const { name } = e.target;
     e.preventDefault();
     this.setState({
@@ -38,9 +45,7 @@ class MainNav extends Component {
   };
 
   render() {
-    const { isSubCategoryOn, activeSubCategory, categories, subCategories } =
-      this.state;
-    console.log(!!subCategories[activeSubCategory]);
+    const { isSubCategoryOn, activeSubCategory, categories } = this.state;
     return (
       <SideModal direction="left" on={true}>
         <Link to="/" className="main_nav_logo">
@@ -52,7 +57,7 @@ class MainNav extends Component {
             on={isSubCategoryOn}
             title="모든 제품"
             list={categories}
-            handleSubNavOn={this.handleClick}
+            handleClick={this.handleSubNavOn}
           >
             <div className="menu_promotion">
               <span>최근 본 제품</span>
@@ -68,12 +73,13 @@ class MainNav extends Component {
               </ul>
             </div>
           </Nav>
-          {!!activeSubCategory && (
+          {isSubCategoryOn && (
             <Nav
               type="sub"
               on={isSubCategoryOn}
               title={activeSubCategory}
-              list={subCategories[activeSubCategory]}
+              list={this.SUB_CATEGORY[activeSubCategory]}
+              handleClick={this.handleSubMenuClick}
             >
               <div className="menu_promotion">
                 <Link to="/">

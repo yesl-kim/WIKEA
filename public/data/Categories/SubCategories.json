@@ -1,0 +1,53 @@
+{
+  "조명": [
+    {
+      "id": "1",
+      "korean_name": "스텐드 조명",
+      "eglish_name": "lamp"
+    },
+    {
+      "id": "2",
+      "korean_name": "LED 전구",
+      "eglish_name": "lamp"
+    },
+    {
+      "id": "3",
+      "korean_name": "시스템 조명",
+      "eglish_name": "lamp"
+    }
+  ],
+  "침대/매트리스": [
+    {
+      "id": "1",
+      "korean_name": "침대",
+      "eglish_name": "bed"
+    },
+    {
+      "id": "2",
+      "korean_name": "소파",
+      "eglish_name": "bed"
+    },
+    {
+      "id": "3",
+      "korean_name": "매트리스",
+      "eglish_name": "bed"
+    }
+  ],
+  "수납/정리": [
+    {
+      "id": "1",
+      "korean_name": "서랍장",
+      "eglish_name": "storage"
+    },
+    {
+      "id": "2",
+      "korean_name": "옷장",
+      "eglish_name": "storage"
+    },
+    {
+      "id": "3",
+      "korean_name": "장식장",
+      "eglish_name": "storage"
+    }
+  ]
+}

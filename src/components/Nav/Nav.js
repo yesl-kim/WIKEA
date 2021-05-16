@@ -5,7 +5,7 @@ import './Nav.scss';
 
 class Nav extends Component {
   render() {
-    const { on, type, title, list, handleSubNavOn, children } = this.props;
+    const { on, type, title, list, handleClick, children } = this.props;
     return (
       <nav className={on ? `nav ${type}_menu on` : `nav ${type}_menu`}>
         <h2 className="nav_title">{title}</h2>
@@ -16,10 +16,15 @@ class Nav extends Component {
             </Link>
           </li>
           {!!list.length &&
-            list.map((item, idx) => (
-              <li key={item + idx}>
-                <Link to="/" role="button" name={item} onClick={handleSubNavOn}>
-                  {item}
+            list.map(item => (
+              <li key={item.id}>
+                <Link
+                  to="/"
+                  role="button"
+                  name={item.korean_name}
+                  onClick={handleClick}
+                >
+                  {item.korean_name}
                 </Link>
                 <i className="ic-chevron" />
               </li>
