@@ -47,9 +47,11 @@ class ItemInfo extends Component {
           </div>
         </div>
         {isLiked ? (
-          <LikePopUp status={LIKED} />
+          <LikePopUp>{<span>위시리스트에 담겼습니다.</span>}</LikePopUp>
         ) : (
-          <LikePopUp status={DISLIKED} />
+          <LikePopUp>
+            {<span>즐겨찾기 목록에서 삭제되었습니다.</span>}
+          </LikePopUp>
         )}
       </>
     );
@@ -58,5 +60,5 @@ class ItemInfo extends Component {
 
 export default ItemInfo;
 
-const LIKED = true;
-const DISLIKED = false;
+// const LIKED = true;
+// const DISLIKED = false;
