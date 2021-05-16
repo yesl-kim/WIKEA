@@ -47,9 +47,9 @@ class ItemInfo extends Component {
           </div>
         </div>
         {isLiked ? (
-          <LikePopUp isLiked={isLiked} />
+          <LikePopUp status={LIKED} />
         ) : (
-          <LikePopUp isLiked={isLiked} />
+          <LikePopUp status={DISLIKED} />
         )}
       </>
     );
@@ -58,5 +58,5 @@ class ItemInfo extends Component {
 
 export default ItemInfo;
 
-// const LIKED = true;
-// const DISLIKED = false;
+const LIKED = true;
+const DISLIKED = false;
