@@ -3,7 +3,12 @@ import './LikePopUp.scss';
 
 class LikePopUp extends Component {
   render() {
-    return <div className="popup_liked invisible">{this.props.children}</div>;
+    const { isLiked } = this.props;
+    return (
+      <div className={`popup_liked ${isLiked ? '' : 'invisible'}`}>
+        {this.props.children}
+      </div>
+    );
   }
 }
 

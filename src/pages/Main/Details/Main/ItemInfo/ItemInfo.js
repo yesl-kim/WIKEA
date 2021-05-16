@@ -47,9 +47,11 @@ class ItemInfo extends Component {
           </div>
         </div>
         {isLiked ? (
-          <LikePopUp>{<span>위시리스트에 담겼습니다.</span>}</LikePopUp>
+          <LikePopUp isLiked={isLiked}>
+            {<span>위시리스트에 담겼습니다.</span>}
+          </LikePopUp>
         ) : (
-          <LikePopUp>
+          <LikePopUp isLiked={isLiked}>
             {<span>즐겨찾기 목록에서 삭제되었습니다.</span>}
           </LikePopUp>
         )}
