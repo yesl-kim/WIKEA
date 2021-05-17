@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './likePopUp.scss';
+import './LikePopUp.scss';
 
 class LikePopUp extends Component {
   render() {
