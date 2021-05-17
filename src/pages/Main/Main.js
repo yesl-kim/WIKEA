@@ -6,7 +6,7 @@ import Label from './components/Label/Label';
 import './Main.scss';
 
 class Main extends React.Component {
-  NEW_BG_IMAGES = [];
+  newBgImages = [];
 
   constructor() {
     super();
@@ -18,7 +18,7 @@ class Main extends React.Component {
   componentDidMount() {
     fetch(API.NEW_BG_IMAGES)
       .then(images => images.json())
-      .then(images => (this.NEW_BG_IMAGES = images));
+      .then(images => (this.newBgImages = images));
     fetch(API.PRODUCTS_MAIN_TEST)
       .then(products => products.json())
       .then(products => {
@@ -79,19 +79,19 @@ class Main extends React.Component {
                   </header>
                 </div>
                 <div className="col-lg-1 lg-only" />
-                {!!this.NEW_BG_IMAGES.length && (
+                {!!this.newBgImages.length && (
                   <>
                     <div className="col-lg-6 col-md-6 col-sm-12">
                       <div className="new_product">
                         <img
-                          alt={this.NEW_BG_IMAGES[0].alt}
-                          src={this.NEW_BG_IMAGES[0].src}
+                          alt={this.newBgImages[0].alt}
+                          src={this.newBgImages[0].src}
                         />
                         {!!newProducts.length &&
                           newProducts[0].map(product => (
                             <Label
                               product={product}
-                              number={this.NEW_BG_IMAGES[0].id}
+                              number={this.newBgImages[0].id}
                             />
                           ))}
                       </div>
@@ -99,14 +99,14 @@ class Main extends React.Component {
                     <div className="col-lg-6 col-md-6 col-sm-12">
                       <div className="new_product">
                         <img
-                          alt={this.NEW_BG_IMAGES[1].alt}
-                          src={this.NEW_BG_IMAGES[1].src}
+                          alt={this.newBgImages[1].alt}
+                          src={this.newBgImages[1].src}
                         />
                         {!!newProducts.length &&
                           newProducts[1].map(product => (
                             <Label
                               product={product}
-                              number={this.NEW_BG_IMAGES[1].id}
+                              number={this.newBgImages[1].id}
                             />
                           ))}
                       </div>
