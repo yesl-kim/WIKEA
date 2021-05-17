@@ -17,7 +17,7 @@ class PrimayInfo extends Component {
           </span>
           <p>화초물뿌리개, 유리, 25 cl</p>
         </h1>
-        <div className="price">W {product.price}</div>
+        <div className="price">W {Number(product.price).toLocaleString()}</div>
         <Star />
       </div>
     );
