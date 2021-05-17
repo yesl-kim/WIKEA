@@ -94,18 +94,21 @@ nav {
     }
 
     img {
+      order: -1;
       height: 36px;
       width: 90px;
       margin-left: 64px;
     }
 
     .searchBox {
+      order: -1;
       width: 500px;
     }
 
     .nav-menu-group button {
       @include pos-center-y;
       left: 0;
+      order: -1;
     }
   }
 }
