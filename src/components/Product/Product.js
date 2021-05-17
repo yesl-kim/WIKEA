@@ -19,22 +19,21 @@ class Product extends React.Component {
 
   totalRating = () => {
     const { rating } = this.props;
-    const ratingIcons = [];
+    const stars = new Array(Math.floor(Number(rating))).fill(
+      <i className="ic-star" />
+    );
 
-    for (let i = 0; i <= this.props.rating - 1; i++) {
-      ratingIcons.push(<i className="ic-star" />);
-    }
     if (rating % 1 > 0) {
-      ratingIcons.push(<i className="ic-cart" />);
+      stars.push(<i className="ic-cart" />);
     }
 
-    return ratingIcons;
+    return stars;
   };
-  // newArray(rating).fill활용하여 수정하기
 
   render() {
     const { koName, enName, category, price, isNew, img, classGrid, children } =
       this.props;
+
     const { favoriteBtn } = this.state;
 
     return (
@@ -50,12 +49,12 @@ class Product extends React.Component {
         <div className="products_explanation">
           <div className="product_new">{isNew ? 'New' : ''}</div>
           <h2 className="product_name">
-            <span>{enName + koName}</span>
+            <span>{`${enName} ${koName}`}</span>
           </h2>
           <div className="product_size">{category}</div>
           <div className="product_price">
             <span>₩</span>
-            {price}
+            {Math.floor(price).toLocaleString()}
           </div>
           <div className="product_rating">{this.totalRating()}</div>
           <button className="product_shopping">
@@ -68,5 +67,3 @@ class Product extends React.Component {
 }
 
 export default Product;
-
-// 저작권, 함수, 리펙토링, 문서화 수정
