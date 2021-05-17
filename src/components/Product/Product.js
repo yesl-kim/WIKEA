@@ -20,7 +20,6 @@ class Product extends React.Component {
   render() {
     const { name, category, price, isNew, rating, img, classGrid, children } =
       this.props;
-
     const { favoriteBtn } = this.state;
 
     const totalRating = () => {
@@ -32,8 +31,10 @@ class Product extends React.Component {
         ratingIcons.push(<i className="ic-cart" />);
       }
 
+      // newArray(rating).fill활용하여 수정하기
       return ratingIcons;
     };
+    // 함수 밖으로 빼주기
 
     return (
       <div className={`product ${classGrid}`}>
@@ -66,3 +67,5 @@ class Product extends React.Component {
 }
 
 export default Product;
+
+// 저작권, 함수, 리펙토링, 문서화 수정
