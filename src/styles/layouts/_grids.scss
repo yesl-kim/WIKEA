@@ -17,7 +17,7 @@ $lg-max-container: 1800px + $lg-margin-left + $lg-margin-right;
 
 .grid-container {
   width: 100%;
-  padding: 0 $sm-margin;
+  padding: 0;
   margin: 0 auto;
 
   .row {
