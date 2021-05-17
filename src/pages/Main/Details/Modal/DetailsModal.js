@@ -60,7 +60,7 @@ class DetailsModal extends Component {
         </dd>
         <hr />
         <dt className="recycling_title">
-          <button onClick={this.showDetails}>
+          <button>
             <h2>지속가능성 & 환경</h2>
             <i className="ic-chevron" />
           </button>
@@ -68,7 +68,7 @@ class DetailsModal extends Component {
         <dd className="recycling_desc">{details[0].recycling}</dd>
         <hr />
         <dt className="package_title">
-          <button onClick={this.showDetails}>
+          <button>
             <h2>포장</h2>
             <i className="ic-chevron" />
           </button>
@@ -80,7 +80,7 @@ class DetailsModal extends Component {
         </dd>
         <hr />
         <dt className="title">
-          <button onClick={this.showDetails}>
+          <button>
             <h2>조립 및 문서</h2>
             <i className="ic-chevron" />
           </button>
@@ -88,7 +88,7 @@ class DetailsModal extends Component {
         <dd className="desc">정보없음</dd>
         <hr />
         <dt className="title">
-          <button onClick={this.showDetails}>
+          <button>
             <h2>고시정보</h2>
             <i className="ic-chevron" />
           </button>
