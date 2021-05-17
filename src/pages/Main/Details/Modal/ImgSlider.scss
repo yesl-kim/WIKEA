@@ -1,61 +1,59 @@
 @import '../../../../styles/var';
 
 .carousel-container {
-  width: 500px;
+  $--img-size: 600px;
+
+  width: $--img-size;
   margin: 30px auto;
   border: 0px solid #000;
   overflow: hidden;
   position: relative;
-}
+  .carousel-slide {
+    display: flex;
+    width: 100%;
+    height: $--img-size;
 
-.carousel-slide {
-  display: flex;
-  width: 100%;
-  height: 500px;
-
-  img {
-    // max-height: 75vh;
-    // max-width: 100%;
-    // width: auto;
-    width: 450px;
-    object-fit: cover;
+    img {
+      width: $--img-size;
+      object-fit: cover;
+    }
   }
-}
 
-%btn {
-  position: absolute;
-  top: 45%;
-  width: 40px;
-  height: 36px;
-  background-color: black;
-}
-
-%icon {
-  color: white;
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.prevBtn {
-  @extend %btn;
-  left: 0;
-  -ms-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-
-  & > i {
-    @extend %icon;
+  %btn {
+    position: absolute;
+    top: 45%;
+    width: 40px;
+    height: 36px;
+    background-color: black;
   }
-}
 
-.nextBtn {
-  @extend %btn;
-  right: 0;
-  -ms-transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+  %icon {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+  }
 
-  & > i {
-    @extend %icon;
+  .prevBtn {
+    @extend %btn;
+    left: 0;
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+    & > i {
+      @extend %icon;
+    }
+  }
+
+  .nextBtn {
+    @extend %btn;
+    right: 0;
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+
+    & > i {
+      @extend %icon;
+    }
   }
 }

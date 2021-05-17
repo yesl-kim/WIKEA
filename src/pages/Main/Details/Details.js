@@ -1,6 +1,5 @@
 import React from 'react';
-import Message from '../../../components/Header/Message';
-import Header from '../../../components/Header/Header';
+
 import Main from './Main/Main.js';
 import ImgModal from './Modal/ImgModal';
 import SideModal from '../../../components/SideModal/SideModal.js';
@@ -56,8 +55,6 @@ class Details extends React.Component {
     const { modalOn, on, details, product } = this.state;
     return (
       <>
-        <Message />
-        <Header />
         <Main
           details={details}
           product={product}

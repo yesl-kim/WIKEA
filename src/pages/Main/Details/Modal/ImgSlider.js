@@ -52,4 +52,4 @@ class ImgSlider extends Component {
 
 export default ImgSlider;
 
-const W = 450;
+const W = 600;

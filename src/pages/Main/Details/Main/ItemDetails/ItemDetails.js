@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Star from '../../../../../components/Star/Star.js';
 
 import './ItemDetails.scss';
 
@@ -25,7 +24,6 @@ class ItemDetails extends Component {
         <hr />
         <button className="item-rating box">
           <span>상품평</span>
-          <Star />
         </button>
         <hr />
       </div>
