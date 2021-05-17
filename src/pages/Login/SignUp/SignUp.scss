@@ -1,0 +1,512 @@
+@import '../../../styles/common.scss';
+@import '../../../styles/var.scss';
+
+.sign_up {
+  display: flex;
+  padding: 80px 20px;
+
+  .sign_up_aside {
+    .sign_up_title_container {
+      .sign_up_title {
+        margin-bottom: 3px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      div {
+        .comment_with_sign_up_already {
+          margin-right: 5px;
+          font-size: 14px;
+        }
+
+        .go_to_login_page {
+          border-bottom: 1px solid $--colour-border-dark;
+          font-size: 14px;
+
+          &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .sign_up_aside_images_container {
+      display: flex;
+      margin-top: 50px;
+      margin-right: 50px;
+
+      .sign_up_aside_images_first_column {
+        width: 134px;
+
+        .colleagues_sitting_around {
+          width: 134px;
+          height: 144px;
+          padding: 3px;
+          border-radius: 8px;
+        }
+
+        .desk_and_monitor {
+          width: 134px;
+          height: 144px;
+          padding: 3px;
+          border-radius: 8px;
+        }
+
+        .indoor_living_room {
+          width: 134px;
+          height: 112px;
+          padding: 3px;
+          border-radius: 8px;
+        }
+
+        .headphone_in_yellow_background {
+          width: 134px;
+          height: 144px;
+          padding: 3px;
+          border-radius: 8px;
+        }
+      }
+
+      .sign_up_aside_images_second_column {
+        width: 134px;
+
+        .light_bulb_in_yellow_background {
+          width: 134px;
+          height: 112px;
+          padding: 3px;
+          border-radius: 8px;
+        }
+
+        .indoor_office {
+          width: 134px;
+          height: 112px;
+          padding: 3px;
+          border-radius: 8px;
+        }
+
+        .rubix_cube_in_yellow_background {
+          width: 134px;
+          height: 144px;
+          padding: 3px;
+          border-radius: 8px;
+        }
+
+        .mom_and_child {
+          width: 134px;
+          height: 112px;
+          padding: 3px;
+          border-radius: 8px;
+        }
+
+        .woman_with_sofa {
+          width: 134px;
+          height: 144px;
+          padding: 3px;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+
+  .sign_up_main {
+    padding-top: 20px;
+
+    .want_you_sign_up_wikea_family_container {
+      .want_you_sign_up_wikea_family {
+        margin-bottom: 35px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .sign_up_wikea_family_with_yes {
+        .checkbox_and_yes_comment_wrapper {
+          margin-bottom: 35px;
+          .sign_up_wikea_family_with_yes_checkbox {
+            margin-right: 5px;
+          }
+          .check_with_yes_answer {
+            margin-right: 5px;
+            font-size: 14px;
+          }
+
+          .wikea_family_benefit {
+            border-bottom: 1px solid $--colour-border-dark;
+            font-size: 14px;
+
+            &:hover {
+              opacity: 0.8;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .just_sign_up_online_mall {
+        .checkbox_and_no_comment_wrapper {
+          margin-bottom: 35px;
+
+          .sign_up_wikea_family_with_no_checkbox {
+            margin-right: 5px;
+          }
+
+          .check_with_no_answer {
+            margin-right: 5px;
+            font-size: 14px;
+          }
+
+          .wikea_online_mall_benefit {
+            border-bottom: 1px solid $--colour-border-dark;
+            font-size: 14px;
+
+            &:hover {
+              opacity: 0.8;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    form {
+      .last_name_input_container {
+        margin-bottom: 30px;
+
+        .last_name_input_wrapper {
+          position: relative;
+
+          #lastNameValue {
+            display: block;
+            width: 100%;
+            margin-bottom: 8px;
+            padding: 10px 10px 2px 2px;
+            border-bottom: 1px solid $--colour-border-dark;
+          }
+
+          label {
+            position: absolute;
+            top: 0px;
+            transform: translateY(50%);
+
+            &.typing {
+              position: absolute;
+              transform: translateY(1%);
+              font-size: 6px;
+            }
+          }
+
+          .lastName_invalid_comment {
+            padding: 0px 0px 5px;
+            color: $--colour-icon-favourite;
+            font-size: 6px;
+          }
+
+          .no_display_comment {
+            display: none;
+          }
+        }
+      }
+
+      .first_name_input_container {
+        margin-bottom: 30px;
+
+        .first_name_input_wrapper {
+          position: relative;
+
+          #firstNameValue {
+            display: block;
+            width: 100%;
+            margin-bottom: 8px;
+            padding: 10px 10px 2px 2px;
+            border-bottom: 1px solid $--colour-border-dark;
+          }
+
+          label {
+            position: absolute;
+            top: 0px;
+            transform: translateY(50%);
+
+            &.typing {
+              position: absolute;
+              transform: translateY(1%);
+              font-size: 6px;
+            }
+          }
+
+          .firstName_invalid_comment {
+            padding: 0px 0px 5px;
+            color: $--colour-icon-favourite;
+            font-size: 6px;
+          }
+
+          .no_display_comment {
+            display: none;
+          }
+        }
+      }
+
+      .birth_day_date_input_container {
+        margin-bottom: 30px;
+
+        .birth_day_date_input_wrapper {
+          position: relative;
+
+          #birthDayDateValue {
+            display: block;
+            width: 100%;
+            margin-bottom: 8px;
+            padding: 10px 10px 2px 2px;
+            border-bottom: 1px solid $--colour-border-dark;
+          }
+
+          label {
+            position: absolute;
+            top: 0px;
+            transform: translateY(50%);
+
+            &.typing {
+              position: absolute;
+              transform: translateY(1%);
+              font-size: 6px;
+            }
+          }
+
+          .birthDayDate_invalid_comment {
+            padding: 0px 0px 5px;
+            color: $--colour-icon-favourite;
+            font-size: 6px;
+          }
+
+          .no_display_comment {
+            display: none;
+          }
+        }
+      }
+
+      .cell_phone_number_input_container {
+        margin-bottom: 30px;
+
+        .cell_phone_number_input_wrapper {
+          position: relative;
+
+          #cellPhoneNumberValue {
+            display: block;
+            width: 100%;
+            margin-bottom: 8px;
+            padding: 10px 10px 2px 70px;
+            border-bottom: 1px solid $--colour-border-dark;
+          }
+
+          label {
+            position: absolute;
+            top: 0px;
+            font-size: 6px;
+          }
+
+          span {
+            position: absolute;
+            top: 0px;
+            transform: translateY(50%);
+          }
+
+          .cellPhoneNumber_invalid_comment {
+            padding: 0px 0px 5px;
+            color: $--colour-icon-favourite;
+            font-size: 6px;
+          }
+
+          .no_display_comment {
+            display: none;
+          }
+        }
+      }
+
+      .id_input_container {
+        margin-bottom: 30px;
+
+        .id_input_wrapper {
+          position: relative;
+
+          #idValue {
+            display: block;
+            width: 100%;
+            margin-bottom: 8px;
+            padding: 10px 10px 2px 2px;
+            border-bottom: 1px solid $--colour-border-dark;
+          }
+
+          label {
+            position: absolute;
+            top: 0px;
+            transform: translateY(50%);
+
+            &.typing {
+              position: absolute;
+              transform: translateY(1%);
+              font-size: 6px;
+            }
+          }
+
+          .id_invalid_comment {
+            padding: 0px 0px 5px;
+            color: $--colour-icon-favourite;
+            font-size: 6px;
+          }
+
+          .no_display_comment {
+            display: none;
+          }
+        }
+      }
+
+      .pw_input_container {
+        margin-bottom: 30px;
+
+        .pw_input_wrapper {
+          position: relative;
+
+          #pwValue {
+            display: block;
+            width: 100%;
+            margin-bottom: 8px;
+            padding: 10px 10px 2px 2px;
+            border-bottom: 1px solid $--colour-border-dark;
+          }
+
+          label {
+            position: absolute;
+            top: 0px;
+            transform: translateY(50%);
+
+            &.typing {
+              position: absolute;
+              transform: translateY(1%);
+              font-size: 6px;
+            }
+          }
+
+          .ic-lock {
+            position: absolute;
+            top: 10px;
+            right: 0px;
+
+            &:hover {
+              opacity: 0.8;
+              cursor: pointer;
+            }
+          }
+
+          .pw_invalid_comment {
+            padding: 0px 0px 5px;
+            color: $--colour-icon-favourite;
+            font-size: 6px;
+          }
+
+          .no_display_comment {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .marketing_acceptance_container {
+      margin-bottom: 40px;
+
+      .marketing_acceptance_checkbox {
+        margin-right: 5px;
+      }
+
+      .marketing_acceptance_comment {
+        font-size: 14px;
+      }
+    }
+
+    .terms_and_conditions_acceptance_container {
+      margin-bottom: 40px;
+
+      .terms_and_conditions_acceptance_checkbox {
+        margin-right: 5px;
+      }
+      .terms_and_conditions_acceptance_comment {
+        margin-right: 5px;
+        font-size: 14px;
+      }
+
+      .terms_and_conditions_details {
+        border-bottom: 1px solid $--colour-border-dark;
+        font-size: 14px;
+      }
+    }
+
+    .personal_info_handling_policy_container {
+      margin-bottom: 40px;
+
+      .personal_info_handling_policy_checkbox {
+        margin-right: 5px;
+      }
+
+      .personal_info_handling_policy_comment {
+        margin-right: 5px;
+        font-size: 14px;
+      }
+
+      .personal_info_handling_policy_details {
+        border-bottom: 1px solid $--colour-border-dark;
+        font-size: 14px;
+      }
+    }
+
+    .personal_info_processing_policy_container {
+      margin-bottom: 40px;
+
+      .personal_info_processing_policy_checkbox {
+        margin-right: 5px;
+      }
+
+      .personal_info_processing_policy_comment {
+        margin-right: 5px;
+        font-size: 14px;
+      }
+
+      .personal_info_processing_policy_details {
+        border-bottom: 1px solid $--colour-border-dark;
+        font-size: 14px;
+      }
+    }
+
+    .personal_info_transferring_policy_container {
+      margin-bottom: 60px;
+
+      .personal_info_transferring_policy_checkbox {
+        margin-right: 5px;
+      }
+
+      .personal_info_transferring_policy_comment {
+        margin-right: 5px;
+        font-size: 14px;
+      }
+
+      .personal_info_transferring_policy_details {
+        border-bottom: 1px solid $--colour-border-dark;
+        font-size: 14px;
+      }
+    }
+    .do_sign_up_btn {
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+      padding: 12px;
+      color: $--color-light-gray;
+      background-color: $--colour-border-dark;
+      border: 1px solid $--colour-border-dark;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+
+      &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    }
+  }
+}
