@@ -15,7 +15,7 @@ class Lists extends React.Component {
     };
   }
 
-  // Mock Data용 fetch
+  // Mock data 용 fetch입니다. 백엔드와 통신 이후 삭제 예정
   // componentDidMount() {
   //   fetch('http://localhost:3000/data/listmockdata.json')
   //     .then(product => product.json())
@@ -26,6 +26,7 @@ class Lists extends React.Component {
   //     });
   // }
 
+  // pagination 구현 로직입니다. 백엔드와 통신 이후 주석 풀 예정
   // fetchProduct = () => {
   //   const { offset, limit, showMoreBar } = this.state;
 

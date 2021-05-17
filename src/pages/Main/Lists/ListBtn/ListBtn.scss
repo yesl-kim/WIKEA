@@ -52,21 +52,21 @@
       padding: 5px;
       transition: all 0.3s ease;
 
-      &:nth-child(2) {
-        border-bottom: 1px solid $--colour-border-dark;
-      }
-
-      &:first-child {
-        color: $--colour-text-lightest;
-        cursor: initial;
-
-        &:hover {
-          border-bottom: none;
-        }
-      }
-
       &:hover {
         border-bottom: 1px solid $--colour-border-dark;
+      }
+    }
+
+    .product_btn_product {
+      border-bottom: 1px solid $--colour-border-dark;
+    }
+
+    .product_count {
+      color: $--colour-text-lightest;
+      cursor: initial;
+
+      &:hover {
+        border-bottom: none;
       }
     }
   }

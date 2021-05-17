@@ -1,7 +1,6 @@
 @import '../../../../../styles/var.scss';
 
 .sortbox {
-  display: none;
   position: absolute;
   top: 4.5rem;
   left: 5.5rem;
@@ -22,8 +21,4 @@
     color: $--colour-text-default;
     cursor: pointer;
   }
-}
-
-.sortbox.visible {
-  display: initial;
 }

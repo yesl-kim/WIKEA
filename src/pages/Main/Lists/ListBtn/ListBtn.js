@@ -8,13 +8,13 @@ class ListBtn extends React.Component {
   constructor() {
     super();
     this.state = {
-      sortbox: true,
+      sortbox: false,
       sideModal: false,
     };
   }
 
   handlebox = e => {
-    const value = e.currentTarget.value;
+    const value = e.currentTarget.name;
 
     this.setState({
       [value]: !this.state[value],
@@ -31,10 +31,10 @@ class ListBtn extends React.Component {
             <span>비교</span>
           </button>
           <button
-            className={!sortbox && 'visible'}
+            className={sortbox && 'visible'}
             aria-label="분류 옵션보기"
             onClick={this.handlebox}
-            value="sortbox"
+            name="sortbox"
           >
             <span>
               정렬
@@ -59,7 +59,7 @@ class ListBtn extends React.Component {
           <button
             aria-label="필터 모달 더보기, 더 지속 가능한 소재, 특가, 신재품, 시리즈"
             onClick={this.handlebox}
-            value="sideModal"
+            name="sideModal"
           >
             <span>
               모든 필터
@@ -68,11 +68,11 @@ class ListBtn extends React.Component {
           </button>
         </div>
         <div className="product_btn">
-          <span>61개</span>
+          <span className="product_count">61개</span>
           <span className="product_btn_product">제품</span>
           <span className="product_btn_showroom">디지털 쇼룸</span>
         </div>
-        <Sortbox visible={!sortbox} />
+        {sortbox && <Sortbox />}
         {/* sideModal merge시 활성화 예정입니다 */}
         {/* <SideModal on={sideModal} direction="right">
           <SortModal />
