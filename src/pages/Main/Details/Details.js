@@ -1,14 +1,9 @@
 import React from 'react';
-import ImgSlider from './Modal/ImgSlider';
-import './Details.scss';
+import Breadcrumb from '../../../components/Breadcrumb/Breadcrumb';
 
 class Details extends React.Component {
   render() {
-    return (
-      <>
-        <ImgSlider />
-      </>
-    );
+    return <Breadcrumb />;
   }
 }
 
