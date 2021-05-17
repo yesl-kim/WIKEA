@@ -5,18 +5,18 @@ import './Label.scss';
 
 class Label extends Component {
   render() {
-    const { product } = this.props;
+    const { product, number, type } = this.props;
     return (
-      <div className={`label_container ${product.id}`}>
+      <div className={`label_container ${number}_${product.id}`}>
         <button type="button" className="label_btn" />
-        <Link to="/" className="label">
+        <Link to="/" className={`label ${type}`}>
           <p className="product_info">
-            {product.isNew && <span className="new">New</span>}
-            <span className="name">{product.name}</span>
+            {product.is_new && <span className="new">New</span>}
+            <span className="name">{product.korean_name}</span>
             <span className="category">{product.category}</span>
             <div className="price">
               <span className="won">￦</span>
-              <span>{product.price.toLocaleString()}</span>
+              <span>{Number(product.price).toLocaleString('ko-KR')}</span>
             </div>
           </p>
           <Link to="/" role="button">
