@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Main from './Main/Main.js';
-import ImgModal from './Modal/ImgModal';
+import ImgModal from './Modal/ImgModal/ImgModal.js';
 import SideModal from '../../../components/SideModal/SideModal.js';
-import DetailsModal from '../Details/Modal/DetailsModal.js';
+import DetailsModal from '../Details/Modal/DetailsModal/DetailsModal.js';
 import './Details.scss';
 
 class Details extends React.Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PrimaryInfo from './PrimaryInfo.js';
-import LikePopUp from '../../Modal/likePopUp.js';
+import LikePopUp from '../../Modal/LikePopup/likePopUp';
 import './ItemInfo.scss';
 
 class ItemInfo extends Component {
