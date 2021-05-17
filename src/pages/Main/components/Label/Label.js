@@ -5,11 +5,11 @@ import './Label.scss';
 
 class Label extends Component {
   render() {
-    const { product, number, type } = this.props;
+    const { number, product } = this.props;
     return (
       <div className={`label_container ${number}_${product.id}`}>
         <button type="button" className="label_btn" />
-        <Link to="/" className={`label ${type}`}>
+        <Link to="/" className="label">
           <p className="product_info">
             {product.is_new && <span className="new">New</span>}
             <span className="name">{product.korean_name}</span>
