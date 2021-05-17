@@ -1,5 +1,5 @@
 import React from 'react';
-import SideModal from '../../components/SideModal/SideModal';
+import './Main.scss';
 
 class Main extends React.Component {
   render() {
