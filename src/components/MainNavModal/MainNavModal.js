@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import SideModal from '../SideModal/SideModal';
@@ -7,14 +6,13 @@ import { API } from '../../config';
 import './MainNavModal.scss';
 
 class MainNavModal extends Component {
-  SUB_CATEGORY = {};
-
   constructor() {
     super();
     this.state = {
       isSubCategoryOn: false,
       activeSubCategory: '',
       categories: [],
+      subCategories: {},
     };
   }
 
@@ -24,18 +22,13 @@ class MainNavModal extends Component {
       .then(res => {
         this.setState({
           categories: res.category_list,
+          subCategories: res.sub_category_list,
         });
-        this.SUB_CATEGORY = res.sub_category_list;
       });
   }
 
-  handleSubMenuClick = e => {
-    e.preventDefault();
-  };
-
   handleSubNavOn = e => {
     const { name } = e.target;
-    e.preventDefault();
     this.setState({
       isSubCategoryOn: true,
       activeSubCategory: name,
@@ -43,7 +36,8 @@ class MainNavModal extends Component {
   };
 
   render() {
-    const { isSubCategoryOn, activeSubCategory, categories } = this.state;
+    const { isSubCategoryOn, activeSubCategory, categories, subCategories } =
+      this.state;
     return (
       <SideModal direction="left" on={true}>
         <Link to="/" className="main_nav_logo">
@@ -76,15 +70,14 @@ class MainNavModal extends Component {
               type="sub"
               on={isSubCategoryOn}
               title={activeSubCategory}
-              list={this.SUB_CATEGORY[activeSubCategory]}
-              handleClick={this.handleSubMenuClick}
+              list={subCategories[activeSubCategory]}
             >
               <div className="menu_promotion">
                 <Link to="/">
                   <span className="promotion_image">
                     <img
                       alt="지속가능한 LED 전구 구매 가이드"
-                      src="https://www.ikea.com/images/led-e6fd0a8b05e35175cd665abc61b80d61.jpg?f=xxxl"
+                      src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
                     />
                   </span>
                   <span>지속가능한 LED 전구 구매 가이드</span>
