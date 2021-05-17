@@ -1,10 +1,25 @@
 import React, { Component } from 'react';
-import Details from '../Details';
+// import Details from '../Details';
 import './DetailsModal.scss';
 
 class DetailsModal extends Component {
+  constructor() {
+    super();
+    this.state = {
+      height: false,
+    };
+  }
+
+  showDetails = () => {
+    const { height } = this.state;
+    this.setState({
+      height: !height,
+    });
+  };
+
   render() {
     const { details } = this.props;
+    const { height } = this.state;
     return (
       <dl className="details_modal">
         <dt className="content_title">
@@ -13,9 +28,23 @@ class DetailsModal extends Component {
           </button>
         </dt>
         <dd className="content">
-          {details[0].content.split('.').map((text, idx) => {
-            return <span key={idx}>{text}</span>;
-          })}
+          {details[0].content
+            .split('.')
+            .slice(0, 2)
+            .map((text, idx) => {
+              return <span key={idx}>{text}</span>;
+            })}
+          <button className="more" onClick={this.showDetails}>
+            더보기
+          </button>
+          <div className={`optional_desc${height ? ' show' : ''}`}>
+            {details[0].content
+              .split('.')
+              .slice(2)
+              .map((text, idx) => {
+                return <span key={idx}>{text}</span>;
+              })}
+          </div>
         </dd>
         <hr />
         <dt className="material_title">
@@ -31,7 +60,7 @@ class DetailsModal extends Component {
         </dd>
         <hr />
         <dt className="recycling_title">
-          <button>
+          <button onClick={this.showDetails}>
             <h2>지속가능성 & 환경</h2>
             <i className="ic-chevron" />
           </button>
@@ -39,7 +68,7 @@ class DetailsModal extends Component {
         <dd className="recycling_desc">{details[0].recycling}</dd>
         <hr />
         <dt className="package_title">
-          <button>
+          <button onClick={this.showDetails}>
             <h2>포장</h2>
             <i className="ic-chevron" />
           </button>
@@ -51,7 +80,7 @@ class DetailsModal extends Component {
         </dd>
         <hr />
         <dt className="title">
-          <button>
+          <button onClick={this.showDetails}>
             <h2>조립 및 문서</h2>
             <i className="ic-chevron" />
           </button>
@@ -59,7 +88,7 @@ class DetailsModal extends Component {
         <dd className="desc">정보없음</dd>
         <hr />
         <dt className="title">
-          <button>
+          <button onClick={this.showDetails}>
             <h2>고시정보</h2>
             <i className="ic-chevron" />
           </button>

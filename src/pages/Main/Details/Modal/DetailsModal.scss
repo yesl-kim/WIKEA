@@ -17,6 +17,14 @@
     }
   }
 
+  .more {
+    margin-bottom: 30px;
+  }
+
+  .optional_desc {
+    height: 0;
+  }
+
   [class$='title'] {
     button {
       @include flexbox(between);
@@ -38,6 +46,10 @@
     // margin: 2rem 0;
     height: 0;
     overflow: hidden;
+  }
+
+  .show {
+    height: auto;
   }
 
   span {
