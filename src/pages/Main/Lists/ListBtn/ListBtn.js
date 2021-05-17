@@ -1,36 +1,28 @@
 import React from 'react';
 import Sortbox from './Sortbox/Sortbox';
-import SideModal from './SideModal/SideModal';
-import SortModal from './SideModal/SortModal';
+// import SideModal from './SideModal/SideModal';
+// import SortModal from './SideModal/FilterModal';
 import './ListBtn.scss';
 
 class ListBtn extends React.Component {
   constructor() {
     super();
     this.state = {
-      sortboxVisible: '',
-      sideModalVisible: false,
+      sortbox: true,
+      sideModal: false,
     };
   }
 
-  hideBox = () => {
-    const { sortboxVisible } = this.state;
+  handlebox = e => {
+    const value = e.currentTarget.value;
 
     this.setState({
-      sortboxVisible: sortboxVisible === 'visible' ? '' : 'visible',
-    });
-  };
-
-  handleSideModal = () => {
-    const { sideModalVisible } = this.state;
-
-    this.setState({
-      sideModalVisible: !sideModalVisible,
+      [value]: !this.state[value],
     });
   };
 
   render() {
-    const { sortboxVisible, sideModalVisible } = this.state;
+    const { sortbox, sideModal } = this.state;
 
     return (
       <div className="btn_line">
@@ -39,9 +31,10 @@ class ListBtn extends React.Component {
             <span>비교</span>
           </button>
           <button
-            className={sortboxVisible}
+            className={!sortbox && 'visible'}
             aria-label="분류 옵션보기"
-            onClick={this.hideBox}
+            onClick={this.handlebox}
+            value="sortbox"
           >
             <span>
               정렬
@@ -65,7 +58,8 @@ class ListBtn extends React.Component {
           </button>
           <button
             aria-label="필터 모달 더보기, 더 지속 가능한 소재, 특가, 신재품, 시리즈"
-            onClick={this.handleSideModal}
+            onClick={this.handlebox}
+            value="sideModal"
           >
             <span>
               모든 필터
@@ -78,10 +72,11 @@ class ListBtn extends React.Component {
           <span className="product_btn_product">제품</span>
           <span className="product_btn_showroom">디지털 쇼룸</span>
         </div>
-        <Sortbox className={sortboxVisible} />
-        <SideModal on={sideModalVisible} direction="right">
+        <Sortbox visible={!sortbox} />
+        {/* sideModal merge시 활성화 예정입니다 */}
+        {/* <SideModal on={sideModal} direction="right">
           <SortModal />
-        </SideModal>
+        </SideModal> */}
       </div>
     );
   }

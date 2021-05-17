@@ -3,7 +3,7 @@ import './Sortbox.scss';
 
 class Sortbox extends React.Component {
   render() {
-    const { className } = this.props;
+    const { visible } = this.props;
     const btnTitle = [
       '베스트 매치',
       '낮은 가격 순',
@@ -17,9 +17,9 @@ class Sortbox extends React.Component {
     ];
 
     return (
-      <div className={`Sortbox ${className}`}>
-        {btnTitle.map(title => (
-          <label className="radio_btn">
+      <div className={`${visible ? 'sortbox visible' : 'sortbox'}`}>
+        {btnTitle.map((title, index) => (
+          <label className="radio_btn" key={index}>
             <span>{title}</span>
             <div className="radio">
               <input type="radio" id="radio" name="radioname" />

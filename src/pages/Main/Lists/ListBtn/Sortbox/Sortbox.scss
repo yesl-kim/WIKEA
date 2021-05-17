@@ -1,6 +1,6 @@
 @import '../../../../../styles/var.scss';
 
-.Sortbox {
+.sortbox {
   display: none;
   position: absolute;
   top: 4.5rem;
@@ -24,6 +24,6 @@
   }
 }
 
-.Sortbox.visible {
+.sortbox.visible {
   display: initial;
 }
