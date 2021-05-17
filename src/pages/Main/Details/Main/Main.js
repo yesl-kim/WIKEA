@@ -12,7 +12,7 @@ class Main extends React.Component {
   render() {
     const { handleModal, handleSideModal, product, details } = this.props;
     return (
-      <div className="main">
+      <main className="main">
         <div className="grid-container">
           <Breadcrumb />
           <div className="row">
@@ -110,7 +110,7 @@ class Main extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </main>
     );
   }
 }
