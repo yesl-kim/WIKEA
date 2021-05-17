@@ -1,8 +1,8 @@
 import React from 'react';
 import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb';
 // import Product from '../../../../components/Product/Product';
-import ScrollBox from '../../../../components/ScrollBox/ScrollBox';
-import Star from '../../../../components/Star/Star.js';
+// import ScrollBox from '../../../../components/ScrollBox/ScrollBox';
+// import Star from '../../../../components/Star/Star.js';
 import ItemDetails from './ItemDetails/ItemDetails';
 import ItemImg from './ItemImg/ItemImg';
 import ItemInfo from './ItemInfo/ItemInfo';

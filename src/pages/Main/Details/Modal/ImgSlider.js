@@ -11,7 +11,9 @@ class ImgSlider extends Component {
 
   goNext = () => {
     const { imgRight } = this.state;
-    if (imgRight > -2250) {
+    const { product } = this.props;
+    const totalWidth = W * (product.url.length - 1);
+    if (imgRight > -totalWidth) {
       this.setState({ imgRight: imgRight - W });
     }
   };
