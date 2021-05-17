@@ -65,7 +65,7 @@ class Details extends React.Component {
           handleSideModal={this.handleSideModal}
         />
         {modalOn && (
-          <ImgModal details={details} handleModal={this.handleModal} />
+          <ImgModal product={product} handleModal={this.handleModal} />
         )}
 
         {on && (

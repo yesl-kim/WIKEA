@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import './ImgModal.scss';
 import ImgSlider from './ImgSlider';
+import './ImgModal.scss';
 
 class ImgModal extends Component {
   render() {
-    const { handleModal, details } = this.props;
+    const { handleModal, product } = this.props;
     return (
       <div className="modal">
         <div className="modal_back">
-          <ImgSlider details={details} />
+          <ImgSlider product={product} />
           <button onClick={handleModal} className="modal_btn" />
         </div>
       </div>
