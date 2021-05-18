@@ -18,15 +18,20 @@
   }
 }
 
-.show_more_btn {
-  @include flexbox(center, center);
-  margin-top: 40px;
-  padding: 15px;
-  border: 1.3px solid $--colour-border-light;
-  border-radius: 20px;
-  transition: all 0.3s ease;
+.pagination_btn {
+  @include flexbox(between, center);
+  width: 100px;
 
-  &:hover {
-    border-color: $--colour-border-default;
+  .show_more_btn {
+    @include flexbox(center, center);
+    margin-top: 40px;
+    padding: 15px;
+    border: 1.3px solid $--colour-border-light;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $--colour-border-default;
+    }
   }
 }

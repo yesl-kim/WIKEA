@@ -9,9 +9,6 @@ class Lists extends React.Component {
     super();
     this.state = {
       products: [],
-      offset: 0,
-      limit: 10,
-      showMoreBar: 50,
     };
   }
 
@@ -27,20 +24,16 @@ class Lists extends React.Component {
   }
 
   // pagination 구현 로직입니다. 백엔드와 통신 이후 주석 풀 예정
-  // fetchProduct = () => {
-  //   const { offset, limit, showMoreBar } = this.state;
-
-  //   const nextLimit = limit + offset;
+  // fetchProduct = (sub_category_name, page) => {
   //   fetch(
-  //     `http://localhost:3000/data/listmockdata.json/products?offset=${offset}&limit=${nextOffset}`
+  //     ` /product/list/sub_category_name=${sub_category_name}&page=${page}`
   //   )
   //     .then(res => res.json())
-  //     .then(product => this.setState({ product, limit: nextLimit, showMoreBar: 100 }));
+  //     .then(product => this.setState({ product }));
   // };
 
   render() {
     const { products, showMoreBar } = this.state;
-    console.log(products);
 
     return (
       <main className="grid-container">
@@ -57,13 +50,22 @@ class Lists extends React.Component {
                   style={{ width: `${showMoreBar}%` }}
                 ></div>
               </div>
-              <button
-                className="show_more_btn"
-                type="button"
-                // onClick={this.fetchProduct}
-              >
-                더보기
-              </button>
+              <div className="pagination_btn">
+                <button
+                  className="show_more_btn"
+                  type="button"
+                  // onClick={this.fetchProduct(table_lamps, 1)}
+                >
+                  1
+                </button>
+                <button
+                  className="show_more_btn"
+                  type="button"
+                  // onClick={this.fetchProduct(table_lamps, 2)}
+                >
+                  2
+                </button>
+              </div>
             </div>
           </div>
         </div>
