@@ -35,9 +35,9 @@ class ImgSlider extends Component {
           style={{ transform: `translateX(${imgRight}px)` }}
         >
           {product &&
-            product.url.map((url, idx) => {
-              return <img key={idx} alt="상세 이미지" src={url} />;
-            })}
+            product.url.map(url => (
+              <img key={url} alt="상세 이미지" src={url} />
+            ))}
         </div>
         <button onClick={this.goPrev} className="prevBtn">
           <i className="ic-chevron" />
