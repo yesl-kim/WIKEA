@@ -1,17 +1,17 @@
 @import '../../../../../styles/var';
 
 .item-primary-info {
+  @include flexbox(between, start);
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+
   > strong {
     width: 100%;
     color: $--colour-cmsg-new;
-    font-size: 12px;
+    font-size: 0.875rem;
     font-weight: 700;
     margin-bottom: 4px;
   }
-
-  @include flexbox(between);
-  flex-wrap: wrap;
-  margin-bottom: 24px;
 
   h1 {
     @include column-flexbox(around, start);
@@ -19,20 +19,22 @@
     font-size: 0.75rem;
     font-weight: 400;
 
-    span:first-of-type {
-      font-size: 18px;
+    .item-name {
+      font-size: 1.375rem;
+      line-height: 1.45455;
       font-weight: 700;
       margin-bottom: 0.25rem;
     }
+
+    .desc {
+      font-size: 0.875rem;
+      line-height: 1.42857;
+    }
   }
 
-  .rating-star {
-    width: 100%;
-    margin: 4px 0;
-    font-size: 14px;
-
-    .ic-star:last-of-type {
-      color: lightgray;
-    }
+  .price {
+    font-size: 1.375rem;
+    line-height: 1.1875;
+    font-weight: 700;
   }
 }

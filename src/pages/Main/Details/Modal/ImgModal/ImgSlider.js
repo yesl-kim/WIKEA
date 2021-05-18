@@ -36,7 +36,7 @@ class ImgSlider extends Component {
         >
           {product &&
             product.url.map((url, idx) => {
-              return <img key={idx} alt="test" src={url} />;
+              return <img key={idx} alt="상세 이미지" src={url} />;
             })}
         </div>
         <button onClick={this.goPrev} className="prevBtn">

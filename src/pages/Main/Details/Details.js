@@ -18,7 +18,7 @@ class Details extends React.Component {
   }
 
   componentDidMount() {
-    //서버 연결 시, url('http://192.168.0.39:5000/product/p/nikelamp')
+    //서버 연결 시, url('http://192.168.0.39:5000/product/detail/id')
     fetch('/data/detailsData/test.json')
       .then(res => res.json())
       .then(product =>

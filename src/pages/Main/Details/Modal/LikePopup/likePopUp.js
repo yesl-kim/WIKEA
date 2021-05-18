@@ -5,7 +5,7 @@ class LikePopUp extends Component {
   render() {
     const { isLiked } = this.props;
     return (
-      <div className={`popup_liked ${isLiked ? '' : 'invisible'}`}>
+      <div className={`popup_liked ${!isLiked && 'invisible'}`}>
         {this.props.children}
       </div>
     );

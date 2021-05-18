@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Detail.scss';
 
 class Detail extends Component {
   constructor() {
@@ -13,7 +14,6 @@ class Detail extends Component {
     this.setState({
       iscollapsed: !iscollapsed,
     });
-    console.log('clicked');
   };
 
   render() {

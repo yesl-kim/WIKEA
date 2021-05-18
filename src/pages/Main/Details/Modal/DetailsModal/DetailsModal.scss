@@ -27,26 +27,4 @@
       overflow: hidden;
     }
   }
-
-  .accordion_item {
-    button {
-      @include flexbox(between);
-      width: 100%;
-      padding: 24px 0;
-    }
-
-    h2 {
-      display: inline;
-      font-size: 0.875rem;
-    }
-
-    .accordion_contents {
-      height: 0;
-      overflow: hidden;
-    }
-  }
-
-  .show {
-    height: auto !important;
-  }
 }

@@ -1,50 +1,14 @@
 @import '../../../../../styles/var';
 
 .item-info {
-  .item-primary-info {
-    > strong {
-      width: 100%;
-      color: $--colour-cmsg-new;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    @include flexbox(between);
-    flex-wrap: wrap;
-    margin-bottom: 24px;
-
-    h1 {
-      @include column-flexbox(around, start);
-      height: 57px;
-      font-size: 0.75rem;
-      font-weight: 400;
-
-      span:first-of-type {
-        font-size: 18px;
-        font-weight: 700;
-        margin-bottom: 0.25rem;
-      }
-    }
-
-    .rating-star {
-      width: 100%;
-      margin: 4px 0;
-      font-size: 14px;
-
-      .ic-star:last-of-type {
-        color: lightgray;
-      }
-    }
-  }
-
+  padding: 0 40px;
   .item-btn-group {
     @include flexbox(around);
     width: 100%;
     height: 56px;
     margin: 16px 0 20px 0;
 
-    button:first-of-type {
+    .purchase {
       width: 80%;
       height: 56px;
       border-radius: 64px;
@@ -53,7 +17,7 @@
       background-color: $--colour-button-primary-emphasised-default;
     }
 
-    button:last-of-type {
+    .heart {
       width: 56px;
       height: 56px;
       border-radius: 50%;
@@ -62,16 +26,17 @@
     }
 
     .liked {
-      background-color: mediumvioletred;
+      background-color: $--colour-border-light;
     }
   }
 
   .item-availability {
-    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.42857;
 
     .stock-check {
-      margin-top: 20px;
-      padding-bottom: 73px;
+      margin-top: 40px;
+      padding-bottom: 40px;
 
       i {
         margin-right: 6px;

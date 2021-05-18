@@ -15,15 +15,18 @@ class ItemDetails extends Component {
         <hr />
         <button onClick={handleSideModal} className="item-information box">
           <span className="title">제품 설명</span>
+          <i className="ic-chevron" />
         </button>
 
         <hr />
         <button className="item-size box">
           <span className="title">제품 크기</span>
+          <i className="ic-chevron" />
         </button>
         <hr />
         <button className="item-rating box">
           <span className="title">상품평</span>
+          <i className="ic-chevron" />
         </button>
         <hr />
       </div>

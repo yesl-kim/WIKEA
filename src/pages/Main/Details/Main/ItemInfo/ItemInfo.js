@@ -26,10 +26,10 @@ class ItemInfo extends Component {
         <div className="item-info sticky">
           <PrimaryInfo product={product} />
           <div className="item-btn-group">
-            <button>구매하기</button>
+            <button className="purchase">구매하기</button>
             <button
               onClick={this.handleLike}
-              className={`${isLiked ? 'liked' : ''}`}
+              className={`heart ${isLiked && 'liked'}`}
             >
               <i className="ic-heart" aria-label="위시리스트에 추가" />
             </button>
@@ -48,11 +48,11 @@ class ItemInfo extends Component {
         </div>
         {isLiked ? (
           <LikePopUp isLiked={isLiked}>
-            {<span>위시리스트에 담겼습니다.</span>}
+            <span>위시리스트에 담겼습니다.</span>
           </LikePopUp>
         ) : (
           <LikePopUp isLiked={isLiked}>
-            {<span>즐겨찾기 목록에서 삭제되었습니다.</span>}
+            <span>즐겨찾기 목록에서 삭제되었습니다.</span>
           </LikePopUp>
         )}
       </>
@@ -61,6 +61,3 @@ class ItemInfo extends Component {
 }
 
 export default ItemInfo;
-
-// const LIKED = true;
-// const DISLIKED = false;

@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
 import Detail from './Detail';
-// import Details from '../Details';
 import './DetailsModal.scss';
 
 class DetailsModal extends Component {
   constructor() {
     super();
     this.state = {
-      height: false,
+      iscollapsed: false,
     };
   }
 
   showDetails = () => {
-    const { height } = this.state;
+    const { iscollapsed } = this.state;
     this.setState({
-      height: !height,
+      iscollapsed: !iscollapsed,
     });
   };
 
   render() {
     const { details } = this.props;
-    const { height } = this.state;
+    const { iscollapsed } = this.state;
     return (
       <div className="product_details">
         <h2 className="product_details_title">제품 설명</h2>
@@ -34,7 +33,7 @@ class DetailsModal extends Component {
           <button className="more" onClick={this.showDetails}>
             더보기
           </button>
-          <div className={`optional_desc${height ? ' show' : ''}`}>
+          <div className={`optional_desc${iscollapsed ? ' show' : ''}`}>
             {details[0].content
               .split('.')
               .slice(2)
