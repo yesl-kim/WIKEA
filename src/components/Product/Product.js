@@ -29,13 +29,13 @@ class Product extends React.Component {
           <i className={favoriteBtn ? 'ic-heart isFavorite' : 'ic-heart'} />
         </button>
         <div className="product_images">
-          <img alt={product.sub_category_name} src={product.url[0]} />
-          <img alt={product.sub_category_name} src={product.url[1]} />
+          <img alt={product.korean_name} src={product.image} />
+          <img alt={product.korean_name} src={product.background_image} />
         </div>
         <div className="products_explanation">
           <div className="product_new">{product.is_new ? 'New' : ''}</div>
           <h2 className="product_name">
-            <span>{`${product.en_name} ${product.ko_name}`}</span>
+            <span>{`${product.english_name} ${product.korean_name}`}</span>
           </h2>
           <div className="product_category">{product.sub_category_name}</div>
           <div className="product_price">

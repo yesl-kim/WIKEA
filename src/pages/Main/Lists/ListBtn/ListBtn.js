@@ -1,7 +1,7 @@
 import React from 'react';
 import Sortbox from './Sortbox/Sortbox';
 // import SideModal from './SideModal/SideModal';
-// import SortModal from './SideModal/FilterModal';
+// import FilterModal from './SideModal/FilterModal';
 import './ListBtn.scss';
 
 class ListBtn extends React.Component {
@@ -9,7 +9,7 @@ class ListBtn extends React.Component {
     super();
     this.state = {
       sortbox: false,
-      sideModal: false,
+      on: false,
     };
   }
 
@@ -21,8 +21,15 @@ class ListBtn extends React.Component {
     });
   };
 
+  handleSideModal = () => {
+    const { on } = this.state;
+    this.setState({
+      on: !on,
+    });
+  };
+
   render() {
-    const { sortbox, sideModal } = this.state;
+    const { sortbox, on } = this.state;
 
     return (
       <div className="btn_line">
@@ -58,7 +65,7 @@ class ListBtn extends React.Component {
           </button>
           <button
             aria-label="필터 모달 더보기, 더 지속 가능한 소재, 특가, 신재품, 시리즈"
-            onClick={this.handlebox}
+            onClick={this.handleSideModal}
             name="sideModal"
           >
             <span>
@@ -74,8 +81,12 @@ class ListBtn extends React.Component {
         </div>
         {sortbox && <Sortbox />}
         {/* sideModal merge시 활성화 예정입니다 */}
-        {/* <SideModal on={sideModal} direction="right">
-          <SortModal />
+        {/* <SideModal
+          handleSideModalOn={this.handleSideModal}
+          on={on}
+          direction="right"
+        >
+          <FilterModal />
         </SideModal> */}
       </div>
     );

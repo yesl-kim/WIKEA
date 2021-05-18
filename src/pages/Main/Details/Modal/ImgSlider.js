@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import URL from './imgData';
 import './ImgSlider.scss';
 
 class ImgSlider extends Component {
@@ -7,21 +6,14 @@ class ImgSlider extends Component {
     super();
     this.state = {
       imgRight: 0,
-      imgUrl: [],
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      imgUrl: URL,
-    });
-  }
-
-  //조건 : '이미지 개수 * W'로 나중에 수정하기!
-
   goNext = () => {
     const { imgRight } = this.state;
-    if (imgRight > -2250) {
+    const { product } = this.props;
+    const totalWidth = W * (product.url.length - 1);
+    if (imgRight > -totalWidth) {
       this.setState({ imgRight: imgRight - W });
     }
   };
@@ -35,15 +27,17 @@ class ImgSlider extends Component {
 
   render() {
     const { imgRight } = this.state;
+    const { product } = this.props;
     return (
       <div className="carousel-container">
         <div
           className="carousel-slide"
           style={{ transform: `translateX(${imgRight}px)` }}
         >
-          {URL.map((url, idx) => {
-            return <img key={idx} alt="test" src={url} />;
-          })}
+          {product &&
+            product.url.map((url, idx) => {
+              return <img key={idx} alt="test" src={url} />;
+            })}
         </div>
         <button onClick={this.goPrev} className="prevBtn">
           <i className="ic-chevron" />
@@ -58,4 +52,4 @@ class ImgSlider extends Component {
 
 export default ImgSlider;
 
-const W = 450;
+const W = 600;

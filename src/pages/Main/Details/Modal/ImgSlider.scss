@@ -1,53 +1,59 @@
-@import '../../../../styles/var.scss';
+@import '../../../../styles/var';
 
 .carousel-container {
-  width: 450px;
+  $--img-size: 600px;
+
+  width: $--img-size;
   margin: 30px auto;
   border: 0px solid #000;
   overflow: hidden;
   position: relative;
-}
+  .carousel-slide {
+    display: flex;
+    width: 100%;
+    height: $--img-size;
 
-.carousel-slide {
-  display: flex;
-  width: 100%;
-  height: 450px;
-}
-
-%btn {
-  position: absolute;
-  top: 45%;
-  width: 40px;
-  height: 36px;
-  background-color: black;
-}
-
-%icon {
-  color: white;
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.prevBtn {
-  @extend %btn;
-  left: 0;
-  -ms-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-
-  & > i {
-    @extend %icon;
+    img {
+      width: $--img-size;
+      object-fit: cover;
+    }
   }
-}
 
-.nextBtn {
-  @extend %btn;
-  right: 0;
-  -ms-transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+  %btn {
+    position: absolute;
+    top: 45%;
+    width: 40px;
+    height: 36px;
+    background-color: black;
+  }
 
-  & > i {
-    @extend %icon;
+  %icon {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .prevBtn {
+    @extend %btn;
+    left: 0;
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+    & > i {
+      @extend %icon;
+    }
+  }
+
+  .nextBtn {
+    @extend %btn;
+    right: 0;
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+
+    & > i {
+      @extend %icon;
+    }
   }
 }
