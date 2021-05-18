@@ -1,4 +1,3 @@
-@import '../../../styles/common.scss';
 @import '../../../styles/var.scss';
 
 .sign_up {
@@ -507,6 +506,14 @@
         opacity: 0.8;
         cursor: pointer;
       }
+    }
+
+    .activated {
+      background-color: $--colour-button-primary-emphasised-press;
+    }
+
+    .deactivated {
+      background-color: $--colour-brand-blue;
     }
   }
 }

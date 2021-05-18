@@ -28,6 +28,17 @@ class SignUp extends React.Component {
     this.props.history.push('/signin');
   };
 
+  goToMain = () => {
+    this.props.history.push('/');
+  };
+
+  showPassword = () => {
+    const { type } = this.state;
+    this.setState({
+      type: type === 'password' ? 'text' : 'password',
+    });
+  };
+
   render() {
     const {
       lastNameValue,
@@ -38,6 +49,8 @@ class SignUp extends React.Component {
       pwValue,
       type,
     } = this.state;
+    const isValid =
+      idValue.includes('@') && idValue.includes('.') && pwValue.length >= 8;
 
     return (
       <div className="sign_up">
@@ -283,7 +296,7 @@ class SignUp extends React.Component {
                 </label>
                 <i
                   className={`ic-lock ${pwValue ? '_show' : '_hide'}`}
-                  // onClick={this.showPassword}
+                  onClick={this.showPassword}
                 />
                 <p
                   className={
@@ -355,7 +368,14 @@ class SignUp extends React.Component {
                 개인정보 국외이전
               </span>
             </div>
-            <button className="do_sign_up_btn" type="button">
+            <button
+              type="button"
+              className={`do_sign_up_btn ${
+                isValid ? 'activated' : 'deactivated'
+              }`}
+              disabled={!isValid}
+              onClick={this.goToMain}
+            >
               가입하기
             </button>
           </form>
