@@ -6,20 +6,20 @@ class DetailsModal extends Component {
   constructor() {
     super();
     this.state = {
-      iscollapsed: false,
+      isShow: false,
     };
   }
 
   showDetails = () => {
-    const { iscollapsed } = this.state;
+    const { isShow } = this.state;
     this.setState({
-      iscollapsed: !iscollapsed,
+      isShow: !isShow,
     });
   };
 
   render() {
     const { details } = this.props;
-    const { iscollapsed } = this.state;
+    const { isShow } = this.state;
     return (
       <div className="product_details">
         <h2 className="product_details_title">제품 설명</h2>
@@ -33,13 +33,14 @@ class DetailsModal extends Component {
           <button className="more" onClick={this.showDetails}>
             더보기
           </button>
-          <div className={`optional_desc${iscollapsed ? ' show' : ''}`}>
-            {details[0].content
-              .split('.')
-              .slice(2)
-              .map((text, idx) => {
-                return <span key={idx}>{text}</span>;
-              })}
+          <div className="optional_desc">
+            {isShow &&
+              details[0].content
+                .split('.')
+                .slice(2)
+                .map((text, idx) => {
+                  return <span key={idx}>{text}</span>;
+                })}
           </div>
         </div>
         <ul className="accordion">
