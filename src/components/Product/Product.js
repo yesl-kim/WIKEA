@@ -18,10 +18,12 @@ class Product extends React.Component {
   };
 
   totalRating = () => {
-    const { rating } = this.props;
-    const stars = new Array(Math.floor(rating)).fill(<i className="ic-star" />);
+    const { star } = this.props.product;
+    const stars = new Array(Math.floor(Number(star))).fill(
+      <i className="ic-star" />
+    );
 
-    if (rating % 1 > 0) {
+    if (star % 1 > 0) {
       stars.push(<i className="ic-cart" />);
     }
 
@@ -29,8 +31,7 @@ class Product extends React.Component {
   };
 
   render() {
-    const { koName, enName, category, price, isNew, img, classGrid, children } =
-      this.props;
+    const { product, classGrid, children } = this.props;
 
     const { favoriteBtn } = this.state;
 
@@ -41,18 +42,18 @@ class Product extends React.Component {
           <i className={favoriteBtn ? 'ic-heart isFavorite' : 'ic-heart'} />
         </button>
         <div className="product_images">
-          <img alt={category} src={img[0]} />
-          <img alt={category} src={img[1]} />
+          <img alt={product.sub_category_name} src={product.url[0]} />
+          <img alt={product.sub_category_name} src={product.url[1]} />
         </div>
         <div className="products_explanation">
-          <div className="product_new">{isNew ? 'New' : ''}</div>
+          <div className="product_new">{product.is_new ? 'New' : ''}</div>
           <h2 className="product_name">
-            <span>{`${enName} ${koName}`}</span>
+            <span>{`${product.en_name} ${product.ko_name}`}</span>
           </h2>
-          <div className="product_size">{category}</div>
+          <div className="product_category">{product.sub_category_name}</div>
           <div className="product_price">
             <span>₩</span>
-            {Math.floor(price).toLocaleString()}
+            {Math.floor(product.price).toLocaleString()}
           </div>
           <div className="product_rating">{this.totalRating()}</div>
           <button className="product_shopping">
