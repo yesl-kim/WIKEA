@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NewProduct from './components/NewProduct/NewProduct';
@@ -15,20 +14,18 @@ class Main extends React.Component {
 
   newProductSections = [];
 
-  componentDidMount() {
-    fetch(API.NEW_BG_IMAGES)
+  async componentDidMount() {
+    await fetch(API.NEW_BG_IMAGES)
       .then(images => images.json())
       .then(images => {
         this.newProductSections = images;
-        console.log('this.newProductSections1 --->', this.newProductSections);
       });
-    fetch(API.PRODUCTS_MAIN_TEST)
+    await fetch(API.PRODUCTS_MAIN_TEST)
       .then(products => products.json())
       .then(products => {
         const [left, right] = products.new_products;
         this.newProductSections[0].products = left;
         this.newProductSections[1].products = right;
-        console.log('this.newProductSections2 --->', this.newProductSections);
       });
     this.setState({
       newProductSections: this.newProductSections,
@@ -37,8 +34,6 @@ class Main extends React.Component {
 
   render() {
     const { newProductSections } = this.state;
-    console.log('newProductSections --->', newProductSections);
-    console.log('this.newProductSections3 --->', this.newProductSections);
     return (
       <>
         <main className="main">
