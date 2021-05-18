@@ -11,14 +11,14 @@ class Details extends React.Component {
     super();
     this.state = {
       modalOn: false,
-      on: false,
+      sideModalOn: false,
       details: [],
       product: [],
     };
   }
 
   componentDidMount() {
-    //서버 없을 때,
+    //서버 연결 시, url('http://192.168.0.39:5000/product/p/nikelamp')
     fetch('/data/detailsData/test.json')
       .then(res => res.json())
       .then(product =>
@@ -27,14 +27,6 @@ class Details extends React.Component {
           details: product.product[0].descriptions,
         })
       );
-    // fetch('http://192.168.0.39:5000/product/p/nikelamp')
-    //   .then(res => res.json())
-    //   .then(product =>
-    //     this.setState({
-    //       product: product.product[0],
-    //       details: product.product[0].descriptions,
-    //     })
-    //   );
   }
 
   handleModal = () => {
@@ -45,14 +37,14 @@ class Details extends React.Component {
   };
 
   handleSideModal = () => {
-    const { on } = this.state;
+    const { sideModalOn } = this.state;
     this.setState({
-      on: !on,
+      sideModalOn: !sideModalOn,
     });
   };
 
   render() {
-    const { modalOn, on, details, product } = this.state;
+    const { modalOn, sideModalOn, details, product } = this.state;
     return (
       <>
         <Main
@@ -65,10 +57,10 @@ class Details extends React.Component {
           <ImgModal product={product} handleModal={this.handleModal} />
         )}
 
-        {on && (
+        {sideModalOn && (
           <SideModal
             handleSideModalOn={this.handleSideModal}
-            on={on}
+            on={sideModalOn}
             direction="right"
           >
             <DetailsModal details={details} />
