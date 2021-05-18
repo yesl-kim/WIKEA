@@ -8,20 +8,17 @@
 - **category** : string
   제품 카테고리입니다
 
-- **price** : string
+- **price** : number
   제품 가격입니다
 
 - **isNew** : string
   제품의 신상품 여부입니다
 
-- **rating** : string
+- **rating** : number
   제품 별점입니다
 
 - **img** : string
   제품 url입니다
-
-- **rating** : string
-  제품 평점입니다
 
 - **classGrid** : string
   product component에 그리드 속성을 부여하기 위한 className입니다
