@@ -12,24 +12,12 @@ class Main extends React.Component {
     };
   }
 
-  newProductSections = [];
-
-  async componentDidMount() {
-    await fetch(API.NEW_BG_IMAGES)
-      .then(images => images.json())
-      .then(images => {
-        this.newProductSections = images;
-      });
-    await fetch(API.PRODUCTS_MAIN_TEST)
+  componentDidMount() {
+    fetch(API.PRODUCTS_MAIN_TEST)
       .then(products => products.json())
       .then(products => {
-        const [left, right] = products.new_products;
-        this.newProductSections[0].products = left;
-        this.newProductSections[1].products = right;
+        this.setState({ newProductSections: products });
       });
-    this.setState({
-      newProductSections: this.newProductSections,
-    });
   }
 
   render() {
