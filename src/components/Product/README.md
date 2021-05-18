@@ -20,8 +20,5 @@
 - **img** : string
   제품 url입니다
 
-- **classGrid** : string
-  product component에 그리드 속성을 부여하기 위한 className입니다
-
 - **children** : this.props.children
   <input type="checkbox">를 담기위한 children입니다

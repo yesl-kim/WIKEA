@@ -16,15 +16,15 @@ class Lists extends React.Component {
   }
 
   // Mock data 용 fetch입니다. 백엔드와 통신 이후 삭제 예정
-  // componentDidMount() {
-  //   fetch('http://localhost:3000/data/listmockdata.json')
-  //     .then(product => product.json())
-  //     .then(product => {
-  //       this.setState({
-  //         product,
-  //       });
-  //     });
-  // }
+  componentDidMount() {
+    fetch('http://localhost:3000/data/listmockdata.json')
+      .then(product => product.json())
+      .then(products => {
+        this.setState({
+          products: products.product,
+        });
+      });
+  }
 
   // pagination 구현 로직입니다. 백엔드와 통신 이후 주석 풀 예정
   // fetchProduct = () => {
@@ -40,6 +40,7 @@ class Lists extends React.Component {
 
   render() {
     const { products, showMoreBar } = this.state;
+    console.log(products);
 
     return (
       <main className="grid-container">

@@ -9,7 +9,7 @@ class Products extends React.Component {
     return (
       <ul className="products row">
         {products.map(product => (
-          <li className="col-lg-3 col-md-4">
+          <li className="col-lg-3 col-md-4" key={product.id}>
             <Product product={product}>
               <input type="checkbox" />
             </Product>
