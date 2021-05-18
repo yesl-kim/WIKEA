@@ -1,9 +1,10 @@
 import React from 'react';
-
 import Main from './Main/Main.js';
 import ImgModal from './Modal/ImgModal/ImgModal.js';
 import SideModal from '../../../components/SideModal/SideModal.js';
 import DetailsModal from '../Details/Modal/DetailsModal/DetailsModal.js';
+// 서버 완성될 시, config.js사용
+// import '../../../config.js';
 import './Details.scss';
 
 class Details extends React.Component {
@@ -18,7 +19,7 @@ class Details extends React.Component {
   }
 
   componentDidMount() {
-    //서버 연결 시, url('http://192.168.0.39:5000/product/detail/id')
+    //서버 연결 시, url('API${this.props.match.params.id}')
     fetch('/data/detailsData/test.json')
       .then(res => res.json())
       .then(product =>
