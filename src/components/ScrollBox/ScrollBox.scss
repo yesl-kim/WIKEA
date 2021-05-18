@@ -4,7 +4,6 @@
   position: relative;
   padding-bottom: 35%;
   height: auto;
-  width: 100%;
   overflow-x: scroll;
 
   .item_list {
@@ -13,7 +12,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
 
     .item {
       flex-basis: calc(22.72727% - 1.25rem);
