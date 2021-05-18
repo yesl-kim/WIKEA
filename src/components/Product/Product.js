@@ -19,9 +19,7 @@ class Product extends React.Component {
 
   totalRating = () => {
     const { rating } = this.props;
-    const stars = new Array(Math.floor(Number(rating))).fill(
-      <i className="ic-star" />
-    );
+    const stars = new Array(Math.floor(rating)).fill(<i className="ic-star" />);
 
     if (rating % 1 > 0) {
       stars.push(<i className="ic-cart" />);
