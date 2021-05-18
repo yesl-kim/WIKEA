@@ -1,6 +1,6 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-// import { API } from '../../../config';
+import { Link, withRouter } from 'react-router-dom';
+import { API } from '../../../config';
 import './SignUp.scss';
 
 class SignUp extends React.Component {
@@ -24,12 +24,47 @@ class SignUp extends React.Component {
     });
   };
 
+  changeCellPhoneNumberInputValue = () => {
+    const { cellPhoneNumberValue } = this.state;
+    this.setState({
+      cellPhoneNumberValue: Number(cellPhoneNumberValue.split('-').join('')),
+    });
+  };
+
   goToSignIn = () => {
     this.props.history.push('/signin');
   };
 
   goToMain = () => {
-    this.props.history.push('/');
+    const {
+      lastNameValue,
+      firstNameValue,
+      birthDayDateValue,
+      cellPhoneNumberValue,
+      idValue,
+      pwValue,
+    } = this.state;
+
+    fetch(API.SIGN_UP, {
+      method: 'POST',
+      body: JSON.stringify({
+        last_name: lastNameValue,
+        first_name: firstNameValue,
+        birthday: birthDayDateValue,
+        phone_number: cellPhoneNumberValue,
+        email: idValue,
+        password: pwValue,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.message === 'SUCCESS') {
+          localStorage.setItem('token', result.token);
+          this.props.history.push('/');
+        } else {
+          alert('입력 값을 확인해주세요');
+        }
+      });
   };
 
   showPassword = () => {
@@ -54,21 +89,20 @@ class SignUp extends React.Component {
 
     return (
       <div className="sign_up">
-        <aside className="sign_up_aside">
-          <section className="sign_up_title_container">
-            <p className="sign_up_title">회원가입</p>
+        <aside className="aside">
+          <section className="aside_title_container">
+            <p className="aside_title">회원가입</p>
             <div>
               <span className="comment_with_sign_up_already">
                 이미 가입하셨나요?
               </span>
-              <span className="go_to_login_page" onClick={this.goToSignIn}>
+              <Link to="/" className="go_to_login_page">
                 로그인 하기
-              </span>
+              </Link>
             </div>
           </section>
-
-          <div className="sign_up_aside_images_container">
-            <section className="sign_up_aside_images_first_column">
+          <div className="aside_images_container">
+            <section className="aside_images_first_column">
               <img
                 className="colleagues_sitting_around"
                 alt="colleagues sitting around"
@@ -90,8 +124,7 @@ class SignUp extends React.Component {
                 src="/images/Login/SignUp/headphone in yellow background.jpeg"
               />
             </section>
-
-            <section className="sign_up_aside_images_second_column">
+            <section className="aside_images_second_column">
               <img
                 className="light_bulb_in_yellow_background"
                 alt="light bulb in yellow background"
@@ -120,8 +153,7 @@ class SignUp extends React.Component {
             </section>
           </div>
         </aside>
-
-        <div className="sign_up_main">
+        <div className="main">
           <section className="want_you_sign_up_wikea_family_container">
             <p className="want_you_sign_up_wikea_family">
               WIKEA Family에 가입하시겠어요?
@@ -153,7 +185,6 @@ class SignUp extends React.Component {
               </div>
             </div>
           </section>
-
           <form>
             <div className="last_name_input_container">
               <div className="last_name_input_wrapper">
@@ -180,7 +211,6 @@ class SignUp extends React.Component {
                 </p>
               </div>
             </div>
-
             <div className="first_name_input_container">
               <div className="first_name_input_wrapper">
                 <input
@@ -206,7 +236,6 @@ class SignUp extends React.Component {
                 </p>
               </div>
             </div>
-
             <div className="birth_day_date_input_container">
               <div className="birth_day_date_input_wrapper">
                 <input
@@ -233,7 +262,6 @@ class SignUp extends React.Component {
                 </p>
               </div>
             </div>
-
             <div className="cell_phone_number_input_container">
               <div className="cell_phone_number_input_wrapper">
                 <input
@@ -241,6 +269,8 @@ class SignUp extends React.Component {
                   type="text"
                   name="cellPhoneNumberValue"
                   onChange={this.handleInputValue}
+                  value={cellPhoneNumberValue}
+                  onBlur={this.changeCellPhoneNumberInputValue}
                 />
                 <label
                   htmlFor="cellPhoneNumberValue"
@@ -260,7 +290,6 @@ class SignUp extends React.Component {
                 </p>
               </div>
             </div>
-
             <div className="id_input_container">
               <div className="id_input_wrapper">
                 <input
@@ -282,7 +311,6 @@ class SignUp extends React.Component {
                 </p>
               </div>
             </div>
-
             <div className="pw_input_container">
               <div className="pw_input_wrapper">
                 <input
@@ -307,7 +335,6 @@ class SignUp extends React.Component {
                 </p>
               </div>
             </div>
-
             <div className="marketing_acceptance_container">
               <input
                 className="marketing_acceptance_checkbox"
@@ -318,7 +345,6 @@ class SignUp extends React.Component {
                 그리고 할인 혜택 정보를 받고 싶어요!
               </span>
             </div>
-
             <div className="terms_and_conditions_acceptance_container">
               <input
                 className="terms_and_conditions_acceptance_checkbox"
@@ -329,7 +355,6 @@ class SignUp extends React.Component {
               </span>
               <span className="terms_and_conditions_details">이용약관</span>
             </div>
-
             <div className="personal_info_handling_policy_container">
               <input
                 className="personal_info_handling_policy_checkbox"
@@ -342,7 +367,6 @@ class SignUp extends React.Component {
                 개인정보 수집ㆍ이용 동의
               </span>
             </div>
-
             <div className="personal_info_processing_policy_container">
               <input
                 class="personal_info_processing_policy_checkbox"
@@ -355,7 +379,6 @@ class SignUp extends React.Component {
                 개인정보 처리 위탁
               </span>
             </div>
-
             <div className="personal_info_transferring_policy_container">
               <input
                 className="personal_info_transferring_policy_checkbox"

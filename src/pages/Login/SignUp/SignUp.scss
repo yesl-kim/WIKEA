@@ -2,13 +2,16 @@
 
 .sign_up {
   display: flex;
-  padding: 80px 20px;
+  padding: 80px 0px;
 
-  .sign_up_aside {
-    .sign_up_title_container {
-      .sign_up_title {
+  .aside {
+    width: 40%;
+    padding-left: 60px;
+
+    .aside_title_container {
+      .aside_title {
         margin-bottom: 3px;
-        font-size: 20px;
+        font-size: 30px;
         font-weight: bold;
       }
 
@@ -30,77 +33,77 @@
       }
     }
 
-    .sign_up_aside_images_container {
+    .aside_images_container {
       display: flex;
       margin-top: 50px;
       margin-right: 50px;
 
-      .sign_up_aside_images_first_column {
-        width: 134px;
+      .aside_images_first_column {
+        width: 150px;
 
         .colleagues_sitting_around {
-          width: 134px;
-          height: 144px;
+          width: 150px;
+          height: 160px;
           padding: 3px;
           border-radius: 8px;
         }
 
         .desk_and_monitor {
-          width: 134px;
-          height: 144px;
+          width: 150px;
+          height: 160px;
           padding: 3px;
           border-radius: 8px;
         }
 
         .indoor_living_room {
-          width: 134px;
-          height: 112px;
+          width: 150px;
+          height: 130px;
           padding: 3px;
           border-radius: 8px;
         }
 
         .headphone_in_yellow_background {
-          width: 134px;
-          height: 144px;
+          width: 150px;
+          height: 160px;
           padding: 3px;
           border-radius: 8px;
         }
       }
 
-      .sign_up_aside_images_second_column {
-        width: 134px;
+      .aside_images_second_column {
+        width: 150px;
 
         .light_bulb_in_yellow_background {
-          width: 134px;
-          height: 112px;
+          width: 150px;
+          height: 130px;
           padding: 3px;
           border-radius: 8px;
         }
 
         .indoor_office {
-          width: 134px;
-          height: 112px;
+          width: 150px;
+          height: 130px;
           padding: 3px;
           border-radius: 8px;
         }
 
         .rubix_cube_in_yellow_background {
-          width: 134px;
-          height: 144px;
+          width: 150px;
+          height: 160px;
           padding: 3px;
           border-radius: 8px;
         }
 
         .mom_and_child {
-          width: 134px;
-          height: 112px;
+          width: 150px;
+          height: 130px;
           padding: 3px;
           border-radius: 8px;
         }
 
         .woman_with_sofa {
-          width: 134px;
-          height: 144px;
+          width: 150px;
+          height: 160px;
           padding: 3px;
           border-radius: 8px;
         }
@@ -108,8 +111,10 @@
     }
   }
 
-  .sign_up_main {
+  .main {
+    width: 60%;
     padding-top: 20px;
+    padding-left: 50px;
 
     .want_you_sign_up_wikea_family_container {
       .want_you_sign_up_wikea_family {
@@ -121,9 +126,11 @@
       .sign_up_wikea_family_with_yes {
         .checkbox_and_yes_comment_wrapper {
           margin-bottom: 35px;
+
           .sign_up_wikea_family_with_yes_checkbox {
             margin-right: 5px;
           }
+
           .check_with_yes_answer {
             margin-right: 5px;
             font-size: 14px;
@@ -143,7 +150,7 @@
 
       .just_sign_up_online_mall {
         .checkbox_and_no_comment_wrapper {
-          margin-bottom: 35px;
+          margin-bottom: 50px;
 
           .sign_up_wikea_family_with_no_checkbox {
             margin-right: 5px;
@@ -169,7 +176,8 @@
 
     form {
       .last_name_input_container {
-        margin-bottom: 30px;
+        width: 70%;
+        margin-bottom: 50px;
 
         .last_name_input_wrapper {
           position: relative;
@@ -207,7 +215,8 @@
       }
 
       .first_name_input_container {
-        margin-bottom: 30px;
+        width: 70%;
+        margin-bottom: 50px;
 
         .first_name_input_wrapper {
           position: relative;
@@ -245,7 +254,8 @@
       }
 
       .birth_day_date_input_container {
-        margin-bottom: 30px;
+        width: 70%;
+        margin-bottom: 50px;
 
         .birth_day_date_input_wrapper {
           position: relative;
@@ -277,7 +287,8 @@
       }
 
       .cell_phone_number_input_container {
-        margin-bottom: 30px;
+        width: 70%;
+        margin-bottom: 50px;
 
         .cell_phone_number_input_wrapper {
           position: relative;
@@ -315,7 +326,8 @@
       }
 
       .id_input_container {
-        margin-bottom: 30px;
+        width: 70%;
+        margin-bottom: 50px;
 
         .id_input_wrapper {
           position: relative;
@@ -353,7 +365,8 @@
       }
 
       .pw_input_container {
-        margin-bottom: 30px;
+        width: 50%;
+        margin-bottom: 50px;
 
         .pw_input_wrapper {
           position: relative;
@@ -403,7 +416,7 @@
     }
 
     .marketing_acceptance_container {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
 
       .marketing_acceptance_checkbox {
         margin-right: 5px;
@@ -415,7 +428,7 @@
     }
 
     .terms_and_conditions_acceptance_container {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
 
       .terms_and_conditions_acceptance_checkbox {
         margin-right: 5px;
@@ -437,7 +450,7 @@
     }
 
     .personal_info_handling_policy_container {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
 
       .personal_info_handling_policy_checkbox {
         margin-right: 5px;
@@ -460,7 +473,7 @@
     }
 
     .personal_info_processing_policy_container {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
 
       .personal_info_processing_policy_checkbox {
         margin-right: 5px;
@@ -506,14 +519,15 @@
     }
     .do_sign_up_btn {
       display: block;
-      width: 100%;
+      width: 60%;
+      height: 50px;
       margin-bottom: 40px;
-      padding: 12px;
+      padding: 15px;
       color: $--color-light-gray;
       background-color: $--colour-border-dark;
       border: 1px solid $--colour-border-dark;
       border-radius: 30px;
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 700;
 
       &:hover {
