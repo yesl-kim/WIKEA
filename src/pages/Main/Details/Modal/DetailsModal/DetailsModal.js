@@ -6,20 +6,20 @@ class DetailsModal extends Component {
   constructor() {
     super();
     this.state = {
-      isShow: false,
+      isCollapsed: false,
     };
   }
 
   showDetails = () => {
-    const { isShow } = this.state;
+    const { isCollapsed } = this.state;
     this.setState({
-      isShow: !isShow,
+      isCollapsed: !isCollapsed,
     });
   };
 
   render() {
     const { details } = this.props;
-    const { isShow } = this.state;
+    const { isCollapsed } = this.state;
     return (
       <div className="product_details">
         <h2 className="product_details_title">제품 설명</h2>
@@ -34,7 +34,7 @@ class DetailsModal extends Component {
             더보기
           </button>
           <div className="optional_desc">
-            {isShow &&
+            {isCollapsed &&
               details[0].content
                 .split('.')
                 .slice(2)
