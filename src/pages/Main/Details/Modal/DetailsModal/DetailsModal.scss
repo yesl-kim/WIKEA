@@ -1,31 +1,34 @@
 @import '../../../../../styles/var';
 
-.details_modal {
+.product_details {
   width: 480px;
   margin-top: 88px;
   padding: 2rem 3rem;
   font-size: 0.875rem;
   color: #484848;
 
-  hr {
-    margin-bottom: 0;
+  .product_details_title {
+    font-size: 1.5625rem;
+    margin-bottom: 2rem;
   }
 
-  .content_title {
-    h1 {
-      font-size: 1.5625rem;
+  .product_details_container {
+    span {
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    .more {
+      margin-bottom: 30px;
+    }
+
+    [class$='desc'] {
+      height: 0;
+      overflow: hidden;
     }
   }
 
-  .more {
-    margin-bottom: 30px;
-  }
-
-  .optional_desc {
-    height: 0;
-  }
-
-  [class$='title'] {
+  .accordion_item {
     button {
       @include flexbox(between);
       width: 100%;
@@ -36,24 +39,14 @@
       display: inline;
       font-size: 0.875rem;
     }
-  }
 
-  [class^='ic-'] {
-    display: inline;
-  }
-
-  [class$='desc'] {
-    // margin: 2rem 0;
-    height: 0;
-    overflow: hidden;
+    .accordion_contents {
+      height: 0;
+      overflow: hidden;
+    }
   }
 
   .show {
-    height: auto;
-  }
-
-  span {
-    display: block;
-    margin-bottom: 2rem;
+    height: auto !important;
   }
 }
