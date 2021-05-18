@@ -212,8 +212,8 @@ class SignUp extends React.Component {
                 <input
                   id="birthDayDateValue"
                   type="text"
-                  // placeholder="YYYY-MM-DD"
                   name="birthDayDateValue"
+                  placeholder="YYYY-MM-DD"
                   onChange={this.handleInputValue}
                 />
                 <label
@@ -238,7 +238,7 @@ class SignUp extends React.Component {
               <div className="cell_phone_number_input_wrapper">
                 <input
                   id="cellPhoneNumberValue"
-                  type="tel"
+                  type="text"
                   name="cellPhoneNumberValue"
                   onChange={this.handleInputValue}
                 />

@@ -261,13 +261,7 @@
           label {
             position: absolute;
             top: 0px;
-            transform: translateY(50%);
-
-            &.typing {
-              position: absolute;
-              transform: translateY(1%);
-              font-size: 6px;
-            }
+            font-size: 6px;
           }
 
           .birthDayDate_invalid_comment {
@@ -434,6 +428,11 @@
       .terms_and_conditions_details {
         border-bottom: 1px solid $--colour-border-dark;
         font-size: 14px;
+
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
+        }
       }
     }
 
@@ -452,6 +451,11 @@
       .personal_info_handling_policy_details {
         border-bottom: 1px solid $--colour-border-dark;
         font-size: 14px;
+
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
+        }
       }
     }
 
@@ -470,6 +474,11 @@
       .personal_info_processing_policy_details {
         border-bottom: 1px solid $--colour-border-dark;
         font-size: 14px;
+
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
+        }
       }
     }
 
@@ -488,6 +497,11 @@
       .personal_info_transferring_policy_details {
         border-bottom: 1px solid $--colour-border-dark;
         font-size: 14px;
+
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
+        }
       }
     }
     .do_sign_up_btn {
