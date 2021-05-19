@@ -13,7 +13,7 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    fetch(API.NEW_PRODUCT)
+    fetch(API.NEW_PRODUCT_TEST)
       .then(products => products.json())
       .then(products => {
         this.setState({ newProductSections: products.new_products });
@@ -22,7 +22,6 @@ class Main extends React.Component {
 
   render() {
     const { newProductSections } = this.state;
-    console.log(newProductSections);
     return (
       <>
         <main className="main">
