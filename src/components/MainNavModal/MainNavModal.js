@@ -21,14 +21,13 @@ class MainNavModal extends Component {
       .then(categories => categories.json())
       .then(res => {
         this.setState({
-          categories: res.category_list,
-          subCategories: res.sub_category_list,
+          categories: res.category,
+          subCategories: res.sub_category,
         });
       });
   }
 
-  handleSubNavOn = e => {
-    const { name } = e.target;
+  handleSubNavOn = name => {
     this.setState({
       isSubCategoryOn: true,
       activeSubCategory: name,
@@ -55,7 +54,7 @@ class MainNavModal extends Component {
               <span>최근 본 제품</span>
               <ul className="promotion_list">
                 <li>
-                  <Link to="/">
+                  <Link to="/lists/">
                     <img
                       alt="탁자"
                       src="https://www.ikea.com/kr/ko/images/products/voxloev-dining-table-light-bamboo__0997396_pe822660_s5.jpg?f=xxxs"
