@@ -1,6 +1,6 @@
-const IP = '192.168.0.28:8000';
+const IP = '172.30.1.47:8000';
 export const API = {
   SIGN_IN: `http://${IP}/users/signin`,
-  PRODUCTS_MAIN: `http://${IP}/product/main`,
-  PRODUCTS_MAIN_TEST: `/data/NewProducts/NewProducts.json`,
+  NEW_PRODUCT: `http://${IP}/product/newList`,
+  NEW_PRODUCT_TEST: `/data/NewProducts/NewProducts.json`,
 };
