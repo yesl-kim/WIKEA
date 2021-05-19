@@ -35,7 +35,7 @@ class Main extends React.Component {
                       <Link to="/" className="image_link">
                         <img
                           alt="침실 가구"
-                          src="https://www.ikea.com/images/07/06/07061f498bfa3b789ada7b5d5151a3c7.jpg?f=s"
+                          src="/images/bgImages/visual.png"
                         />
                       </Link>
                     </div>
