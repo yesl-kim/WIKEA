@@ -37,36 +37,38 @@ class Lists extends React.Component {
     const { products, showMoreBar } = this.state;
 
     return (
-      <main className="grid-container">
-        <Breadcrumb />
-        <div className="row">
-          <div className="col-lg-1 col-md-1"></div>
-          <div className="col-lg-12 col-md-11">
-            <ItemExplanation />
-            <ListBtn />
-            <Products products={products} />
-            <div className="show_more">
-              <div className="show_more_bar">
-                <div
-                  className="show_more_charge_half"
-                  style={{ width: `${showMoreBar}%` }}
-                ></div>
-              </div>
-              <div className="pagination_btn">
-                <button
-                  className="show_more_btn"
-                  type="button"
-                  // onClick={this.fetchProduct(table_lamps, 1)}
-                >
-                  1
-                </button>
-                <button
-                  className="show_more_btn"
-                  type="button"
-                  // onClick={this.fetchProduct(table_lamps, 2)}
-                >
-                  2
-                </button>
+      <main className="lists">
+        <div className="grid-container">
+          <div className="row">
+            <div className="col-lg-1 col-md-1"></div>
+            <div className="col-lg-12 col-md-11">
+              <Breadcrumb />
+              <ItemExplanation />
+              <ListBtn />
+              <Products products={products} />
+              <div className="show_more">
+                <div className="show_more_bar">
+                  <div
+                    className="show_more_charge_half"
+                    style={{ width: `${showMoreBar}%` }}
+                  ></div>
+                </div>
+                <div className="pagination_btn">
+                  <button
+                    className="show_more_btn"
+                    type="button"
+                    // onClick={this.fetchProduct(table_lamps, 1)}
+                  >
+                    1
+                  </button>
+                  <button
+                    className="show_more_btn"
+                    type="button"
+                    // onClick={this.fetchProduct(table_lamps, 2)}
+                  >
+                    2
+                  </button>
+                </div>
               </div>
             </div>
           </div>

@@ -8,8 +8,24 @@ class Nav extends React.Component {
     super();
     this.state = {
       isMainNavModalOn: false,
+      scrollTop: 0,
     };
   }
+
+  componentDidMount = () => {
+    window.addEventListener('scroll', this.handleScroll);
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener('scroll', this.handleScroll);
+  };
+
+  handleScroll = e => {
+    const scrollTop = ('scroll', e.srcElement.scrollingElement.scrollTop);
+    this.setState({
+      scrollTop,
+    });
+  };
 
   handleMainNavModalOn = () => {
     this.setState({
@@ -18,11 +34,12 @@ class Nav extends React.Component {
   };
 
   render() {
-    const { isMainNavModalOn } = this.state;
+    const { scrollTop, isMainNavModalOn } = this.state;
+
     return (
-      <>
+      <div className={`nav_wrap ${scrollTop - NAV >= 0 && 'hide'}`}>
         <Message />
-        <nav className="nav">
+        <nav className="nav_menu" onScroll={this.handleScroll}>
           <h1 className="visually-hidden">메뉴바</h1>
           <img alt="logo" src="/images/Detail/logo.png" className="logo" />
           <div className="lg-only options">
@@ -76,9 +93,11 @@ class Nav extends React.Component {
             handleSideModalOn={this.handleMainNavModalOn}
           />
         </nav>
-      </>
+      </div>
     );
   }
 }
 
 export default Nav;
+
+const NAV = 132;

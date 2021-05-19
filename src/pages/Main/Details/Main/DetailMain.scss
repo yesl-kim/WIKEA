@@ -15,11 +15,11 @@
   }
 
   @include responsive(D) {
-    padding: 0 40px 0 20px;
+    padding: 132px 40px 0 20px;
 
     .sticky {
       position: sticky;
-      top: 96px;
+      top: 140px;
       margin-bottom: 100px;
     }
 
