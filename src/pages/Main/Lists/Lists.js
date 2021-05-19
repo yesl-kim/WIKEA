@@ -1,4 +1,5 @@
 import React from 'react';
+import Breadcrumb from '../../../components/Breadcrumb/Breadcrumb';
 import ItemExplanation from './ItemExplanation/ItemExplanation';
 import ListBtn from './ListBtn/ListBtn';
 import Products from './Products/Products';
@@ -37,6 +38,7 @@ class Lists extends React.Component {
 
     return (
       <main className="grid-container">
+        <Breadcrumb />
         <div className="row">
           <div className="col-lg-1 col-md-1"></div>
           <div className="col-lg-12 col-md-11">

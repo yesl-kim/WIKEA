@@ -1,5 +1,5 @@
 import React from 'react';
-import Main from './Main/Main.js';
+import DetailMain from './Main/DetailMain.js';
 import ImgModal from './Modal/ImgModal/ImgModal.js';
 import SideModal from '../../../components/SideModal/SideModal.js';
 import DetailsModal from '../Details/Modal/DetailsModal/DetailsModal.js';
@@ -16,6 +16,7 @@ class Details extends React.Component {
       sideModalOn: false,
       details: [],
       product: [],
+      recommended: [],
     };
   }
 
@@ -27,6 +28,14 @@ class Details extends React.Component {
         this.setState({
           product: product.product[0],
           details: product.product[0].descriptions,
+        })
+      );
+
+    fetch('/data/listmockdata.json')
+      .then(res => res.json())
+      .then(res =>
+        this.setState({
+          recommended: res.product,
         })
       );
   }
@@ -60,12 +69,13 @@ class Details extends React.Component {
   };
 
   render() {
-    const { modalOn, sideModalOn, details, product } = this.state;
+    const { modalOn, sideModalOn, details, product, recommended } = this.state;
     return (
       <>
-        <Main
+        <DetailMain
           details={details}
           product={product}
+          recommended={recommended}
           handleModal={this.handleModal}
           handleSideModal={this.handleSideModal}
         />
@@ -73,16 +83,14 @@ class Details extends React.Component {
           <ImgModal product={product} handleModal={this.handleModal} />
         )}
 
-        {sideModalOn && (
-          <SideModal
-            handleSideModalOn={this.handleSideModal}
-            on={sideModalOn}
-            direction="right"
-          >
-            {/* <CartModal /> */}
-            <DetailsModal details={details} />
-          </SideModal>
-        )}
+        <SideModal
+          handleSideModalOn={this.handleSideModal}
+          on={sideModalOn}
+          direction="right"
+        >
+          {/* <CartModal /> */}
+          {sideModalOn && <DetailsModal details={details} />}
+        </SideModal>
       </>
     );
   }

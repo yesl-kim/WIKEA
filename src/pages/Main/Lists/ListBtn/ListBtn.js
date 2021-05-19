@@ -1,7 +1,7 @@
 import React from 'react';
 import Sortbox from './Sortbox/Sortbox';
-// import SideModal from './SideModal/SideModal';
-// import FilterModal from './SideModal/FilterModal';
+import SideModal from '../../../../components/SideModal/SideModal';
+import FilterModal from './FilterModal/FilterModal';
 import './ListBtn.scss';
 
 class ListBtn extends React.Component {
@@ -81,13 +81,13 @@ class ListBtn extends React.Component {
         </div>
         {sortbox && <Sortbox />}
         {/* sideModal merge시 활성화 예정입니다 */}
-        {/* <SideModal
+        <SideModal
           handleSideModalOn={this.handleSideModal}
           on={on}
           direction="right"
         >
           <FilterModal />
-        </SideModal> */}
+        </SideModal>
       </div>
     );
   }

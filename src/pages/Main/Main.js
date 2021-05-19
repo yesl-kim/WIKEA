@@ -1,29 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NewProduct from './components/NewProduct/NewProduct';
+import { API } from '../../config';
+import Label from './components/Label/Label';
 import ScrollBox from '../../components/ScrollBox/ScrollBox';
 import Product from '../../components/Product/Product';
-import { API } from '../../config';
 import './Main.scss';
 
 class Main extends React.Component {
+  newBgImages = [];
+
   constructor() {
     super();
     this.state = {
-      newProductSections: [],
+      recommended: [],
+      newProducts: [],
     };
   }
 
   componentDidMount() {
-    fetch(API.NEW_PRODUCT)
+    fetch(API.NEW_BG_IMAGES)
+      .then(images => images.json())
+      .then(images => (this.newBgImages = images));
+    fetch(API.PRODUCTS_MAIN_TEST)
       .then(products => products.json())
       .then(products => {
-        this.setState({ newProductSections: products });
+        this.setState({
+          newProducts: products.new_products,
+        });
       });
+    fetch('/data/listmockdata.json')
+      .then(res => res.json())
+      .then(res =>
+        this.setState({
+          recommended: res.product,
+        })
+      );
   }
 
   render() {
-    const { newProductSections } = this.state;
+    const { newProducts, recommended } = this.state;
     return (
       <>
         <main className="main">
@@ -79,10 +94,40 @@ class Main extends React.Component {
                   </header>
                 </div>
                 <div className="col-lg-1 lg-only" />
-                {!!newProductSections.length &&
-                  newProductSections.map(section => (
-                    <NewProduct key={section.id} section={section} />
-                  ))}
+                {!!this.newBgImages.length && (
+                  <>
+                    <div className="col-lg-6 col-md-6 col-sm-12">
+                      <div className="new_product">
+                        <img
+                          alt={this.newBgImages[0].alt}
+                          src={this.newBgImages[0].src}
+                        />
+                        {!!newProducts.length &&
+                          newProducts[0].map(product => (
+                            <Label
+                              product={product}
+                              number={this.newBgImages[0].id}
+                            />
+                          ))}
+                      </div>
+                    </div>
+                    <div className="col-lg-6 col-md-6 col-sm-12">
+                      <div className="new_product">
+                        <img
+                          alt={this.newBgImages[1].alt}
+                          src={this.newBgImages[1].src}
+                        />
+                        {!!newProducts.length &&
+                          newProducts[1].map(product => (
+                            <Label
+                              product={product}
+                              number={this.newBgImages[1].id}
+                            />
+                          ))}
+                      </div>
+                    </div>
+                  </>
+                )}
               </section>
             </div>
           </article>

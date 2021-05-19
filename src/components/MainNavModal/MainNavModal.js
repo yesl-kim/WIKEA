@@ -37,8 +37,14 @@ class MainNavModal extends Component {
   render() {
     const { isSubCategoryOn, activeSubCategory, categories, subCategories } =
       this.state;
+    const { sideModalOn, handleSideModalOn } = this.props;
+
     return (
-      <SideModal direction="left" on={true}>
+      <SideModal
+        direction="left"
+        on={sideModalOn}
+        handleSideModalOn={handleSideModalOn}
+      >
         <Link to="/" className="main_nav_logo">
           <img alt="wikea logo" src="http://placehold.it/90x36" />
         </Link>
