@@ -16,12 +16,13 @@ class Main extends React.Component {
     fetch(API.NEW_PRODUCT)
       .then(products => products.json())
       .then(products => {
-        this.setState({ newProductSections: products });
+        this.setState({ newProductSections: products.new_products });
       });
   }
 
   render() {
     const { newProductSections } = this.state;
+    console.log(newProductSections);
     return (
       <>
         <main className="main">

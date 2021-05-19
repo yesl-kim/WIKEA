@@ -6,7 +6,7 @@ class Label extends Component {
   render() {
     const { number, product } = this.props;
     return (
-      <div className={`label_container ${number}_${product.id}`}>
+      <div className={`label_container label${number}_${product.id}`}>
         <button type="button" className="label_btn" />
         <Link to="/" className="label">
           <p className="product_info">
