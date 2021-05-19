@@ -5,30 +5,57 @@
 .label_container {
   position: absolute;
 
-  &.new01_1 {
-    top: 36%;
-    left: 17.5%;
+  &.new2_18 {
+    top: 76%;
+    left: 90%;
+
+    .label {
+      right: 150%;
+    }
+  }
+
+  &.new2_1 {
+    top: 17.5%;
+    left: 23.5%;
 
     .label {
       left: 150%;
     }
   }
 
-  &.new01_4 {
+  &.new2_21 {
     top: 52%;
-    left: 50%;
+    left: 13%;
 
     .label {
       left: 150%;
     }
   }
 
-  &.new01_7 {
-    top: 73%;
-    left: 37.5%;
+  &.new3_2 {
+    top: 41%;
+    left: 49.5%;
 
     .label {
       left: 150%;
+    }
+  }
+
+  &.new3_22 {
+    top: 85%;
+    left: 20%;
+
+    .label {
+      left: 150%;
+    }
+  }
+
+  &.new3_19 {
+    top: 65%;
+    left: 49%;
+
+    .label {
+      right: 150%;
     }
   }
 
@@ -68,7 +95,6 @@
   .label {
     @include flexbox(between, start);
     @include pos-center-y(absolute);
-    left: 150%;
     padding: 14px 6px 16px 15px;
     width: 100%;
     min-width: 135px;
