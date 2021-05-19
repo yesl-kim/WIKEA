@@ -17,17 +17,8 @@ class Routes extends React.Component {
           <Route exact path="/" component={Main} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
-<<<<<<< HEAD
-          <Route exact path="/lists" component={Lists} />
-          <Route
-            exact
-            path="/p/details/:sub_category_url/:id"
-            component={Details}
-          />
-=======
           <Route exact path="/lists/:subCat" component={Lists} />
-          <Route exact path="/details" component={Details} />
->>>>>>> origin/feature/mainNavRouting
+          <Route exact path="/p/details/:subCat/:id" component={Details} />
         </Switch>
         <Footer />
       </Router>
