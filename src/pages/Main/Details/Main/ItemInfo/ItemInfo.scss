@@ -1,0 +1,47 @@
+@import '../../../../../styles/var';
+
+.item-info {
+  padding: 0 40px;
+  .item-btn-group {
+    @include flexbox(around);
+    width: 100%;
+    height: 56px;
+    margin: 16px 0 20px 0;
+
+    .purchase {
+      width: 80%;
+      height: 56px;
+      border-radius: 64px;
+      color: white;
+      font-weight: 700;
+      background-color: $--colour-button-primary-emphasised-default;
+    }
+
+    .heart {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      font-weight: 700;
+      border: 2px solid $--colour-border-light;
+    }
+
+    .liked {
+      background-color: $--colour-border-light;
+    }
+  }
+
+  .item-availability {
+    font-size: 0.875rem;
+    line-height: 1.42857;
+
+    .stock-check {
+      margin-top: 40px;
+      padding-bottom: 40px;
+
+      i {
+        margin-right: 6px;
+        font-size: 16px;
+      }
+    }
+  }
+}

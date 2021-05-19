@@ -1,9 +1,90 @@
 import React from 'react';
-import Breadcrumb from '../../../components/Breadcrumb/Breadcrumb';
+import Main from './Main/Main.js';
+import ImgModal from './Modal/ImgModal/ImgModal.js';
+import SideModal from '../../../components/SideModal/SideModal.js';
+import DetailsModal from '../Details/Modal/DetailsModal/DetailsModal.js';
+// 서버 완성될 시, config.js사용
+// import '../../../config.js';
+import CartModal from './Modal/CartModal/CartModal.js';
+import './Details.scss';
 
 class Details extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      modalOn: false,
+      sideModalOn: false,
+      details: [],
+      product: [],
+    };
+  }
+
+  componentDidMount() {
+    //서버 연결 시, url('API${this.props.match.params.id}')
+    fetch('/data/detailsData/test.json')
+      .then(res => res.json())
+      .then(product =>
+        this.setState({
+          product: product.product[0],
+          details: product.product[0].descriptions,
+        })
+      );
+  }
+
+  //서버 연결 && 동적라우팅 시, 주석 해제
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.match.params.id !== this.props.match.params.id) {
+  //     fetch(`API${this.props.match.params.id}`)
+  //       .then(res => res.json())
+  //       .then(product =>
+  //         this.setState({
+  //           product: product.product[0],
+  //           details: product.product[0].descriptions,
+  //         })
+  //       );
+  //   }
+  // }
+
+  handleModal = () => {
+    const { modalOn } = this.state;
+    this.setState({
+      modalOn: !modalOn,
+    });
+  };
+
+  handleSideModal = () => {
+    const { sideModalOn } = this.state;
+    this.setState({
+      sideModalOn: !sideModalOn,
+    });
+  };
+
   render() {
-    return <Breadcrumb />;
+    const { modalOn, sideModalOn, details, product } = this.state;
+    return (
+      <>
+        <Main
+          details={details}
+          product={product}
+          handleModal={this.handleModal}
+          handleSideModal={this.handleSideModal}
+        />
+        {modalOn && (
+          <ImgModal product={product} handleModal={this.handleModal} />
+        )}
+
+        {sideModalOn && (
+          <SideModal
+            handleSideModalOn={this.handleSideModal}
+            on={sideModalOn}
+            direction="right"
+          >
+            <CartModal />
+            <DetailsModal details={details} />
+          </SideModal>
+        )}
+      </>
+    );
   }
 }
 

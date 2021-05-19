@@ -1,0 +1,40 @@
+@import '../../../../../styles/var';
+
+.item-primary-info {
+  @include flexbox(between, start);
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+
+  > strong {
+    width: 100%;
+    color: $--colour-cmsg-new;
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  h1 {
+    @include column-flexbox(around, start);
+    height: 57px;
+    font-size: 0.75rem;
+    font-weight: 400;
+
+    .item-name {
+      font-size: 1.375rem;
+      line-height: 1.45455;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .desc {
+      font-size: 0.875rem;
+      line-height: 1.42857;
+    }
+  }
+
+  .price {
+    font-size: 1.375rem;
+    line-height: 1.1875;
+    font-weight: 700;
+  }
+}

@@ -19,6 +19,7 @@
 
 - **page-detail**
 - ImgSlider.js.scss
+  (ImgSlider : const W = 600? 500?)
 - ImgModal.js.scss
 
 ---
