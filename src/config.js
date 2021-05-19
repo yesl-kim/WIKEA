@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const IP = '172.30.1.47:8000';
 export const API = {
   SIGN_IN: `http://${IP}/users/signin`,
@@ -12,4 +13,10 @@ export const API = {
   NEW_PRODUCT: `http://${IP}/product/newList`,
   NEW_PRODUCT_TEST: `/data/NewProducts/NewProducts.json`,
   // >>>>>>> origin/feature/main
+=======
+const IP = '10.58.6.62:8000';
+
+export const API = {
+  SIGN_IN: `http://${IP}/users/signin`,
+>>>>>>> origin/feature/image
 };

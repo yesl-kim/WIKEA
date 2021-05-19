@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
 import { API } from '../../config';
 import Label from './components/Label/Label';
@@ -134,6 +135,13 @@ class Main extends React.Component {
         </main>
       </>
     );
+=======
+import './Main.scss';
+
+class Main extends React.Component {
+  render() {
+    return <></>;
+>>>>>>> origin/feature/image
   }
 }
 
