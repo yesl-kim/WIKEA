@@ -18,6 +18,10 @@
   .accordion_contents {
     height: 0;
     overflow: hidden;
+
+    > div {
+      margin-bottom: 2rem;
+    }
   }
 }
 

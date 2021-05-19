@@ -20,16 +20,18 @@ class DetailsModal extends Component {
   render() {
     const { details } = this.props;
     const { isCollapsed } = this.state;
+    console.log(details[0].material.split('\\r'));
     return (
       <div className="product_details">
         <h2 className="product_details_title">제품 설명</h2>
         <div className="product_details_container">
-          {details[0].content
-            .split('.')
-            .slice(0, 2)
-            .map((text, idx) => {
-              return <span key={idx}>{text}</span>;
-            })}
+          {details &&
+            details[0].content
+              .split('.')
+              .slice(0, 2)
+              .map((text, idx) => {
+                return <span key={idx}>{text}</span>;
+              })}
           <button className="more" onClick={this.showDetails}>
             더보기
           </button>
@@ -45,15 +47,17 @@ class DetailsModal extends Component {
         </div>
         <ul className="accordion">
           <Detail title={TITLE[0]}>
-            {details[0].material.map((text, idx) => {
-              return <span key={idx}>{text}</span>;
-            })}
+            {details[0].material &&
+              details[0].material.split('\\r').map((text, idx) => {
+                return <div key={idx}>{text}</div>;
+              })}
           </Detail>
           <Detail title={TITLE[1]}>{details[0].recycling}</Detail>
           <Detail title={TITLE[2]}>
-            {details[0].package.map((text, idx) => {
-              return <span key={idx}>{text}</span>;
-            })}
+            {details &&
+              details[0].package.split('\\r').map((text, idx) => {
+                return <div key={idx}>{text}</div>;
+              })}
           </Detail>
           <Detail title={TITLE[3]}>정보없음</Detail>
           <Detail title={TITLE[4]}>정보없음</Detail>

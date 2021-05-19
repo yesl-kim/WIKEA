@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import PrimaryInfo from './PrimaryInfo.js';
 import LikePopUp from '../../Modal/LikePopup/likePopUp';
+import SideModal from '../../../../../components/SideModal/SideModal.js';
 import './ItemInfo.scss';
+import CartModal from '../../Modal/CartModal/CartModal.js';
 
 class ItemInfo extends Component {
   constructor() {
     super();
     this.state = {
       isLiked: false,
+      isAdded: false,
     };
   }
 
@@ -18,15 +21,24 @@ class ItemInfo extends Component {
     });
   };
 
+  addToCart = () => {
+    const { isAdded } = this.state;
+    this.setState({
+      isAdded: !isAdded,
+    });
+  };
+
   render() {
-    const { isLiked } = this.state;
+    const { isLiked, isAdded } = this.state;
     const { product } = this.props;
     return (
       <>
         <div className="item-info sticky">
           <PrimaryInfo product={product} />
           <div className="item-btn-group">
-            <button className="purchase">구매하기</button>
+            <button onClick={this.addToCart} className="purchase">
+              {isAdded ? '장바구니에 추가되었습니다.' : '구매하기'}
+            </button>
             <button
               onClick={this.handleLike}
               className={`heart ${isLiked && 'liked'}`}
@@ -38,6 +50,7 @@ class ItemInfo extends Component {
             <div className="stock-check">
               <i className="ic-cart1" />
               <span>배송 여부는 결제 단계에서 확인하실 수 있습니다.</span>
+              {!!product.stock && <div className="circle" />}
             </div>
             <hr />
             <div className="stock-check">
@@ -54,6 +67,15 @@ class ItemInfo extends Component {
           <LikePopUp isLiked={isLiked}>
             <span>즐겨찾기 목록에서 삭제되었습니다.</span>
           </LikePopUp>
+        )}
+        {isAdded && (
+          <SideModal
+            handleSideModalOn={this.addToCart}
+            on={isAdded}
+            direction="right"
+          >
+            <CartModal product={product} />
+          </SideModal>
         )}
       </>
     );

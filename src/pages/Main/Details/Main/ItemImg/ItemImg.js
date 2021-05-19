@@ -8,13 +8,8 @@ class ItemImg extends Component {
       <div>
         <div className="item-img">
           {!!product.url &&
-            product.url.map(url => (
-              <img
-                key={product.id}
-                onClick={handleModal}
-                alt="상품이미지"
-                src={url}
-              />
+            product.url.map((url, idx) => (
+              <img key={idx} onClick={handleModal} alt="상품이미지" src={url} />
             ))}
         </div>
         <div className="sm-slide lg-hidden"></div>
