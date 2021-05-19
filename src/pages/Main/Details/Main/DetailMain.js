@@ -33,6 +33,7 @@ class Main extends React.Component {
           <div className="row">
             <div className="col-lg-1 lg-only" />
             <ul className="col-lg-12">
+              <h2 className="scrollbox_name">추천 제품</h2>
               <ScrollBox>
                 {recommended.map(el => (
                   <li className="item">

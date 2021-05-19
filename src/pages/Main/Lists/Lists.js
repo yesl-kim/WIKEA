@@ -3,6 +3,8 @@ import Breadcrumb from '../../../components/Breadcrumb/Breadcrumb';
 import ItemExplanation from './ItemExplanation/ItemExplanation';
 import ListBtn from './ListBtn/ListBtn';
 import Products from './Products/Products';
+import Product from '../../../components/Product/Product';
+import ScrollBox from '../../../components/ScrollBox/ScrollBox';
 import './Lists.scss';
 
 class Lists extends React.Component {
@@ -10,18 +12,47 @@ class Lists extends React.Component {
     super();
     this.state = {
       products: [],
+      recommended: [],
     };
   }
 
   // Mock data 용 fetch입니다. 백엔드와 통신 이후 삭제 예정
+  // componentDidMount() {
+  //   fetch('http://localhost:3000/data/listmockdata.json')
+  //     .then(product => product.json())
+  //     .then(products => {
+  //       this.setState({
+  //         products: products.product,
+  //       });
+  //     });
+
+  //   fetch('/data/listmockdata.json')
+  //     .then(res => res.json())
+  //     .then(res =>
+  //       this.setState({
+  //         recommended: res.product,
+  //       })
+  //     );
+  // }
+
+  // 백엔드 통신용 데이터
   componentDidMount() {
     fetch('http://localhost:3000/data/listmockdata.json')
       .then(product => product.json())
       .then(products => {
-        this.setState({
-          products: products.product,
-        });
+        // this.setState({
+        //   products: products.product,
+        // });
+        console.log(products);
       });
+
+    fetch('/data/listmockdata.json')
+      .then(res => res.json())
+      .then(res =>
+        this.setState({
+          recommended: res.product,
+        })
+      );
   }
 
   // pagination 구현 로직입니다. 백엔드와 통신 이후 주석 풀 예정
@@ -34,7 +65,7 @@ class Lists extends React.Component {
   // };
 
   render() {
-    const { products, showMoreBar } = this.state;
+    const { products, recommended, showMoreBar } = this.state;
 
     return (
       <main className="lists">
@@ -70,6 +101,16 @@ class Lists extends React.Component {
                   </button>
                 </div>
               </div>
+              <ul>
+                <h2 className="scrollbox_name">추천 제품</h2>
+                <ScrollBox>
+                  {recommended.map(el => (
+                    <li className="item">
+                      <Product product={el} />
+                    </li>
+                  ))}
+                </ScrollBox>
+              </ul>
             </div>
           </div>
         </div>
