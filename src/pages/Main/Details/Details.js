@@ -5,7 +5,7 @@ import SideModal from '../../../components/SideModal/SideModal.js';
 import DetailsModal from '../Details/Modal/DetailsModal/DetailsModal.js';
 // 서버 완성될 시, config.js사용
 // import '../../../config.js';
-import CartModal from './Modal/CartModal/CartModal.js';
+
 import './Details.scss';
 
 class Details extends React.Component {
@@ -79,7 +79,6 @@ class Details extends React.Component {
             on={sideModalOn}
             direction="right"
           >
-            <CartModal />
             <DetailsModal details={details} />
           </SideModal>
         )}
