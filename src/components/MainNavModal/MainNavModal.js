@@ -71,10 +71,7 @@ class MainNavModal extends Component {
               <ul className="promotion_list">
                 <li>
                   <Link to="/lists/">
-                    <img
-                      alt="탁자"
-                      src="https://www.ikea.com/kr/ko/images/products/voxloev-dining-table-light-bamboo__0997396_pe822660_s5.jpg?f=xxxs"
-                    />
+                    <img alt="조명" src="/images/products/lamp/10-r.png" />
                   </Link>
                 </li>
               </ul>
