@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
 import { API } from '../../config';
 import Label from './components/Label/Label';
@@ -53,7 +52,7 @@ class Main extends React.Component {
                       <Link to="/" className="image_link">
                         <img
                           alt="침실 가구"
-                          src="https://www.ikea.com/images/07/06/07061f498bfa3b789ada7b5d5151a3c7.jpg?f=s"
+                          src="/images/bgimages/visual.png"
                         />
                       </Link>
                     </div>
@@ -135,13 +134,6 @@ class Main extends React.Component {
         </main>
       </>
     );
-=======
-import './Main.scss';
-
-class Main extends React.Component {
-  render() {
-    return <></>;
->>>>>>> origin/feature/image
   }
 }
 

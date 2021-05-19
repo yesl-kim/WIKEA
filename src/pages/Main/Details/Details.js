@@ -20,9 +20,10 @@ class Details extends React.Component {
     };
   }
 
+  // 목데이터 용 패치
   componentDidMount() {
-    //서버 연결 시, url('API${this.props.match.params.id}')
-    fetch('/data/detailsData/test.json')
+    const { id } = this.props.match.params;
+    fetch(`http://172.30.1.23:5000/product/detail/?id=${id}`)
       .then(res => res.json())
       .then(product =>
         this.setState({
@@ -41,18 +42,20 @@ class Details extends React.Component {
   }
 
   //서버 연결 && 동적라우팅 시, 주석 해제
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.match.params.id !== this.props.match.params.id) {
-  //     fetch(`API${this.props.match.params.id}`)
-  //       .then(res => res.json())
-  //       .then(product =>
-  //         this.setState({
-  //           product: product.product[0],
-  //           details: product.product[0].descriptions,
-  //         })
-  //       );
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    const { id } = this.props.match.params;
+
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      fetch(`http://172.30.1.23:5000/product/detail/?id=${id}`)
+        .then(res => res.json())
+        .then(product =>
+          this.setState({
+            product: product.product[0],
+            details: product.product[0].descriptions,
+          })
+        );
+    }
+  }
 
   handleModal = () => {
     const { modalOn } = this.state;
@@ -70,6 +73,7 @@ class Details extends React.Component {
 
   render() {
     const { modalOn, sideModalOn, details, product, recommended } = this.state;
+    console.log(this.props);
     return (
       <>
         <DetailMain
