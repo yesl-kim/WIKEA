@@ -60,7 +60,7 @@ class MainNavModal extends Component {
         <div className="main_nav_box">
           <AsideNav
             type="main"
-            j={isCategoriesClicked}
+            isClicked={isCategoriesClicked}
             on={isSubCategoryOn}
             title="모든 제품"
             list={categories}
