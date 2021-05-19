@@ -3,11 +3,34 @@ import Message from './Message';
 import './Nav.scss';
 
 class Nav extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      scrollTop: 0,
+    };
+  }
+
+  componentDidMount = () => {
+    window.addEventListener('scroll', this.handleScroll);
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener('scroll', this.handleScroll);
+  };
+
+  handleScroll = e => {
+    const scrollTop = ('scroll', e.srcElement.scrollingElement.scrollTop);
+    this.setState({
+      scrollTop,
+    });
+  };
+
   render() {
+    const { scrollTop } = this.state;
     return (
-      <>
+      <div className={`nav_wrap ${scrollTop - NAV >= 0 && 'hide'}`}>
         <Message />
-        <nav>
+        <nav className="nav_menu" onScroll={this.handleScroll}>
           <h1 className="visually-hidden">메뉴바</h1>
           <img alt="logo" src="/images/Detail/logo.png" />
           <div className="lg-only options">
@@ -57,9 +80,11 @@ class Nav extends React.Component {
             </button>
           </div>
         </nav>
-      </>
+      </div>
     );
   }
 }
 
 export default Nav;
+
+const NAV = 132;
