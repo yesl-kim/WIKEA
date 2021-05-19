@@ -60,7 +60,6 @@ class Details extends React.Component {
   };
 
   render() {
-<<<<<<< HEAD
     const { modalOn, sideModalOn, details, product } = this.state;
     return (
       <>
@@ -86,9 +85,6 @@ class Details extends React.Component {
         )}
       </>
     );
-=======
-    return <></>;
->>>>>>> origin/feature/Header
   }
 }
 
