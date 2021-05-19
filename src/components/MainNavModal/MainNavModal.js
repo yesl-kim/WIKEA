@@ -9,6 +9,7 @@ class MainNavModal extends Component {
   constructor() {
     super();
     this.state = {
+      isCategoriesClicked: [],
       isSubCategoryOn: false,
       activeSubCategory: '',
       categories: [],
@@ -21,30 +22,45 @@ class MainNavModal extends Component {
       .then(categories => categories.json())
       .then(res => {
         this.setState({
+          isCategoriesClicked: res.category.map(cat => false),
           categories: res.category,
           subCategories: res.sub_category,
         });
       });
   }
 
-  handleSubNavOn = name => {
+  handleSubNavOn = (num, name) => {
     this.setState({
+      isCategoriesClicked: this.state.isCategoriesClicked.map(
+        (el, idx) => idx === num
+      ),
       isSubCategoryOn: true,
       activeSubCategory: name,
     });
   };
 
   render() {
-    const { isSubCategoryOn, activeSubCategory, categories, subCategories } =
-      this.state;
+    const { sideModalOn, handleSideModalOn } = this.props;
+    const {
+      isCategoriesClicked,
+      isSubCategoryOn,
+      activeSubCategory,
+      categories,
+      subCategories,
+    } = this.state;
     return (
-      <SideModal direction="left" on={true}>
+      <SideModal
+        direction="left"
+        on={sideModalOn}
+        handleSideModalOn={handleSideModalOn}
+      >
         <Link to="/" className="main_nav_logo">
           <img alt="wikea logo" src="http://placehold.it/90x36" />
         </Link>
         <div className="main_nav_box">
           <AsideNav
             type="main"
+            j={isCategoriesClicked}
             on={isSubCategoryOn}
             title="모든 제품"
             list={categories}

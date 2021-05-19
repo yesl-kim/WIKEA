@@ -1,5 +1,5 @@
 import React from 'react';
-import MainNavModal from '../../components/MainNavModal/MainNavModal';
+import Nav from '../../components/Nav/Nav';
 import './Main.scss';
 
 class Main extends React.Component {

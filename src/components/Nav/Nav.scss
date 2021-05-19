@@ -1,12 +1,12 @@
 @import '/src/styles/common';
 
-nav {
+.nav {
   @include flexbox(between);
   position: relative;
   padding: 0 20px;
   flex-wrap: wrap;
 
-  img {
+  .logo {
     width: 75px;
     height: 35px;
     margin: 15px 0;
@@ -93,7 +93,7 @@ nav {
       }
     }
 
-    img {
+    .logo {
       order: -1;
       height: 36px;
       width: 90px;
