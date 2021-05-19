@@ -96,7 +96,7 @@ class SignUp extends React.Component {
               <span className="comment_with_sign_up_already">
                 이미 가입하셨나요?
               </span>
-              <Link to="/" className="go_to_login_page">
+              <Link to="/signin" className="go_to_login_page">
                 로그인 하기
               </Link>
             </div>
