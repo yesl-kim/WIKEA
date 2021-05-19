@@ -1,6 +1,7 @@
 const IP = '172.30.1.47:8000';
 export const API = {
   SIGN_IN: `http://${IP}/users/signin`,
+  SIGN_UP: `http://${IP}/user/signup`,
   // <<<<<<< HEAD
   // <<<<<<< HEAD
   DETAILS: `http://${IP}/product/detail/`,
