@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './AsideNav.scss';
 
 class AsideNav extends Component {
+  goToSubCat = subCat => {
+    this.props.history.push(`/lists/${subCat}`);
+  };
+
   render() {
     const { on, type, title, list, handleClick, children } = this.props;
     return (
@@ -11,22 +15,19 @@ class AsideNav extends Component {
       >
         <h2 className="aside_nav_title">{title}</h2>
         <ul aria-label={`${title} 하위 메뉴`} className="menu_container">
-          <li>
-            <Link to="/">
-              {type === 'main' ? '지속가능한 제품' : '전체 보기'}
-            </Link>
-          </li>
+          <li>{type === 'main' ? '지속가능한 제품' : '전체 보기'}</li>
           {!!list.length &&
             list.map(item => (
-              <li key={item.id}>
-                <Link
-                  to="/"
-                  role="button"
-                  name={item.korean_name}
-                  onClick={handleClick}
-                >
-                  {item.korean_name}
-                </Link>
+              <li
+                key={item.id}
+                role="button"
+                onClick={
+                  type === 'main'
+                    ? () => handleClick(item.korean_name)
+                    : () => this.goToSubCat(item.english_name)
+                }
+              >
+                {item.korean_name}
                 <i className="ic-chevron" />
               </li>
             ))}
@@ -37,4 +38,4 @@ class AsideNav extends Component {
   }
 }
 
-export default AsideNav;
+export default withRouter(AsideNav);
