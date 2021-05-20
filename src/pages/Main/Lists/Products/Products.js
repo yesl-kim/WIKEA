@@ -7,11 +7,8 @@ class Products extends React.Component {
 
     return (
       <ul className="products">
-        {/* product component가 merge되면 구현 예정입니다 */}
-
-        {/* (arr.map(p => <li>p</li>)) */}
-
-        {/* {product.map(item => (
+        (arr.map(p => <li>p</li>))
+        {product.map(item => (
           <Product
             name={item.name}
             category={item.category}
@@ -24,7 +21,7 @@ class Products extends React.Component {
           >
             <input type="checkbox" />
           </Product>
-        ))} */}
+        ))}
       </ul>
     );
   }

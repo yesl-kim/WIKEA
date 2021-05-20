@@ -45,17 +45,13 @@ class MainNavModal extends Component {
       activeSubCategory,
       categories,
     } = this.state;
-    let categoryName = [];
-    const subCategoryName = {};
+    const subCategories = {};
 
     if (categories.length) {
-      categoryName = categories.map(category => category.korean_name);
-      for (let name of categoryName) {
-        if (!subCategoryName[name])
-          subCategoryName[name] = categories.filter(
-            category => category.korean_name === name
-          )[0].sub_category;
-      }
+      categories.forEach(
+        category =>
+          (subCategories[category.korean_name] = category.sub_category)
+      );
     }
 
     return (
@@ -92,7 +88,7 @@ class MainNavModal extends Component {
               type="sub"
               on={isSubCategoryOn}
               title={activeSubCategory}
-              list={subCategoryName[activeSubCategory]}
+              list={subCategories[activeSubCategory]}
               handleSideModalOn={handleSideModalOn}
             >
               <div className="menu_promotion">
