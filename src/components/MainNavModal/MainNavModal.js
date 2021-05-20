@@ -61,7 +61,7 @@ class MainNavModal extends Component {
         handleSideModalOn={handleSideModalOn}
       >
         <Link to="/" className="main_nav_logo">
-          <img alt="wikea logo" src="http://placehold.it/90x36" />
+          <img alt="wikea logo" src="/images/logo.png" />
         </Link>
         <div className="main_nav_box">
           <AsideNav
@@ -77,7 +77,7 @@ class MainNavModal extends Component {
               <ul className="promotion_list">
                 <li>
                   <Link to="/lists/">
-                    <img alt="조명" src="/images/products/lamp/10-r.png" />
+                    <img alt="조명" src="/images/products/lamps/10-r png.png" />
                   </Link>
                 </li>
               </ul>

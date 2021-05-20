@@ -6,4 +6,5 @@ export const API = {
   NEW_PRODUCT: `http://${IP}/product/newlist`,
   NEW_PRODUCT_TEST: `/data/NewProducts/NewProducts.json`,
   RECOMMEND: `http://${IP}/product/recommendation`,
+  DETAILS: `http://${IP}/product`,
 };

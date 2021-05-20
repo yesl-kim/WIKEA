@@ -18,6 +18,7 @@ class Details extends React.Component {
     };
   }
 
+  // 목데이터 용 패치
   componentDidMount() {
     const { id } = this.props.match.params;
     fetch(`${API.DETAILS}/${id}`)
@@ -29,7 +30,7 @@ class Details extends React.Component {
         })
       );
 
-    fetch(`${API.RECOMMENDED_PRODUCT}/${id}`)
+    fetch(`${API.RECOMMEND}/${id}`)
       .then(res => res.json())
       .then(res =>
         this.setState({

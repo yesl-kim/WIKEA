@@ -66,5 +66,58 @@
         }
       ]
     }
-  ]
+  ],
+  "sub_category": {
+    "조명": [
+      {
+        "id": "1",
+        "korean_name": "장식 조명",
+        "english_name": "decorative-light"
+      },
+      {
+        "id": "2",
+        "korean_name": "작업등",
+        "english_name": "work-lamps"
+      },
+      {
+        "id": "3",
+        "korean_name": "LED 전구",
+        "english_name": "led-lamps"
+      }
+    ],
+    "침대/매트리스": [
+      {
+        "id": "1",
+        "korean_name": "침대",
+        "english_name": "bed"
+      },
+      {
+        "id": "2",
+        "korean_name": "침구",
+        "english_name": "bedding"
+      },
+      {
+        "id": "3",
+        "korean_name": "매트리스",
+        "english_name": "mattresses"
+      }
+    ],
+    "수납/정리": [
+      {
+        "id": "1",
+        "korean_name": "수납장",
+        "english_name": "cabinets"
+      },
+      {
+        "id": "2",
+        "korean_name": "옷장",
+        "english_name": "wardrobes"
+      },
+      {
+        "id": "3",
+        "korean_name": "책장",
+        "english_name": "bookcases"
+      }
+    ]
+  }
 }

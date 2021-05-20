@@ -1,14 +1,15 @@
 import React from 'react';
 import Message from './Message';
 import MainNavModal from '../MainNavModal/MainNavModal';
+import { Link } from 'react-router-dom';
 import './Nav.scss';
 
 class Nav extends React.Component {
   constructor() {
     super();
     this.state = {
-      scrollTop: 0,
       isMainNavModalOn: false,
+      scrollTop: 0,
     };
   }
 
@@ -56,9 +57,9 @@ class Nav extends React.Component {
               </a>
             </li>
             <li>
-              <a href="/">
+              <Link to="/signin">
                 <i className="ic-user" />
-              </a>
+              </Link>
             </li>
             <li>
               <a href="/">
@@ -87,6 +88,10 @@ class Nav extends React.Component {
               <i className="ic-store" />
             </button>
           </div>
+          <MainNavModal
+            sideModalOn={isMainNavModalOn}
+            handleSideModalOn={this.handleMainNavModalOn}
+          />
         </nav>
         <MainNavModal
           sideModalOn={isMainNavModalOn}

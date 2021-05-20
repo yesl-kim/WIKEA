@@ -11,6 +11,7 @@ class DetailsMain extends React.Component {
   render() {
     const { handleModal, handleSideModal, product, details, recommended } =
       this.props;
+
     return (
       <main className="detail_main">
         <div className="grid-container">
@@ -31,7 +32,7 @@ class DetailsMain extends React.Component {
           </div>
           <div className="row">
             <div className="col-lg-1 lg-only" />
-            <div className="col-lg-12">
+            <div className="col-lg-12 col-md-11">
               <ScrollBox title="추천 제품">
                 {recommended.map(recommended => (
                   <li className="item">

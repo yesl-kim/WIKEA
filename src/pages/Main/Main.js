@@ -5,7 +5,6 @@ import ScrollBox from '../../components/ScrollBox/ScrollBox';
 import Product from '../../components/Product/Product';
 import { API } from '../../config';
 import './Main.scss';
-
 class Main extends React.Component {
   constructor() {
     super();
@@ -14,7 +13,6 @@ class Main extends React.Component {
       newProductSections: [],
     };
   }
-
   componentDidMount() {
     fetch('http://10.58.6.62:8000/product/newlist')
       .then(products => products.json())
@@ -29,7 +27,6 @@ class Main extends React.Component {
         });
       });
   }
-
   render() {
     const { recommended, newProductSections } = this.state;
     return (
@@ -100,5 +97,4 @@ class Main extends React.Component {
     );
   }
 }
-
 export default Main;
