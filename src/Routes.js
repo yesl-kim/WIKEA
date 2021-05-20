@@ -5,6 +5,7 @@ import SignUp from './pages/Login/SignUp/SignUp';
 import Main from './pages/Main/Main';
 import Lists from './pages/Main/Lists/Lists';
 import Details from './pages/Main/Details/Details';
+import Footer from './components/Footer/Footer';
 import Nav from './components/Nav/Nav';
 
 class Routes extends React.Component {
@@ -19,6 +20,7 @@ class Routes extends React.Component {
           <Route exact path="/lists" component={Lists} />
           <Route exact path="/details" component={Details} />
         </Switch>
+        <Footer />
       </Router>
     );
   }
