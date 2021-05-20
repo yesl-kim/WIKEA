@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NewProduct from './components/NewProduct/NewProduct';
+import ScrollBox from '../../components/ScrollBox/ScrollBox';
+import Product from '../../components/Product/Product';
 import { API } from '../../config';
 import './Main.scss';
 
@@ -8,6 +10,7 @@ class Main extends React.Component {
   constructor() {
     super();
     this.state = {
+      recommended: [],
       newProductSections: [],
     };
   }
@@ -21,7 +24,7 @@ class Main extends React.Component {
   }
 
   render() {
-    const { newProductSections } = this.state;
+    const { recommended, newProductSections } = this.state;
     return (
       <>
         <main className="main">
@@ -57,7 +60,10 @@ class Main extends React.Component {
               <section className="row">
                 <div className="col-lg-1 lg-only" />
                 <div className="col-lg-12 col-md-12">
-                  스크롤 박스 컴포넌트 부분
+                  <ScrollBox title="추천 제품">
+                    {!!recommended.length &&
+                      recommended.map(product => <Product product={product} />)}
+                  </ScrollBox>
                 </div>
               </section>
               <section className="row">
