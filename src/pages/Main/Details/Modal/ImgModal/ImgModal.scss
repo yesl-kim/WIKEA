@@ -1,4 +1,4 @@
-@import '../../../../styles/var';
+@import '../../../../../styles/var';
 
 .modal {
   @include flexbox;
@@ -9,34 +9,29 @@
   left: 0;
   background: rgba(0, 0, 0, 0.6);
 }
+
 .modal_btn {
   width: 30px;
   height: 30px;
   position: absolute;
-  right: 0;
-  background-color: red;
+  right: 2rem;
+  top: 2rem;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
   z-index: 1;
 
   &::before {
     content: 'X';
+    font-weight: 700;
   }
 }
 
 .modal_back {
+  @include flexbox;
   position: relative;
   width: 70%;
   height: 70%;
   background-color: white;
-
-  img {
-    width: 100%;
-    @include pos-center;
-
-    @include responsive(D) {
-      & {
-        width: auto;
-        height: 100%;
-      }
-    }
-  }
+  border-radius: 4px;
 }

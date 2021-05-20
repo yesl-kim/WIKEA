@@ -1,5 +1,18 @@
 @import '../../../../../styles/var.scss';
 
 .cart_modal {
+  width: 480px;
+  padding: 2rem 3rem;
+  font-size: 0.875rem;
+  background-color: $--colour-brand-blue;
+
+  .cart_message {
+    display: inline-block;
+    padding-top: 80px;
+    font-weight: 700;
+    line-height: 1.36;
+    letter-spacing: -0.02625rem;
+    color: white;
+  }
   background-color: $--colour-brand-blue;
 }

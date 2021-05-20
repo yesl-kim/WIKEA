@@ -1,0 +1,30 @@
+@import '../../../../../styles/var';
+
+.accordion_item {
+  padding: 24px 0;
+  border-bottom: 1px solid $--colour-border-light;
+
+  button {
+    @include flexbox(between);
+    width: 100%;
+    padding-bottom: 24px;
+  }
+
+  h2 {
+    display: inline;
+    font-size: 0.875rem;
+  }
+
+  .accordion_contents {
+    height: 0;
+    overflow: hidden;
+
+    > div {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.show {
+  height: auto !important;
+}
