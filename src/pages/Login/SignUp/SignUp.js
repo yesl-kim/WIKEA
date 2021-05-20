@@ -31,10 +31,6 @@ class SignUp extends React.Component {
     });
   };
 
-  goToSignIn = () => {
-    this.props.history.push('/signin');
-  };
-
   goToMain = () => {
     const {
       lastNameValue,
@@ -59,7 +55,6 @@ class SignUp extends React.Component {
       .then(response => response.json())
       .then(result => {
         if (result.message === 'SUCCESS') {
-          localStorage.setItem('token', result.token);
           this.props.history.push('/');
         } else {
           alert('입력 값을 확인해주세요');

@@ -1,0 +1,50 @@
+@import '../../../../../styles/var.scss';
+
+.filter_modal {
+  width: 100%;
+  padding: 80px;
+  padding-top: 140px;
+
+  li {
+    @include column-flexbox(center, center);
+    margin-bottom: 40px;
+    cursor: pointer;
+
+    .filter_btn {
+      @include flexbox(between, center);
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .filter_name {
+      @include column-flexbox(start, start);
+
+      span:first-child {
+        font-weight: 600;
+      }
+    }
+
+    .filter_box {
+      width: 95%;
+
+      .filter_lists {
+        width: 100%;
+
+        label {
+          @include flexbox(between, center);
+          width: 100%;
+          padding: 1rem 0;
+          font-size: 0.875rem;
+          font-weight: 500;
+          line-height: 1.57;
+          color: $--colour-text-default;
+          cursor: pointer;
+        }
+      }
+    }
+
+    input {
+      margin-right: 8px;
+    }
+  }
+}
