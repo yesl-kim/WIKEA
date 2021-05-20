@@ -6,11 +6,13 @@ import Main from './pages/Main/Main';
 import Lists from './pages/Main/Lists/Lists';
 import Details from './pages/Main/Details/Details';
 import Footer from './components/Footer/Footer';
+import Nav from './components/Nav/Nav';
 
 class Routes extends React.Component {
   render() {
     return (
       <Router>
+        <Nav />
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/signin" component={SignIn} />
