@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
+// 최종 merge시, 주석해제
+// import Rate from '../../../../../components/Rate/Rate';
 import './ItemDetails.scss';
 
 class ItemDetails extends Component {
   render() {
     const { product, handleSideModal } = this.props;
-
     return (
       <div className="item-details">
         <div className="item-summary">
@@ -17,7 +17,6 @@ class ItemDetails extends Component {
           <span className="title">제품 설명</span>
           <i className="ic-chevron" />
         </button>
-
         <hr />
         <button className="item-size box">
           <span className="title">제품 크기</span>
@@ -27,11 +26,11 @@ class ItemDetails extends Component {
         <button className="item-rating box">
           <span className="title">상품평</span>
           <i className="ic-chevron" />
+          {/* <Rate rate={product.star} /> */}
         </button>
         <hr />
       </div>
     );
   }
 }
-
 export default ItemDetails;

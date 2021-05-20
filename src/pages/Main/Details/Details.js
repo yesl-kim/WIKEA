@@ -1,5 +1,5 @@
 import React from 'react';
-import Main from './Main/Main.js';
+import DetailsMain from './Main/DetailsMain.js';
 import ImgModal from './Modal/ImgModal/ImgModal.js';
 import SideModal from '../../../components/SideModal/SideModal.js';
 import DetailsModal from '../Details/Modal/DetailsModal/DetailsModal.js';
@@ -16,17 +16,26 @@ class Details extends React.Component {
       sideModalOn: false,
       details: [],
       product: [],
+      recommended: [],
     };
   }
 
   componentDidMount() {
-    //서버 연결 시, url('API${this.props.match.params.id}')
-    fetch('/data/detailsData/test.json')
+    const { id } = this.props.match.params;
+    fetch(`/data/detailsData/test.json`)
       .then(res => res.json())
       .then(product =>
         this.setState({
           product: product.product[0],
           details: product.product[0].descriptions,
+        })
+      );
+
+    fetch('/data/listmockdata.json')
+      .then(res => res.json())
+      .then(res =>
+        this.setState({
+          recommended: res.recommend_product,
         })
       );
   }
@@ -60,10 +69,11 @@ class Details extends React.Component {
   };
 
   render() {
-    const { modalOn, sideModalOn, details, product } = this.state;
+    const { modalOn, sideModalOn, details, product, recommended } = this.state;
     return (
       <>
-        <Main
+        <DetailsMain
+          recommended={recommended}
           details={details}
           product={product}
           handleModal={this.handleModal}
@@ -72,16 +82,13 @@ class Details extends React.Component {
         {modalOn && (
           <ImgModal product={product} handleModal={this.handleModal} />
         )}
-
-        {sideModalOn && (
-          <SideModal
-            handleSideModalOn={this.handleSideModal}
-            on={sideModalOn}
-            direction="right"
-          >
-            <DetailsModal details={details} />
-          </SideModal>
-        )}
+        <SideModal
+          handleSideModalOn={this.handleSideModal}
+          on={sideModalOn}
+          direction="right"
+        >
+          {sideModalOn && <DetailsModal details={details} />}
+        </SideModal>
       </>
     );
   }
