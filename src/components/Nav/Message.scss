@@ -1,0 +1,27 @@
+@import '/src/styles/common';
+
+.message-wrap {
+  @include flexbox(start);
+  height: 50px;
+  padding: 0 20px;
+  background-color: black;
+  font-size: 12px;
+  font-weight: 700;
+
+  @include responsive(T) {
+    @include flexbox;
+    padding: 10px 0;
+  }
+
+  @include responsive(D) {
+    @include flexbox;
+    height: 40px;
+    padding: 10px 0;
+  }
+
+  i,
+  span {
+    color: white;
+    margin-right: 4px;
+  }
+}

@@ -29,8 +29,16 @@ class Product extends React.Component {
   };
 
   render() {
-    const { koName, enName, category, price, isNew, img, classGrid, children } =
-      this.props;
+    const {
+      koName,
+      enName,
+      category,
+      price,
+      isNew,
+      image,
+      classGrid,
+      children,
+    } = this.props;
 
     const { favoriteBtn } = this.state;
 
@@ -41,8 +49,8 @@ class Product extends React.Component {
           <i className={favoriteBtn ? 'ic-heart isFavorite' : 'ic-heart'} />
         </button>
         <div className="product_images">
-          <img alt={category} src={img[0]} />
-          <img alt={category} src={img[1]} />
+          <img alt={category} src={image[0]} />
+          <img alt={category} src={image[1]} />
         </div>
         <div className="products_explanation">
           <div className="product_new">{isNew ? 'New' : ''}</div>

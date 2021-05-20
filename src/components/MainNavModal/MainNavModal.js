@@ -11,7 +11,7 @@ class MainNavModal extends Component {
     this.state = {
       isSubCategoryOn: false,
       activeSubCategory: '',
-      categories: [],
+      categories: '',
       subCategories: {},
     };
   }
@@ -44,27 +44,29 @@ class MainNavModal extends Component {
           <img alt="wikea logo" src="http://placehold.it/90x36" />
         </Link>
         <div className="main_nav_box">
-          <AsideNav
-            type="main"
-            on={isSubCategoryOn}
-            title="모든 제품"
-            list={categories}
-            handleClick={this.handleSubNavOn}
-          >
-            <div className="menu_promotion">
-              <span>최근 본 제품</span>
-              <ul className="promotion_list">
-                <li>
-                  <Link to="/">
-                    <img
-                      alt="탁자"
-                      src="https://www.ikea.com/kr/ko/images/products/voxloev-dining-table-light-bamboo__0997396_pe822660_s5.jpg?f=xxxs"
-                    />
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </AsideNav>
+          {categories && (
+            <AsideNav
+              type="main"
+              on={isSubCategoryOn}
+              title="모든 제품"
+              list={categories}
+              handleClick={this.handleSubNavOn}
+            >
+              <div className="menu_promotion">
+                <span>최근 본 제품</span>
+                <ul className="promotion_list">
+                  <li>
+                    <Link to="/">
+                      <img
+                        alt="탁자"
+                        src="https://www.ikea.com/kr/ko/images/products/voxloev-dining-table-light-bamboo__0997396_pe822660_s5.jpg?f=xxxs"
+                      />
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </AsideNav>
+          )}
           {isSubCategoryOn && (
             <AsideNav
               type="sub"

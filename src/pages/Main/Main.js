@@ -16,15 +16,28 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    fetch(API.NEW_PRODUCT_TEST)
+    fetch('http://10.58.6.62:8000/product/newlist')
       .then(products => products.json())
       .then(products => {
         this.setState({ newProductSections: products.new_products });
+        console.log('newProductSections 들어옴');
       });
+    fetch('http://10.58.6.62:8000/product/recommendation')
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          recommended: res.recommended_product,
+        });
+        console.log('recommended 들어옴');
+      });
+    console.log('zjaelak');
+    console.log('api', API.NEW_PRODUCT);
   }
 
   render() {
     const { recommended, newProductSections } = this.state;
+    console.log('recommended', recommended);
+    console.log('newProductSections', newProductSections);
     return (
       <>
         <main className="main">
