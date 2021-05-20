@@ -1,7 +1,7 @@
 import React from 'react';
 import Sortbox from './Sortbox/Sortbox';
-import SideModal from './SideModal/SideModal';
-import SortModal from './SideModal/FilterModal';
+import SideModal from '../../../../components/SideModal/SideModal';
+import FilterModal from './FilterModal/FilterModal';
 import './ListBtn.scss';
 
 class ListBtn extends React.Component {
@@ -22,7 +22,7 @@ class ListBtn extends React.Component {
   };
 
   render() {
-    const { sortbox } = this.state;
+    const { sortbox, sideModal } = this.state;
 
     return (
       <div className="btn_line">
@@ -74,7 +74,7 @@ class ListBtn extends React.Component {
         </div>
         {sortbox && <Sortbox />}
         <SideModal on={sideModal} direction="right">
-          <SortModal />
+          <FilterModal />
         </SideModal>
       </div>
     );

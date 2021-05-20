@@ -1,30 +1,20 @@
 import React from 'react';
+import Product from '../../../../components/Product/Product';
 import './Products.scss';
-
 class Products extends React.Component {
   render() {
-    // const { products } = this.props;
-
+    const { products } = this.props;
     return (
-      <ul className="products">
-        (arr.map(p => <li>p</li>))
-        {product.map(item => (
-          <Product
-            name={item.name}
-            category={item.category}
-            price={item.price}
-            isFavorite={item.isFavorite}
-            rating={item.rating}
-            img={item.img}
-            classGrid="col-lg-3 col-md-4"
-            key={item.id}
-          >
-            <input type="checkbox" />
-          </Product>
+      <ul className="products row">
+        {products.map(product => (
+          <li className="col-lg-3 col-md-4" key={product.id}>
+            <Product product={product}>
+              <input type="checkbox" />
+            </Product>
+          </li>
         ))}
       </ul>
     );
   }
 }
-
 export default Products;
