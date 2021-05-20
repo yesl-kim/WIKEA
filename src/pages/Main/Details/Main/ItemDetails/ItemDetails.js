@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// 최종 merge시, 주석해제
-// import Rate from '../../../../../components/Rate/Rate';
+import Rate from '../../../../../components/Rate/Rate';
 import './ItemDetails.scss';
 
 class ItemDetails extends Component {
@@ -26,7 +25,7 @@ class ItemDetails extends Component {
         <button className="item-rating box">
           <span className="title">상품평</span>
           <i className="ic-chevron" />
-          {/* <Rate rate={product.star} /> */}
+          <Rate rate={product.star} />
         </button>
         <hr />
       </div>

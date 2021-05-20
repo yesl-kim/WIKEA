@@ -3,8 +3,7 @@ import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb';
 import ItemDetails from './ItemDetails/ItemDetails';
 import ItemImg from './ItemImg/ItemImg';
 import ItemInfo from './ItemInfo/ItemInfo';
-// 최종 merge 시 주석 해제
-// import ScrollBox from '../../../../components/ScrollBox/ScrollBox';
+import ScrollBox from '../../../../components/ScrollBox/ScrollBox';
 import './DetailsMain.scss';
 
 class DetailsMain extends React.Component {
@@ -31,13 +30,13 @@ class DetailsMain extends React.Component {
           <div className="row">
             <div className="col-lg-1 lg-only" />
             <div className="col-lg-12">
-              {/* <ScrollBox title="추천 제품">
+              <ScrollBox title="추천 제품">
                 {recommended.map(recommended => (
                   <li className="item">
                     <Product product={recommended} />
                   </li>
                 ))}
-              </ScrollBox> */}
+              </ScrollBox>
             </div>
           </div>
         </div>

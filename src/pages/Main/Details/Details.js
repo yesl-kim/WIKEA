@@ -3,8 +3,7 @@ import DetailsMain from './Main/DetailsMain.js';
 import ImgModal from './Modal/ImgModal/ImgModal.js';
 import SideModal from '../../../components/SideModal/SideModal.js';
 import DetailsModal from '../Details/Modal/DetailsModal/DetailsModal.js';
-// 서버 완성될 시, config.js사용
-// import '../../../config.js';
+import '../../../config.js';
 
 import './Details.scss';
 
@@ -22,7 +21,7 @@ class Details extends React.Component {
 
   componentDidMount() {
     const { id } = this.props.match.params;
-    fetch(`/data/detailsData/test.json`)
+    fetch(``)
       .then(res => res.json())
       .then(product =>
         this.setState({
@@ -40,19 +39,18 @@ class Details extends React.Component {
       );
   }
 
-  //서버 연결 && 동적라우팅 시, 주석 해제
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.match.params.id !== this.props.match.params.id) {
-  //     fetch(`API${this.props.match.params.id}`)
-  //       .then(res => res.json())
-  //       .then(product =>
-  //         this.setState({
-  //           product: product.product[0],
-  //           details: product.product[0].descriptions,
-  //         })
-  //       );
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      fetch(`API${this.props.match.params.id}`)
+        .then(res => res.json())
+        .then(product =>
+          this.setState({
+            product: product.product[0],
+            details: product.product[0].descriptions,
+          })
+        );
+    }
+  }
 
   handleModal = () => {
     const { modalOn } = this.state;
