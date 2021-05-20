@@ -81,17 +81,12 @@ class ListBtn extends React.Component {
           <span className="product_btn_showroom">디지털 쇼룸</span>
         </div>
         {sortbox && <Sortbox />}
-<<<<<<< HEAD
         <SideModal
           handleSideModalOn={this.handleSideModal}
           on={on}
           direction="right"
         >
           <FilterModal filterBtn={filterBtn} />
-=======
-        <SideModal on={sideModal} direction="right">
-          <FilterModal />
->>>>>>> master
         </SideModal>
       </div>
     );

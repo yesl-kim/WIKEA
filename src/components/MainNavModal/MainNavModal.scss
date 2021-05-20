@@ -1,10 +1,16 @@
 @import '../../styles/var.scss';
 
 .main_nav_logo {
+  display: block;
   position: absolute;
   top: 1.25rem;
   left: 150px;
   background-color: #fff;
+
+  img {
+    width: 90px;
+    height: 36px;
+  }
 }
 
 .main_nav_box {

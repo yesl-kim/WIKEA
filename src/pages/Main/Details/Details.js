@@ -3,13 +3,7 @@ import DetailsMain from './Main/DetailsMain.js';
 import ImgModal from './Modal/ImgModal/ImgModal.js';
 import SideModal from '../../../components/SideModal/SideModal.js';
 import DetailsModal from '../Details/Modal/DetailsModal/DetailsModal.js';
-<<<<<<< HEAD
-// 서버 완성될 시, config.js사용
-// import '../../../config.js';
-// import CartModal from './Modal/CartModal/CartModal.js';
-=======
 import { API } from '../../../config.js';
->>>>>>> master
 import './Details.scss';
 
 class Details extends React.Component {
@@ -36,7 +30,7 @@ class Details extends React.Component {
         })
       );
 
-    fetch(`${API.RECOMMENDED_PRODUCT}/${id}`)
+    fetch(`${API.RECOMMEND}/${id}`)
       .then(res => res.json())
       .then(res =>
         this.setState({
@@ -80,7 +74,6 @@ class Details extends React.Component {
           recommended={recommended}
           details={details}
           product={product}
-          recommended={recommended}
           handleModal={this.handleModal}
           handleSideModal={this.handleSideModal}
         />

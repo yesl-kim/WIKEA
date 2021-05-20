@@ -1,6 +1,7 @@
 import React from 'react';
 import Message from './Message';
 import MainNavModal from '../MainNavModal/MainNavModal';
+import { Link } from 'react-router-dom';
 import './Nav.scss';
 
 class Nav extends React.Component {
@@ -9,7 +10,6 @@ class Nav extends React.Component {
     this.state = {
       isMainNavModalOn: false,
       scrollTop: 0,
-      isMainNavModalOn: false,
     };
   }
 
@@ -57,9 +57,9 @@ class Nav extends React.Component {
               </a>
             </li>
             <li>
-              <a href="/">
+              <Link to="/signin">
                 <i className="ic-user" />
-              </a>
+              </Link>
             </li>
             <li>
               <a href="/">

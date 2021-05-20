@@ -20,7 +20,7 @@ class Lists extends React.Component {
   componentDidMount() {
     const subCategory = this.props.match.params.sub_category_name;
 
-    fetch(`http://10.58.2.174:5000/product?sub_category_name=${subCategory}`)
+    fetch(`http://10.58.6.62:8000/product?sub_category_name=${subCategory}`)
       .then(product => product.json())
       .then(products => {
         this.setState({
@@ -28,7 +28,7 @@ class Lists extends React.Component {
         });
       });
 
-    fetch('http://10.58.2.174:5000/product/recommendation')
+    fetch('http://10.58.6.62:8000/product/recommendation')
       .then(res => res.json())
       .then(res =>
         this.setState({
@@ -39,7 +39,7 @@ class Lists extends React.Component {
 
   pagination = (subCategory, page) => {
     fetch(
-      `http://10.58.2.174:5000/product?sub_category_name=${subCategory}&page=${page}`
+      `http://10.58.6.62:8000/product?sub_category_name=${subCategory}&page=${page}`
     )
       .then(res => res.json())
       .then(products =>
@@ -51,7 +51,7 @@ class Lists extends React.Component {
     const subCategory = this.props.match.params.sub_category_name;
 
     fetch(
-      `http://10.58.2.174:5000/product?sub_category_name=${subCategory}&${filterName}`
+      `http://10.58.6.62:8000/product?sub_category_name=${subCategory}&${filterName}`
     )
       .then(res => res.json())
       .then(products =>

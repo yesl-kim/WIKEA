@@ -5,10 +5,7 @@ import ScrollBox from '../../components/ScrollBox/ScrollBox';
 import Product from '../../components/Product/Product';
 import { API } from '../../config';
 import './Main.scss';
-
 class Main extends React.Component {
-  newBgImages = [];
-
   constructor() {
     super();
     this.state = {
@@ -16,7 +13,6 @@ class Main extends React.Component {
       newProductSections: [],
     };
   }
-
   componentDidMount() {
     fetch('http://10.58.6.62:8000/product/newlist')
       .then(products => products.json())
@@ -30,15 +26,7 @@ class Main extends React.Component {
           recommended: res.recommended_product,
         });
       });
-    fetch('http://10.58.6.62:8000/product/recommend')
-      .then(res => res.json())
-      .then(res =>
-        this.setState({
-          recommended: res.recommended_product,
-        })
-      );
   }
-
   render() {
     const { recommended, newProductSections } = this.state;
     return (
@@ -92,75 +80,21 @@ class Main extends React.Component {
                   <header className="section_title">
                     <h2>신제품을 만나보세요</h2>
                     <Link to="/" role="button">
-                      지금 할인 받기
+                      신제품 보러 가기
                     </Link>
-                  </div>
-                </section>
-              </div>
-            </div>
-            <section className="row">
-              <div className="col-lg-1 lg-only" />
-              <div className="col-lg-12 col-md-12">
-                <ScrollBox>
-                  {recommended.map(el => (
-                    <li className="item">
-                      <Product product={el} />
-                    </li>
+                  </header>
+                </div>
+                <div className="col-lg-1 lg-only" />
+                {!!newProductSections.length &&
+                  newProductSections.map(section => (
+                    <NewProduct key={section.id} section={section} />
                   ))}
-                </ScrollBox>
-              </div>
-            </section>
-            <section className="row">
-              <div className="col-lg-1 lg-only" />
-              <div className="col-lg-12 col-md-12">
-                <header className="section_title">
-                  <h2>신제품을 만나보세요</h2>
-                  <Link to="/" role="button">
-                    신제품 보러 가기
-                  </Link>
-                </header>
-              </div>
-              <div className="col-lg-1 lg-only" />
-              {!!this.newBgImages.length && (
-                <>
-                  <div className="col-lg-6 col-md-6 col-sm-12">
-                    <div className="new_product">
-                      <img
-                        alt={this.newBgImages[0].alt}
-                        src={this.newBgImages[0].src}
-                      />
-                      {!!newProducts.length &&
-                        newProducts[0].map(product => (
-                          <Label
-                            product={product}
-                            number={this.newBgImages[0].id}
-                          />
-                        ))}
-                    </div>
-                  </div>
-                  <div className="col-lg-6 col-md-6 col-sm-12">
-                    <div className="new_product">
-                      <img
-                        alt={this.newBgImages[1].alt}
-                        src={this.newBgImages[1].src}
-                      />
-                      {!!newProducts.length &&
-                        newProducts[1].map(product => (
-                          <Label
-                            product={product}
-                            number={this.newBgImages[1].id}
-                          />
-                        ))}
-                    </div>
-                  </div>
-                </>
-              )}
-            </section>
-          </div>
-        </article>
-      </main>
+              </section>
+            </div>
+          </article>
+        </main>
+      </>
     );
   }
 }
-
 export default Main;
