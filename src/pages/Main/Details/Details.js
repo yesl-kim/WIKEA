@@ -29,7 +29,7 @@ class Details extends React.Component {
         })
       );
 
-    fetch(`API.RECOMMENDED_PRODUCT${id}`)
+    fetch(`${API.RECOMMENDED_PRODUCT}/${id}`)
       .then(res => res.json())
       .then(res =>
         this.setState({
