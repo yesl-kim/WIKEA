@@ -75,7 +75,11 @@ class Main extends React.Component {
                 <div className="col-lg-12 col-md-12">
                   <ScrollBox title="추천 제품">
                     {!!recommended.length &&
-                      recommended.map(product => <Product product={product} />)}
+                      recommended.map(product => (
+                        <li className="item">
+                          <Product product={product} />
+                        </li>
+                      ))}
                   </ScrollBox>
                 </div>
               </section>
