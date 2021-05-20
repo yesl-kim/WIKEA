@@ -35,7 +35,7 @@ class Nav extends React.Component {
 
   render() {
     const { scrollTop, isMainNavModalOn } = this.state;
-    console.log(scrollTop);
+
     return (
       <div className={`nav_wrap ${scrollTop - NAV >= 0 && 'hide'}`}>
         <Message />

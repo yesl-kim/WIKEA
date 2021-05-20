@@ -30,6 +30,7 @@ class ListBtn extends React.Component {
 
   render() {
     const { sortbox, on } = this.state;
+    const { filterBtn } = this.props;
 
     return (
       <div className="btn_line">
@@ -80,13 +81,12 @@ class ListBtn extends React.Component {
           <span className="product_btn_showroom">디지털 쇼룸</span>
         </div>
         {sortbox && <Sortbox />}
-        {/* sideModal merge시 활성화 예정입니다 */}
         <SideModal
           handleSideModalOn={this.handleSideModal}
           on={on}
           direction="right"
         >
-          <FilterModal />
+          <FilterModal filterBtn={filterBtn} />
         </SideModal>
       </div>
     );

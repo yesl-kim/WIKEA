@@ -24,7 +24,7 @@ class Product extends React.Component {
     const { favoriteBtn } = this.state;
 
     return (
-      <Link to={`/details/${product.sub_category_url}/${product.id}`}>
+      <Link to={`/product/${product.name}`}>
         <div className={`product`}>
           {children}
           <button className="product_favorite" onClick={this.handleFavoriteBtn}>

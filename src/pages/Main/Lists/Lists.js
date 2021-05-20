@@ -18,28 +18,8 @@ class Lists extends React.Component {
   }
 
   // // Mock data 용 fetch입니다. 백엔드와 통신 이후 삭제 예정
-  componentDidMount() {
-    fetch('/data/listmockdata.json')
-      .then(product => product.json())
-      .then(products => {
-        this.setState({
-          products: products.product,
-        });
-      });
-
-    fetch('/data/listmockdata.json')
-      .then(res => res.json())
-      .then(products =>
-        this.setState({
-          recommended: products.product,
-        })
-      );
-  }
-
   // componentDidMount() {
-  //   const subCat = this.props.match.params.subCat;
-
-  //   fetch(`http://172.30.1.23:5000/product/?sub_category_name=${subCat}`)
+  //   fetch('/data/listmockdata.json')
   //     .then(product => product.json())
   //     .then(products => {
   //       this.setState({
@@ -49,16 +29,36 @@ class Lists extends React.Component {
 
   //   fetch('/data/listmockdata.json')
   //     .then(res => res.json())
-  //     .then(res =>
+  //     .then(products =>
   //       this.setState({
-  //         recommended: res.product,
+  //         recommended: products.product,
   //       })
   //     );
   // }
 
+  componentDidMount() {
+    const subCategory = this.props.match.params.sub_category_name;
+
+    fetch(`http://10.58.2.174:5000/product?sub_category_name=${subCategory}`)
+      .then(product => product.json())
+      .then(products => {
+        this.setState({
+          products: products.product,
+        });
+      });
+
+    fetch('/data/listmockdata.json')
+      .then(res => res.json())
+      .then(res =>
+        this.setState({
+          recommended: res.product,
+        })
+      );
+  }
+
   pagination = (subCategory, page) => {
     fetch(
-      `http://172.30.1.23:5000/product/?sub_category_name=${subCategory}&page=${page}`
+      `http://10.58.2.174:5000/product?sub_category_name=${subCategory}&page=${page}`
     )
       .then(res => res.json())
       .then(products =>
@@ -66,16 +66,24 @@ class Lists extends React.Component {
       );
   };
 
-  // filterBtn = (filterName) => {
-  //   fetch('')
-  //   .then(res => res.json())
-  //   .then(products => )
-  // }
+  filterBtn = filterName => {
+    const subCategory = this.props.match.params.sub_category_name;
+
+    fetch(
+      `http://10.58.2.174:5000/product?sub_category_name=${subCategory}&${filterName}`
+    )
+      .then(res => res.json())
+      .then(products =>
+        this.setState({
+          products: products.product,
+        })
+      );
+  };
 
   render() {
     const { products, recommended, showMoreBar } = this.state;
-    const subCat = this.props.match.params.subCat;
-    console.log(showMoreBar);
+    const subCategory = this.props.match.params.sub_category_name;
+
     return (
       <main className="lists">
         <div className="grid-container">
@@ -84,7 +92,7 @@ class Lists extends React.Component {
             <div className="col-lg-12 col-md-11">
               <Breadcrumb />
               <ItemExplanation />
-              <ListBtn />
+              <ListBtn filterBtn={this.filterBtn} />
               <Products products={products} />
               <div className="show_more">
                 <div className="show_more_bar">
@@ -97,14 +105,14 @@ class Lists extends React.Component {
                   <button
                     className="show_more_btn"
                     type="button"
-                    onClick={() => this.pagination(subCat, 1)}
+                    onClick={() => this.pagination(subCategory, 1)}
                   >
                     1
                   </button>
                   <button
                     className="show_more_btn"
                     type="button"
-                    onClick={() => this.pagination(subCat, 2)}
+                    onClick={() => this.pagination(subCategory, 2)}
                   >
                     2
                   </button>
