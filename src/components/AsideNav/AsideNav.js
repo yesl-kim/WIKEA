@@ -10,7 +10,6 @@ class AsideNav extends Component {
   render() {
     const { isClicked, on, type, title, list, handleClick, children } =
       this.props;
-    console.log('isclicked', isClicked);
     return (
       <nav
         className={on ? `aside_nav ${type}_menu on` : `aside_nav ${type}_menu`}

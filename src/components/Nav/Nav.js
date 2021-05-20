@@ -1,5 +1,6 @@
 import React from 'react';
 import Message from './Message';
+import MainNavModal from '../MainNavModal/MainNavModal';
 import './Nav.scss';
 
 class Nav extends React.Component {
@@ -7,6 +8,7 @@ class Nav extends React.Component {
     super();
     this.state = {
       scrollTop: 0,
+      isMainNavModalOn: false,
     };
   }
 
@@ -25,8 +27,14 @@ class Nav extends React.Component {
     });
   };
 
+  handleMainNavModalOn = () => {
+    this.setState({
+      isMainNavModalOn: !this.state.isMainNavModalOn,
+    });
+  };
+
   render() {
-    const { scrollTop } = this.state;
+    const { scrollTop, isMainNavModalOn } = this.state;
     return (
       <div className={`nav_wrap ${scrollTop - NAV >= 0 && 'hide'}`}>
         <Message />
@@ -80,6 +88,10 @@ class Nav extends React.Component {
             </button>
           </div>
         </nav>
+        <MainNavModal
+          sideModalOn={isMainNavModalOn}
+          handleSideModalOn={this.handleMainNavModalOn}
+        />
       </div>
     );
   }
