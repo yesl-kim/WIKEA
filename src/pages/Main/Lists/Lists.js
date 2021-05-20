@@ -56,15 +56,21 @@ class Lists extends React.Component {
   //     );
   // }
 
-  pagination = (sub_category_name, page) => {
+  pagination = (subCategory, page) => {
     fetch(
-      `http://172.30.1.23:5000/product/?sub_category_name=${sub_category_name}&page=${page}`
+      `http://172.30.1.23:5000/product/?sub_category_name=${subCategory}&page=${page}`
     )
       .then(res => res.json())
       .then(products =>
         this.setState({ products: products.product, showMoreBar: page })
       );
   };
+
+  // filterBtn = (filterName) => {
+  //   fetch('')
+  //   .then(res => res.json())
+  //   .then(products => )
+  // }
 
   render() {
     const { products, recommended, showMoreBar } = this.state;
