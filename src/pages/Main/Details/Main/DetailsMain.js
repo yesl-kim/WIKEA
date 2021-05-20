@@ -4,11 +4,13 @@ import ItemDetails from './ItemDetails/ItemDetails';
 import ItemImg from './ItemImg/ItemImg';
 import ItemInfo from './ItemInfo/ItemInfo';
 import ScrollBox from '../../../../components/ScrollBox/ScrollBox';
+import Product from '../../../../components/Product/Product';
 import './DetailsMain.scss';
 
 class DetailsMain extends React.Component {
   render() {
-    const { handleModal, handleSideModal, product, details } = this.props;
+    const { handleModal, handleSideModal, product, details, recommended } =
+      this.props;
     return (
       <main className="detail_main">
         <div className="grid-container">
