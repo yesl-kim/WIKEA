@@ -1,5 +1,6 @@
 import React from 'react';
 import Message from './Message';
+import MainNavModal from '../MainNavModal/MainNavModal';
 import './Nav.scss';
 
 class Nav extends React.Component {
@@ -7,6 +8,7 @@ class Nav extends React.Component {
     super();
     this.state = {
       scrollTop: 0,
+      isMainNavModalOn: false,
     };
   }
 
@@ -25,14 +27,20 @@ class Nav extends React.Component {
     });
   };
 
+  handleMainNavModalOn = () => {
+    this.setState({
+      isMainNavModalOn: !this.state.isMainNavModalOn,
+    });
+  };
+
   render() {
-    const { scrollTop } = this.state;
+    const { scrollTop, isMainNavModalOn } = this.state;
     return (
       <div className={`nav_wrap ${scrollTop - NAV >= 0 && 'hide'}`}>
         <Message className="message_wrap" />
         <nav className="nav_menu" onScroll={this.handleScroll}>
           <h1 className="visually-hidden">메뉴바</h1>
-          <img className="logo" alt="logo" src="/images/Detail/logo.png" />
+          <img className="logo" alt="logo" src="/images/logo.png" />
           <div className="lg-only options">
             <a href="/">
               <span>모든제품</span>
@@ -63,7 +71,7 @@ class Nav extends React.Component {
               </a>
             </li>
             <li>
-              <button className="col-lg-1">
+              <button className="col-lg-1" onClick={this.handleMainNavModalOn}>
                 <i className="ic-menu" />
               </button>
             </li>
@@ -80,6 +88,10 @@ class Nav extends React.Component {
             </button>
           </div>
         </nav>
+        <MainNavModal
+          sideModalOn={isMainNavModalOn}
+          handleSideModalOn={this.handleMainNavModalOn}
+        />
       </div>
     );
   }

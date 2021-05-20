@@ -9,10 +9,10 @@ class MainNavModal extends Component {
   constructor() {
     super();
     this.state = {
+      isCategoriesClicked: [],
       isSubCategoryOn: false,
       activeSubCategory: '',
-      categories: '',
-      subCategories: {},
+      categories: [],
     };
   }
 
@@ -21,58 +21,75 @@ class MainNavModal extends Component {
       .then(categories => categories.json())
       .then(res => {
         this.setState({
-          categories: res.category_list,
-          subCategories: res.sub_category_list,
+          isCategoriesClicked: res.category.map(cat => false),
+          categories: res.category,
         });
       });
   }
 
-  handleSubNavOn = e => {
-    const { name } = e.target;
+  handleSubNavOn = (num, name) => {
     this.setState({
+      isCategoriesClicked: this.state.isCategoriesClicked.map(
+        (el, idx) => idx === num
+      ),
       isSubCategoryOn: true,
       activeSubCategory: name,
     });
   };
 
   render() {
-    const { isSubCategoryOn, activeSubCategory, categories, subCategories } =
-      this.state;
+    const { sideModalOn, handleSideModalOn } = this.props;
+    const {
+      isCategoriesClicked,
+      isSubCategoryOn,
+      activeSubCategory,
+      categories,
+    } = this.state;
+    const subCategories = {};
+
+    if (categories.length) {
+      categories.forEach(
+        category =>
+          (subCategories[category.korean_name] = category.sub_category)
+      );
+    }
+
     return (
-      <SideModal direction="left" on={true}>
+      <SideModal
+        direction="left"
+        on={sideModalOn}
+        handleSideModalOn={handleSideModalOn}
+      >
         <Link to="/" className="main_nav_logo">
           <img alt="wikea logo" src="http://placehold.it/90x36" />
         </Link>
         <div className="main_nav_box">
-          {categories && (
-            <AsideNav
-              type="main"
-              on={isSubCategoryOn}
-              title="모든 제품"
-              list={categories}
-              handleClick={this.handleSubNavOn}
-            >
-              <div className="menu_promotion">
-                <span>최근 본 제품</span>
-                <ul className="promotion_list">
-                  <li>
-                    <Link to="/">
-                      <img
-                        alt="탁자"
-                        src="https://www.ikea.com/kr/ko/images/products/voxloev-dining-table-light-bamboo__0997396_pe822660_s5.jpg?f=xxxs"
-                      />
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </AsideNav>
-          )}
+          <AsideNav
+            type="main"
+            isClicked={isCategoriesClicked}
+            on={isSubCategoryOn}
+            title="모든 제품"
+            list={categories}
+            handleClick={this.handleSubNavOn}
+          >
+            <div className="menu_promotion">
+              <span>최근 본 제품</span>
+              <ul className="promotion_list">
+                <li>
+                  <Link to="/lists/">
+                    <img alt="조명" src="/images/products/lamp/10-r.png" />
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </AsideNav>
           {isSubCategoryOn && (
             <AsideNav
               type="sub"
               on={isSubCategoryOn}
               title={activeSubCategory}
               list={subCategories[activeSubCategory]}
+              handleSideModalOn={handleSideModalOn}
             >
               <div className="menu_promotion">
                 <Link to="/">

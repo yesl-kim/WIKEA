@@ -1,33 +1,40 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './AsideNav.scss';
 
 class AsideNav extends Component {
+  goToSubCat = subCat => {
+    this.props.history.push(`/lists/${subCat}`);
+    this.props.handleSideModalOn();
+  };
+
   render() {
-    const { on, type, title, list, handleClick, children } = this.props;
+    const { isClicked, on, type, title, list, handleClick, children } =
+      this.props;
     return (
       <nav
         className={on ? `aside_nav ${type}_menu on` : `aside_nav ${type}_menu`}
       >
         <h2 className="aside_nav_title">{title}</h2>
         <ul aria-label={`${title} 하위 메뉴`} className="menu_container">
-          <li>
-            <Link to="/">
-              {type === 'main' ? '지속가능한 제품' : '전체 보기'}
-            </Link>
-          </li>
+          <li>{type === 'main' ? '지속가능한 제품' : '전체 보기'}</li>
           {!!list.length &&
-            list.map(item => (
-              <li key={item.id}>
-                <Link
-                  to="/"
-                  role="button"
-                  name={item.korean_name}
-                  onClick={handleClick}
-                >
-                  {item.korean_name}
-                </Link>
-                <i className="ic-chevron" />
+            list.map((item, idx) => (
+              <li
+                key={item.id}
+                role="button"
+                onClick={
+                  type === 'main'
+                    ? () => handleClick(idx, item.korean_name)
+                    : () => this.goToSubCat(item.english_name)
+                }
+              >
+                {item.korean_name}
+                {type === 'main' && (
+                  <i
+                    className={isClicked[idx] ? 'ic-chevron on' : 'ic-chevron'}
+                  />
+                )}
               </li>
             ))}
         </ul>
@@ -37,4 +44,4 @@ class AsideNav extends Component {
   }
 }
 
-export default AsideNav;
+export default withRouter(AsideNav);

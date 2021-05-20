@@ -20,7 +20,6 @@ class DetailsModal extends Component {
   render() {
     const { details } = this.props;
     const { isCollapsed } = this.state;
-    console.log(details[0].material.split('\\r'));
     return (
       <div className="product_details">
         <h2 className="product_details_title">제품 설명</h2>
