@@ -17,25 +17,6 @@ class Lists extends React.Component {
     };
   }
 
-  // // Mock data 용 fetch입니다. 백엔드와 통신 이후 삭제 예정
-  // componentDidMount() {
-  //   fetch('/data/listmockdata.json')
-  //     .then(product => product.json())
-  //     .then(products => {
-  //       this.setState({
-  //         products: products.product,
-  //       });
-  //     });
-
-  //   fetch('/data/listmockdata.json')
-  //     .then(res => res.json())
-  //     .then(products =>
-  //       this.setState({
-  //         recommended: products.product,
-  //       })
-  //     );
-  // }
-
   componentDidMount() {
     const subCategory = this.props.match.params.sub_category_name;
 
@@ -47,11 +28,11 @@ class Lists extends React.Component {
         });
       });
 
-    fetch('/data/listmockdata.json')
+    fetch('http://10.58.2.174:5000/product/recommendation')
       .then(res => res.json())
       .then(res =>
         this.setState({
-          recommended: res.product,
+          recommended: res.recommended_product,
         })
       );
   }
