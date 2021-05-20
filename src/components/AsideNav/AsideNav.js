@@ -5,10 +5,12 @@ import './AsideNav.scss';
 class AsideNav extends Component {
   goToSubCat = subCat => {
     this.props.history.push(`/lists/${subCat}`);
+    this.props.handleSideModalOn();
   };
 
   render() {
-    const { on, type, title, list, handleClick, children } = this.props;
+    const { isClicked, on, type, title, list, handleClick, children } =
+      this.props;
     return (
       <nav
         className={on ? `aside_nav ${type}_menu on` : `aside_nav ${type}_menu`}
@@ -17,18 +19,22 @@ class AsideNav extends Component {
         <ul aria-label={`${title} 하위 메뉴`} className="menu_container">
           <li>{type === 'main' ? '지속가능한 제품' : '전체 보기'}</li>
           {!!list.length &&
-            list.map(item => (
+            list.map((item, idx) => (
               <li
                 key={item.id}
                 role="button"
                 onClick={
                   type === 'main'
-                    ? () => handleClick(item.korean_name)
+                    ? () => handleClick(idx, item.korean_name)
                     : () => this.goToSubCat(item.english_name)
                 }
               >
                 {item.korean_name}
-                <i className="ic-chevron" />
+                {type === 'main' && (
+                  <i
+                    className={isClicked[idx] ? 'ic-chevron on' : 'ic-chevron'}
+                  />
+                )}
               </li>
             ))}
         </ul>

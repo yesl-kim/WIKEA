@@ -1,16 +1,9 @@
-const IP = '172.30.1.23:5000';
+const IP = '10.58.6.62:8000';
 export const API = {
-  SIGN_IN: `http://${IP}/user/signin`,
   SIGN_UP: `http://${IP}/user/signup`,
-
-  DETAILS: `http://${IP}/product`,
-  // =======
-  CATEGORY: '/data/Categories/Categories.json',
-  // >>>>>>> origin/feature/mainNavRouting
-
-  NEW_PRODUCT: `http://${IP}/product/newList`,
-  RECOMMENDED_PRODUCT: `http://${IP}/product/recommended_product`,
-  // >>>>>>> origin/feature/main
-
-  PRODUCT_LIST: `http://${IP}/product`,
+  SIGN_IN: `http://${IP}/user/signin`,
+  CATEGORY: `http://${IP}/product/category`,
+  NEW_PRODUCT: `http://${IP}/product/newlist`,
+  NEW_PRODUCT_TEST: `/data/NewProducts/NewProducts.json`,
+  RECOMMEND: `http://${IP}/product/recommendation`,
 };

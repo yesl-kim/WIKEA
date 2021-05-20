@@ -1,11 +1,9 @@
 import React from 'react';
 import Product from '../../../../components/Product/Product';
 import './Products.scss';
-
 class Products extends React.Component {
   render() {
     const { products } = this.props;
-
     return (
       <ul className="products row">
         {products.map(product => (
@@ -19,5 +17,4 @@ class Products extends React.Component {
     );
   }
 }
-
 export default Products;

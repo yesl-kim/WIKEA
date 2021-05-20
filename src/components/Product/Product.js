@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Rate from '../Rate/Rate';
 import './Product.scss';
-
 class Product extends React.Component {
   constructor() {
     super();
@@ -10,19 +9,15 @@ class Product extends React.Component {
       favoriteBtn: false,
     };
   }
-
   handleFavoriteBtn = () => {
     const { favoriteBtn } = this.state;
-
     this.setState({
       favoriteBtn: !favoriteBtn,
     });
   };
-
   render() {
     const { product, children } = this.props;
     const { favoriteBtn } = this.state;
-
     return (
       <Link to={`/product/${product.name}`}>
         <div className={`product`}>
@@ -54,5 +49,4 @@ class Product extends React.Component {
     );
   }
 }
-
 export default Product;

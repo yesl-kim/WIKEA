@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import Rate from '../../../../../components/Rate/Rate';
-
 import './ItemDetails.scss';
 
 class ItemDetails extends Component {
   render() {
     const { product, handleSideModal } = this.props;
-
     return (
       <div className="item-details">
         <div className="item-summary">
@@ -18,7 +16,6 @@ class ItemDetails extends Component {
           <span className="title">제품 설명</span>
           <i className="ic-chevron" />
         </button>
-
         <hr />
         <button className="item-size box">
           <span className="title">제품 크기</span>
@@ -35,5 +32,4 @@ class ItemDetails extends Component {
     );
   }
 }
-
 export default ItemDetails;

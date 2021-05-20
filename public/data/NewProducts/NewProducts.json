@@ -1,56 +1,58 @@
-[
-  {
-    "id": "new01",
-    "src": "https://images.unsplash.com/photo-1614590354333-c72a209c78a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80",
-    "products": [
-      {
-        "id": "1",
-        "is_new": true,
-        "english_name": "nikelamp",
-        "korean_name": "나이키램프",
-        "price": "30000.00"
-      },
-      {
-        "id": "2",
-        "is_new": true,
-        "english_name": "nikebed",
-        "korean_name": "나이키침대",
-        "price": "300000.00"
-      },
-      {
-        "id": "3",
-        "is_new": true,
-        "english_name": "nikestorage",
-        "korean_name": "나이키수납",
-        "price": "100000.00"
-      }
-    ]
-  },
-  {
-    "id": "new02",
-    "src": "https://images.unsplash.com/photo-1600607687126-8a3414349a51?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
-    "products": [
-      {
-        "id": "1",
-        "is_new": true,
-        "english_name": "nikelamp",
-        "korean_name": "나이키램프",
-        "price": "30000.00"
-      },
-      {
-        "id": "2",
-        "is_new": true,
-        "english_name": "nikebed",
-        "korean_name": "나이키침대",
-        "price": "300000.00"
-      },
-      {
-        "id": "3",
-        "is_new": true,
-        "english_name": "nikestorage",
-        "korean_name": "나이키수납",
-        "price": "100000.00"
-      }
-    ]
-  }
-]
+{
+  "new_products": [
+    {
+      "id": "new01",
+      "src": "https://images.unsplash.com/photo-1614590354333-c72a209c78a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80",
+      "products": [
+        {
+          "id": "1",
+          "is_new": true,
+          "english_name": "nikelamp",
+          "korean_name": "나이키램프",
+          "price": "30000.00"
+        },
+        {
+          "id": "2",
+          "is_new": true,
+          "english_name": "nikebed",
+          "korean_name": "나이키침대",
+          "price": "300000.00"
+        },
+        {
+          "id": "3",
+          "is_new": true,
+          "english_name": "nikestorage",
+          "korean_name": "나이키수납",
+          "price": "100000.00"
+        }
+      ]
+    },
+    {
+      "id": "new02",
+      "src": "https://images.unsplash.com/photo-1600607687126-8a3414349a51?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+      "products": [
+        {
+          "id": "1",
+          "is_new": true,
+          "english_name": "nikelamp",
+          "korean_name": "나이키램프",
+          "price": "30000.00"
+        },
+        {
+          "id": "2",
+          "is_new": true,
+          "english_name": "nikebed",
+          "korean_name": "나이키침대",
+          "price": "300000.00"
+        },
+        {
+          "id": "3",
+          "is_new": true,
+          "english_name": "nikestorage",
+          "korean_name": "나이키수납",
+          "price": "100000.00"
+        }
+      ]
+    }
+  ]
+}

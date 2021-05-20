@@ -2,33 +2,64 @@
 @import '../../../../styles/mixins/positions';
 @import '../../../../styles/constants/colors';
 
+@mixin pos-label($name) {
+  $name: 150%;
+}
+
 .label_container {
   position: absolute;
 
-  &.new01_1 {
-    top: 36%;
-    left: 17.5%;
+  &.new2_18 {
+    top: 76%;
+    left: 90%;
 
     .label {
-      left: 150%;
+      @include pos-label(right);
     }
   }
 
-  &.new01_4 {
+  &.new2_1 {
+    top: 17.5%;
+    left: 23.5%;
+
+    .label {
+      @include pos-label(left);
+    }
+  }
+
+  &.new2_21 {
     top: 52%;
-    left: 50%;
+    left: 13%;
 
     .label {
-      left: 150%;
+      @include pos-label(left);
     }
   }
 
-  &.new01_7 {
-    top: 73%;
-    left: 37.5%;
+  &.new3_2 {
+    top: 41%;
+    left: 49.5%;
 
     .label {
-      left: 150%;
+      @include pos-label(left);
+    }
+  }
+
+  &.new3_22 {
+    top: 85%;
+    left: 20%;
+
+    .label {
+      @include pos-label(left);
+    }
+  }
+
+  &.new3_19 {
+    top: 65%;
+    left: 49%;
+
+    .label {
+      @include pos-label(right);
     }
   }
 
@@ -68,7 +99,6 @@
   .label {
     @include flexbox(between, start);
     @include pos-center-y(absolute);
-    left: 150%;
     padding: 14px 6px 16px 15px;
     width: 100%;
     min-width: 135px;
@@ -77,6 +107,9 @@
     box-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
     line-height: 1.571;
     font-size: 0.875rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 250ms ease-in-out;
 
     .product_info {
       font-size: 0.875rem;
@@ -122,6 +155,11 @@
       i {
         font-size: 24px;
       }
+    }
+
+    &.on {
+      opacity: 1;
+      visibility: visible;
     }
   }
 }

@@ -9,10 +9,10 @@ class MainNavModal extends Component {
   constructor() {
     super();
     this.state = {
+      isCategoriesClicked: [],
       isSubCategoryOn: false,
       activeSubCategory: '',
       categories: [],
-      subCategories: {},
     };
   }
 
@@ -21,23 +21,38 @@ class MainNavModal extends Component {
       .then(categories => categories.json())
       .then(res => {
         this.setState({
+          isCategoriesClicked: res.category.map(cat => false),
           categories: res.category,
-          subCategories: res.sub_category,
         });
       });
   }
 
-  handleSubNavOn = name => {
+  handleSubNavOn = (num, name) => {
     this.setState({
+      isCategoriesClicked: this.state.isCategoriesClicked.map(
+        (el, idx) => idx === num
+      ),
       isSubCategoryOn: true,
       activeSubCategory: name,
     });
   };
 
   render() {
-    const { isSubCategoryOn, activeSubCategory, categories, subCategories } =
-      this.state;
     const { sideModalOn, handleSideModalOn } = this.props;
+    const {
+      isCategoriesClicked,
+      isSubCategoryOn,
+      activeSubCategory,
+      categories,
+    } = this.state;
+    const subCategories = {};
+
+    if (categories.length) {
+      categories.forEach(
+        category =>
+          (subCategories[category.korean_name] = category.sub_category)
+      );
+    }
 
     return (
       <SideModal
@@ -51,6 +66,7 @@ class MainNavModal extends Component {
         <div className="main_nav_box">
           <AsideNav
             type="main"
+            isClicked={isCategoriesClicked}
             on={isSubCategoryOn}
             title="모든 제품"
             list={categories}
@@ -73,6 +89,7 @@ class MainNavModal extends Component {
               on={isSubCategoryOn}
               title={activeSubCategory}
               list={subCategories[activeSubCategory]}
+              handleSideModalOn={handleSideModalOn}
             >
               <div className="menu_promotion">
                 <Link to="/">

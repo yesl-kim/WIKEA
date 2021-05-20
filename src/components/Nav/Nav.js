@@ -9,6 +9,7 @@ class Nav extends React.Component {
     this.state = {
       isMainNavModalOn: false,
       scrollTop: 0,
+      isMainNavModalOn: false,
     };
   }
 
@@ -35,13 +36,12 @@ class Nav extends React.Component {
 
   render() {
     const { scrollTop, isMainNavModalOn } = this.state;
-
     return (
       <div className={`nav_wrap ${scrollTop - NAV >= 0 && 'hide'}`}>
-        <Message />
+        <Message className="message_wrap" />
         <nav className="nav_menu" onScroll={this.handleScroll}>
           <h1 className="visually-hidden">메뉴바</h1>
-          <img alt="logo" src="/images/logo.png" className="logo" />
+          <img className="logo" alt="logo" src="/images/logo.png" />
           <div className="lg-only options">
             <a href="/">
               <span>모든제품</span>
@@ -93,6 +93,10 @@ class Nav extends React.Component {
             handleSideModalOn={this.handleMainNavModalOn}
           />
         </nav>
+        <MainNavModal
+          sideModalOn={isMainNavModalOn}
+          handleSideModalOn={this.handleMainNavModalOn}
+        />
       </div>
     );
   }
