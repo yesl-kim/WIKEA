@@ -1,15 +1,16 @@
 const IP = '172.30.1.23:5000';
 export const API = {
-  SIGN_IN: `http://${IP}/users/signin`,
+  SIGN_IN: `http://${IP}/user/signin`,
   SIGN_UP: `http://${IP}/user/signup`,
-  // <<<<<<< HEAD
-  // <<<<<<< HEAD
-  DETAILS: `http://${IP}/product/detail/`,
+
+  DETAILS: `http://${IP}/product`,
   // =======
   CATEGORY: '/data/Categories/Categories.json',
   // >>>>>>> origin/feature/mainNavRouting
-  // =======
+
   NEW_PRODUCT: `http://${IP}/product/newList`,
-  NEW_PRODUCT_TEST: `/data/NewProducts/NewProducts.json`,
+  RECOMMENDED_PRODUCT: `http://${IP}/product/recommended_product`,
   // >>>>>>> origin/feature/main
+
+  PRODUCT_LIST: `http://${IP}/product`,
 };

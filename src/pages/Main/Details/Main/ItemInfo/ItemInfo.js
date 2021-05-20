@@ -38,6 +38,7 @@ class ItemInfo extends Component {
             <div className="stock-check">
               <i className="ic-cart1" />
               <span>배송 여부는 결제 단계에서 확인하실 수 있습니다.</span>
+              {!!product.stock && <div className="circle" />}
             </div>
             <hr />
             <div className="stock-check">

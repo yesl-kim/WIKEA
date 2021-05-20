@@ -1,5 +1,5 @@
 import React from 'react';
-import DetailMain from './Main/DetailMain.js';
+import DetailsMain from './Main/DetailsMain.js';
 import ImgModal from './Modal/ImgModal/ImgModal.js';
 import SideModal from '../../../components/SideModal/SideModal.js';
 import DetailsModal from '../Details/Modal/DetailsModal/DetailsModal.js';
@@ -23,7 +23,7 @@ class Details extends React.Component {
   // 목데이터 용 패치
   componentDidMount() {
     const { id } = this.props.match.params;
-    fetch(`http://172.30.1.23:5000/product/detail/?id=${id}`)
+    fetch(`/data/detailsData/test.json`)
       .then(res => res.json())
       .then(product =>
         this.setState({
@@ -36,7 +36,7 @@ class Details extends React.Component {
       .then(res => res.json())
       .then(res =>
         this.setState({
-          recommended: res.product,
+          recommended: res.recommend_product,
         })
       );
   }
@@ -76,7 +76,7 @@ class Details extends React.Component {
     console.log(this.props);
     return (
       <>
-        <DetailMain
+        <DetailsMain
           details={details}
           product={product}
           recommended={recommended}

@@ -13,14 +13,33 @@ class Lists extends React.Component {
     this.state = {
       products: [],
       recommended: [],
+      showMoreBar: 1,
     };
   }
 
   // // Mock data 용 fetch입니다. 백엔드와 통신 이후 삭제 예정
+  componentDidMount() {
+    fetch('/data/listmockdata.json')
+      .then(product => product.json())
+      .then(products => {
+        this.setState({
+          products: products.product,
+        });
+      });
+
+    fetch('/data/listmockdata.json')
+      .then(res => res.json())
+      .then(products =>
+        this.setState({
+          recommended: products.product,
+        })
+      );
+  }
+
   // componentDidMount() {
   //   const subCat = this.props.match.params.subCat;
 
-  //   fetch('/data/listmockdata.json')
+  //   fetch(`http://172.30.1.23:5000/product/?sub_category_name=${subCat}`)
   //     .then(product => product.json())
   //     .then(products => {
   //       this.setState({
@@ -37,37 +56,20 @@ class Lists extends React.Component {
   //     );
   // }
 
-  componentDidMount() {
-    const subCat = this.props.match.params.subCat;
-
-    fetch(`http://172.30.1.23:5000/product/list/?sub_category_name=${subCat}`)
-      .then(product => product.json())
-      .then(products => {
-        this.setState({
-          products: products.product,
-        });
-      });
-
-    fetch('/data/listmockdata.json')
-      .then(res => res.json())
-      .then(res =>
-        this.setState({
-          recommended: res.product,
-        })
-      );
-  }
-
-  fetchProduct = (sub_category_name, page) => {
+  pagination = (sub_category_name, page) => {
     fetch(
-      `http://172.30.1.23:5000/product/list/?sub_category_name=${sub_category_name}&page=${page}`
+      `http://172.30.1.23:5000/product/?sub_category_name=${sub_category_name}&page=${page}`
     )
       .then(res => res.json())
-      .then(products => this.setState({ products: products.product }));
+      .then(products =>
+        this.setState({ products: products.product, showMoreBar: page })
+      );
   };
 
   render() {
     const { products, recommended, showMoreBar } = this.state;
-
+    const subCat = this.props.match.params.subCat;
+    console.log(showMoreBar);
     return (
       <main className="lists">
         <div className="grid-container">
@@ -82,36 +84,33 @@ class Lists extends React.Component {
                 <div className="show_more_bar">
                   <div
                     className="show_more_charge_half"
-                    style={{ width: `${showMoreBar}%` }}
-                  ></div>
+                    style={{ width: `${(showMoreBar / 2) * 100}%` }}
+                  />
                 </div>
                 <div className="pagination_btn">
                   <button
                     className="show_more_btn"
                     type="button"
-                    onClick={() => this.fetchProduct('work-lamps', 1)}
+                    onClick={() => this.pagination(subCat, 1)}
                   >
                     1
                   </button>
                   <button
                     className="show_more_btn"
                     type="button"
-                    onClick={() => this.fetchProduct('work-lamps', 2)}
+                    onClick={() => this.pagination(subCat, 2)}
                   >
                     2
                   </button>
                 </div>
               </div>
-              <ul>
-                <h2 className="scrollbox_name">추천 제품</h2>
-                <ScrollBox>
-                  {recommended.map(el => (
-                    <li className="item">
-                      <Product product={el} />
-                    </li>
-                  ))}
-                </ScrollBox>
-              </ul>
+              <ScrollBox title="추천 제품">
+                {recommended.map(recommended => (
+                  <li className="item">
+                    <Product product={recommended} />
+                  </li>
+                ))}
+              </ScrollBox>
             </div>
           </div>
         </div>

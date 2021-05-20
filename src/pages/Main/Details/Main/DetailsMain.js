@@ -5,9 +5,9 @@ import ItemImg from './ItemImg/ItemImg';
 import ItemInfo from './ItemInfo/ItemInfo';
 import ScrollBox from '../../../../components/ScrollBox/ScrollBox';
 import Product from '../../../../components/Product/Product';
-import './DetailMain.scss';
+import './DetailsMain.scss';
 
-class Main extends React.Component {
+class DetailsMain extends React.Component {
   render() {
     const { handleModal, handleSideModal, product, details, recommended } =
       this.props;
@@ -32,16 +32,15 @@ class Main extends React.Component {
           </div>
           <div className="row">
             <div className="col-lg-1 lg-only" />
-            <ul className="col-lg-12">
-              <h2 className="scrollbox_name">추천 제품</h2>
-              <ScrollBox>
-                {recommended.map(el => (
+            <div className="col-lg-12 col-md-11">
+              <ScrollBox title="추천 제품">
+                {recommended.map(recommended => (
                   <li className="item">
-                    <Product product={el} />
+                    <Product product={recommended} />
                   </li>
                 ))}
               </ScrollBox>
-            </ul>
+            </div>
           </div>
         </div>
       </main>
@@ -49,4 +48,4 @@ class Main extends React.Component {
   }
 }
 
-export default Main;
+export default DetailsMain;

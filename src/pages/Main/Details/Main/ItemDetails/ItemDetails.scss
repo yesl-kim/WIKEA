@@ -32,6 +32,15 @@
     }
   }
 
+  .item-rating {
+    flex-wrap: wrap;
+
+    .product_rating {
+      width: 100%;
+      text-align: left;
+    }
+  }
+
   hr {
     margin: 10px 0;
   }

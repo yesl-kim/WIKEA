@@ -41,7 +41,7 @@ class Nav extends React.Component {
         <Message />
         <nav className="nav_menu" onScroll={this.handleScroll}>
           <h1 className="visually-hidden">메뉴바</h1>
-          <img alt="logo" src="/images/Detail/logo.png" className="logo" />
+          <img alt="logo" src="/images/logo.png" className="logo" />
           <div className="lg-only options">
             <a href="/">
               <span>모든제품</span>

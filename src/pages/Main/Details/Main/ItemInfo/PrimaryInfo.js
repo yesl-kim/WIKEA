@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Rate from '../../../../../components/Rate/Rate';
 
 import './PrimaryInfo.scss';
 
@@ -19,6 +20,7 @@ class PrimayInfo extends Component {
         <div className="price">
           ₩ {product.price && product.price.toLocaleString()}
         </div>
+        <Rate rate={product.star} />
       </div>
     );
   }

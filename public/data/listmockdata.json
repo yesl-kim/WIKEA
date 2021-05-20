@@ -11,8 +11,10 @@
       "sub_category_name": "작업등",
       "sub_category_url": "table_lamps",
       "star": 3.4,
-      "image": "/images/products/lamp/1-r.png",
-      "background_image": "/images/products/lamp/2-1.jpg"
+      "image": [
+        "/images/products/lamps/1-r png.png",
+        "/images/products/lamps/2-1.jpg"
+      ]
     },
     {
       "id": 2,
@@ -25,8 +27,10 @@
       "sub_category_name": "작업등",
       "sub_category_url": "table_lamps",
       "star": 3.4,
-      "image": "/images/products/lamp/1-r.png",
-      "background_image": "/images/products/lamp/2-1.jpg"
+      "image": [
+        "/images/products/lamps/1-r png.png",
+        "/images/products/lamps/2-1.jpg"
+      ]
     },
     {
       "id": 3,
@@ -39,8 +43,10 @@
       "sub_category_name": "작업등",
       "sub_category_url": "table_lamps",
       "star": 3.4,
-      "image": "/images/products/lamp/1-r.png",
-      "background_image": "/images/products/lamp/2-1.jpg"
+      "image": [
+        "/images/products/lamps/1-r png.png",
+        "/images/products/lamps/2-1.jpg"
+      ]
     },
     {
       "id": 4,
@@ -53,8 +59,10 @@
       "sub_category_name": "작업등",
       "sub_category_url": "table_lamps",
       "star": 3.4,
-      "image": "/images/products/lamp/1-r.png",
-      "background_image": "/images/products/lamp/2-1.jpg"
+      "image": [
+        "/images/products/lamps/1-r png.png",
+        "/images/products/lamps/2-1.jpg"
+      ]
     },
     {
       "id": 5,
@@ -67,8 +75,10 @@
       "sub_category_name": "작업등",
       "sub_category_url": "table_lamps",
       "star": 3.4,
-      "image": "/images/products/lamp/1-r.png",
-      "background_image": "/images/products/lamp/2-1.jpg"
+      "image": [
+        "/images/products/lamps/1-r png.png",
+        "/images/products/lamps/2-1.jpg"
+      ]
     }
   ],
   "series": "NEWBALANCE"

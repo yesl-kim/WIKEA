@@ -7,13 +7,16 @@ class Rate extends React.Component {
       <i className="ic-star" />
     );
     if (rate % 1 > 0) {
-      stars.push(<i className="ic-cart" />);
+      stars.push(<i className="ic-heart" />);
     }
     return stars;
   };
 
   render() {
-    return <div className="product_rating">{this.totalRating()}</div>;
+    const { rate } = this.props;
+    return rate ? (
+      <div className="product_rating">{this.totalRating()}</div>
+    ) : null;
   }
 }
 
