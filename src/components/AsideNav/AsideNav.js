@@ -5,6 +5,7 @@ import './AsideNav.scss';
 class AsideNav extends Component {
   goToSubCat = subCat => {
     this.props.history.push(`/lists/${subCat}`);
+    this.props.handleSideModalOn();
   };
 
   render() {

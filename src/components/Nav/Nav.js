@@ -71,7 +71,7 @@ class Nav extends React.Component {
               </a>
             </li>
             <li>
-              <button className="col-lg-1">
+              <button className="col-lg-1" onClick={this.handleMainNavModalOn}>
                 <i className="ic-menu" />
               </button>
             </li>

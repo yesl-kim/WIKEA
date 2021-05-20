@@ -13,7 +13,6 @@ class MainNavModal extends Component {
       isSubCategoryOn: false,
       activeSubCategory: '',
       categories: [],
-      subCategories: {},
     };
   }
 
@@ -24,7 +23,6 @@ class MainNavModal extends Component {
         this.setState({
           isCategoriesClicked: res.category.map(cat => false),
           categories: res.category,
-          subCategories: res.sub_category,
         });
       });
   }
@@ -46,8 +44,20 @@ class MainNavModal extends Component {
       isSubCategoryOn,
       activeSubCategory,
       categories,
-      subCategories,
     } = this.state;
+    let categoryName = [];
+    const subCategoryName = {};
+
+    if (categories.length) {
+      categoryName = categories.map(category => category.korean_name);
+      for (let name of categoryName) {
+        if (!subCategoryName[name])
+          subCategoryName[name] = categories.filter(
+            category => category.korean_name === name
+          )[0].sub_category;
+      }
+    }
+
     return (
       <SideModal
         direction="left"
@@ -82,7 +92,8 @@ class MainNavModal extends Component {
               type="sub"
               on={isSubCategoryOn}
               title={activeSubCategory}
-              list={subCategories[activeSubCategory]}
+              list={subCategoryName[activeSubCategory]}
+              handleSideModalOn={handleSideModalOn}
             >
               <div className="menu_promotion">
                 <Link to="/">
