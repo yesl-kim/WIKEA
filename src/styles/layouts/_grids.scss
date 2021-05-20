@@ -1,6 +1,5 @@
 @import '../constants/breakpoint';
 @import '../mixins/_responsive';
-
 $gutter: 20px;
 
 $sm-columns: 4;
@@ -24,34 +23,28 @@ $lg-max-container: 1800px + $lg-margin-left + $lg-margin-right;
   width: 100%;
   padding: 0;
   margin: 0 auto;
-
   .row {
     display: flex;
     flex-wrap: wrap;
   }
-
   //속성선택자 : col-로 시작하는 모든 클래스 선택
   [class^='col-'] {
     padding: 0 $gutter / 2;
   }
-
   @for $i from 1 through $sm-columns {
     .col-sm-#{$i} {
       width: percentage($i / $sm-columns);
     }
   }
-
   @include responsive(T) {
     max-width: $md-max-container;
     padding: 0 $md-margin;
-
     @for $i from 1 through $md-columns {
       .col-md-#{$i} {
         width: percentage($i / $md-columns);
       }
     }
   }
-
   @include responsive(D) {
     max-width: $lg-max-container;
     padding: 0 $lg-margin-right 0 $lg-margin-left;
