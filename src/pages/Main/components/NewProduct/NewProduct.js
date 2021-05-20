@@ -22,7 +22,7 @@ class NewProduct extends Component {
     return (
       <div className="col-lg-6 col-md-6 col-sm-12">
         <div className="new_product" onMouseLeave={() => this.handleLabelOn(0)}>
-          <img alt="신제품 인테리어" src={section.src} />
+          <img alt="신제품 인테리어" src={section.url} />
           {section.products.map((product, idx) => (
             <Label
               key={product.id}

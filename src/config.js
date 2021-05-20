@@ -5,4 +5,5 @@ export const API = {
   CATEGORY: `http://${IP}/product/category`,
   NEW_PRODUCT: `http://${IP}/product/newlist`,
   NEW_PRODUCT_TEST: `/data/NewProducts/NewProducts.json`,
+  RECOMMEND: `http://${IP}/product/recommendation`,
 };
