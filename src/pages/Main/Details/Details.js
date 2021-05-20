@@ -3,8 +3,7 @@ import DetailsMain from './Main/DetailsMain.js';
 import ImgModal from './Modal/ImgModal/ImgModal.js';
 import SideModal from '../../../components/SideModal/SideModal.js';
 import DetailsModal from '../Details/Modal/DetailsModal/DetailsModal.js';
-import '../../../config.js';
-
+import { API } from '../../../config.js';
 import './Details.scss';
 
 class Details extends React.Component {
@@ -21,7 +20,7 @@ class Details extends React.Component {
 
   componentDidMount() {
     const { id } = this.props.match.params;
-    fetch(``)
+    fetch(`${API.DETAILS}/${id}`)
       .then(res => res.json())
       .then(product =>
         this.setState({
@@ -30,7 +29,7 @@ class Details extends React.Component {
         })
       );
 
-    fetch('/data/listmockdata.json')
+    fetch(`API.RECOMMENDED_PRODUCT${id}`)
       .then(res => res.json())
       .then(res =>
         this.setState({
@@ -41,7 +40,7 @@ class Details extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
-      fetch(`API${this.props.match.params.id}`)
+      fetch(`${API.DETAILS}/${this.props.match.params.id}`)
         .then(res => res.json())
         .then(product =>
           this.setState({
