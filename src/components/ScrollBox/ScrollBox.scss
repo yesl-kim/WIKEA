@@ -1,0 +1,24 @@
+@import '../../styles/var.scss';
+
+.scroll_box {
+  position: relative;
+  padding-bottom: 39%;
+  height: auto;
+  overflow-x: scroll;
+
+  .item_list {
+    @include flexbox(start);
+    flex-wrap: nowrap;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .item {
+      flex-basis: calc(22.72727% - 1.25rem);
+      flex-shrink: 0;
+      max-width: calc(22.72727% - 1.25rem);
+      margin-right: 1.3rem;
+      padding: 0;
+    }
+  }
+}
