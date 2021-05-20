@@ -1,0 +1,23 @@
+@import '../../../../../styles/var';
+
+.item-img {
+  display: flex;
+  overflow: hidden;
+  cursor: url("data:image/svg+xml;charset=UTF-8,%3csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='40' height='40' rx='20' fill='%23111'/%3e%3cpath d='M22.34 19.07l-1.41-1.41L24.58 14H22v-2h6v6h-2v-2.59l-3.66 3.66zM14 24.59l3.66-3.66 1.41 1.41L15.42 26H18v2h-6v-6h2v2.59z' fill='%23fff'/%3e%3c/svg%3e")
+      20 20,
+    auto;
+
+  @include responsive(D) {
+    display: block;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .sm-slide {
+    width: 100%;
+    height: 34px;
+    border-top: 2px solid $--colour-border-light;
+  }
+}
