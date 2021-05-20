@@ -63,7 +63,7 @@ class SignIn extends React.Component {
             <img
               className="wikea_logo"
               alt="WIKEA Logo"
-              src="/images/Login/SignIn/wikeaLogo.jpeg"
+              src="/images/logo.png"
             />
           </header>
           <article>
