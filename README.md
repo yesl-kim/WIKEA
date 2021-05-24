@@ -2,15 +2,10 @@
 
 - 가구 전문 이커머스 플랫폼인 [이케아(IKEA)](https://www.ikea.com/kr/ko/) 클론 프로젝트
 
-## 프로젝트 소개
-
-- 인테리어 가구, 소품을 판매하는 사이트
-- 카테고리, 신제품, 가격, 색상 등에 따라 상품을 볼 수 있는 필터 기능을 제공
-
 ## 프로젝트 계획 및 일정
 
 🎈 Period : 2021.05.10 ~ 2021.05.21
-- 1st Sprint : 전체 레이아웃, 컴포넌트화
+- 1st Sprint : 전체 레이아웃, 컴포넌트화, 목데이터로 API 테스트
 - 2nd Sprint : 컴포넌트 별 기능 구현, 프론트-백 통신, conflict 수정 작업
 
 ## 팀원
@@ -28,34 +23,25 @@
   - [최우석](https://github.com/tonic523)
   - [백엔드 github 링크](https://github.com/wecode-bootcamp-korea/20-1st-WIKEA-backend)
 
-## 적용 기술
+## 기술 스택
 
-- Front-End : React, React Router, Sass, JavaScript
+- Front-End : HTML, SCSS, JavaScript, React, React Router
 - Back-End : Python, Django web framework, Bcrypt, My SQL, pyjwt
 - Common : POSTMAN, Insomnia, RESTful API
+- Tooling : Git, Github, Trello, Slack
 
-## 구현 기능
+## 구현 기능  
+(내가 기여한 부분은 볼드처리)
 
-### 로그인/회원가입 페이지 (안정현)
-
-- ㅇㅇㅇ
-
-### 메인 페이지 (김예슬)
-
-- ㅇㅇㅇ
-
-### 리스트 페이지 (김수연)
-
-- ㅇㅇㅇ
-
-### 상세 페이지 (노선경)
-
-- ㅇㅇㅇ
-
+- 이메일, 아이디, 핸드폰 번호 등 형식 검사 후 회원가입
+- 로그인 성공 후 로컬스토리지에 토큰 저장
+- 헤더 스크롤 애니메이션
+- **객체 매핑을 활용한 네비게이션 탭 기능**
+- query string을 사용한 정렬, 필터 기능
+- **react-router를 사용한 동적 라우팅 (메인 -> 리스트**, 리스트 -> 상세, 상세 -> 상세 페이지 이동)
 
 ## 데모 영상
 - [유튜브 영상 링크(예정)]()
-
 
 ## 💥 Reference
 - 이 프로젝트는 [이케아(IKEA)](https://www.ikea.com/kr/ko/) 사이트를 참조하여 학습목적으로 만들었습니다.
