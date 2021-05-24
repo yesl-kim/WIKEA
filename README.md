@@ -32,13 +32,14 @@
 
 - Front-End : React, React Router, Sass, JavaScript
 - Back-End : Python, Django web framework, Bcrypt, My SQL, pyjwt
-- Common : POSTMAN, Insomnia, RESTful API
+- Common : Slack, Trello, GitHub, Git, RESTful API
 
 ## 구현 기능
 
 ### 로그인/회원가입 페이지 (안정현)
 
-- ㅇㅇㅇ
+- 로그인/회원가입 시, 입력 항목들에 대한 validation 로직(유효성 검증) 구현 
+- 사용자 인증(Authentication) 완료에 따른, Local Storage에서의 access token(JSON Web Tokens) 관리
 
 ### 메인 페이지 (김예슬)
 
