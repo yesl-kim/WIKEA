@@ -17,7 +17,7 @@ class MainNavModal extends Component {
   }
 
   componentDidMount() {
-    fetch(API.CATEGORY)
+    fetch(API.CATEGORY_TEST)
       .then(categories => categories.json())
       .then(res => {
         this.setState({
