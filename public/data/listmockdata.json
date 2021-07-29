@@ -1,0 +1,85 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "korean_name": "뉴발란스램프",
+      "english_name": "newbalancelamp",
+      "price": "25000.00",
+      "special_price": "20000.00",
+      "is_new": false,
+      "color_list": [],
+      "sub_category_name": "작업등",
+      "sub_category_url": "table_lamps",
+      "star": 3.4,
+      "image": [
+        "/images/products/lamps/1-r png.png",
+        "/images/products/lamps/2-1.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "korean_name": "뉴발란스램프",
+      "english_name": "newbalancelamp",
+      "price": "25000.00",
+      "special_price": "20000.00",
+      "is_new": false,
+      "color_list": [],
+      "sub_category_name": "작업등",
+      "sub_category_url": "table_lamps",
+      "star": 3.4,
+      "image": [
+        "/images/products/lamps/1-r png.png",
+        "/images/products/lamps/2-1.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "korean_name": "뉴발란스램프",
+      "english_name": "newbalancelamp",
+      "price": "25000.00",
+      "special_price": "20000.00",
+      "is_new": false,
+      "color_list": [],
+      "sub_category_name": "작업등",
+      "sub_category_url": "table_lamps",
+      "star": 3.4,
+      "image": [
+        "/images/products/lamps/1-r png.png",
+        "/images/products/lamps/2-1.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "korean_name": "뉴발란스램프",
+      "english_name": "newbalancelamp",
+      "price": "25000.00",
+      "special_price": "20000.00",
+      "is_new": false,
+      "color_list": [],
+      "sub_category_name": "작업등",
+      "sub_category_url": "table_lamps",
+      "star": 3.4,
+      "image": [
+        "/images/products/lamps/1-r png.png",
+        "/images/products/lamps/2-1.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "korean_name": "뉴발란스램프",
+      "english_name": "newbalancelamp",
+      "price": "25000.00",
+      "special_price": "20000.00",
+      "is_new": false,
+      "color_list": [],
+      "sub_category_name": "작업등",
+      "sub_category_url": "table_lamps",
+      "star": 3.4,
+      "image": [
+        "/images/products/lamps/1-r png.png",
+        "/images/products/lamps/2-1.jpg"
+      ]
+    }
+  ],
+  "series": "NEWBALANCE"
+}

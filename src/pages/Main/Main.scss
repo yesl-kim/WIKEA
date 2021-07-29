@@ -1,0 +1,110 @@
+@import '../../styles/var.scss';
+.main {
+  padding-top: calc(4rem + 132px);
+  font-family: $font-main;
+  section {
+    margin-bottom: 4rem;
+    &.promotion {
+      position: relative;
+      height: auto;
+      div {
+        height: 100%;
+      }
+      .image_container {
+        a {
+          display: block;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      .description {
+        padding: 3rem;
+        background-color: $--colour-bg-promotion;
+        h2 {
+          margin-bottom: 0.5rem;
+          font-size: 1.47rem;
+          line-height: 1.36;
+          letter-spacing: -0.02625rem;
+        }
+        p {
+          margin-bottom: 2rem;
+          font-size: 0.875rem;
+          line-height: 1.571;
+        }
+        a {
+          display: inline-block;
+          padding: 0 1.5rem;
+          width: auto;
+          height: 2.5rem;
+          background-color: $--colour-bg-inverse;
+          border-radius: 64px;
+          font-size: 0.75rem;
+          font-weight: bold;
+          line-height: 2.5rem;
+          color: #fff;
+        }
+      }
+    }
+    .section_title {
+      @include flexbox(between, end);
+      margin-bottom: 2rem;
+      a {
+        padding: 0.7rem 1.5rem 0.8rem;
+        border: 1px solid $--colour-disabled-ui;
+        border-radius: 64px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        transition: 200ms cubic-bezier(0.4, 0, 0.4, 1);
+        &:hover {
+          border-color: $--colour-icon-light;
+        }
+      }
+    }
+  }
+}
+@include responsive('D') {
+  .main {
+    .promotion {
+      padding-bottom: 37.25%;
+      div {
+        position: absolute;
+        top: 0;
+      }
+      .image_container {
+        left: 0;
+        width: 66.66%;
+        img {
+          @include pos-center(absolute);
+        }
+      }
+      .description {
+        right: 0;
+        width: 33.33%;
+      }
+    }
+  }
+}
+@include responsive('T') {
+  .main {
+    .promotion {
+      padding-bottom: 0;
+      div {
+        position: static;
+      }
+      .image_container {
+        width: 100%;
+        img {
+          display: block;
+          position: static;
+          transform: translate(0, 0);
+        }
+      }
+      .description {
+        width: 100%;
+      }
+    }
+  }
+}
