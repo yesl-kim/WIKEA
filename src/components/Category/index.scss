@@ -49,4 +49,28 @@
       }
     }
   }
+
+  .menu_promotion {
+    padding: 2rem 0;
+    border-top: 1px solid $--colour-neutral-grey-100;
+    font-size: 0.875rem;
+
+    span {
+      font-weight: bold;
+    }
+
+    .promotion_list {
+      display: flex;
+      padding-top: 2rem;
+
+      li {
+        width: 33.33%;
+
+        a {
+          display: block;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
 }
