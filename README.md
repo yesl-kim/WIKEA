@@ -9,15 +9,8 @@
 프론트엔드: HTML, SCSS, JavaScript, React.js  
 백엔드: Python, Django web framework, Bcrypt, My SQL, pyjwt
 
-<br/>
-
 ## 프로젝트 소개
 **인테리어 가구 전문 이커머스 플랫폼**
-
-### 제공 서비스
-- 자체 회원가입, 로그인
-- 카테고리별 상품을 찾고 상세 정보 탐색
-- 상품 정렬, 필터
 
 <br/>
 
