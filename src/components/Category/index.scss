@@ -1,27 +1,13 @@
 @import '../../styles/var.scss';
 
-.aside_nav {
+.category {
   padding: 1.25rem 2rem 0 0;
+  width: 275px;
+  transition: margin 0.2s ease;
 
-  &.main_menu {
-    width: 275px;
-    transition: margin 0.2s ease;
-
-    &.on {
-      margin-right: 320px;
-      border-right: 1px solid $--colour-neutral-grey-100;
-    }
-  }
-
-  &.sub_menu {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    width: 320px;
-
-    &.on {
-      left: calc(150px + 275px + 2rem);
-    }
+  &.on {
+    margin-right: 320px;
+    border-right: 1px solid $--colour-neutral-grey-100;
   }
 
   .nav_title {
@@ -59,6 +45,30 @@
 
         &.on {
           opacity: 1;
+        }
+      }
+    }
+  }
+
+  .menu_promotion {
+    padding: 2rem 0;
+    border-top: 1px solid $--colour-neutral-grey-100;
+    font-size: 0.875rem;
+
+    span {
+      font-weight: bold;
+    }
+
+    .promotion_list {
+      display: flex;
+      padding-top: 2rem;
+
+      li {
+        width: 33.33%;
+
+        a {
+          display: block;
+          margin-bottom: 40px;
         }
       }
     }
