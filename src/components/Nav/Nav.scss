@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   background-color: white;
-  transition: 0.4s ease;
+  transition: 0.5s ease;
   z-index: 9999;
   &.hide {
     transform: translateY(-132px);
