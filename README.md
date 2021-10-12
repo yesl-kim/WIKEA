@@ -3,8 +3,6 @@
 > [데모 영상](https://youtu.be/I6-gSyTRVAU)  
 > [자세한 코드 설명과 회고록](https://yesl-kim.github.io/posts/wikea)
 
-<br/>
-
 |           |                                                                           Front-end                                                                            |                                       Back-end                                       |
 | :-------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------: |
 |   팀원    | [김수연](https://github.com/ksy4568), [김예슬](https://github.com/yesl-kim), [노선경](https://github.com/celline1637), [안정현](https://github.com/ahnjeongh2) | [정운산](https://github.com/Action2theFuture), [최우석](https://github.com/tonic523) |
@@ -41,11 +39,15 @@
 
 ### 내가 기여한 기능 - 메인 페이지
 
-![메인- 텝메뉴 (1).gif](<https://s3-us-west-2.amazonaws.com/secure.notion-static.com/27f4ea86-f4e9-415d-8b17-0f579c4bbedf/메인-_텝메뉴_(1).gif>)
+![메인페이지 GNB](https://github.com/yesl-kim/wikea/blob/main/mainGNB.gif?raw=true)
+
+|                                   메인페이지 1                                   | 메인페이지 2                                                                      |
+| :------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------- |
+| ![](https://github.com/yesl-kim/wikea/blob/main/mainpage-scrollbox.gif?raw=true) | ![](https://github.com/yesl-kim/wikea/blob/main/mainpage-newProduct.gif?raw=true) |
 
 - 객체 매핑을 활용하여 GNB 구현
 - 제품 카테고리를 path parameter로 담아 동적 라우팅
-- 공용 사이드 모달 컴포넌트 구현 후 [README.md](http://README.md) 파일로 문서화 (props의 타입, optional, 설명 기입)
+- 공용 사이드 모달 컴포넌트 구현 후 README.md 파일로 문서화 (props의 타입, optional, 설명 기입)
 - REST API로 서버와 통신 후 신제품, 카테고리 데이터 받아오기
 - 미디어쿼리로 테블릿 사이즈의 반응형 구현
 - 상단 Nav 바의 스크롤 애니메이션 구현 후 디바운싱 적용
